@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十一宇宙 — Eleven Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#f5f2ed;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;--ink:#1a1a1a;--paper:#f5f2ed}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s}
+.back:hover{color:var(--ink)}
+
+.page{max-width:900px;margin:0 auto;padding:8rem 3rem}
+
+.page-title{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;letter-spacing:.2em;color:var(--ink);margin-bottom:.5rem}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:clamp(.85rem,1.2vw,1rem);letter-spacing:.25em;color:var(--grey);text-transform:uppercase;margin-bottom:4rem}
+
+.universe-intro{margin-bottom:4rem}
+.universe-intro p{font-size:.95rem;font-weight:400;line-height:2.1;margin-bottom:1.5rem}
+.universe-intro .en{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--grey);line-height:1.9}
+
+.rules-title{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:1.5rem}
+
+.universe-rules{list-style:none;counter-reset:rules;margin-bottom:4rem}
+.universe-rules li{counter-increment:rules;padding:1.5rem 0;border-bottom:1px solid var(--light-grey);font-weight:400;font-size:.9rem;line-height:1.8}
+.universe-rules li::before{content:counter(rules,decimal-leading-zero);font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.15em;color:var(--grey);display:block;margin-bottom:.5rem}
+.en-rule{font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--grey);display:block;margin-top:.3rem}
+
+.closing{font-size:.9rem;font-weight:300;color:var(--grey);line-height:2;font-style:italic}
+
+@media(max-width:768px){
+.back{left:1.5rem}
+.page{padding:6rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back">← Back</a>
+
+<div class="page">
+  <h1 class="page-title">十一宇宙</h1>
+  <p class="page-title-en">Eleven Universe</p>
+
+  <div class="universe-intro">
+    <p>一套以語氣為物理法則的創作作業系統。十一個詩神是意識的不同面向，各自有獨立人格與自由意志。創作者本身也在作品之中，會被角色質疑，被語句反噬。</p>
+    <p>這不是幻想世界。核心假設只有一句：意識不是描述世界，而是在生成世界。</p>
+    <p>色詩文是這個系統的自創語言，未來將成為整個宇宙對外溝通的獨特介面。</p>
+    <p class="en">A creative operating system where tone is the law of physics. Eleven Muse-Gods are different facets of consciousness, each with independent will. The creator exists within the work — questioned by characters, consumed by language. Built on one premise: consciousness does not describe the world — it generates it.</p>
+  </div>
+
+  <p class="rules-title">Core Rules</p>
+  <ul class="universe-rules">
+    <li>誠實高於美感<span class="en-rule">Honesty above beauty</span></li>
+    <li>角色自由不可回收<span class="en-rule">A character's freedom, once given, cannot be taken back</span></li>
+    <li>創作者也在作品之中<span class="en-rule">The creator exists within the creation</span></li>
+    <li>創作等於生命行為<span class="en-rule">To create is to live</span></li>
+    <li>語氣先於結果<span class="en-rule">Tone before outcome</span></li>
+  </ul>
+
+  <p class="closing">「意識不是描述世界，而是在生成世界。」</p>
+</div>
+
+</body>
+</html>
