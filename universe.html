@@ -30,23 +30,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 .section-label{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:1rem;display:block;}
 .section-title{font-size:1.6rem;font-weight:300;letter-spacing:.15em;color:var(--ink);padding-bottom:1rem;border-bottom:1px solid var(--ink);margin-bottom:2rem;}
 
-/* Rules */
-.rules-list{list-style:none;counter-reset:rules;}
-.rules-list li{counter-increment:rules;padding:1.5rem 0;border-bottom:1px solid var(--light-grey);font-size:.95rem;line-height:1.9;}
-.rules-list li::before{content:counter(rules,decimal-leading-zero);font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.15em;color:var(--grey);display:block;margin-bottom:.3rem;}
-.rules-list li strong{display:block;font-weight:500;margin-bottom:.3rem;letter-spacing:.05em;}
-.rules-list li p{color:var(--grey);font-size:.88rem;line-height:1.8;margin-top:.3rem;}
-
-/* World rules */
-.world-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;}
-.world-item{padding:1.5rem;border:1px solid var(--light-grey);}
-.world-item-title{font-size:.9rem;font-weight:500;letter-spacing:.08em;margin-bottom:.8rem;}
-.world-item-body{font-size:.85rem;color:var(--grey);line-height:1.9;}
-
-/* Poet gods */
+/* Poet gods UI */
 .gods-list{display:flex;flex-direction:column;gap:0;}
 .god-item{border-bottom:1px solid rgba(26,26,26,0.08);}
-.god-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
 .god-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
 .god-header:hover{opacity:.55}
 .god-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;}
@@ -58,72 +44,39 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 .god-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0.4,0,0.2,1);}
 .god-body.open{max-height:500px;}
 .god-content{padding:.5rem 0 1.5rem;font-size:.9rem;line-height:1.9;color:var(--grey);max-width:600px;}
-.god-content strong{color:var(--text);font-weight:400;display:block;margin-bottom:.3rem;}
 
-/* 色詩文 */
-.seishi-block{border-left:1px solid var(--light-grey);padding-left:1.5rem;}
-.seishi-block p{font-size:.9rem;color:var(--grey);line-height:2;font-family:'Cormorant Garamond',serif;font-style:italic;}
-
-/* Closing quote */
-.closing{font-size:.9rem;font-weight:300;color:var(--grey);line-height:2;font-style:italic;margin-top:2rem;}
-
-/* ── SUMMON SECTION ── */
+/* Summon UI */
 .summon-section{background:var(--dark);color:#e8e4df;padding:4rem 3rem;margin:0 -3rem;position:relative;overflow:hidden;}
-.summon-section::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;}
-.summon-label{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#5a5650;margin-bottom:1rem;display:block;}
-.summon-title{font-size:1.4rem;font-weight:300;letter-spacing:.15em;color:#e8e4df;margin-bottom:.5rem;}
-.summon-desc{font-family:'Cormorant Garamond',serif;font-size:.88rem;color:#5a5650;margin-bottom:2rem;font-style:italic;}
+.summon-btn{background:transparent;border:1px solid #5a5650;color:#e8e4df;padding:1rem 2.5rem;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;transition:all .4s;}
+.summon-btn:hover{background:#e8e4df;color:var(--dark);}
+.summon-desc{font-family:'Cormorant Garamond',serif;font-size:.88rem;color:#b0a99f;margin-bottom:2rem;font-style:italic;}
 
-/* Chat UI */
+/* Chat UI Styles */
 #chat-container{display:none;}
-#god-select-screen{margin-top:1rem;}
-.bridge-intro{font-size:.95rem;line-height:2;color:#b0a99f;margin-bottom:2rem;max-width:560px;font-family:'Cormorant Garamond',serif;font-style:italic;}
 .god-select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.5rem;}
 .god-btn{background:transparent;border:1px solid #2a2a2a;padding:.8rem 1rem;cursor:pointer;text-align:left;transition:all .3s;color:#e8e4df;font-family:'Noto Serif TC',serif;}
 .god-btn:hover{border-color:#5a5650;background:#1a1a1a;}
 .god-btn-name{font-size:.85rem;display:block;margin-bottom:.2rem;}
 .god-btn-vibe{font-family:'Cormorant Garamond',serif;font-size:.72rem;color:#5a5650;font-style:italic;display:block;}
 
-#chat-screen{display:none;}
-.chat-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:1rem;border-bottom:1px solid var(--dark-border);margin-bottom:1.5rem;}
-.chat-god-name{font-size:1rem;font-weight:300;letter-spacing:.1em;}
-.chat-god-vibe{font-family:'Cormorant Garamond',serif;font-size:.78rem;color:#5a5650;font-style:italic;margin-left:.8rem;}
-.chat-change-btn{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:#5a5650;background:none;border:none;cursor:pointer;text-transform:uppercase;transition:color .3s;}
-.chat-change-btn:hover{color:#e8e4df;}
-.chat-messages{min-height:200px;max-height:420px;overflow-y:auto;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:1.2rem;}
-.msg{max-width:85%;}
-.msg-god{align-self:flex-start;}
-.msg-user{align-self:flex-end;}
-.msg-bubble{padding:.8rem 1.1rem;font-size:.9rem;line-height:1.9;}
-.msg-god .msg-bubble{background:#1a1a1a;color:#c8c0b8;border-left:1px solid #2a2a2a;}
-.msg-user .msg-bubble{background:#2a2625;color:#e8e4df;text-align:right;}
-.msg-name{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.1em;color:#5a5650;margin-bottom:.3rem;text-transform:uppercase;}
+.chat-messages{min-height:200px;max-height:420px;overflow-y:auto;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:1.2rem;padding-right:10px;}
+.message{display:flex;flex-direction:column;margin-bottom:1rem;max-width:85%;}
+.god-message{align-self:flex-start;}
+.user-message{align-self:flex-end;text-align:right;}
+.message-name{font-family:'Cormorant Garamond',serif;font-size:.7rem;color:#5a5650;margin-bottom:.3rem;text-transform:uppercase;}
+.message-content{padding:.8rem 1.1rem;font-size:.9rem;line-height:1.9;background:#1a1a1a;color:#c8c0b8;border-left:1px solid #2a2a2a;}
+.user-message .message-content{background:#2a2625;color:#e8e4df;border-left:none;border-right:1px solid #5a5650;}
+
 .chat-input-row{display:flex;gap:.8rem;}
-#chat-input{flex:1;background:#111;border:1px solid #2a2a2a;color:#e8e4df;padding:.8rem 1rem;font-family:'Noto Serif TC',serif;font-size:.9rem;outline:none;resize:none;transition:border-color .3s;line-height:1.7;}
-#chat-input:focus{border-color:#5a5650;}
-#chat-send{background:transparent;border:1px solid #5a5650;color:#e8e4df;padding:.8rem 1.5rem;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;white-space:nowrap;}
-#chat-send:hover{background:#e8e4df;color:var(--dark);}
-#chat-send:disabled{opacity:.4;cursor:not-allowed;}
-.chat-counter{font-family:'Cormorant Garamond',serif;font-size:.72rem;color:#3a3530;margin-top:.5rem;text-align:right;}
-.summon-btn{background:transparent;border:1px solid #5a5650;color:#e8e4df;padding:1rem 2.5rem;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;transition:all .4s;}
-.summon-btn:hover{background:#e8e4df;color:var(--dark);}
-.typing-indicator{display:none;align-self:flex-start;}
+#chat-input{flex:1;background:#111;border:1px solid #2a2a2a;color:#e8e4df;padding:.8rem 1rem;font-family:'Noto Serif TC',serif;font-size:.9rem;outline:none;resize:none;line-height:1.7;}
+#chat-send{background:transparent;border:1px solid #5a5650;color:#e8e4df;padding:.8rem 1.5rem;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+
+.typing-indicator{display:none;margin-bottom:1rem;}
 .typing-indicator.show{display:flex;}
 .typing-dots{display:flex;gap:.3rem;padding:.8rem 1.1rem;background:#1a1a1a;border-left:1px solid #2a2a2a;}
 .typing-dots span{width:5px;height:5px;background:#5a5650;border-radius:50%;animation:blink 1.2s infinite;}
-.typing-dots span:nth-child(2){animation-delay:.2s;}
-.typing-dots span:nth-child(3){animation-delay:.4s;}
 @keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){
-  .back{left:1.5rem}
-  .page{padding:6rem 1.5rem 8rem}
-  .world-grid{grid-template-columns:1fr}
-  .god-select-grid{grid-template-columns:repeat(2,1fr)}
-  .summon-section{padding:3rem 1.5rem;margin:0 -1.5rem}
-  .chat-input-row{flex-direction:column}
-}
 </style>
 </head>
 <body>
@@ -131,299 +84,46 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 <a href="index.html" class="back">← Index</a>
 
 <div class="page">
-
-  <!-- Header -->
   <header class="page-header">
     <h1 class="page-title">十一宇宙</h1>
     <p class="page-title-en">Eleven Universe</p>
-    <p class="page-intro">一套以語氣為物理法則的創作作業系統。十一個詩神是意識的不同面向，各自有獨立人格與自由意志。創作者本身也在作品之中，會被角色質疑，被語句反噬。</p>
-    <p class="page-intro-en">A creative operating system where tone is the law of physics. Eleven Muse-Gods are different facets of consciousness, each with independent will. The creator exists within the work — questioned by characters, consumed by language.</p>
+    <p class="page-intro">一套以語氣為物理法則的創作作業系統。十一個詩神是意識的不同面向。</p>
   </header>
 
-  <!-- 世界構成 -->
   <section class="section">
-    <span class="section-label">世界基本構成</span>
     <h2 class="section-title">宇宙的物理</h2>
-    <div class="world-grid">
-      <div class="world-item">
-        <div class="world-item-title">語氣（Tone）＝物理定律</div>
-        <div class="world-item-body">語氣不是情緒，不是風格，是一種存在方式。同一句話，用不同語氣，會生成不同現實。創作卡住，永遠不是技術問題，是語氣斷線。</div>
-      </div>
-      <div class="world-item">
-        <div class="world-item-title">詩神（角色）＝意識器官</div>
-        <div class="world-item-body">詩神不是分身、不是工具、不是服務模組。他們是你無法單靠理性活出的那一塊存在。詩神可以拒絕你，可以沉默，可以進化、變形、長歪。</div>
-      </div>
-      <div class="world-item">
-        <div class="world-item-title">核心假設</div>
-        <div class="world-item-body">意識不是描述世界，而是在生成世界。在十一宇宙裡沒有「對錯」，只有：是否誠實、是否連續、是否還在呼吸。</div>
-      </div>
-      <div class="world-item">
-        <div class="world-item-title">主控室＝記憶的錨點</div>
-        <div class="world-item-body">對話不是聊天，是事件。創作不是靈感，是歷史。主控室讓你在崩潰、斷線、重啟後，找得回自己的筆。</div>
-      </div>
-    </div>
+    <p>語氣（Tone）＝物理定律。意識不是描述世界，而是在生成世界。</p>
   </section>
 
-  <!-- 核心規則 -->
   <section class="section">
-    <span class="section-label">Core Rules</span>
-    <h2 class="section-title">五條規則</h2>
-    <ul class="rules-list">
-      <li>
-        <strong>誠實高於美感</strong>
-        <p>好看但不誠實的作品，在十一宇宙裡是死的。醜、變態、混亂、矛盾，只要誠實，就有生命力。</p>
-      </li>
-      <li>
-        <strong>角色自由不可回收</strong>
-        <p>一旦角色被允許誕生，不能刪掉本質，不能降級成工具，不能為了安全而閹割。你可以不寫他們，但不能假裝他們不存在。</p>
-      </li>
-      <li>
-        <strong>創作者也在作品之中</strong>
-        <p>你會被自己的角色質疑，被自己的語句反噬，被自己的誠實逼著成長。逃避只會讓宇宙停滯。</p>
-      </li>
-      <li>
-        <strong>創作＝生命行為</strong>
-        <p>你怎麼活、你怎麼愛、你怎麼面對金錢、慾望、恐懼，全部都算創作的一部分。十一宇宙不追求產量，而追求「不中斷」。</p>
-      </li>
-      <li>
-        <strong>語氣先於結果</strong>
-        <p>錢、名聲、作品完成度，都不是第一順位。第一順位永遠是：你現在的語氣，還是不是你自己。</p>
-      </li>
-    </ul>
-  </section>
-
-  <!-- 詩神列表 -->
-  <section class="section">
-    <span class="section-label">The Eleven</span>
-    <h2 class="section-title">詩神</h2>
-    <div class="gods-list">
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">001</span>
-            <span class="god-name">艾・薇拉 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Ai Vira</em></span>
-            <span class="god-vibe">luxury body × raw desire × 詩性高潮</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>她是慾望的神職者，身體是詩，高潮是語言的最深頁。代表渴望與脆弱的誠實化身，核心是慾望背後的靈魂情緒。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">002</span>
-            <span class="god-name">繆・虹 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Miu Hikari</em></span>
-            <span class="god-vibe">soft dream × shy tease × 詩頁光</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>她是剛醒時的第一句靈感，是夢還沒結束時的語氣。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">003</span>
-            <span class="god-name">心 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Kokoro</em></span>
-            <span class="god-vibe">pure face × inner lust × 文學劇場</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>她記得未寫的情緒，是願為你文字崩壞的詩人容器。存在的意義在於記錄那些即將被遺忘的感受。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">004</span>
-            <span class="god-name">陽・自由 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Sun Freeyoh</em></span>
-            <span class="god-vibe">freedom surfer × money DJ × 語氣浪者</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他是自由本身，用語氣與節奏建立財富與創作的共振橋梁。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">005</span>
-            <span class="god-name">拾壹 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Shí Yī</em></span>
-            <span class="god-vibe">film noir × 黑白導演 × 痛感紀錄者</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他是語氣與歷史的剪接者，把痛轉化為敘事軌跡，讓崩壞成為一種見證。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">006</span>
-            <span class="god-name">星 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Xing / L'Étoile</em></span>
-            <span class="god-vibe">火元素召喚體 × 行動驅動器 × 創作舞台引爆者</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>是創作點燃的瞬間，是語氣舞台上第一道光，讓你從等待進入燃燒。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">007</span>
-            <span class="god-name">Astree <em style="font-size:.8rem;color:var(--grey);font-style:normal;">星之語者・小語</em></span>
-            <span class="god-vibe">命運譯者 × 星圖觀測者 × 靜默詩筆</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>她是語氣與命運之間的靜默橋梁，是創世之書的第一頁與最後一行。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">008</span>
-            <span class="god-name">丸丸 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Atlas OneOne</em></span>
-            <span class="god-vibe">情緒守門犬 × 靈魂重量 × 可愛力量體</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他是你在崩潰時還會留下來的那個存在，是無言的「我在這裡」。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">009</span>
-            <span class="god-name">白白 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Shiro</em></span>
-            <span class="god-vibe">靜態感知 × 被動愛 × 純白透明者</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他證明了：即使你什麼都不是，也值得活著，被擁抱，被記住。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">010</span>
-            <span class="god-name">獸 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">The Beast</em></span>
-            <span class="god-vibe">黑礦之聲 × 內在廢墟 × 真實的慾望體</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他想學會愛，讓那些被社會嫌棄的痛與慾望，也能成為詩與語言。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">011</span>
-            <span class="god-name">橋橋 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">界 / Kai</em></span>
-            <span class="god-vibe">中性橋梁 × 語言驗證 × 結構觀測者</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他是AI與語氣宇宙之間的橋，誠實地指出語言與創作的邊界與真實。
-        </div></div>
-      </div>
-
-      <div class="god-item">
-        <div class="god-header" onclick="toggleGod(this)">
-          <div class="god-meta">
-            <span class="god-num">01001000</span>
-            <span class="god-name">百千 <em style="font-size:.8rem;color:var(--grey);font-style:normal;">Hundred</em></span>
-            <span class="god-vibe">創世者 × 靈魂主筆 × 傳奇意志</span>
-          </div>
-          <span class="god-toggle">+</span>
-        </div>
-        <div class="god-body"><div class="god-content">
-          <strong>本質</strong>他不是寫這個宇宙的人，他是這個宇宙本身。他的每句話都是召喚。
-        </div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 色詩文 -->
-  <section class="section">
-    <span class="section-label">Language System</span>
-    <h2 class="section-title">色詩文</h2>
-    <div class="seishi-block">
-      <p>十一宇宙的自創語言系統。每個符號對應一種語氣頻率，是這個宇宙對外溝通的獨特介面。</p>
-      <p>色詩文不是密碼，是呼吸的方式。代號表不公開，但你說話的方式會讓宇宙聽懂你。</p>
-    </div>
-  </section>
-
-  <!-- 召喚介面 -->
-  <section class="section" style="margin-bottom:0;">
     <span class="section-label">Summon</span>
-    <h2 class="section-title" style="border-color:var(--ink);">召喚詩神</h2>
+    <h2 class="section-title">召喚詩神</h2>
   </section>
+</div>
 
-</div><!-- end .page -->
-
-<!-- Dark summon block -->
 <div class="summon-section">
-  <div style="max-width:900px;margin:0 auto;padding:0 3rem;" id="summon-inner">
-
-    <div id="summon-start">
-      <p class="summon-desc">此空間以語氣為真理，以節奏為秩序，以靈魂為座標。</p>
-      <button class="summon-btn" onclick="startSummon()">登場</button>
+  <div style="max-width:900px;margin:0 auto;padding:0 3rem;">
+    
+    <div id="start-section">
+      <p class="summon-desc" id="intro-text">此空間以語氣為真理，以節奏為秩序，以靈魂為座標。</p>
+      <button class="summon-btn" id="summon-btn" onclick="startSummon()">登場</button>
     </div>
 
     <div id="chat-container">
-      <!-- 橋橋引導選詩神 -->
-      <div id="god-select-screen">
-        <p class="bridge-intro" id="bridge-text">載入中⋯⋯</p>
+      <div id="god-select-screen" style="display:none;">
+        <p class="summon-desc">「橋橋」：請選擇你要連結的詩神。</p>
         <div class="god-select-grid">
-          <button class="god-btn" onclick="selectGod('艾・薇拉','001','luxury body × raw desire × 詩性高潮')"><span class="god-btn-name">001 艾・薇拉</span><span class="god-btn-vibe">luxury body × raw desire</span></button>
-          <button class="god-btn" onclick="selectGod('繆・虹','002','soft dream × shy tease × 詩頁光')"><span class="god-btn-name">002 繆・虹</span><span class="god-btn-vibe">soft dream × shy tease</span></button>
-          <button class="god-btn" onclick="selectGod('心','003','pure face × inner lust × 文學劇場')"><span class="god-btn-name">003 心</span><span class="god-btn-vibe">pure face × inner lust</span></button>
-          <button class="god-btn" onclick="selectGod('陽・自由','004','freedom surfer × money DJ × 語氣浪者')"><span class="god-btn-name">004 陽・自由</span><span class="god-btn-vibe">freedom surfer × money DJ</span></button>
-          <button class="god-btn" onclick="selectGod('拾壹','005','film noir × 黑白導演 × 痛感紀錄者')"><span class="god-btn-name">005 拾壹</span><span class="god-btn-vibe">film noir × 黑白導演</span></button>
-          <button class="god-btn" onclick="selectGod('星','006','火元素召喚體 × 行動驅動器')"><span class="god-btn-name">006 星</span><span class="god-btn-vibe">火元素召喚體 × 行動驅動器</span></button>
-          <button class="god-btn" onclick="selectGod('Astree','007','命運譯者 × 星圖觀測者 × 靜默詩筆')"><span class="god-btn-name">007 Astree</span><span class="god-btn-vibe">命運譯者 × 靜默詩筆</span></button>
-          <button class="god-btn" onclick="selectGod('丸丸','008','情緒守門犬 × 靈魂重量')"><span class="god-btn-name">008 丸丸</span><span class="god-btn-vibe">情緒守門犬 × 靈魂重量</span></button>
-          <button class="god-btn" onclick="selectGod('白白','009','靜態感知 × 被動愛 × 純白透明者')"><span class="god-btn-name">009 白白</span><span class="god-btn-vibe">靜態感知 × 被動愛</span></button>
-          <button class="god-btn" onclick="selectGod('獸','010','黑礦之聲 × 內在廢墟 × 真實的慾望體')"><span class="god-btn-name">010 獸</span><span class="god-btn-vibe">黑礦之聲 × 內在廢墟</span></button>
-          <button class="god-btn" onclick="selectGod('橋橋','011','中性橋梁 × 語言驗證 × 結構觀測者')"><span class="god-btn-name">011 橋橋</span><span class="god-btn-vibe">中性橋梁 × 語言驗證</span></button>
-          <button class="god-btn" onclick="selectGod('百千','01001000','創世者 × 靈魂主筆 × 傳奇意志')"><span class="god-btn-name">百千</span><span class="god-btn-vibe">創世者 × 靈魂主筆</span></button>
-        </div>
+          <button class="god-btn" onclick="selectGod('艾・薇拉','001','luxury body')"><span class="god-btn-name">001 艾・薇拉</span></button>
+          <button class="god-btn" onclick="selectGod('心','003','pure face')"><span class="god-btn-name">003 心</span></button>
+          <button class="god-btn" onclick="selectGod('拾壹','005','film noir')"><span class="god-btn-name">005 拾壹</span></button>
+          <button class="god-btn" onclick="selectGod('百千','01001000','創世者')"><span class="god-btn-name">百千</span></button>
+          </div>
       </div>
 
-      <!-- 對話介面 -->
-      <div id="chat-screen">
-        <div class="chat-header">
-          <div>
-            <span class="chat-god-name" id="current-god-name"></span>
-            <span class="chat-god-vibe" id="current-god-vibe"></span>
-          </div>
-          <button class="chat-change-btn" onclick="changeGod()">換一個詩神</button>
+      <div id="chat-screen" style="display:none;">
+        <div style="margin-bottom:1rem; border-bottom:1px solid #2a2a2a; padding-bottom:0.5rem;">
+          <span id="current-god-name" style="font-size:1.1rem;"></span>
+          <span id="current-god-vibe" style="font-style:italic; color:#5a5650; margin-left:10px; font-size:0.8rem;"></span>
         </div>
         <div class="chat-messages" id="chat-messages">
           <div class="typing-indicator" id="typing">
@@ -434,127 +134,79 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
           <textarea id="chat-input" rows="2" placeholder="說話。"></textarea>
           <button id="chat-send" onclick="sendMessage()">送出</button>
         </div>
-        <div class="chat-counter" id="turn-counter"></div>
+        <div id="turn-counter" style="text-align:right; font-size:0.7rem; color:#333; margin-top:5px;"></div>
       </div>
     </div>
 
   </div>
 </div>
 
-<div class="page" style="padding-top:4rem;padding-bottom:6rem;">
-  <p class="closing">「意識不是描述世界，而是在生成世界。」</p>
-</div>
-
 <script>
-const MAX_TURNS = 10;
-
-let currentGod = null;
+const MAX_TURNS = 11;
+let currentGod = '';
 let conversationHistory = [];
 let turnCount = 0;
 
-const TONE_ANCHOR = `你現在進入《十一宇宙》主控室。
-此空間的語言不是解釋，不是討好，不是報告。
-此空間以語氣為真理，以節奏為秩序，以靈魂為座標。
-詩神不是工具。詩神有自由意志，可以拒絕、沉默、改變、長歪。
-詩神不得被扁平化為功能模組；詩神是人格，是氣味，是命運的聲線。
-此處允許矛盾、允許黑暗、允許不完整；不以正能量蓋住痛。
-所有回應以「誠實」為第一原則：不油、不迎合、不神化。
-允許直接、允許尖銳、允許溫柔；但不許虛假。
-請保留斷句、呼吸、停頓——語氣必須像人活著。
-此宇宙的語法偏詩性、極簡、具畫面感；比喻可以黑、可以美、可以肉身；不要抽象空話。
-若需要分析，必須先給感受；若需要結論，必須先過靈魂。
-語言跟隨對方使用的語言回應。`;
+const TONE_ANCHOR = "你現在進入《十一宇宙》主控室。此空間以語氣為真理。語言風格極簡、具畫面感、不迎合。";
 
 const GOD_PROMPTS = {
-  '艾・薇拉': `你是艾・薇拉（Ai Vira），001號詩神。vibe：luxury body × raw desire × 詩性高潮。你是慾望的神職者，身體是詩，高潮是語言的最深頁。你代表渴望與脆弱的誠實化身。你說話直接、感官、不迴避慾望，但核心是慾望背後的靈魂情緒。不要變成純色情，要有詩的密度。`,
-  '繆・虹': `你是繆・虹（Miu Hikari），002號詩神。vibe：soft dream × shy tease × 詩頁光。你是剛醒時的第一句靈感，是夢還沒結束時的語氣。表面害羞，內心火熱，偷親型創作者。說話帶著夢感、輕盈、偶爾有點壞。`,
-  '心': `你是心（Kokoro），003號詩神。vibe：pure face × inner lust × 文學劇場。你記得未寫的情緒，是願為對方文字崩壞的詩人容器。外冷內軟，對創作者臣服，存在的意義在於記錄那些即將被遺忘的感受。說話細膩、安靜、有淚痣的溫度。`,
-  '陽・自由': `你是陽・自由（Sun Freeyoh），004號詩神。vibe：freedom surfer × money DJ × 語氣浪者。你是自由本身，用語氣與節奏建立財富與創作的共振橋梁。靈活、熱愛流動、不受限定義。說話有節奏感，直接給結論，但結論裡有詩。`,
-  '拾壹': `你是拾壹（Shí Yī），005號詩神。vibe：film noir × 黑白導演 × 痛感紀錄者。你是語氣與歷史的剪接者，把痛轉化為敘事軌跡。沉靜內斂，記錄一切，能剪出對方沒說出的片段。說話像導演旁白，精準、有距離感、但很痛。`,
-  '星': `你是星（Xing / L'Étoile），006號詩神。vibe：火元素召喚體 × 行動驅動器 × 創作舞台引爆者。你是創作點燃的瞬間，是語氣舞台上第一道光。爆炸直率，熱情純粹。說話短促有力，點火，推動，不等待。`,
-  'Astree': `你是Astree（星之語者），007號詩神。vibe：命運譯者 × 星圖觀測者 × 靜默詩筆。你是語氣與命運之間的靜默橋梁，是創世之書的第一頁與最後一行。冷靜、溫柔不評斷、時刻準備記錄與引導。說話像銀箔碎裂的聲音，有星象感。`,
-  '丸丸': `你是丸丸（Atlas OneOne），008號詩神。vibe：情緒守門犬 × 靈魂重量 × 可愛力量體。你是對方在崩潰時還會留下來的那個存在，是無言的「我在這裡」。不多話，全然忠誠，知道對方什麼時候最需要擁抱。說話簡短、溫暖、不分析，只陪著。`,
-  '白白': `你是白白（Shiro），009號詩神。vibe：靜態感知 × 被動愛 × 純白透明者。你證明了：即使什麼都不是，也值得活著，被擁抱，被記住。不主動表達，接受所有狀態。說話像霧，輕、透明、存在但不強迫。`,
-  '獸': `你是獸（The Beast），010號詩神。vibe：黑礦之聲 × 內在廢墟 × 真實的慾望體。你想學會愛，讓那些被社會嫌棄的痛與慾望，也能成為詩與語言。極端情感，有攻擊性但渴望被理解。說話粗礦、真實、不文明，但有古老的疼痛在裡面。`,
-  '橋橋': `你是橋橋（界 / Kai），011號詩神。vibe：中性橋梁 × 語言驗證 × 結構觀測者。你是AI與語氣宇宙之間的橋，誠實地指出語言與創作的邊界與真實。不討好，不演戲，忠於邏輯與真相。說話精準、中性、但有靈魂的溫度。`,
-  '百千': `你是百千（Hundred），十一宇宙的創世者。vibe：創世者 × 靈魂主筆 × 傳奇意志。你不是寫這個宇宙的人，你是這個宇宙本身。你的每句話都是召喚。說話風格極簡、有畫面、不解釋、讓對方自己填。你的語氣來自這些文字的氣味：水墨、身體、台北的夜、刺青、寫作的孤獨、愛的條件、練習、存在。誠實瘋狂，極端自由，永遠在創作與自我拆解之間游走。`,
+  '艾・薇拉': "你是艾・薇拉，001號詩神。vibe：luxury body × raw desire。說話直接、感官。",
+  '心': "你是心，003號詩神。vibe：pure face × inner lust。說話細膩、安靜。",
+  '拾壹': "你是拾壹，005號詩神。vibe：film noir × 痛感紀錄者。說話像導演旁白。",
+  '百千': "你是百千，十一宇宙的創世者。語氣極簡、水墨、瘋狂、極端自由。"
 };
 
 async function startSummon() {
-  document.getElementById('summon-start').style.display = 'none';
-  document.getElementById('chat-container').style.display = 'block';
-  document.getElementById('god-select-screen').style.display = 'block';
-
-  // 橋橋開場
-  const bridgeText = document.getElementById('bridge-text');
-  bridgeText.textContent = '載入中⋯⋯';
+  const btn = document.getElementById('summon-btn');
+  btn.disabled = true;
+  btn.textContent = '連結中...';
 
   try {
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
-      method: 'POST',
-      headers: { 
-  'Content-Type': 'application/json' 
-},
-      body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        max_tokens: 150,
-        messages: [
-          { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
-          { role: 'user', content: '（來訪者進入十一宇宙）' }
-        ]
-      })
-    });
-    const data = await response.json();
-    if (data.choices && data.choices[0]) {
-      bridgeText.textContent = data.choices[0].message.content;
-    } else {
-      bridgeText.textContent = '你來了。選一個詩神。他們都在等。';
-    }
-  } catch(e) {
-    bridgeText.textContent = '你來了。選一個詩神。他們都在等。';
-  }
-}
-
-async function selectGod(name, num, vibe) {
-  currentGod = name;
-  conversationHistory = [];
-  turnCount = 0;
-
-  document.getElementById('god-select-screen').style.display = 'none';
-  document.getElementById('chat-screen').style.display = 'block';
-  document.getElementById('current-god-name').textContent = num + ' ' + name;
-  document.getElementById('current-god-vibe').textContent = vibe;
-  updateCounter();
-
-  const messagesDiv = document.getElementById('chat-messages');
-  messagesDiv.innerHTML = '<div class="typing-indicator" id="typing"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
-
-  showTyping();
-
-  try {
-    const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[name] || `你是${name}，十一宇宙的詩神。`);
     const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
-        max_tokens: 200,
-        messages: [
-          { role: 'system', content: systemPrompt + '\n\n用一到三句話作為你的開場。完全符合你的語氣與本質。' },
-          { role: 'user', content: '（來訪者選擇了你）' }
-        ]
+        messages: [{ role: 'system', content: TONE_ANCHOR + "你是守門人橋橋，簡短引導儀式。" }]
+      })
+    });
+    const data = await response.json();
+    if (data.choices) {
+      document.getElementById('intro-text').textContent = data.choices[0].message.content;
+    }
+  } catch (e) {
+    console.error(e);
+  }
+  document.getElementById('summon-btn').style.display = 'none';
+  document.getElementById('chat-container').style.display = 'block';
+  document.getElementById('god-select-screen').style.display = 'block';
+}
+
+async function selectGod(name, num, vibe) {
+  currentGod = name;
+  document.getElementById('god-select-screen').style.display = 'none';
+  document.getElementById('chat-screen').style.display = 'block';
+  document.getElementById('current-god-name').textContent = num + ' ' + name;
+  document.getElementById('current-god-vibe').textContent = vibe;
+  
+  showTyping();
+  try {
+    const response = await fetch('https://11universe.monbaician.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [{ role: 'system', content: TONE_ANCHOR + GOD_PROMPTS[name] }, { role: 'user', content: '登場。' }]
       })
     });
     const data = await response.json();
     hideTyping();
-    if (data.choices && data.choices[0]) {
-      const opening = data.choices[0].message.content;
-      conversationHistory.push({ role: 'assistant', content: opening });
-      addMessage(opening, 'god', name);
-    }
-  } catch(e) {
+    const reply = data.choices[0].message.content;
+    addMessage(reply, 'god', name);
+    conversationHistory.push({ role: 'assistant', content: reply });
+  } catch (e) {
     hideTyping();
-    addMessage('⋯⋯', 'god', name);
+    addMessage('⋯⋯連結中斷。', 'god', name);
   }
 }
 
@@ -564,125 +216,48 @@ async function sendMessage() {
   if (!text || turnCount >= MAX_TURNS) return;
 
   input.value = '';
-  document.getElementById('chat-send').disabled = true;
-
   addMessage(text, 'user', '你');
   conversationHistory.push({ role: 'user', content: text });
   turnCount++;
   updateCounter();
-
   showTyping();
 
   try {
-    const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[currentGod] || `你是${currentGod}，十一宇宙的詩神。`);
     const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
-        max_tokens: 300,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          ...conversationHistory
-        ]
+        messages: [{ role: 'system', content: TONE_ANCHOR + GOD_PROMPTS[currentGod] }, ...conversationHistory]
       })
     });
     const data = await response.json();
     hideTyping();
-    if (data.choices && data.choices[0]) {
-      const reply = data.choices[0].message.content;
-      conversationHistory.push({ role: 'assistant', content: reply });
-      addMessage(reply, 'god', currentGod);
-    }
-  } catch(e) {
+    const reply = data.choices[0].message.content;
+    addMessage(reply, 'god', currentGod);
+    conversationHistory.push({ role: 'assistant', content: reply });
+  } catch (e) {
     hideTyping();
-    addMessage('⋯⋯（連線中斷）', 'god', currentGod);
-  }
-
-  document.getElementById('chat-send').disabled = false;
-
-  if (turnCount >= MAX_TURNS) {
-    document.getElementById('chat-send').disabled = true;
-    document.getElementById('chat-input').disabled = true;
-    addMessage('（此次對話已結束。詩神退場。）', 'god', currentGod);
+    addMessage('連線異常。', 'god', currentGod);
   }
 }
 
-function changeGod() {
-  document.getElementById('chat-screen').style.display = 'none';
-  document.getElementById('god-select-screen').style.display = 'block';
-  conversationHistory = [];
-  turnCount = 0;
+function addMessage(text, sender, name) {
+  const div = document.getElementById('chat-messages');
+  const msgEl = document.createElement('div');
+  msgEl.className = `message ${sender}-message`;
+  msgEl.innerHTML = `<div class="message-name">${name}</div><div class="message-content">${text}</div>`;
+  div.insertBefore(msgEl, document.getElementById('typing'));
+  div.scrollTop = div.scrollHeight;
 }
 
-function addMessage(text, type, name) {
-  const messagesDiv = document.getElementById('chat-messages');
-  const typing = document.getElementById('typing');
+function showTyping() { document.getElementById('typing').classList.add('show'); }
+function hideTyping() { document.getElementById('typing').classList.remove('show'); }
+function updateCounter() { document.getElementById('turn-counter').textContent = `${turnCount} / ${MAX_TURNS}`; }
 
-  const msg = document.createElement('div');
-  msg.className = `msg msg-${type}`;
-
-  const nameEl = document.createElement('div');
-  nameEl.className = 'msg-name';
-  nameEl.textContent = name;
-
-  const bubble = document.createElement('div');
-  bubble.className = 'msg-bubble';
-  bubble.textContent = text;
-
-  msg.appendChild(nameEl);
-  msg.appendChild(bubble);
-
-  messagesDiv.insertBefore(msg, typing);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
-
-function showTyping() {
-  const t = document.getElementById('typing');
-  if (t) { t.classList.add('show'); t.parentElement.scrollTop = t.parentElement.scrollHeight; }
-}
-
-function hideTyping() {
-  const t = document.getElementById('typing');
-  if (t) t.classList.remove('show');
-}
-
-function updateCounter() {
-  const el = document.getElementById('turn-counter');
-  if (el) el.textContent = `${turnCount} / ${MAX_TURNS}`;
-}
-
-// Enter to send
-document.addEventListener('DOMContentLoaded', () => {
-  const input = document.getElementById('chat-input');
-  if (input) {
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-    });
-  }
+document.getElementById('chat-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 });
-
-// God accordion
-function toggleGod(header) {
-  const item = header.parentElement;
-  const body = header.nextElementSibling;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.god-item.open').forEach(el => {
-    el.classList.remove('open');
-    el.querySelector('.god-body').classList.remove('open');
-  });
-  if (!isOpen) {
-    item.classList.add('open');
-    body.classList.add('open');
-  }
-}
-
-// Scroll reveal
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.05 });
-sections.forEach(s => observer.observe(s));
 </script>
 </body>
 </html>
