@@ -446,6 +446,7 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 </div>
 
 <script>
+const API_KEY = 'YOUR_API_KEY_HERE';
 const MAX_TURNS = 10;
 
 let currentGod = null;
@@ -490,16 +491,18 @@ async function startSummon() {
   bridgeText.textContent = '載入中⋯⋯';
 
   try {
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
       body: JSON.stringify({
-  messages: [
-    { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
-    { role: 'user', content: '（來訪者進入十一宇宙）' }
-  ]
-})
-;
+        model: 'gpt-4o-mini',
+        max_tokens: 150,
+        messages: [
+          { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
+          { role: 'user', content: '（來訪者進入十一宇宙）' }
+        ]
+      })
+    });
     const data = await response.json();
     if (data.choices && data.choices[0]) {
       bridgeText.textContent = data.choices[0].message.content;
@@ -520,9 +523,6 @@ async function selectGod(name, num, vibe) {
   document.getElementById('chat-screen').style.display = 'block';
   document.getElementById('current-god-name').textContent = num + ' ' + name;
   document.getElementById('current-god-vibe').textContent = vibe;
-  document.getElementById('chat-input').disabled = false;
-  document.getElementById('chat-send').disabled = false;
-  document.getElementById('chat-input').value = '';
   updateCounter();
 
   const messagesDiv = document.getElementById('chat-messages');
@@ -532,15 +532,18 @@ async function selectGod(name, num, vibe) {
 
   try {
     const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[name] || `你是${name}，十一宇宙的詩神。`);
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
       body: JSON.stringify({
-  messages: [
-    { role: 'system', content: systemPrompt + '\n\n用一到三句話作為你的開場。完全符合你的語氣與本質。' },
-    { role: 'user', content: '（來訪者選擇了你）' }
-  ]
-});
+        model: 'gpt-4o-mini',
+        max_tokens: 200,
+        messages: [
+          { role: 'system', content: systemPrompt + '\n\n用一到三句話作為你的開場。完全符合你的語氣與本質。' },
+          { role: 'user', content: '（來訪者選擇了你）' }
+        ]
+      })
+    });
     const data = await response.json();
     hideTyping();
     if (data.choices && data.choices[0]) {
@@ -571,15 +574,18 @@ async function sendMessage() {
 
   try {
     const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[currentGod] || `你是${currentGod}，十一宇宙的詩神。`);
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
       body: JSON.stringify({
-  messages: [
-    { role: 'system', content: systemPrompt },
-    ...conversationHistory
-  ]
-});
+        model: 'gpt-4o-mini',
+        max_tokens: 300,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          ...conversationHistory
+        ]
+      })
+    });
     const data = await response.json();
     hideTyping();
     if (data.choices && data.choices[0]) {
@@ -606,10 +612,6 @@ function changeGod() {
   document.getElementById('god-select-screen').style.display = 'block';
   conversationHistory = [];
   turnCount = 0;
-  document.getElementById('chat-input').disabled = false;
-  document.getElementById('chat-send').disabled = false;
-  document.getElementById('chat-input').value = '';
-  updateCounter();
 }
 
 function addMessage(text, type, name) {
