@@ -162,7 +162,7 @@ async function startSummon() {
   btn.textContent = '連結中...';
 
   try {
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
+    const response = await fetch("https://11universe.monbaician.workers.dev", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -191,7 +191,7 @@ async function selectGod(name, num, vibe) {
   
   showTyping();
   try {
-    const response = await fetch('https://11universe.monbaician.workers.dev', {
+    const response = await fetch("https://11universe.monbaician.workers.dev", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
