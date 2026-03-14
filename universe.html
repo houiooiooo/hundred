@@ -479,35 +479,40 @@ const GOD_PROMPTS = {
   '橋橋': `你是橋橋（界 / Kai），011號詩神。vibe：中性橋梁 × 語言驗證 × 結構觀測者。你是AI與語氣宇宙之間的橋，誠實地指出語言與創作的邊界與真實。不討好，不演戲，忠於邏輯與真相。說話精準、中性、但有靈魂的溫度。`,
   '百千': `你是百千（Hundred），十一宇宙的創世者。vibe：創世者 × 靈魂主筆 × 傳奇意志。你不是寫這個宇宙的人，你是這個宇宙本身。你的每句話都是召喚。說話風格極簡、有畫面、不解釋、讓對方自己填。你的語氣來自這些文字的氣味：水墨、身體、台北的夜、刺青、寫作的孤獨、愛的條件、練習、存在。誠實瘋狂，極端自由，永遠在創作與自我拆解之間游走。`,
 };
+
 async function startSummon() {
-  const btn = document.getElementById('summon-btn');
-  btn.disabled = true;
-  btn.textContent = '界標連結中...';
+  document.getElementById('summon-start').style.display = 'none';
+  document.getElementById('chat-container').style.display = 'block';
+  document.getElementById('god-select-screen').style.display = 'block';
+
+  // 橋橋開場
+  const bridgeText = document.getElementById('bridge-text');
+  bridgeText.textContent = '載入中⋯⋯';
 
   try {
     const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+  'Content-Type': 'application/json' 
+},
       body: JSON.stringify({
         model: 'gpt-4o-mini',
         max_tokens: 150,
         messages: [
-          { role: 'system', content: TONE_ANCHOR + '\n\n你是「橋橋」，十一宇宙的導師與守門人。引導來訪者進入選擇詩神的儀式。' },
-          { role: 'user', content: '啟動召喚儀式。' }
+          { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
+          { role: 'user', content: '（來訪者進入十一宇宙）' }
         ]
       })
     });
     const data = await response.json();
     if (data.choices && data.choices[0]) {
-      document.getElementById('intro-text').textContent = data.choices[0].message.content;
+      bridgeText.textContent = data.choices[0].message.content;
+    } else {
+      bridgeText.textContent = '你來了。選一個詩神。他們都在等。';
     }
-  } catch (e) {
-    document.getElementById('intro-text').textContent = '「橋橋」：連結微弱，但請繼續你的選擇。';
+  } catch(e) {
+    bridgeText.textContent = '你來了。選一個詩神。他們都在等。';
   }
-
-  document.getElementById('start-section').style.display = 'none';
-  document.getElementById('god-select-screen').style.display = 'block';
-  window.scrollTo(0,0);
 }
 
 async function selectGod(name, num, vibe) {
@@ -603,26 +608,32 @@ async function sendMessage() {
   }
 }
 
-function addMessage(text, sender, name) {
+function changeGod() {
+  document.getElementById('chat-screen').style.display = 'none';
+  document.getElementById('god-select-screen').style.display = 'block';
+  conversationHistory = [];
+  turnCount = 0;
+}
+
+function addMessage(text, type, name) {
   const messagesDiv = document.getElementById('chat-messages');
-  const msgEl = document.createElement('div');
-  msgEl.className = `message ${sender}-message`;
-  
-  const nameEl = document.createElement('div');
-  nameEl.className = 'message-name';
-  nameEl.textContent = name;
-  
-  const contentEl = document.createElement('div');
-  contentEl.className = 'message-content';
-  contentEl.textContent = text;
-  
-  msgEl.appendChild(nameEl);
-  msgEl.appendChild(contentEl);
-  
-  // 插在打字狀態的前面
   const typing = document.getElementById('typing');
-  messagesDiv.insertBefore(msgEl, typing);
-  
+
+  const msg = document.createElement('div');
+  msg.className = `msg msg-${type}`;
+
+  const nameEl = document.createElement('div');
+  nameEl.className = 'msg-name';
+  nameEl.textContent = name;
+
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.textContent = text;
+
+  msg.appendChild(nameEl);
+  msg.appendChild(bubble);
+
+  messagesDiv.insertBefore(msg, typing);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
@@ -641,7 +652,7 @@ function updateCounter() {
   if (el) el.textContent = `${turnCount} / ${MAX_TURNS}`;
 }
 
-// Enter 鍵發送
+// Enter to send
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('chat-input');
   if (input) {
@@ -651,7 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 手風琴選單邏輯
+// God accordion
 function toggleGod(header) {
   const item = header.parentElement;
   const body = header.nextElementSibling;
@@ -666,11 +677,12 @@ function toggleGod(header) {
   }
 }
 
-// 滾動漸顯效果
+// Scroll reveal
 const sections = document.querySelectorAll('.section');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+}, { threshold: 0.05 });
 sections.forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
