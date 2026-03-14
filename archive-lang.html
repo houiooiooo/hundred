@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我們如何學會語言 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;letter-spacing:.15em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;}
+.divider{width:100%;height:1px;background:var(--ink);margin-bottom:0;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">關於我們如何學會語言</h1>
+    <span class="page-title-en">On How We Learn to Speak</span>
+    <p class="page-desc">一個概念能走多遠。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月27日</span><span class="piece-title">練習</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>練習是練習，所以結果沒關係。因為練習就是練習。練習的過程，就是目的。沒有意義就是練習的意義。</p>
+        <p>雖然說練習不是為了意義，但有時候還是想被稱讚，想被喜歡，不過練習不在意也是一種練習，於是持續練習。練習不練習。練習持續練習。</p>
+        <p>練習著沒有煩惱，然後練習忘記，然後就沒有煩惱了。因為忘記了練習。也忘記了你，順便忘記自己。忘記恐懼。忘記了都好，然後都可以。不知不覺又開始練習。練習走路。練習吃飯。練習早一點睡。練習笑。練習想念。</p>
+        <p>發現原來，我一直在練習。一直以來，我都在練習。練習愛。練習生活。練習死去。練習接受，一切練習。練習是，結果與意義。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月31日</span><span class="piece-title">微塵</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>午餐煮南洋咖哩鍋，食材有番茄與雞腿肉，椰子油與奶油的比例是重點，起司用北海道牌。</p>
+        <p>瓦斯爐的角落。微塵與另一個微塵。</p>
+        <p>所以，要結束了嗎。是啊。等他把火關了。煮過頭了吧。可以吃就好。好吃嗎。不知道，微塵不吃火鍋。你很漂亮。謝謝，你也是。或許微塵才知道微塵的美。畢竟是微塵啊。要很近才能看見。存在很短暫。短暫的事物都很美。其實也蠻久了，從過年後到現在。相對來說也是。</p>
+        <p>你會想到嗎？什麼？關於抹布與清潔劑。不會。是嘛？不知道的事情，就只是想像而已。那為什麼還要說話呢。我也不知道，可能因為覺得不重要吧。說什麼或是不說什麼都不重要。因為不知道會說什麼？因為微塵最後都會被掃除掉。是嘛。但說了也蠻好的吧。我也覺得。總之很高興。我也是。謝謝你。謝謝。</p>
+        <p>洗了碗之後掃除廚房。白色的泡沫沾滿廚檯，桶裡黑色的水旋轉，像是在跳舞一樣。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月18日</span><span class="piece-title">什麼都不是</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>那天下午。我遇見了什麼都不是。若要說的準確一點，大概是兩點十分左右，多一些，或是少一些。</p>
+        <p>是一個很舒服的午後。溫度，天氣都是。冬天結束之後不久，梅雨季還沒來之前的空隙。陽光很溫柔的照耀在金紙鋪隔壁的馬路上。</p>
+        <p>剛訓練完身體，準備回家洗衣服。騎著車，經過家裡附近的便利商店。轉彎。風吹在臉上，感覺到因為曬傷的脫皮。那時，我在想著關於為什麼企鵝要搶銀行的心訣⋯⋯總之是一些幫助靜心的練習。控制著油門慢速前進，一邊重複著問自己關於為什麼企鵝要搶銀行的問題？到底是為什麼？</p>
+        <p>然後，我想到了什麼都不是。然後，遇見了什麼都不是。</p>
+        <p>什麼都不是。不是風，不是陽光，不是肌肉的痠痛。不是感覺，不是想法，不是心情。不是嘴巴裡面咖啡的味道。不是松鼠，也不是停車場的鐵欄杆。那是什麼？我在路邊停下，看著後照鏡裡面。自己的臉。什麼都不是在哪裡？什麼都不是不在哪裡。</p>
+        <p>公園的邊緣，排水蓋前面，有一些許多落葉，塑膠細管套，還有房地產的廣告傳單。因為什麼都不是，所以什麼都不是。遇見了什麼都不是。那也什麼都不是。什麼都不是沒有離開。什麼都不是不會改變。因為他什麼都不是。與他一樣的什麼都不是。</p>
+        <p>然後，回到的日常的幻想。時間。空間。想像中的深海鯨魚。無視壓力。持續下潛。被寂靜的水包圍。感覺到一點點悲傷，還有一些平淡的快樂。身體停下來，稍微笑一下。手拿出鑰匙開門，走上樓。今天適合洗衣服，打算連床單一起。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">7月30日</span><span class="piece-title">我</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>我，是我。</p>
+        <p>我，一直是我。</p>
+        <p>我，不能不是我。</p>
+        <p>我，改變的越多，就越是我。</p>
+        <p>我，失去了許多，才發現，那都不是我。</p>
+        <p>我，懷抱著，遙遠的，痛苦的，漂浮的記憶，行走在午夜的房間裡。</p>
+        <p>只為了成為我。</p>
+        <p>我，想像著，好笑的，溫暖的，柔軟的夢想，飛行在深藍色的星空。</p>
+        <p>只為了找到我。</p>
+        <p>我，在擁有美好燈光的大街上，跟著聲響的細節感受著身體。</p>
+        <p>想忘記我。</p>
+        <p>但其實早就沒關係了。</p>
+        <p>在那個某一天，最涼爽的早晨，也是夜的黑暗邊緣，我，終究是穿越了，所有害怕的瞬間。</p>
+        <p>發現了，那理所當然的，最簡單又最直接的愛。</p>
+        <p>說著，我，一直是我，無論如何，我，都會是我。</p>
+        <p>所以，我，就是我。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">8月6日</span><span class="piece-title">孤獨</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>孤獨是美好的，安靜的，確實的。</p>
+        <p>是在凌晨騎車回家的藍色光線，正在調和著霓虹燈的顏色，為柏油路劃出波紋。</p>
+        <p>孤獨是自由的，溫暖的，被呼吸著的。</p>
+        <p>是風吹過八月的夕陽，與卡通造型的雲一起，在相隔八個光分的距離之間，存在於同一片，炙熱同時無聲的天空。</p>
+        <p>孤獨是完整的，柔軟的，如大地一般廣闊的。</p>
+        <p>是接受了只有自己可以享受，美好故事的開端與結尾，同時演出並欣賞著，期待被點燃的煙草，暗示著死亡的必然性。</p>
+        <p>孤獨是真實的，是誠實的，是可以被接受的。</p>
+        <p>是在社交之後的軟性飲料，是被預期的笑話，也是理解之後的沈默，是在痛苦被接納之後的溫柔。</p>
+        <p>孤獨是我，是在今天早晨，房間裡，即將入眠的我。</p>
+        <p>發現自己是如此孤獨，同時被一切愛著。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">8月9日</span><span class="piece-title">存在</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>存在合理。</p>
+        <p>覺得不合理也沒關係，存在還是存在。</p>
+        <p>存在很好。</p>
+        <p>覺得不好也好，存在依然存在。</p>
+        <p>存在美，帥，漂亮與自然。</p>
+        <p>存在自然而然的存在。</p>
+        <p>自然而然就是讚。</p>
+        <p>存在存在，一直都存在，醒著存在，睡著也存在。</p>
+        <p>因為不存在不存在。</p>
+        <p>所以存在當然存在。</p>
+        <p>存在回憶過去，想像未來，在現在。</p>
+        <p>無論去哪裡玩，都存在於現在。</p>
+        <p>存在可以說，也可以不說，他可以超越語言或是不超越，隨他高興開心都可以。</p>
+        <p>存在如何都好，都行，都存在。</p>
+        <p>於是存在把音響打開，點開連結，聽著音樂，跳起了舞。</p>
+        <p>那裏沒有過去，也沒有未來，只有無限的，存在。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">九月一日</span><span class="piece-title">去年九月的詩</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>九月的第一天，他想起，周末要辦的活動今天截止，那是有關詩的活動，什麼是詩呢，google上寫著，詩是一種文學，用於反應生活與表達情感。</p>
+        <p>他想像自己的生活與感情，走過佈滿骯髒管線的牆壁，那裏的告示警告著盡頭沒有出路，房子裡有一些香菸與酒精，需要防備與隔閡，需要喜愛著某種，不能直說的漂亮。</p>
+        <p>那是曾經以為可以再次掌握生活的節奏和始終不能被控制的那種瘋狂是不可避免的失敗宿命，轉念而成絕對自由是如此誘人的讓他可以放鬆地在虛無的海洋裡面放棄所有作為。</p>
+        <p>他以為每一天的開始和結束的界線是不清楚的，瘋狂的，被風吹過的，像是冷氣的排水進入水溝，在無止盡的夏日，在截止日的最後一天嘗試寫一些詩，詩是什麼？他繼續google，關於詩作，上面寫著⋯⋯用於反應生活與表達情感的文學載體，括弧，poetry。</p>
+        <p>他聽說，對詩的愛自然，是陽光草原，與流水，但對他來說的，生活裡的自然，是機車炙熱的排氣管，是四十二歲的老公寓，破碎的水泥牆油漆，剝落在肩上，成為頭皮屑，因為世界上太多的氣味，需要燃燒菸紙來掩蓋不安，需要酒精突破社交障礙，需要更多以假亂真的辯才無礙，需要物質來表達看不見的愛。</p>
+        <p>google上寫著，詩，表達凝鍊，結構多樣的型態，是詩作的另一個條件，google這麼說著，還說，韻律很重要，這樣詩才有美感，但他更願意用自己的解釋，關於美感，關於性，關於美味的食物和安全感，蜂蜜與豆漿濺濕襯衫，胸口的乳頭透了出來，或許先將詩完成了一半。</p>
+        <p>曾經他的希望是自己永遠都不要說謊，就算私慾也永遠能看穿只是另一個面向的愛，因為沒有自己的愛，是專注，是沒有其他事物，是想像的減法，是角色預設的刪除，是極簡風的顏色，是沒有解釋，沒有想法，沒有故事，只有聲音，光，形狀與顏色。</p>
+        <p>就這樣，發現，一切變得簡單，天真，又充滿了愛，那就是他一直想要的，一直都想要的，簡單的愛。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-ta.html">← 他</a>
+    <a href="archive-bairi.html">百的某日 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>

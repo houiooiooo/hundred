@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>百的某日 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;}
+.divider{width:100%;height:1px;background:var(--ink);opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">百的某日</h1>
+    <span class="page-title-en">A Day of Hundred</span>
+    <p class="page-desc">真實發生的事。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">11月13日</span><span class="piece-title">漁市</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>橋下，拍賣結束後的清晨，血在水桶裡，與地上的污泥混在一起。</p>
+        <p>新鮮的鐵鏽味，往河的方向流動，鳥群錯開一輛輛開往城市的卡車，留下內臟、殼與一些些鱗片。</p>
+        <p>其中一隻白鷺鷥發現一片鯊魚鰭，叼著往日出的方向飛去，過往的海洋生活迎來末日，今日所有的儀式結束了。</p>
+        <p>而我與嶄新的綠色機車，載著用保麗龍裝的16片鮭魚切片，瞥見一整晚雨後的彩虹。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月24日</span><span class="piece-title">鞦韆</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>昨天想起她時，是關於鞦韆的事。晚上我們去公園散步。那時已接近午夜，白天下過雨，公園的空氣冷冷的。</p>
+        <p>平常一樣的公園，有涼亭。七彩鳥頭造型的遊樂場。還有鞦韆。是一個極簡風格，剛建好不久的鞦韆，兩根大鐵管打入地面，鐵鍊連結著木板。深夜的公園空蕩蕩的。但我們不是很在意，好幾個夜晚我們都在晚上散步，聊學校家人還有一些她的心情諸如此類的事情，大部分忘記了。只記得她鞦韆玩得很認真，不說話。擺盪的角度接近九十度，就好像要飛起來一樣。</p>
+        <p>小學時清晨還沒有開始上課的操場，提早到的小朋友都會在那邊玩鞦韆。我雖然也是會比較提早到的一群，但從來沒有加入過他們。有天幾個人玩得太厲害飛出去受傷。學校在上面貼了黃布條上面寫著故障，雖然鞦韆其實沒有壞。</p>
+        <p>我坐在旁邊的鞦韆看她玩，只是隨便晃晃，直到她盡興之後我們才離開。繼續聊那些不太重要的事。有天晚上我們發現鞦韆附近有本筆記，撿起來翻，裡面寫著蛋糕的食譜，有一些關於烤箱的溫度和麵粉種類的重點整理。我好像說了哪天一起做菜之類的。後來沒成。</p>
+        <p>小時候我總是在課本上畫畫，不記筆記，我想那只是轉化感覺的一種方式，我的字不像其他人一樣工整漂亮，速度也跟不上。我直到很後來才發現自己不需要跟任何人比較，也不用在乎誰的評價。</p>
+        <p>後來也都沒有關係了。因為大部分都忘記了。只記得她鞦韆玩得很認真，不說話。擺盪的角度接近九十度，就好像要飛起來一樣。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">11月21日</span><span class="piece-title">彤彤</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>昨天在永康街的塗鴉市集遇見彤彤。彤彤和外婆一起來，她七歲又四個月，小學二年級，前瀏海綁著幾條細辮，穿搭是2000年前後的Y2K STYLE。她最喜歡孔雀、貓咪還有粉紅色的花。</p>
+        <p>她先向我要了綠色油漆，然後是藍色，粉紅色，紫色還有黑色，我幫她找了黑色蠟筆，她說謝謝。</p>
+        <p>然後她也想要我的畫，我說好，然後她也跟我要了紙，我們一起畫畫。然後她跟我說學校的事情，說常常有人羨慕她畫畫，但是她覺得開心就好了啊，幹嘛羨慕別人，然後隔壁攤友說了畫畫要天分之類的，她就說不要在意天分啊，在意天分就功虧一簣了，就像那個守株待兔的故事一樣。</p>
+        <p>她說的話在我的心裡迴盪。我問她有什麼願望，她說沒有，只要爸爸媽媽平安就好。她跟爸爸一年只見一次，一次兩個禮拜，平常媽媽工作，姑婆奶奶外婆都會輪流照顧她。她有的時候覺得每個人說的話都不一樣，但是沒關係。</p>
+        <p>我跟她說，那是因為每個人都有自己的人生啊，不管是彤彤，爸爸，媽媽還是外婆，她說她知道阿，所以沒關係。然後她說她真的很喜歡畫畫，她還記得她一歲的時候就用手指沾著顏料在牆壁上畫畫。</p>
+        <p>我說那你要繼續畫，繼續畫你喜歡的畫，去找你自己覺得的漂亮，她說她知道阿，她才不管其他人怎麼想。然後我把畫給她，她說她超級喜歡，問我說為什麼你的畫那麼酷，我說我也不知道。她要我幫外婆也畫一張，然後她要把兩張放在一起，之後她自己也要畫抽象畫。</p>
+        <p>我說謝謝我很高興，然後她在我的牆面的圖下面畫了一個小女孩，她說她覺得牆上這個圖是一隻大野狼。</p>
+        <p>我想起我以前的一些記憶，那段時間我自己一個人住，常常覺得自己是一隻孤獨的動物，也想起小的時候我爸在軍營的日子，與後母相處的夜晚，和國高中的一些片段，那些日子離開了同時也一直留在我的身上，讓我成為了現在的我。</p>
+        <p>回家之後，我把彤彤給我的畫貼在牆上。為了這段記憶，我嘗試把這些片段與感覺打成文字。我很謝謝彤彤。她提醒了我很重要的事情，那關於純粹的快樂。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月18日</span><span class="piece-title">關於音樂的幾個回憶</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>5歲。他被載去看牙醫，路過水果攤時，聽到收音機正在播著，阿牛版本的，對面的女孩看過來。他忘記等下就要拔牙。</p>
+        <p>13歲。音樂老師要他們選一首歌上台唱歌。他很緊張。選了最喜歡的五月天。擁抱。髮型像安全帽的女同學，在他唱到一半的時候說：你自以為有阿信那樣帥啊。</p>
+        <p>16歲。他在高中熱音社練習成發的solo，是楊乃文的靜止，他很想要表現好，彈的滿頭大汗，全身跟著音樂晃動。女主唱和其他同學笑到不行，走出社辦時說了一些話。他只聽到，你剛剛有看到嗎？哈哈哈哈哈。</p>
+        <p>18歲。他的初戀女友，主修長笛。與他分手了。和大學熱音社學長在一起。分手時，她傳了一段訊息，其中一段寫著：我覺得你根本沒有那麼喜歡音樂。</p>
+        <p>21歲。他與樂團成員在左輪手槍初登台。他準備了很久。練習了很久。但是表演時，他還是把和弦都忘光了。結束時團長與他在旁邊鐵皮抽菸。說：你是認真的嗎？</p>
+        <p>上禮拜。他在灰色地帶，第一次放歌。接在一個很厲害的DJ後面。她讓全場舞池炙熱，大家的表情都是笑容。</p>
+        <p>走上台時，他全身冰冷，插入usb。那位DJ幫他按下播放鍵。</p>
+        <p>中途，在他的位置，看出去，一個人都不在。</p>
+        <p>結束時，他走下台。發現十幾個人都坐在舞池的地板上。他們站起來。鼓掌。有人對他說：你真的療癒了我。</p>
+        <p>他不知道要說什麼。他鎮定的帶著笑容，好好的與大家社交，道別。</p>
+        <p>直到回到那個，充滿貓咪的院子時，眼睛裡的水才流出來。</p>
+        <p>是大家療癒了他。</p>
+        <p>謝謝所有。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-lang.html">← 關於我們如何學會語言</a>
+    <a href="archive-material.html">材料 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>

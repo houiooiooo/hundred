@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>他 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;}
+.divider{width:100%;height:1px;background:var(--ink);margin-bottom:0;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.series-note{font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--light-grey);letter-spacing:.1em;margin-left:.8rem;font-style:italic;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:999999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.date-mark{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.15em;color:var(--light-grey);display:block;margin:2rem 0 .8rem;}
+.date-mark:first-child{margin-top:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">他</h1>
+    <span class="page-title-en">He</span>
+    <p class="page-desc">第三人稱。素描。帶角色距離感的觀察。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">2月19日 — 3月5日</span>
+          <span class="piece-title">繼父<span class="series-note">系列</span></span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+
+        <span class="date-mark">2月19日</span>
+        <p>過去的記憶飄浮在空氣裡，呼吸起來沒有味道，他每天都會懷疑一陣子關於過去是不是真實存在著，最後都會因為沒有結果而放棄。</p>
+        <p>發生在他生命中的事都已經過去了，就算是尖銳的，會留下傷口的也是。大部分時間也都不會困擾著他，因為他大部分時間，都忘記大部分細節。然後偶爾會像鬧鐘一樣，又會再去回想他們，關於他們走路的姿勢，他們的臉和表情，和一些記憶裏面的一些枝微末節。</p>
+        <p>他與小萍姐的相遇是在18歲的夏天，那時他因為高中輟學，在便利商店打工。</p>
+        <p>離開家時則是14歲，母親過世，他也不想與繼父同住。遇見繼父則是7歲，那時繼父還不會對他動用暴力，會牽他的手帶他逛夜市。</p>
+        <p>繼父並不是刻版印象中的那種隨意動用暴力的粗魯男人，他在郵局上班，寡言木訥，不喝酒，厭惡吸菸，喜歡做家事，對老年人很溫柔，穿素色條紋襯衫，帶無框眼鏡，夢想是有許多孩子和去北極看極光。他並不清楚後來繼父有沒有看到極光，但他沒有任何孩子是確定的事情。</p>
+
+        <span class="date-mark">2月20日</span>
+        <p>有記憶以來，母親與父親就分開了，但無論是誰都不對他好好說明，他只能偶爾從親戚的談天去片段理解父母分開的緣由。</p>
+        <p>或許是父親做了相當過分的事，也可能是母親單方面的想法，事情究竟如何好像誰也不清楚，且談起這件事親戚們就開始說起台語（平常大家與他說話時都不用台語），母親則是完全閉口不談。時間一久他也不想去理解了，就像與他無關的事情一般。</p>
+        <p>比起父親，在小時候繼父對他的影響或許深刻得多。繼父與母親是相親認識的，在母親三十歲的後半，比母親小三歲的繼父不到兩年時間就與母親結婚、同居，隔年就從外公那裏將剛上小學的他接去一起生活。</p>
+        <p>據說母親是繼父的初戀。個性大不同的兩人是如何從戀愛到決定結婚，他也不是很清楚，只知道這件事或許就像父母分開的原因一樣，成為注定無法理解的神秘事件之一。</p>
+        <p>母親很忙碌，個性外向的她有著修長的身材，口齒伶俐，反應很快，天生的社交魅力有著說服力，在經商之路適應得很好，從年輕時就開始經營著地方瓶蓋與拉鍊工廠的業務，規模一年比一年成長，後來為了兼顧橫跨縣市之間地方的網絡，幾個星期都在外出差是常有的事。</p>
+        <p>他和繼父只有在難得的周末才能見到母親。許多等待的夜晚，他與繼父一起度過。他們會一起在餐桌上鋪上報紙，吃加熱過的便當。吃飯時間是很安靜的。繼父要求他咀嚼食物時，嘴巴不張開，碗筷不敲出發聲音，椅子只坐三分之一。繼父自己也是那樣的，他們會慢慢的吃飯，然後一起看電視，在九點準時睡覺。日復一日都是這樣的。</p>
+        <p>⋯⋯他或許很孤獨。後來他想起繼父，有時會這樣覺得。他不記得繼父提過有什麼深刻交心的朋友，對於生活中各種想法，他也不會管他是否理解，都會一股腦地對他傾訴。</p>
+        <p>讓他有時也會覺得對於繼父夢想破滅，以及在他身上，各種彷彿漩渦一般的哀愁，或許有些責任，但有時候又覺得不是繼父說的那樣。因為事情究竟如何，誰也不好說。</p>
+        <p>後來他在經過大型賣場的時候，常會想起與繼父一起相處的時光，關於對於彼此充滿矛盾感情的兩個人不得不一起生活的時間。繼父有許多值得學習的地方，例如衣物的收納，以及各種有效率做家事的方法，以及遵守承諾的重要性。</p>
+        <p>但他並沒有從他身上學到被愛的方法。繼父的所有愛似乎都集中在母親身上。他記得每次到了周末，感受到繼父雀躍的心情，他也是，只是他們那樣的感覺或許不盡相同，但他們誰也不懂對方的心，在那個時候。</p>
+
+        <span class="date-mark">2月22日</span>
+        <p>或許與父親有關，上小學後母親他搬了幾次家，也換了幾次學校，有幾次他差一點就要交上朋友，但友誼來不及累積成更重要的回憶之前，就因為他需要時間去適應新的環境而錯失了機會，自然而然成為那一種，比較安靜的小孩，而對於當時的他來說，社交障礙是直到上國中被霸凌之後才需要正視的問題。恰好成長於網路進入人類生活的世代，他將許多時間花在電腦遊戲與網路上，接觸著各式各樣的世界，那是繼父和母親不了解的世界，資訊像是海浪一樣環繞著他，是超越善與惡，謊言和真實並存的地方。他會在半夜繼父入睡之後，打開電腦上線，接受隨機性給予他的衝擊，在那裏所有他所不了解的事物都需要依靠自己反覆消化，而且沒有正確答案。但也許也是那麼第一次，他感受到了關於屬於自己的一些，說不清的「什麼」，像是慾望，也像是熱情。他也說不清那些感覺是如何在他內在翻騰，但他知道他就是這樣的會不斷往那個方向去。後來他回想，或許就是因為如此，他才會開始為他生命中給予各種理所當然的正確答案提出質疑，並成為後來的他。但一切為他帶來那麼多苦澀與眼淚。多年的緩慢爬行穿越後才能釋懷。但或許會發生的事情總是會發生，而那也是就是會那麼發生的事情。</p>
+
+        <span class="date-mark">3月5日</span>
+        <p>幾年內，他們的婚姻生活因為細微的小事開始出現了變化。繼父將那些無處可去，揉雜著不滿的憤怒投射到他身上，他們經常維持著緊張的關係。他在許多夜晚到日出的交界，承受著繼父的管教，與感受他困在關係中的痛苦，他傾聽身材瘦小的繼父一遍又一遍訴說著在婚姻生活裡面的無奈與哀怨。</p>
+        <p>對於他來說，對繼父的感覺從怨恨轉為同情是自然的事情，母親溝通目的是安撫而不是理解，在相處的當下和平的每一天最為珍貴，她也盡她可能的發揮的經濟上面的長才，公司成為她心靈與身體寄託的同時，也為家裡帶來物質豐沛的生活。</p>
+        <p>但另方面，或許是成長過程不曾得到過誰的憐憫，也或許是有意為之保護自己的方法，母親對於底層還有更深的含意的事物選擇放置，因此對於家人除了物質慰藉以外的精神匱乏，用幽默、笑容和溫柔的外皮巧妙的轉圜過去，或許在某一些人眼裡看起來是充滿魅力的成熟大人，但那些都是選擇，她正為了避免觸摸一些關於每個人對於生活想像慾望的核心部分，將他們放置在表面的和平之後，讓時間處置關係，就像僅為維持機械運轉更換最低限度的零件一般讓生活繼續。</p>
+        <p>無論是誰都沒有錯，他們只是讓自己好過一些而在說著謊欺騙他人，欺騙自己，在用不同的表情切換著角色，祈禱著和平的日子一天再過一天。他們都善良溫柔的以自己最努力的方式讓包括自己的所有人幸福，但因為能力是那麼有限，世界是那麼複雜的有著太多不同的期待在他們身上，他們在相處的過程中渴求愛的方式是那麼的不一樣，讓所有人相處在同一個房間卻沒有辦法與彼此的心連結。</p>
+        <p>他也是。他保持安靜，觀察著。時常一開口就若無其事地說謊，為了自己與所有人行動著。就跟其他人一樣。他並不覺得自己的心有受到什麼傷害。他的身體或許受過傷。但他的心始終還是一樣，只是在一直前進著，保持安靜，觀察著。</p>
+        <p>國中時母親生了一場病，不久就過世了。後來又經過一段時間，他與繼父不再為責任束縛住彼此的關係。無論如何，所有人都會繼續人生，就好像什麼事情都沒發生過一樣。</p>
+
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">4月16日 — 4月19日</span>
+          <span class="piece-title">牡羊座的她<span class="series-note">系列</span></span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+
+        <span class="date-mark">4月16日 — 牡羊座的她（一）</span>
+        <p>因為前兩天畫畫的主題是牡羊座，讓我想到了我的後母，所以決定來寫一些文章，來談我的童年，還有她。</p>
+        <p>事先說明，雖然這個事先說明有點沒必要，因為我也不需要證明什麼，但過去童年對我的影響我已經化解並轉化，如今是懷抱著感恩的心，看待我的過去所有經歷，也不覺得特別需要療癒或是不療癒什麼，也早就沒有把自己當受害者來看。</p>
+        <p>但是有些經歷對一些人來說，或許會有些投射，但也沒關係，反正一直以來，我只是在寫我想寫的東西，也只是我的視角，我的世界與我的觀點，想看就看，要如何投射也就如何投射，如此而已。就請將一切當作文學創作吧。</p>
+        <p>我的後母是牡羊座的，四月一日出生，小時候我總覺得這是上天給我最難笑的愚人節玩笑。開玩笑的。其實也不是。</p>
+        <p>我大概六歲之後和後母一起生活，還有我爸。在小的時候我爸就跟生母離婚了，然後也不聯絡不見面。所以我對我生母的記憶只有一些破碎的麻將桌和他們爭吵的記憶，其他在我童年時的記憶可以說幾乎沒有，接近成年之後我才跟我的生母見面。</p>
+        <p>生母是雙子座的，麻將與賭博貫穿她的一生，但她的部分暫時不提，也是個特別的人物，可能之後再說。</p>
+        <p>總之六歲之前，我在高雄讀幼稚園，我們家是客家人，讓阿婆帶，我爸是高級軍官，很少回來，但一回來就會帶我去玩具反斗城，所以我還蠻喜歡我爸的。總之我爸在離婚之後很快就再婚了，娶了我的後母，然後我們搬到桃園去讀小學。</p>
+        <p>其實記憶中我沒有多久就叫後母媽媽了，我想對我來說沒有太大差別，反正我對我媽也沒有什麼記憶。我們住在龜山榮民醫院旁邊的眷村，我爸常常要去軍營，所以經常都是我與後母一起過的。</p>
+        <p>小的時候我很膽小，也很黏我爸，所以我爸每次回家，我就要與他一起睡，直到我睡著，我爸才會回去與我後母睡。一開始後母對我還好，直到有一次，我又睡不著了，她帶我去陽台罰站，她回到房間之後，我開始大哭，然後後母害怕我吵醒我爸，馬上跑回來，拿了木板用力的打我手。那是她第一次打我。</p>
+        <p>有了第一次之後，後來就是很多次，大概維持了六年，次數數不清，都在我爸不在的時候。後母曾經是鉛球選手，她會拉起我的耳朵，往牆壁上甩（所以我現在耳朵比較開，或許也是因為當時的撕裂傷）或是拿木板，最多時候直接用拳頭揍，所以很小的時候，我對身體的記憶就是大大小小的瘀青與傷痕。</p>
+        <p>後母每次揍完我都會仔細的檢查我的身體，以免被我爸發現。除此之外她也在日常生活中，給予我許多精神上的壓力，例如我坐餐桌椅只能坐三分之一，吃飯以碗就口，以符合她想像中的「軍事規範」。她也會拿過期的便當給我吃，有一次我印象蠻深刻的，因為餿掉的麻婆豆腐真的很噁心，我到廁所吐的時候，她會說「如果你不想的話，就不會吐出來。」另外，她對廁所整潔也是很要求，如果我不小心尿尿滴到馬桶外面，她會叫我用舌頭舔乾淨。</p>
+        <p>大概直到小學畢業，有六年的時間我都是在這樣的生活中度過的。她有的時候會解釋她為什麼會這樣對我，有時候她也會哭，有的時候則是詛咒。簡單來說，根據她的說法，就是她恨我。</p>
+        <p>因為我破壞了她的夢想。根據她的計畫，我應該在高雄讓我阿婆帶到小學畢業，讓她可以和我爸生小孩，而她的人生夢想，就是有小孩，許多小孩。但根據她的說法，我爸因為擔心有了小孩，她會虧待我，所以不讓她有小孩，我的確有幾次半夜被他們爭吵聲吵醒，理由是我爸堅持使用保險套。我小時候的第一場性教育也是如此學習的，這也是蠻好笑的。</p>
+        <p>總之每當他們爭吵完時，我爸又要回軍營了，留下我跟後母兩個人在那眷村公寓三樓的家。我經常會向我分享一些大人才會有的心事，包括她的委屈，我爸的冷漠，還有她認為的勤儉的金錢觀。</p>
+        <p>她在公家機關當約聘雇，脾氣的關係，人緣也不好，因此或許我是後母唯一的朋友，我猜。</p>
+        <p>後母的個性現在想法，其實就是牡羊座火象力量的完整呈現，她正直，直接，單純，討厭說謊，她對我所做的一切在她眼中都是有道理的，都是「管教」，都是對我好，為了改正我那頑強狡猾的個性。</p>
+        <p>說實話，後母的確給我帶來許多禮物，成年之後我發現我特別有演戲與說謊的天賦，也是歸功於她讓我在小的時候無時無刻要戰戰兢兢，察言觀色，我也比一般同齡人成熟，更加對於人的心裡有更多思考，因為我要活下去。</p>
+        <p>而且對於當時的我來說，我畏懼也同時愛著後母的。我看過她的脆弱，與恐懼，我知道她深愛著我的父親，因此無法違抗他，因此她的每一天也活在痛苦中。她真的很努力了。但因為她是牡羊座，脾氣真的改不了。</p>
+
+        <span class="date-mark">牡羊座的她（二）</span>
+        <p>牡羊座的她，喜歡的食物是可樂與披薩。總是看起來在生氣的她，其實也很容易高興。開心的時候，她是藏不住的。</p>
+        <p>身材有點壯壯的，五官有點陽剛，她喜歡運動，跟我打羽毛球時，不太會控制力道。小的時候我的運動神經不是很好，反應不快，但我喜歡跟她一起打球。</p>
+        <p>她養了一隻花狗，叫做小花，她很疼小花。小花是她的寶貝女兒。從來不會叫。</p>
+        <p>我與小花一起散步時，我們都很安靜。小花是老狗了，是她定期去餵在公司停車場的其中一隻。聽說如果不帶回來，很快就會被抓走，去安樂死。講到這件事，她會眼匡紅。她怎麼捨得小花。只好帶回來。</p>
+        <p>小花是我看過最安靜的狗。不知道小花曾經去過哪裡，但我覺得小花是知道一些事的。她很疼小花，就是想給她最好的。</p>
+        <p>在好像是無限循環的其中一個禮拜日，她拿出一台機器，是我從沒想過的驚喜，土星SEGA主機。牡羊座的她也喜歡打電動，遇到父親之前她一直是單身，平常沒事就在打電動。她喜歡運動類，例如模擬滑雪或是賽車，我則是喜歡日式RPG。</p>
+        <p>如果我表現得好，我就可以打電動一小時。「你怎麼都看得懂？」她看著我玩全日文的遊戲，她覺得很奇怪。「我也不知道，就感覺是這樣。」感覺可以知道很多事，就算不用完全理解也沒關係。</p>
+
+        <span class="date-mark">4月18日 — 牡羊座的她（三）</span>
+        <p>今天又要來寫後母與我小時候的故事了。時至今日，我很確定我是很感謝她的，沒有恨留下來，因為她豐富我的人生，教會我許多事情，包括人性與苦痛的雙重性。</p>
+        <p>雖然現在我們的生活只剩下LINE上面的長輩圖問候，但我在心中還是與她有連結，而且，她在她有限的生命裡，將愛投注在我、我爸、小花與追逐金錢上，讓我理解這世界人的面貌，永遠有不同面向，是生命的一部分。</p>
+        <p>後母也教會小時候的我，隱藏自己的情感，並且最重要的是，學會說謊，並瞭解這世間沒有絕對的道德，所有人都只是在做他們覺得正確的事。謊言是工具，在許多時刻可以扭轉人的處境，並且帶來平安，說一半的真相比純粹的謊言高級，這是我從小就知道的事情。</p>
+        <p>晚上睡覺前我會思考明天的事，然後計畫一切，想出最好的說法並減少自己最多的麻煩。我知道我有著力量，可以扭轉可預見的災難，只要知道每個人實際在意的是什麼。</p>
+        <p>也或許是因為她的願望，十歲時，我們家的經濟持續增長，從桃園的眷村搬到新店的社區，我們買了新房子，後母和爸爸都各自有一台汽車，也因為爸爸更常在家，我也比較少挨揍了，只剩下精神攻擊與日常的羞辱。</p>
+        <p>可能有許多原因，讓小時候的我，不擅長與同齡人相處，也不像現在有那麼多朋友，一方面是因為我的體重一直都超重，時常會被欺負嘲笑，另一方面我已經太習慣與後母之間過於成人的勾心鬥角，面對同齡人時，我經常驚嘆於其他人的單純，一直都沒辦法很自然的相處，或是真心地交什麼朋友。</p>
+        <p>爸爸升官到中校，也不再那麼長時間待在軍營裡，取而代之的是酒會與應酬。他在外的形象，是一個非常健談，身材挺拔，帥氣的角色，但在家裡他經常是沈默的，他不會對我分享什麼心事，只是會帶我出去玩，給我零用錢，他對我展現的愛是一種幽微的且沒有語言的行動。</p>
+        <p>例如，國中時我與其他班級的人打架，我被數十人一起圍毆，隔天是他帶著罹癌的身體與幾個公司的兄弟，一起去將學務處砸爛，然後招集所有學生的家長到會議室，要他們一人捐十萬給慈濟。從此同學，包括老師，就更加的與我保持距離，至少沒有再被欺負了。</p>
+        <p>幾年後我跟我的DJ老師俊輝說起這件事，俊輝說，欸你爸真的很愛你欸，不然你會被打得更慘。我想想也是，這是他表現愛的方式。我想他一直在扮演一個他想像中，有威嚴的父親，直到去世的兩年間，我才少有看見他真實的脆弱，不甘與掙扎。</p>
+
+        <span class="date-mark">4月19日 — 牡羊座的她（四）</span>
+        <p>凌晨下班</p>
+        <p>回家</p>
+        <p>帶丸丸散步</p>
+        <p>去便利商店</p>
+        <p>他吃地瓜</p>
+        <p>我喝豆漿</p>
+        <p>打開電腦記事本</p>
+        <p>寫下</p>
+        <p>生命給予的，都是在幫助我成為我，於是一切皆是旅程。</p>
+        <p>在開始畫畫之前，寫下文章的最後一段。</p>
+        <p>——</p>
+        <p>隨著時間遠去，我逐漸追上牡羊座的她當時的年紀，開始可以試著用更加同理的心情去看待，因為她對生活的想像是被這樣與那樣的價值觀，綑綁在一個沒有未來的未來，瘋狂也僅是一種結果，而非需要譴責的對象。</p>
+        <p>如果現在的我不能用更加超然與全面的視角，去思考並感受她的處境，那麼世代延續下來的仇恨，也就無法超越命運，我也會因為那樣受限制的思維影響，成為某種被宿命描繪的刻板印象悲劇角色。</p>
+        <p>但幸運的是我並沒有。我想我真的很幸運。</p>
+        <p>國中之後，因為相處的時間變長，牡羊座的她與父親常吵架，一下合好，一下又要離婚。</p>
+        <p>我看著她的起伏，第一次覺得自己好像超越她的成熟。但現在看來，我其實沒辦法真正體會她的痛苦，就像她不能理解我的一樣。</p>
+        <p>我們都不懂得表達感受，更別說處理關係。</p>
+        <p>因為我們活在不同的時空裡，只是被關係的想像框架了定義，愛與恨的矛盾在她心裡，也在生活裡。我們需要大概同樣的十年去化解。</p>
+        <p>14歲時，她對我說，她受夠我跟父親，決心要離婚。但不久後父親就住院了，大腸癌第三期。兩年後，醫藥費耗光這些年他們累積的財產，一場空。</p>
+        <p>父親過世。賣掉房子，處理剩下遺產。我們最後一次去銀行辦事。</p>
+        <p>我說那之後再見。我要搬出去。</p>
+        <p>她沒有說什麼。</p>
+        <p>我知道她不擅長表達這樣的情感。是過於複雜的心情。</p>
+        <p>掰掰。</p>
+        <p>我擁抱她。她的身體很僵硬。然後我去搭公車，車窗外的風景很超現實。</p>
+        <p>經歷了所有情緒的曲折，高中一年級的我與牡羊座的她，關係就此告一段落。</p>
+        <p>後來她投入佛法，一度要出家，但又因為人際關係作罷。後來都獨居。我偶爾會去看她。</p>
+        <p>我心裡知道，因為牡羊座的她，我才成為今天的我。她給我的禮物包裝比較特別。</p>
+        <p>回顧過往，因為牡羊座的她，讓我不會隨便被他人的話語左右，我的意志不會因為他人的想法輕易改變，因為她曾經如此用盡力氣要動搖我的心，我卻依然是我。</p>
+        <p>從此我是如此自由。</p>
+        <p>因此我感謝牡羊座的她。</p>
+
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月6日</span><span class="piece-title">她醒來</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>她醒來後發現沒關係了。過去幾個禮拜，她都在為自己即將死去的這件事痛苦。她不停想著母親、貓咪以及那些還沒有完成的設計案。但今天早上，聽著外面的雨聲。她醒來。發現都沒關係了。她不是一個女人，家人、好朋友或是誰的飼主。不是腹部的疼痛，不是鏡子中認不出來的臉，也不是胸口無止盡的想念。</p>
+        <p>她誰都不是。所有事物都在。但都不太一樣了。包括她的煩惱。像指甲間的皺紋一樣無關緊要。或是說，所有東西都是一樣重要，也一樣輕盈。總之她誰都不是。就是這樣吧。這世間的一切運轉的正常，空氣依然可以呼吸，重力還是讓她牢牢地在地板上。她的身體即將死去，只是會發生的眾多事件中的其中之一。</p>
+        <p>她起身，走去陽台，撫摸那些泥土。最美好的幻覺。來到，死去。就像花瓣一樣。有無止盡的姿態，數不清的昆蟲與看不見的微生物曾經造訪。那朵花每年都會枯萎，然後春天再開花，她從來沒太在意，只是在開花時欣賞。她突然發覺，她連花的名字都不知道。但名字或許本來就不重要。花誰都不是。就像她一樣。誰都不是。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">10月9日</span><span class="piece-title">不善言詞的少年</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>過去那個少年，總是在，鐘響之前，在頂樓的樓梯間，看著，綠色的油漆，和上面，灰塵混和在一起的蜘蛛絲，身後的門，是豔陽照射的水泥地板，水塔，大象造型的雲，與深深的藍色天空，自由，總是在，限制著想像力範圍的空間內，發出聲響。</p>
+        <p>與設想不同的是，他並沒有喜歡，也沒有很討厭，任何一條回家的路，就算小徑上總是充滿著，許多想像，向他席捲而來的慾望，他也不願意，在當下就決定，故事的走向，角色的命運。</p>
+        <p>因為普遍是，對於日常的判斷，分離的想法，像是譬喻一樣的譬喻，依然把握著，那些與恐懼一起前行，行走在高空的記憶，那是在經過流轉之後，接受妄想就是世界的全部內容，是從上往下看的視角，看著，在那操場上，正在練習大隊接力，走在前面的跑者，手上的，紅色的棒子。</p>
+        <p>用過年時收到的卡通日曆，記錄著生命的長度，在黑夜與清晨連結的房間，用自慰的記憶填滿著，生活的片段，偶爾閱讀發光的螢幕，被無意間的一句話語觸動感覺，感覺安全，自我感覺良好和與愛有關的，一切行為，於是一次又一次，用衛生紙擦了許多遍，在回家的路上，用美工刀片，緊握著，在制服口袋裡的，微微出汗的手心。</p>
+        <p>曾經離開，然後又回來了，觀察著，誘餌的變化，在那陷阱裡面享受疼痛，在那疼痛裡面，看見自己的存在，那樣的存在，對於眼神的用法，表情的角度，想要更加的聰明，更加成熟，更加世故與老練。</p>
+        <p>卻也不願意承認，自己，其實早就已經，一直都，一直都，做得到所有，所有事情，那與之連結的心，甚至沒有分辨，可以區別內外的差異。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">四月七日</span><span class="piece-title">在所有鳥都銷聲匿跡的日子</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>他習慣在每個休假日去離家裡三十分鐘腳踏車程的後山，拿著望遠鏡看那些鳥。</p>
+        <p>綠繡眼、白頭翁、麻雀、樹鵲、黑冠麻鷺、家八哥、五色鳥、紅嘴黑鵯、小彎嘴畫眉、白腰文鳥，那些鳥並沒有一隻在乎他的存在。</p>
+        <p>就他一樣不在乎。</p>
+        <p>無論保育工作做得如何，只要他有一件可以持續進行下去的活動，而不感覺到自己逐漸被不斷重複的日常淹沒，就可以持續下去。</p>
+        <p>而這半年的活動，就是看著這些鳥。</p>
+        <p>早上七點出發，他會在煙盒剩下三隻時回家，通常是下午四點左右。</p>
+        <p>最後在晚餐後抽掉最後一根幸運煙，結束他兩個星期一次的假日。</p>
+        <p>因為醫生開的藥的緣故，他已經對大部分事物沒有冷靜以外的情緒，沒有憤怒，也沒有性慾。</p>
+        <p>只是很像呼吸，對每日清單寫上確認，然後整理好必要的日用品清單，往下個禮拜前進。</p>
+        <p>也是因為如此，他很清楚現在的他，對於任何有意義的人際關係，都是非常需要珍惜的。</p>
+        <p>而且在大部分時候，沈默是最好的答案。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-colors.html">← 顏色</a>
+    <a href="archive-lang.html">關於我們如何學會語言 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>

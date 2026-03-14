@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>材料 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.material-note{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;border-left:1px solid var(--light-grey);padding-left:1rem;}
+.divider{width:100%;height:1px;background:var(--ink);margin-top:2rem;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">材料</h1>
+    <span class="page-title-en">Material</span>
+    <p class="material-note">還不知道是什麼的。或者已經知道，只是還沒變成別的東西。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月18日</span><span class="piece-title">垃圾車</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>在公園的側邊，鄰居們將累積多日的垃圾拿出來等車來，不久後，一貫的《給愛麗絲》響起，廣播提醒著回收是資源，亂丟是垃圾。等待的過程一切都井然有序，結束後阿姨們坐在鐵椅上，敲著膝蓋聊天。他戴著耳機，裡面沒有音樂。散步回家。</p>
+        <p>這些例行公事，有時會讓他想起剩餘的一些些感情，和曾經與誰一起的記憶。但他的世界已經沒有垃圾會被亂丟，沒有資源可以回收，自小萍姐後，他的生活就是這樣的。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月23日</span><span class="piece-title">有條件的</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>因為那無條件的已存在這個世界上的角落，在陽光裡，草地上，烏黑的排氣管中。不需要一一提起。而我有著偏見，看法和想要的東西。例如調味乳的偏好。巧克力的可以，果汁的不行。就像悲傷的時候，姊姊遞給我的香菸，會緩慢地殺死未來的我，同時也讓現在的我好過一點。就像期末考前的邀約或是去年冬天凌晨兩點的咖啡。我是有條件的。例如在將來某個平凡的一天，太陽會升起，我會死去。那是條件之一。那是其中一件一開始就決定好的事情。所以我才不願提起，關於我的愛是有條件的這件事情。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月25日</span><span class="piece-title">佛寺的夢</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>小的時候，每隔一陣子就會與阿婆去雲林鄉下的一間佛寺參加法會。那是一間尋常的佛寺，不大也不小，就在火車站附近。對面是鐵軌，隔壁有一間旅館和雜貨店。據說那裏在家族日治時期的老家附近，爺爺與叔公和其他祖先的骨灰都在那裏。</p>
+        <p>我喜歡佛寺的味道，對法會也不討厭，只是對儀式的冗長有些不耐煩。一次在大家拿著經文要經過各神尊的廳堂來回參拜的時候，我繞開其他人從廚房的後門溜出去。寺的後方有一條長長的斜坡，上面有一間獨立的禪房，裏面有一尊菩薩，小桌子，木魚。上方有一個鐘，繩子垂在疊好的榻榻米上方，我將坐墊鋪在地板上睡覺。</p>
+        <p>在夢中幾隻殭屍安靜地排列在佛寺的餐廳，他們站在窗的兩旁，曼陀羅圖案的咒文在牆壁上不斷旋轉，他們的表情並不猙獰，臉上青色的血管像是植物一樣充滿著生機，他們的指甲看起來銳利，像是被打磨過的刀械被安置在充滿皺紋的雙手上閃閃發光，身上的絲綢與頭上的官帽也非常的合身。我不害怕，我知道他們並不是真的殭屍，只是以殭屍的樣子出現在我面前，仔細觀察他們還在呼吸，正活生生地，同時安靜的休息。</p>
+        <p>我將注意力放在牆壁上曼陀羅的花紋，我看著那些圖案不斷旋轉，圖案每一部分都在移動，好像在不斷消散的瞬間又流轉成為原本的形狀，入迷的我突然意識到自己沒有身體，沒有手腳也沒有眼睛，但同時也意識到，沒有什麼東西消失，只是一開始就不在那裏。</p>
+        <p>那裏原本就沒有我，只有那裏。轉瞬之間一切如昔，風與流轉的曼陀羅沒有被誰看著，只是一直都在那裏流轉。不知道過了多久，我聽見鐘聲，在迷糊中看見幾位師父慌慌張張跑進房間，原來是我在睡夢中不知為何拉了上方的繩，敲響了鐘，聲音迴盪在小徑間再傳進佛堂，打斷了眾人靜修的禪定。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月26日</span><span class="piece-title">川燙菠菜</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>因為想要嘗試新的食譜，去黃昏市場買菜。可能是那裏的人太熱情了。回家路上感覺到一點寂寞。川燙菠菜時，不小心燙傷了手，雖然只是紅紅的但沒興致了。躺在床上看著貓咪影片，看完了之後再看狗狗影片，然後是刺蝟、狐狸和小浣熊。看著看著就睡著了。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月27日</span><span class="piece-title">夢見了一個夢</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>他夢見了一個夢，關於夢在做著夢的夢。他夢見自己是沙漠中的綠鬣蜥，雨林中的紅毛猩猩，是鯨魚也是身體裡的蝦米。他夢見自己是桌上的羊小排，也是期待著大餐的小孩。</p>
+        <p>他夢見他是家對面鴿舍的鴿子，繞著紅旗飛行，也夢見他是載著鴿子出海的船長，哨聲一響，所有鳥振動翅膀，他們要穿越數百公里才能回到岸上。他夢見他是包裹鴿子身體的海，是每一滴水氣，也是成為雨的雲。他夢見他是昨晚下過雨的公園，樹下的吐司屑，是麻雀也是熟睡的貓咪。</p>
+        <p>他夢見他是一個人類，有著煩惱，說著謊。他夢著所有時間，同時夢著昨天、今天與明天的他。夢裡的他六歲、十七歲，以及二十九歲。</p>
+        <p>他夢見了他在戀愛，渴望並充滿了慾望，他為了愛在掙扎，在傷害，在煩惱，在說謊。他夢見他在害怕，害怕著孤獨，害怕著受傷，害怕著死亡。他夢見了他在出生之前死亡，在死去之後出生了。他夢見了原諒以及被原諒。接納以及被接納。愛。</p>
+        <p>他夢見了所有人都在做夢，他夢見了所有人的夢。夢見了他就是夢，在做著所有夢的夢。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月1日</span><span class="piece-title">被愛妄想症</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>那故事是這樣的，因為各種偶然，一個會用魔法的奴隸被主角解放了，他原來是備受關注的天才少年，成功說服主角一起去見冥界女神，希望復活他死去的戀人。經過一番冒險後，少年的願望成真了。問題是人家根本沒喜歡他，還希望能再死一次。原來是才能的副作用。他得了被愛妄想症。</p>
+        <p>高中的第二個冬天，我在捷運站出口等約會對象，那是另間學校的女生，她讓我等了兩個多小時，但那時因為太想談戀愛了，也就沒關係。</p>
+        <p>等待時我看著路邊的情侶吵架，男生重重地摔安全帽，女生則是尖叫。然後她來了。我們去看了電影，是威爾史密斯演的親子片，完全不記得在演什麼。看完了去吃義大利麵，她問了我很奇怪的問題，關於喜歡與愛有什麼差別，我好像說喜歡是一種感覺，愛是一種狀態。之類的。她沒什麼反應，回去時我送她去捷運站，我要去搭公車。那對情侶還在，正緊緊擁抱著。我與她則是再也沒見。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月1日</span><span class="piece-title">修女與鹽燈</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>清晨離開網咖，點了最後一根菸，水溝流動著彩色的泡沫，霧氣壟罩我的身體，沾染著疲憊與早餐店的醬油味，忘記自己是什麼時候開始習慣這樣揮霍時間。回家路上一直打瞌睡。</p>
+        <p>在離學校不遠的山腰租了一間平房，騎車一段時間後，要走路經過小徑才能到。房租很便宜，但每天要幫忙除草。旁邊有一間修道院，修女早上會掃除道路上的落葉，她看見我親切打招呼。覺得自己臉色很糟，禮貌微笑點個頭就趕快經過。就這樣睡到了下午。她來敲門。</p>
+        <p>她拿了幾顆蘋果請我吃，問說你好嗎？我說很好謝謝。我以為她要說些關於神的事。但她沒有，反而提起了鹽燈的事情。母親喜歡鹽燈、七星陣聚寶盆之類一些會帶來好運的東西。我沒有很在意。寄來的燈就被隨意擺外面桌上。</p>
+        <p>那燈看起來很美。她說。過去她似乎曾在尼泊爾有過一段辛苦的日子，那時朋友送給她的鹽燈一直在記憶裡陪伴著她。現在她身邊沒有留下什麼，所以希望能看看那燈。我說好。她將桌面與燈上的灰塵擦拭乾淨，插上電，鹽燈發出橘色的光，的確很漂亮。我們坐在陽台的木椅上，靜靜看著。我又有些睏了就回去睡。醒來時桌上有張卡片。上面寫著謝謝你的鹽與光。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月4日</span><span class="piece-title">公車</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>在公車上看著一站一站，人上去下來。他們表情像是植物一樣。或許是因為不想哀愁，所以將快樂一起捨去了。早晨的微笑與夜晚的疲憊連成一線。什麼話都不想說。</p>
+        <p>晚上經常失眠的日子，我會在公車上睡覺，660線的班次一圈大約一個半小時，經過學校、山路與捷運站，我在行進的路線上，睡著然後醒來，醒來然後再睡著。</p>
+        <p>到總站的時候我先下車，然後等下一班發車。司機向我走來。是他的休息時間。他認得我。他抽著菸什麼話都不說。我不知道要在哪站下車。不知為何我開口。他點點頭。說不定不在路線範圍。他說。我將帽沿往下拉。菸抽完他就走了。回程我在景美站下，在夜市吃了蛋包飯。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月5日</span><span class="piece-title">生活需要空隙</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>生活需要空隙，去愛、去恐懼、去遺忘、去死亡。死亡需要空隙，去呼吸，去感覺，去理解。理解沒有死亡，只有生活。呼吸、覺知、愛。我就在這裡。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月7日</span><span class="piece-title">照片</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>我已經接受，或許不會再見到你。也接受我不曾了解，可能也不會了解你。自那天從身邊走過之前，應該早就已經決定了。甚至在更久以前。總之。我的心包括著所有東西。包括那天下午迎面而來的街。</p>
+        <p>細數著早上醒來之後，每個想法，其中沒有因果關係。那是不是也沒關係？如果一切都串連在一起。世界上，無數電影正在上演著。無數音樂被傾聽著。無數個派對，舞池裡，有無數人在跳舞。我不喜歡跳舞，但我喜歡你看見然後開心。我是這樣相信著。</p>
+        <p>我不曾了解，可能也不會了解你，就像桌上的那張照片，照片中的我五歲，我想知道拿著相機的是誰。但能告訴我的人都已經不在了。我能知道的只有這張照片。</p>
+        <p>如果知道，那就不需要相信了。相信是因為想要相信，是因為不知道。知道就只是知道，沒有其他前提。所以我相信你。</p>
+        <p>應該早就已經決定了。甚至在更久以前。每一次隨機撥放。每一次窗戶照射進來的光線。總之，我的心包括著所有東西。包括那天下午你離開的街。包括照片。包括我。包括你。我們在那裏跳著舞。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月14日</span><span class="piece-title">可可</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>飛行直到凌晨一點十一分，該睡覺的時間。日出黑夜，呼吸一樣接續。執著和堅持也僅是一線之間。平衡不意味著中間。智慧是價值判斷力再加上選擇優先順序。</p>
+        <p>想要寫關於可可的事，記筆記。據說可可很久以前（大約是三千年前），被當飲料喝。納瓦特爾語。巧克力。是苦水的意思。苦水。馬雅人種可可樹。十五米高的可可樹，開著白色的花。十月。果莢被摘下。發酵。可可豆被取出。烘乾碾碎。許多可可豆成為了可可粉。</p>
+        <p>可可粉先去一個地方。真空包裝。送到另一個國家的食品工廠。混和了糖與香料。熱可可粉坐著另一艘船。上岸。經過黑夜還有黑夜。十二點四十八分，抽雲絲頓的陳姓物流士。將可可粉送到華盛街的便利商店。被擺在咖啡機下面。</p>
+        <p>華盛街的便利商店。半夜。希望不要聽到意料之外的音樂。冒著風險。夜晚的音樂會在心裡面迴盪。然後是與店員單獨沉默幾秒之間。熱可可謝謝。五十元。會員載具。不用謝謝。可可經過舌頭。喉嚨。很甜。胃。溫暖的感覺。可可與身體融合。在二十四小時內完全成為身體的一部分。細胞會在七年內間代謝。有些成了皮屑，大部分是水。一部分的可可被當作想法的來源。寫成文章。一部分的可可偶爾失眠。其他的可可則是想早點睡。</p>
+        <p>有些時候可可會幻想。關於總有一天，可可會再次成為可可。但那樣的可可飛行的尺度。是超出可可想像範圍之外的想像。像極致的日出黑夜。橫跨世紀的呼吸。非線性的融合與分離。</p>
+        <p>可可最後決定。該睡覺的時間還是要睡覺。可可的旅程沒有開始也沒有終點。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月15日</span><span class="piece-title">花語</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>世間的血與水相連在一起，所有事物以無限的角度，不斷循環著分離與融合。花的姿態是沉默的答案。翻開一本介紹花朵的書，上面寫著花語。</p>
+        <p>三色堇是堅定的靈魂，鳳尾百合的是休息。貝母是謙虛的心，刻球花是小小的勇氣。麥是豐收，陽光百合則是溫暖的心。迷你鳳梨，你是完整的。澤蘭是想起那一天。</p>
+        <p>刺芹是隱藏的愛。繡球花是冷酷。泡盛草是自由。孔雀柏是悲傷，紅果金絲桃則是悲傷不會持續下去。寒丁子是夢。香豌豆，記得我，細小的快樂。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月16日</span><span class="piece-title">謝謝</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>謝謝。</p>
+        <p>每天的你都不一樣。看著你睡著的側臉，突然這樣發現。有時你會說夢話。有時還會做鬼臉。</p>
+        <p>我想像著你的夢。我想像著你。在我的想像裡，你就是我想像的夢。我想相信我想相信的事情。</p>
+        <p>過了一段時間，我才發現。決定不勉強做任何決定的這個決定，其實是一件很勉強的事。因為我其實沒有做決定。</p>
+        <p>現在的行動是過去的想法，過去的想法來自更久以前的行動。我用許多想法組成的概念幫助我理解這個概念，也幫助我理解了概念其實只是概念。想法只是想法。我被無限個因果推動著行動。像半夜突然出現的地震一樣無法抵擋。</p>
+        <p>這樣的理解，並沒有改變現在的我，要做決定這件事。就算做出不決定的決定。那也會是一個決定。所以我決定了繼續決定下去，不勉強自己。</p>
+        <p>總之，每天的你其實都一樣。是我想像的你都不一樣。你睡著的側臉，有的時候好笑，有的時候可愛。大部分的時候都很好笑又很可愛。</p>
+        <p>謝謝。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月19日</span><span class="piece-title">寮國老闆</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>是一個平凡無奇的下午。</p>
+        <p>讓沉默進行，世界的運轉。讓語言消失，在想法的末端。讓咖啡蒸發，火焰劃過菸紙。讓遙遠的房間，冷氣機上的灰塵，浮現漂亮的形狀。</p>
+        <p>騎車經過一間又一間的餐廳。因為很懶惰的不想自己煮。有印度料理、泰式料理。還有中式料理，越南料理。然後有一間招牌寫著寮國。是日式料理的裝潢。進去吃了。點了鯖魚味噌煮定食。白米飯，牛蒡絲，茶碗蒸與豆腐湯。</p>
+        <p>老闆似乎一人經營。他身材瘦小，包著頭巾。長時間勞動的疲憊印象。稍微有些過度熱情招呼，說話時滿臉笑容。眼睛瞇成弦月的形狀。</p>
+        <p>他說他是寮國人。寮國？我對寮國一無所知。他開始說起寮國的事。寮國在中國、越南、柬埔寨、泰國附近。許多人是農夫。種咖啡與稻。許多人信佛，有許多佛寺。治安很好，出門都不鎖門也不怕小偷。政府不喜歡電影，全國只有三間電影院。他最喜歡的電影導演是北野武。</p>
+        <p>然後是手槍。在寮國，手槍似乎用不貴的錢就能買到。我問他有槍嗎？他說他曾經用手槍殺死過一個人。蹦蹦。蹦。那個人就死了。他這樣說。之後話題就結束了。我跟他說鯖魚味噌煮很好吃。付過錢就離開了。他說謝謝下次再來。</p>
+        <p>回家的路上我想到。我對生活一無所知。無論是寮國，還是鯖魚的料理方式。或是在生活裡，每一個出現的人。我什麼都不知道，只是抱持著一些印象。</p>
+        <p>回到家，躺在沙發上，我去了想像中，寮國的家。那裏有著一望無際的稻田與咖啡被烘乾的香味。烈日照耀著，我在涼椅上聽蟬的聲音午睡。木桌上，放著一把黑星手槍。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月20日</span><span class="piece-title">小老鼠上屋頂</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>上學路上他看見一隻小老鼠的身體，在馬路的中央。他用衛生紙當作白布撿了起來放到旁邊。早餐店說晚點垃圾車來了會處理。</p>
+        <p>他把書包放在文具店。搭12號公車到終點，往山上的步道走去。爬到了半山腰，空空的心與早起運動的老夫妻擦肩而過。在山頂看著太陽、高壓電塔，城市像積木一樣。</p>
+        <p>下午回家。收拾散落一地的碎酒瓶。父親在客廳睡著了，發出巨大的鼾聲。他走進房間打開電燈，沒有亮。夕陽即將西下。</p>
+        <p>黑暗中他躺在床上。保持安靜。數著所有可以看見的東西。耳機。藥丸。指甲剪。枕頭。花瓶。零錢。棉被。窗戶。樹。桌子。書。水杯。</p>
+        <p>無聲的想法出現。他花了一些時間接受。閉上眼。希望所有人都平安，快樂，幸福。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月14日</span><span class="piece-title">椅子上發呆</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>早起他坐在椅子上，望向沒有開啟的電腦螢幕，一片漆黑中的一片空白，沒有在休息，沒有在工作，沒有在練習休息，也沒有在偷懶著工作，只是坐在椅子上發呆，沒有要做其他事。想法像雲一樣出現，他用有限的心神去想像未來可能會發生，或是不會發生的事情。愛人，受傷，看電影，生病，吃火鍋，助人，開車，寫文章，游泳，期待，流眼淚，聽音樂，掙扎，開心，讀小說，說話，被人幫助，說諧音梗笑話，吃起司火鍋，被愛，看六人行，與狗狗去公園散步，騎機車，走路，畫畫，失望，看漫畫，害怕，接受，工作，休息，在電腦桌前面的椅子想事情。然後，他發現，無論是他想要，或是不想要，各種事情，大概都會發生，或是已經發生了。然後，他以前就知道這件事了，只是忘記了。然後，他打開電腦的記事本，手放上鍵盤，打字。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月21日</span><span class="piece-title">粉紅色的怪獸</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>被風吹醒。去關窗戶，空氣裏面有灰塵的味道。夢見了粉紅色的怪獸。她說，如果你悲傷，我可以把你吃掉。我拒絕了，所以醒來，讓記憶緩緩流進身體。</p>
+        <p>下樓去買早餐。天還沒亮，城市的光淡淡的，與大樓的陰影走在一起。吃了吐司，喝了紅茶，決定下午要去哪裡。阿姨說透早。我說謝謝。與這個世界的聯繫，在每一個無心的問候裡面。</p>
+        <p>走路，感受心沒有中間地帶。今天要洗樓梯，所以將鞋子收起來。交房租的時候，提醒自己沒擁有過。帶有線耳機，所以不怕遺忘，也習慣線與線之間的結，都沒關係。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">5月9日</span><span class="piece-title">不會寄出的信</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>我書寫著，不會寄出的信，寫完之後把他放在岸上的鞋子邊，與身體一起進入大海裡。</p>
+        <p>海底沒有光，被水包圍之後，就感覺不到壓力。一切都是概念性上的隱喻，心這樣對我說。在深海裡，剩下的只有深海，沒有呼吸，也沒有預約好的餐廳。</p>
+        <p>想法想要說一些什麼，被另一個想法提醒他不過是一些想法，跟他一樣是一些不重要的想法。</p>
+        <p>想法繼續說著，說有些人知道如何生活，讓我們恭喜他。心則說，現在的我們正在深海裡，努力著不努力。</p>
+        <p>深海比陸地寬廣，未來比過去更靠近。我沒有辦法放棄，不曾擁有的東西。</p>
+        <p>海風吹走了信封袋，裡面裝著沒有人閱讀過的聲音，在我的心裡面重複撥放著，今年五月的特選專輯。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">5月9日</span><span class="piece-title">小老鼠</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>小老鼠在屋頂上兵兵蹦蹦。究竟在做什麼呢？或許小老鼠也是上班族，剛下班回家，害怕寂寞又疲累的他，每天累積著許多壓力。每天都在講電話，發訊息。</p>
+        <p>那小老鼠喜歡的音樂是什麼樣的呢？我的接受範圍很廣。小老鼠滑著手機，意興闌珊地回答。只要不是貓咪當主唱就行。可是貓咪很可愛欸。外表不重要阿，音樂是拿來跳舞用的阿。</p>
+        <p>原來小老鼠在屋頂上是在跳舞嗎？是啊，因為喜歡跳舞，所以哪裡都不想去，只想在屋頂上跳舞啊。原來是這樣啊。那可以去別的地方跳嗎？明天還要上班啊。</p>
+        <p>是這樣嗎？我會考慮看看的。謝謝你啊。然後，一陣子後，兵兵蹦蹦的聲音繼續。既然是在跳舞，那也沒辦法了。我連上網路，尋找著，主唱是貓咪的新專輯。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">5月14日</span><span class="piece-title">呼吸</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>我在這裡，呼吸，在前進的路上。街上的人們，戴著口罩，沒人要說話。在死亡的恐懼淹沒著心之前，在沒有名字的悲傷浮出水面之前。想起十五億年前的藍綠藻，在冰冷的海洋裡，戀愛。然後，身為後代，現在也依然在，呼吸，想念，然後說，嗨。你也在這裏。在回家的路上。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">7月7日</span><span class="piece-title">真實的愛（短）</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>是幸福快樂。無論想法，味道或願望。</p>
+        <p>真實的愛，是做自己。做真實的自己。也就是最好的自己。沒有恐懼的自己。</p>
+        <p>是在那無限美麗的夢想中，最理想，最愛的自己。</p>
+        <p>是沒有條件的，沒有但是的，與其他無關的。</p>
+        <p>真實的愛，沒有可是，沒有不過，沒有期待，沒有需要。</p>
+        <p>只是看見你從對街走來，嘴角上揚。</p>
+        <p>真實的愛，是都好，是都可以，是沒關係，是剩下的菸紙都給你。</p>
+        <p>是早晨的第一口空氣，是睡前的最後一眼風景。</p>
+        <p>真實的愛，是我，也是你。是同一個房間裡，對視的眼睛。</p>
+        <p>真實的愛，是真實的愛。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">8月1日</span><span class="piece-title">豆腐乳</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>在公園的涼亭躲雨，柱上一個塗鴉寫著，豆腐乳之戀。我想像一對熱愛著豆腐乳的戀人，他們嘗試在豆腐乳過期之前，在一起，卻因為沒有白飯，分手了。</p>
+        <p>也或許是完全不同的情況，畢竟感情的事情誰也說不準。但或許我不應該擅自揣測，而且我對豆腐乳一無所知。</p>
+        <p>雨停之後，大學時期很愛惜物品的朋友來找我，說要借一下睡袋與登山背包，自從幾年前他成為斯多葛主義者之後，他就不看電視了，也是少數還會打電話給我的朋友。</p>
+        <p>我們在後陽台抽菸，濾嘴有洗衣粉的味道。他說明天還要準備基地需要的裝備，就先離開了，然後我去洗碗。</p>
+        <p>我將碗洗好了之後檢查冰箱，裡面空蕩蕩的。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">8月2日</span><span class="piece-title">海豚的夢裡沒有珊瑚</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>冷氣吹出溫暖的風，背上的汗沾濕床單。他去廚房喝水。吃下橢圓形和粉紅色小藥丸，醫生說可以緩解恐慌，還有順利入睡。</p>
+        <p>眼睛細細的醫生，一邊聽他說一邊點頭。診所的牆上，有一個捕夢網，上面有一隻海豚。海豚？</p>
+        <p>總之，他不是很會表達，一直都不太會。醫生聽完之後說了解了。然後開藥給他。真的了解嗎？他自己都不是很了解，但失去控制的感覺很真實。</p>
+        <p>吃完藥就要去睡，最好是二十分鐘內，螢幕的藍光，也會影響睡眠。他習慣在睡前看狗狗影片。幾隻哈士奇，在沙發跳上跳下。小時候外婆養的白白，也會躲在沙發底下。白白後來去哪裡了？他不記得了。但他記得送走外婆的事情。</p>
+        <p>然後，失去控制的感覺又蔓延開來，緩慢地隨著黑暗中光的殘影，收縮，伸展一切都在持續著，他的呼吸，心跳，狗狗影片，想法，無限延伸的想法，手腳和床和牆壁，胸口與衣服，一切都沒有分別。</p>
+        <p>味增湯，魚骨，溶解在房間裡，與味增和海帶共享著世界。世界是無邊無際的網，我是自作聰明的猴子？不，是網，是網。海豚這樣對他說，因為海豚的夢裡沒有珊瑚，所以你可以放心休息。你是總是被理解著的那一個。溫暖的風，汗水沾濕了床單，成為池塘。池塘裡有一隻魚，等待著被撈起，如果那一天會來臨。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">11月15日</span><span class="piece-title">期待</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>期待是玻璃杯曾經裝滿著，晶瑩剔透的水，是窗前恣意生長的，綠色小草。是下過無數次的西洋棋，黑白分明的思緒，是在棋盤前，猜想關於你的心情。是牛仔的冒險，飛行在超時空公車站，是浪漫的子彈，穿過了心臟，將血液留在，初次見面的地方。是到處都有的期待，期待著，再次見面的一切，在那裏與這裡，開開心心的細節，與我的快樂一樣的真實。是一直存在的，無止盡的，不設條件的，在所有角落的期待。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">12月11日</span><span class="piece-title">十二月六日的前後</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>整理一些書，聯絡搬家公司，騎車吹三個小時的風，路過孤單的7-11，導航指向的山路，背景是嶄新的公墓。感冒，整理雜物，看醫生，拿抗過敏藥，在新的公園散步。搭火車過去，搭高鐵回來。</p>
+        <p>在和平路233號的六樓，從陽台往下看。做回收的阿伯阿嬸正在拆解我搬下去的沙發與健身椅，是非洲草原上被分食的大象身體。</p>
+        <p>沒有意識到自己多麼富有的我，可以曾經擁有著那麼多，又不得不丟棄在歇業金紙店的轉角。在電影街前面迷失方向的我，擁有著美好的，破舊的房間，被風包覆著，那些在同時想念著我的，那些我。</p>
+        <p>但我一直都是我。想念的我也是我。我一直是我。</p>
+        <p>家具記憶中的顏色，是模糊與斷斷續續，是颱風天即將到來的黃色，是雲和天空之間的紫色，是紅色的鴿舍，也是在路燈故障，暗暗的街道上，便利商店的光，映照著的臉。</p>
+        <p>他也說著，隨時都可以捨棄，也隨時都可以回來，沒關係啊。因為你還是你，你還是你啊。</p>
+        <p>阿伯撿到了五十元，開心地大喊一聲「偶雜！」打斷我飄盪的幻想，他將零錢收到左邊的屁股袋，旁邊的阿嬸專心的翻找著垃圾袋裡，有價值的事物。清潔隊阿姨打電話給我，說他們下午兩點會來收床底架，房東將電費扣掉後還了押金，我離開了散步過約兩千三百次上下的公園，沒說再見。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">12月27日</span><span class="piece-title">空洞</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>嘗試寫下空洞，不過一直沒辦法，因為空洞是，一種無法描述的一種無法描述，像那樣之類的，一些什麼。</p>
+        <p>那樣想像你讀了文章，心裡想說的話，或夢見了我們的冒險，醒來在地圖上尋找地點。</p>
+        <p>總之，空洞的我，正在寫著空洞的文字，描寫空洞的心情。</p>
+        <p>我寫著，空洞曾經以為那樣的空洞，可以不再是空洞，但那也是空洞的想法，搭配著空洞的期待。</p>
+        <p>空洞期待著那樣的空洞，可以填滿一些空洞。無論是他的空洞，還是自己的空洞。</p>
+        <p>曾經空洞在空洞的深處，發出空洞的聲音，得到了空洞的回應。</p>
+        <p>於是在空洞裡，空洞正在回想空洞的記憶，那樣的結尾，充滿著空洞。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-bairi.html">← 百的某日</a>
+    <a href="archive-2025.html">返回作品集 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>

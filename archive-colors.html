@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>顏色 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;min-height:1.4em;}
+.divider{width:100%;height:1px;background:var(--ink);margin-bottom:0;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">顏色</h1>
+    <span class="page-title-en">Colour</span>
+    <p class="page-desc">&nbsp;</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月25日</span><span class="piece-title">顏色</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>顏色，是尼古丁。是充滿暴力的童年回憶。是麥香奶茶。說謊的習慣，無止盡的夜。性慾的地獄。等待呼吸清晨稀薄的空氣，日常社交是線上遊戲，穿越神經質的角色設定，寂寞是圍繞著他的空氣。是忽視，扭曲的愛，是依戀，流轉在身體之間，像是穿過手指頭的水。</p>
+        <p>後來，開始看見顏色的表情，過去非常在乎的，皮膚上的斑點，也被當作自信的裝飾。品味言外之意，關於顏色與顏色之間的，無限透明。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月1日</span><span class="piece-title">染色康乃馨</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>在花店看見了漂亮的花，店員說是染色康乃馨。一朵八十元。買下來，插在床頭櫃的花瓶。睡著之後，顏色離開了花瓣。那是有漸層的紫色與藍色，他們將夢染色，漂浮在周圍的空氣之間。他們說：這裡是你的世界。</p>
+        <p>我的世界？是啊。這裡的全都是你。夢中的白色花瓶，裡面有一朵白色的康乃馨。窗外正在下著雪。陽台漆了白色防水漆。樓下的工人們，扛著白色的水泥。</p>
+        <p>顏色們往意識的地方去，將他們染色。是有漸層的紫色與藍色。你們能將回憶染色嗎？那時才意識到，自己貪戀這裡的原因。因為這裡沒有回憶，就像是沒有顏色一樣純粹的白色。</p>
+        <p>顏色包圍著我，洗去我的恐懼，悔恨與眼淚。醒來之後，染色康乃馨一樣美麗。</p>
+        <p>像花朵一樣，結束的那一天終究會來，顏色們會回來，他們會包圍我，包括康乃馨上的漸層，紫色與藍色，那時我的恐懼，悔恨與眼淚，都會被洗去，回到純粹的白色。那裏，是我的世界。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月31日</span><span class="piece-title">紅色</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>紅色，是血的顏色，是晚餐之後，白色瓷盤留下的血漬，是夕陽融合風的線條，撥動沙灘上安排好的漸層。</p>
+        <p>她決定變化的方向，判斷的標準，於是在冒險者展現跨越的意圖同時，就已經在說著她的語言。</p>
+        <p>紅色，是火焰的顏色，是在雷擊之後的清晨，煙霧之中，森林的對比色。</p>
+        <p>她出現在指甲劃破皮膚之後，行走在人群的上方，堅持著理所當然的幻想。</p>
+        <p>因為那裡存在著，最鮮豔的紅色。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">10月4日</span><span class="piece-title">橘子與灰</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>橘子走向鋼琴，用衣角擦拭蓋上的灰，回想曾經認真練習的時間，那是用一萬小時編織成形的夢，天真的心情在幾年裡催促著她走過，彎曲的山路，泥土在指縫裡留下了細微的傷口，直到城市的灰滲透她的白色襯衫，在纖維裡，呼吸裡，每一次略帶緊張的微笑裡，她很冷靜，同時不抱著任何怨恨。</p>
+        <p>她知道，那是為了灰色的她，許多年前許的生日願望。她想要一些證明，一些熱切眼神，一些因為距離而自然發酵的期待，一些故意不戳破的神秘感，增添遊戲的籌碼，自由的假象，延長愛的有效期限，把握住所有，溫暖的，可以消化的，安全感。</p>
+        <p>終究，隨著旅程，所有空白的慾望都被海水清洗，留下冷空氣與鹽粒，在肌膚的表面陳列。她發現了。她的所有願望都會被實現，只是未必是她以為的樣子。就這樣，灰色的她，不知不覺死在九月。</p>
+        <p>輕鬆，自然，不抱任何期待。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月9日</span><span class="piece-title">綠色</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>曾經有座森林</p>
+        <p>北邊的陽光</p>
+        <p>照耀南邊的濕地</p>
+        <p>落葉腐蝕著</p>
+        <p>昨夜遺忘的身體</p>
+        <p>背景BGM是</p>
+        <p>無止境的ambient</p>
+        <p>因為那裡的DJ</p>
+        <p>從來不休息</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月13日</span><span class="piece-title">藍色</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>小學的時候，英文老師將他喜歡的女生取名Alice。討厭的男生，叫做Mike。輪到他的時候，老師說，你就叫做Blue吧。</p>
+        <p>為什麼是Blue？他到現在也不明白。或許也沒有為什麼。</p>
+        <p>但是藍色，的確一直與他一起。不曾分開。</p>
+        <p>藍色，是水的顏色。</p>
+        <p>是柔軟的波浪，是晃動情緒的潮汐，是透明的心，也是深海的傷。</p>
+        <p>他希望冷靜，充滿智慧，順著流動，遺忘被時間淹沒的願望，因為乾燥的鹽分讓皮膚刺痛，於是只好，倒臥在，美好陽光，照射的午後，靜止，在那，幽暗的藍色床單上。</p>
+        <p>因為藍色，是天空的顏色。</p>
+        <p>他無數次，嘗試看到屋頂的上方，在那更深處，見到那無限透明的藍色，在那遠方的深處，在那深處的遠方，是，宇宙無止境的中性，是，既不冷酷，也不炙熱的，藍色。</p>
+        <p>於是他在佈滿，藍色的星球上，開始習慣聽見洪水接近的聲音，準備接受，屬於他獨有的，同時包容一切的，藍色。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月8日</span><span class="piece-title">紫色</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>曾經那位，喜愛紫色的國王，有著一個願望。</p>
+        <p>他要打造一萬面，紫色海螺的國旗。</p>
+        <p>送給王國裡，一萬個城邦。</p>
+        <p>放到城邦內，一萬戶人家。</p>
+        <p>讓風，搖響鈴鐺時，隨旗幟飄蕩。</p>
+        <p>讓下午，孩子們回家時，可以感覺到，海的溫暖，還有記得，曾經他們一起跨越的，低谷裡的，悲傷。</p>
+        <p>但工匠卻敲碎了國王的夢，他說，陛下，為了一公克的紫色顏料，可是要殺死一萬隻的海螺啊。</p>
+        <p>於是國王將沒有完成的夢，放進他的抽屜裡。</p>
+        <p>那本日記，沒有文字與日期，只有屬於他的，一頁又一頁的，紫色。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-cats.html">← 一千個名字的貓</a>
+    <a href="archive-ta.html">他 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>

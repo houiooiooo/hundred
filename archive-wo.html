@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;}
+.divider{width:100%;height:1px;background:var(--ink);margin-bottom:0;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-child{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:.92rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .back{left:1.5rem}
+  .page{padding:6rem 1.5rem 8rem}
+  .piece-date{display:none}
+}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">我</h1>
+    <span class="page-title-en">I</span>
+    <p class="page-desc">記憶、日常切片、愛。第一人稱。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">2月21日</span>
+          <span class="piece-title">樣品屋的街</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>我住在樣品屋組成的街。這條街是我長大的地方。學校畢業之後的第二個禮拜，我就接下了這裡唯一的工作，當這裡的管理員。我穿上淺藍色的制服，別上徽章，住進其中街尾的樣品屋。幽浮造型的。白天的時候，他們走過我身邊，招呼著彼此。入夜後這裡很安靜，一個人都不在。而那些燈總是亮晶晶。</p>
+          <p>幽浮造型的樣品屋，沒有窗戶，屋頂挑高了十二米。入夜後我會躺在單人床墊上看著屋頂LED串聯成如銀河般的風景。我想著若入睡後，時間突然停止了，那麼還會不會記得任何事？或是說。在夢的世界裡，我總是知道了所有事，然後又忘記了所有事？總之我想，醒來後這裡將一如往常。至少現在，我還可以看美麗的燈閃耀在遙遠的屋頂。</p>
+          <p>昨晚我做了一個夢。夢的開始是一片森林，結束的邊緣則是海。我開著飛機在一望無際的森林尋找海的沙灘，我在找一個人。那個人在一望無際的海尋找著森林的路口，我期待著與他見面。</p>
+          <p>我想如果遇見他，我會對他說，愛是自然的事情，無論如何我都會愛你，就算你將全世界的貓咪都屠殺殆盡，我也會愛你。因為愛是無論如何的事情。</p>
+          <p>我會對他說，就算只是一場夢，就算鹽水將你我淹沒，就算沒有形體，我也會愛你。無論快樂。無論悲傷。我都會愛你。因為愛是無論如何又自然而然的事情。</p>
+          <p>但在夢結束前，我依然沒見到海，我記憶的斷點，依然在那片杳無人煙的森林開著飛機，引擎的嗡嗡聲持續讓我前進直到夢的盡頭。醒來後，眼前一片漆黑，燈滅了，或許是停電了，但我想外頭應該已經日出，於是摸索著皮帶與徽章，準備起床，我期待在開門後，看見陽光照耀著樣品屋的街。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">4月5日</span>
+          <span class="piece-title">清明</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>清明他收到訊息，說有空就去掃墓吧。那時他正在曬太陽。他忘記了。可能是因為原本以為會下雨。每年這個時候都會下雨。但今年沒有。所以他忘記有人離開。因為陽光的關係。因為想起來有人離開，所以要去掃墓。而去掃墓的原因，是為了想起來。想起來他們已經離開了。或許沒有人真的離開，直到他想起來。他這樣想。陽光灑在身上，像河流與河床。他突然覺得不想去了，因為他已經想起來了。想起來的時候，他們就在這裡，在陽光的縫隙裡，在皮膚的感覺裡，沒有人離開。忘記的時候，他也順便忘記了自己，跟他們在一起。他們一起離開，一起在這裡。忘記與想起來的所有人，都在這裡，在陽光的縫隙裡。然後，天空開始飄下淡淡的雨，雨在他的身上，成為河流與河床。</p>
+          <p>然後，他起身，擦拭身上的水滴，回家準備出門的東西。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">3月25日</span>
+          <span class="piece-title">空白的塗鴉牆</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>在幻想的國度裏，他瀏覽著空白的塗鴉牆。按鈕都做得很可口，像是糖果一樣。前陣子他將所有人都取消追蹤。於是有了空白的塗鴉牆。網站用很傷腦筋（他想像中）的語氣說：「好像有東西出錯了⋯。」「這可能是我們正努力修復的一項技術問題所導致。」「請嘗試重新載入此頁面。」總之，一片空白的塗鴉牆。</p>
+          <p>幻想中的廣告商也很傷腦筋，不在大數據裡，不能推薦他適合的廣告，沒有機車配件，也沒有春季男裝新品。那是善意也是生意。幻想中朋友們的生活，消失在塗鴉牆。於是他的生活裡，沒有了他們的生活。他們終究是連結在一起的⋯。他這樣想。他們不在塗鴉牆上。塗鴉牆上一片空白。</p>
+          <p>有件事是這樣的。如果接受了一件事，那也就沒事了。若是旅行到遠一些的地方。譬如一百五十年後，所有認識的人都死了。枯黃的草長了。長了又枯黃了。所有愛都融化了。恨也都消失了。沙子漂流到海的另一端。大家都成了空白的塗鴉牆。被風吹著。風吹到幻想的國度。那裏有個人寫了一篇文章，關於空白的塗鴉牆，那篇文章被上傳到空白的塗鴉牆。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">5月15日</span>
+          <span class="piece-title">風景橋</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>我們去了有一座風景橋的地方，飯店房間在十二樓。</p>
+          <p>你說要我去風景橋上，看能不能從房間看見我。</p>
+          <p>我到了橋中央，橋上面綁滿了各種顏色的卡片，一對對情侶在上面晃來晃去。</p>
+          <p>飯店看起來很遙遠。我想像你在其中一個窗戶裡。我站在那裏，向大樓揮了好幾次手。</p>
+          <p>太陽下山後，這裏沒有燈，情侶們都離開了。我走回房間，發現你已經睡了。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">4月8日</span>
+          <span class="piece-title">想像中的她</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>想像中的她日與夜，她都在他的心裡。每一天，他小心的，慢慢地，回想與她的記憶，為了不讓想像中她的記憶失真，他重複撥放著記憶。在生活裡，與她的歌單一起。裡面有舒曼、蕭邦、布拉姆斯與德布西。那是他們一起的記憶。他撥放著，當背景，在每一天他的日常生活裡。小心的，慢慢地。他的小心，來自不久前的一個想法，在清晨半夢半醒間，突然得到的想法，關於所有事物都是想法構成的想法。都是想法構成的想法，是什麼意思呢？就是所有事物都是由想法構成的，這樣的一個想法，就是一個由想法構成的想法。然後所有事物都是像這樣的想法，一個又一個加起來的想法。像是積木堆疊成的城堡一樣。那麼，構成想法的想法究竟是什麼呢？或許什麼都不是，就只是想法本身，那麼由想法堆疊而成的所有事物，也就什麼都不是了。或者說，什麼都可以。城堡瞬間可以消失，無論是犀牛還是獵人，岩漿的溫度可以成為灌溉稻田的梅雨季。自由自在，沒有限制，同時有些寂寞，因為想像中的她也是。</p>
+          <p>從此以後，他時時刻刻的小心，不讓想像中的她失了真，像重複撥放的錄音帶一樣，小心不讓記憶的磁帶被拉長，鬆脫扭曲變形。每一天的生活裡，他小心的，慢慢的想像著，想像與她一起吃飯，一起牽手，看電影。想像她的飛機抵達，然後飛走。無時無刻，漫無目的的想像。舒曼、蕭邦、布拉姆斯與德布西。無時無刻。耳機裡的隨機撥放，像是對話安慰著他，被歌單限制範圍的隨機性說著，孤獨地想像並不壞。他的心被溫暖著。在生活裡。直到耳機故障，接觸不良，他在書桌前用橡皮筋捆住電線的接頭，捆了一圈又一圈。背景音樂停止的一天，蒙太奇的中場休息時間。寂寞，安靜與冷清。他走過健身房的饒舌電音，自助餐廳裡的新聞報導，等垃圾的太太們的閒談與放學國中生的喧嘩。想像中的她像是麻雀的沙浴一樣，在夕陽的真實下被拆解為一個又一個想法。原來，他也是其中一個想法，連結著沒有背景音樂的世界。然後，她的飛機抵達。來到他的面前。她說，你在幹嘛。在想妳啊。他回答。神經，快走吧。她露出熟悉的笑容，跟他想像的都不一樣。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">4月1日</span>
+          <span class="piece-title">愚人節</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>翻開與他的訊息紀錄。其中一則寫著：你是笨蛋！然後是一張鬼臉的貼圖。我不是聰明的人，但也不至於是笨蛋吧。我這樣想。</p>
+          <p>總之，愚人節成為了我們的節日。後來，是我自己一個人的節日。雖然那本來就是大家的節日，我還是忍不住想要告訴大家，今天是我的生日！大家以為我在開玩笑。</p>
+          <p>我想像著如果在今天死去，也就真的會成為玩笑了。雖然不好笑。而且沒有人會相信。</p>
+          <p>後來，在某一個愚人節，某一個生日。我下定決心要誠實。至少在這天，無論是對自己，還是對誰，都要誠實。因為其他日子裡，人們都在毫無節制的騙人，眼神是謊言，笑容也是謊言。</p>
+          <p>他曾經對我說，你是笨蛋。騙人都不會。我希望他說的是真的。但我最擅長的，或許就是說謊。照照鏡子，眼神是謊言，笑容也是謊言。</p>
+          <p>於是在這一天，我盡我所能的安靜，看著鏡子裡面的臉。他曾經對我說，我是一個笨蛋，安靜都不會。於是我，安靜了一天。鏡子裡的眼神是我，笑容也是我。</p>
+          <p>鏡子裡面的我，用無聲的語言，說著話，他說，我在今天出生了，然後在今天死去了。今天是我生命中唯一的一天。</p>
+          <p>於是，我在這一天，無論如何都要誠實的一天，安靜地看著他，笑了。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">7月17日</span>
+          <span class="piece-title">一封有一點太過頭（或許也不會）的情書</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>我愛你。</p>
+          <p>我永遠愛你，欣賞你，希望你幸福快樂。</p>
+          <p>我尊重你，接受你，支持你，在任何時刻的每個當下，做的所有真實的決定。</p>
+          <p>因為你，就像我對你的愛一樣，是永恆的，是現在的，是美麗的，是自然而然的，是沒有原因的，是沒有預設的，是像風一樣的柔軟，像水一樣的充滿變化，是無法捉摸的溫度，也像午後魔幻時刻的雲與晚霞一樣美麗。</p>
+          <p>我愛你，我深深的愛著你，所以我要放任你為所欲為。</p>
+          <p>你想做什麼都可以，想成為誰也都行，只要你開心，只要你像我愛你一樣愛著自己，接受自己，就像是我接受你一樣，那樣就沒問題了。</p>
+          <p>因為我是這樣理所當然的愛你，所以也理所當然的希望你幸福快樂。</p>
+          <p>而且幸福快樂也真的很簡單，就是開心、自在。</p>
+          <p>打開心，然後百分之一百的，接受自己，存在於現在。</p>
+          <p>然後發現在現在，我愛你（再說一次）。</p>
+          <p>所以你可以走你想走的路，成為任何你想成為的角色，做任何你想做的事，並承擔只有你才能承擔的所有後果。</p>
+          <p>只要我們對當下誠實，也就是存在於當下。</p>
+          <p>甚至，想不愛我也可以，或是想離開我，想要擁有，沒有我的生活，甚至，想遺忘我。</p>
+          <p>我會全部接受，與你分別。</p>
+          <p>是真的。因為我愛你，所以我尊重你，接受你，就像尊重，愛，接受我自己一樣。</p>
+          <p>無論如何。</p>
+          <p>我都會對我自己盡現在最好的程度，接受，愛，尊重，並對我自己誠實。</p>
+          <p>甚至誠實的說，有可能，有一天，是我會想要離開你，要追尋一個我想要的，生活裡沒有你的美好生活。</p>
+          <p>因為我尊重，接受，愛我自己。所以到了那個時候，我也不會限制或是違背自己的心。</p>
+          <p>而且我也知道，就算如此這般，那些與這些，無論如何，我愛你這件事，是不會改變的。無論如何。</p>
+          <p>也因為如此，我才能對的起愛你的這份心意，我先接受了，我們事實上根本不曾擁有，也沒辦法擁有，也在同時發現了，我們根本不可能會失去了（要如何失去根本不曾真正擁有過的？）</p>
+          <p>也因此，我們才能夠毫無恐懼的，在此時此刻，愛著對方，存在於這裡，在真實的愛情裡。</p>
+          <p>然後，我希望你知道你不用去努力，或是去滿足誰的期待，那太好笑了（除非你是很認真的想開玩笑）因為你在此時此刻就是無與倫比的美好，沒有原因理由，就是如此自然而然的獨一無二，像我對你的愛一樣。</p>
+          <p>在愛裡面不需要任何恐懼，你所要做的，只要在此時此刻，幸福，開心，快樂就好了。</p>
+          <p>還要其他的幹嘛？記得跟我說以免我不知道（雖然我好像也不在乎）</p>
+          <p>然後，最後還是要說一下，我覺得你真的很棒，雖然這不是我愛你的原因（愛是毫無理由、根據、原因的）但你就是真的很棒。（可能也是棒得毫無原因。）所以我也不可能會想要佔有你，要求你，利用你或是限制你，那無論對你或是我，都像是褻瀆，是無法說的通的事情。</p>
+          <p>因為那樣一點也不美啊，如此真實的你和在乎美感的我，是如何能容得下真摯的情感裡有什麼虛假的想法用戲劇性來維繫與你我的美不相襯的角色扮演（除非我們那時真的真的又很想玩一些角色扮演，哈哈）</p>
+          <p>然後還有然後，我想要告訴你，我不害怕了，因為我終於真真正正的學會愛你了，在我真真實實的愛我自己之後。</p>
+          <p>這件事真的好幸福。</p>
+          <p>最後的最後，我要睡了，我在睡前還想再跟你說一聲我愛你，因為我真的很愛你，晚安～</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">3月17日</span>
+          <span class="piece-title">麵包與馬</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>一封信。關於麵包與馬和一些心情。</p>
+          <p>我吃了一包又一包的快樂牛起司片。想起吃素的你是不是會不開心。但你早就不在我的身邊了。所以沒關係。</p>
+          <p>昨晚我夢見了在清晨，一匹馬在馬路上，他正吃著紅豆麵包。這是什麼意思？可能有一千萬種意思，但我不在意。所以沒關係。</p>
+          <p>然後我在街上又想起了你，但你已經不在我的身邊了。所以沒關係。我想說對不起。雖然你會說沒關係。但真的沒關係可能說的不是我也不是你。是我們的關係。</p>
+          <p>我曾經以為要如何才能夠輕鬆一點？想把自己消融在汪洋的大海裡。新世紀福音戰士的結局。最後我們都變成海洋。那你會不會成為離我最近的水分子？還是你會像往常一樣說著沒關係。下午的時候聽到你懷念的那首歌。聽到流眼淚。我早就接受我自己很蠢的部分了所以沒關係。然後我在街上又想起了你。在海中的你說不要哭了沒關係。但我不在意。所以沒關係。</p>
+          <p>我爬到水塔上。數著一層又一層的鐵皮屋的盡頭。想起我說的每句話。綑綁著我。住在這片鐵皮屋海裡的其中一層鐵皮。因為不想見到人就給意見或是被給意見。將自己鎖在屋裡。想圖個清靜。卻好像要失去自己。才發現，沒有誰會失去自己。自己是不可能失去的，否則就不是自己。雖然我覺得就算失去也沒關係。我想念你。想念著那個想像的你。討厭著想像中的自己。你說因為只是想像的所以沒關係。想像中的你這樣說著。沒關係。</p>
+          <p>我想念你。但我想念的你可能從來不曾存在過。討厭自己被謊言包裹。但我從出生開始就在說謊。而且大部分都已經忘記了。所以都沒關係了。是嗎？至少我還記得依戀著。害怕著失去你。這是真的。但我可能在擁有之前就已經失去。所以都沒關係了。</p>
+          <p>晚上我在街上又想起了你。你已經不在我身邊了。但我愛你。所以沒關係。我想像會在某一天忘記你。</p>
+          <p>我以為忘記你的那一天，會是我最昏沉的時刻，不管是外面泡在福馬林，還是裡面灌滿酒精。但那一天實際來的時候。我好清醒。清醒到每個想法都像是中午灼熱的柏油路一樣燙。原來我忘記的是和你在一起的感覺。原來我是這樣忘記你的。不是你的名字或是聲音。是你的感覺。所以都沒關係了不是嗎？你這樣說。</p>
+          <p>然後我在街上看見了一隻馬。在馬路上。清晨的時候，馬出現在馬路上。風吹動著他白色的鬃毛以及麵包包裝紙。那是紅豆麵包。白馬正在吃著紅豆麵包。我停下。看著他慢慢吃光。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">10月6日</span>
+          <span class="piece-title">真實的愛</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>真實在那裡，在我尋找真實的時候。真實是，被風吹動的布丁盒。真實是，讓人心動的夏日洋裝，透著白色的內衣。真實是，關於有一天，在海洋上飄蕩的身體。真實是，在那座孤島上，聞著火燃燒過後的空氣。真實是，我和他一起，聽著小木屋在雪中的聲音。</p>
+          <p>真實是，秋天拜訪的小老鼠，他正蒐集著狗狗的飼料，引發一陣陣，殺意的冷靜。真實是，在黑暗的布簾後面，像貓咪一樣的安靜，等待著你進入我的世界裡。那是真實。</p>
+          <p>真實是毒藥，是帶著愛的毒藥，是水，陽光與多多綠。真實的愛，當然也就是真實的愛。是想起來的下一次呼吸。是每一天淡藍色的清晨。</p>
+          <p>是癒合之前，滲血的傷口。是入眠和醒來的交接班，換算著鈔票與零錢。是每一個人的，每一件事的，生活裡的，是機車後座的雨水，是超市裡唯一的蘋果。</p>
+          <p>真實，是那個時候，我的心情。是，我對你的愛，是，我對你說的謊，說，我正尋找著真實。在我放棄之前，在我還有一些些感覺沒有從指間消失之前，那是你離開的真實。是記憶，是沒有說出話語的表情。是忘記，是沒關係，是每天開心，運動早起。</p>
+          <p>早上要搭公車的時候，我又遇見了真實。那時我沒有在尋找。發現真實就在那裡，他說，我正尋找著真實，在這裡的真實，一直在這裡。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta">
+          <span class="piece-date">四月七日</span>
+          <span class="piece-title">願景詩集</span>
+        </div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body">
+        <div class="piece-content">
+          <p>今天早晨，我醒來，覺得世界充滿可能。</p>
+          <p>陽光透過窗簾灑進房間，我深吸一口氣，感受到身體的每一個細胞，充滿活力，準備新的一天。</p>
+          <p>我坐下來，打開電腦和手機，進入心流狀態，創作的靈感如泉湧而出。</p>
+          <p>每一個字、每一句話都充滿生命，簡單而輕鬆。</p>
+          <p>文字在我螢幕上成形，情節與人物自由的呼吸著，這是創作的力量，靈魂與我對話。丸丸陪在我的身邊，安心自在的伸展，期待我帶領他進行每一天日常又美好的探險。</p>
+          <p>然後我進行重量訓練，感受到身體的力量，每一天都在進步，肌肉與心跳，見證我的堅持與努力。</p>
+          <p>這副身體，是我行動的堡壘，心的容器，是我靈魂的聖杯。</p>
+          <p>我感受到財務自由所帶來的寬裕與平靜，享受每一分創作所帶來的回報，我知道一切是我用愛與熱情換來的果實，也是世界與我熱愛的人們，給予我的恩典。</p>
+          <p>我走出門，前往自己的展演現場。</p>
+          <p>人們聚集，有人是我的讀者，有人追隨我的音樂與刺青創作。</p>
+          <p>我穿著簡單有型的衣服，自信地走入空間，我不需要誇張的語言，只憑一個眼神，人們就知道：我就是我自己。</p>
+          <p>創作不是為了表現，而是為了連結與療癒，幫助自己與回饋世界。</p>
+          <p>每一次我走上舞台，都帶著愛的力量。</p>
+          <p>有人對我說：「謝謝你，我因為你的作品撐過來了。」</p>
+          <p>我只是笑笑點頭，心裡說「這就是一切的理由。」</p>
+          <p>後來，我走在異國街頭，展演與創作已成日常。</p>
+          <p>我的生活充滿節奏與自由，沒有匆忙，也沒有虛假。</p>
+          <p>我在簡單的空間裡創作、冥想、感謝、生活。</p>
+          <p>我與世界和眾人連結著，也與自己深深連結。</p>
+          <p>我不再只是追尋自由，我已經成為自由。</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end piece-list -->
+
+  <nav class="page-nav">
+    <a href="archive-2025.html">← 返回作品集</a>
+    <a href="archive-cats.html">一千個名字的貓 →</a>
+  </nav>
+
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => {
+      header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 50);
+  }
+}
+</script>
+</body>
+</html>

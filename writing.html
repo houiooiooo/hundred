@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字 — 百 Hundred</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #f5f2ed; /* 米色宣紙感 */
+            --ink: #1a1a1a;   /* 墨色 */
+            --grey: #7a756f;
+        }
+
+        body {
+            background-color: var(--paper);
+            color: var(--ink);
+            font-family: 'Noto Serif TC', serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* 返回按鈕 */
+        .back-home {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--grey);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .back-home:hover { color: var(--ink); }
+
+        /* 選單容器 */
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem; /* 選單間距 */
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--ink);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .nav-item:hover {
+            opacity: 0.6;
+            transform: translateY(-2px);
+        }
+
+        .nav-item h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 0.3em;
+        }
+
+        .nav-item span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            color: var(--grey);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* 裝飾線 */
+        .divider {
+            width: 30px;
+            height: 1px;
+            background-color: var(--grey);
+            margin: 0 auto;
+            opacity: 0.2;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .nav-item h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home">← Index</a>
+
+    <div class="nav-container">
+        <a href="archive-2025.html" class="nav-item">
+            <h2>2025 作品集</h2>
+            <span>Selected Works 2025</span>
+        </a>
+
+        <div class="divider"></div>
+
+        <a href="series-2026.html" class="nav-item">
+            <h2>2026 連載中</h2>
+            <span>Ongoing Series 2026</span>
+        </a>
+
+        <div class="divider"></div>
+
+        <a href="universe.html" class="nav-item">
+            <h2>十一宇宙</h2>
+            <span>Eleven Universe</span>
+        </a>
+    </div>
+
+</body>
+</html>

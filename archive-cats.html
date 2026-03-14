@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一千個名字的貓 — 文字作品集 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:.25em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:1rem;}
+.page-desc{font-size:.88rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-style:italic;line-height:1.9;}
+.divider{width:100%;height:1px;background:var(--ink);margin-bottom:0;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.piece-list{opacity:0;animation:fadeUp .8s ease forwards .5s;}
+.sub-label{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--light-grey);margin:3rem 0 .5rem;display:block;}
+.sub-label:first-child{margin-top:1.5rem;}
+.piece-item{border-bottom:1px solid rgba(26,26,26,0.08);}
+.piece-item:first-of-type{border-top:1px solid rgba(26,26,26,0.08);}
+.sub-label+.piece-item{border-top:1px solid rgba(26,26,26,0.08);}
+.piece-header{display:flex;justify-content:space-between;align-items:baseline;padding:1.1rem 0;cursor:pointer;user-select:none;transition:opacity .3s;gap:1rem;}
+.piece-header:hover{opacity:.55}
+.piece-meta{display:flex;align-items:baseline;gap:1.2rem;flex:1;min-width:0;}
+.piece-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.1em;color:var(--grey);white-space:nowrap;flex-shrink:0;}
+.piece-title{font-size:.95rem;font-weight:400;letter-spacing:.05em;color:var(--ink);line-height:1.5;}
+.piece-toggle{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);flex-shrink:0;transition:transform .4s ease;line-height:1;}
+.piece-item.open .piece-toggle{transform:rotate(45deg);}
+.piece-body{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.4,0,0.2,1);}
+.piece-body.open{max-height:99999px;}
+.piece-content{font-size:1.1rem;line-height:2.3;color:var(--text);text-align:justify;max-width:640px;padding:.5rem 0 2.5rem;}
+.piece-content p{margin-bottom:1.4em;}
+.piece-content p:last-child{margin-bottom:0;}
+.page-nav{display:flex;justify-content:space-between;margin-top:6rem;padding-top:2rem;border-top:1px solid var(--light-grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;}
+.page-nav a{color:var(--grey);text-decoration:none;transition:color .3s;}
+.page-nav a:hover{color:var(--ink)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}.piece-date{display:none}}
+</style>
+</head>
+<body>
+<a href="archive-2025.html" class="back">← 作品集</a>
+<div class="page">
+  <header class="page-header">
+    <h1 class="page-title">一千個名字的貓</h1>
+    <span class="page-title-en">The Cat with a Thousand Names</span>
+    <p class="page-desc">所有被命名過的存在。</p>
+  </header>
+  <div class="divider"></div>
+
+  <div class="piece-list">
+
+    <span class="sub-label">貓</span>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月4日</span><span class="piece-title">一千</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓，小學三年級時，曾經在教室的窗檯，發現藍紫色的一千元。</p>
+        <p>一千元對他來說，是幸運的證明，是想像力的工具，是在無力反抗的清晨所留下的，最自由的秘密。</p>
+        <p>一千元被塞進直笛裡，直到被趕出家門的第二個秋天。</p>
+        <p>他去全家，買了一顆茶葉蛋、七星淡與中熱美。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月5日</span><span class="piece-title">貓年</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓（小玉），在過年的時候，在街上滑滑板。他是第一次在這個城市過年。這裡不常下雨，人們特別喜歡吃PIZZA（或許只是刻板印象）。</p>
+        <p>回想起來，每一次過年的記憶，小玉都在某個交通工具上面奔馳，往不同的未知前進。</p>
+        <p>熊年在卡車前進在漆黑山路上，連結著鴨年陽光明媚的海灘，與長頸鹿年出生的他，在開滿向日葵的鄉間尋找著回民宿的路。</p>
+        <p>小玉想起過去的家人。現在的小玉會衷心的希望大家都過得很好。因為現在的他已經長大了。</p>
+        <p>他在不常下雨的城市，將食物送給需要的人，APP說，過年期間送外送有獎勵加成。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月6日</span><span class="piece-title">初六</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>初六，一千個名字的貓（喬喬）今天在想關於麻辣火鍋的事情。明天他要帶著火鍋料與湯底，騎機車去拜訪深山裡的朋友，但是氣象預報說，明天會下雨。雨水會不會沾濕生菜與牛肉片？他的煩惱樸實無華，是生活輕鬆的秘密。昨天書店打烊前，他買了一本書，書名是，心是孤獨的獵手。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月11日</span><span class="piece-title">理解的理解</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓（毛毛），去圖書館看書。</p>
+        <p>經常翹課的毛毛，什麼書都看（但不看恐怖故事，因為太恐怖了）</p>
+        <p>下午四點快要五點的時候，曾經以為不需要被誰理解的毛毛，突然理解了一些關於理解的理解。</p>
+        <p>要理解理解，就要理解理解的感受與被理解的感受。</p>
+        <p>理解的感受被理解之後會產生被理解的感受，若是理解被理解的感受是因為理解也就能理解其實理解同時也伴隨著被理解的感受。</p>
+        <p>他理解了之後才理解原來有時候能夠透過閱讀感覺到被理解也是這樣的緣故，在他的感受與理解作品的同時，他其實是在理解自己，通過感受⋯</p>
+        <p>他只是需要理解到，因為他也不是可以理解任何人（作品），所以他（作品）有時候不需要被任何人都理解。</p>
+        <p>因為這真的有點難理解，所以不被理解也是沒有關係的。他是這樣理解的。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月16日</span><span class="piece-title">小風</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓（小風）鐵架上的小鳥聊天。他們聊天氣，聊心情，聊好吃的東西與悲傷的事情。一陣子之後，小風靠在磚牆上，好像在想什麼，也好像什麼都沒有想。他自己也不知道。眼睛瞇成一條線的小風，在缺了幾塊的磚牆下方，與頂端的尖刺一起，不說話。你在難過對不對？小鳥嘰嘰喳喳的一直說話。不要難過啦。要開心啊。一直嘰嘰喳喳。小風自己也不知道。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月13日</span><span class="piece-title">悲傷的樣子</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>今天與有一千個名字的貓去撿貝殼。一千個名字的貓，有一千個名字。他說叫他哪一個都可以。可以叫他圓圓或是Minou，泡芙或是inu。無論是哪個名字都只是其中一個而已。他對我說，他其中一個名字叫做悲傷。</p>
+        <p>為他取名的人也叫做悲傷。有的時候他會想要看清楚悲傷的樣子。但悲傷沒有形狀，沒有長相，沒有固定的身高。他越想要看清楚，就越模糊。但他感覺得到悲傷。每次感覺到那陣酸酸的感覺，他就知道那是悲傷。曾經他以為悲傷需要有個原因才叫做悲傷。但悲傷不需要原因。悲傷的故事都是大家傳說的。但悲傷其實就只是悲傷。有一天，他接受了悲傷。他感覺到了酸楚。他知道了悲傷真正的樣子。然後悲傷就離開了。</p>
+        <p>真的很奇怪，一般來說，悲傷（貓）都是先離開的那一個。</p>
+        <p>我們撿了很多貝殼。</p>
+        <p>貓還有一個名字叫做志雄。志雄沒有辦法思考的時候，就會去游泳。學生時期他曾參加過游泳隊，也在幾次比賽中得過名次。但一直到最近，他才比較有時間運動。水讓他冷靜。不會糾結在各種難解的結裡面。例如投資失利，例如子女青春期叛逆。一直以來他都為自己是很規矩地，很負責任的，不會出問題的那一個。他以為他不會扮演那一個角色。但輪到他的時候。他還是演出了。很規矩地。女兒離家出走的那年夏天，他讓自己放了長假。他開著豐田休旅車去東部的海港。那裏沒有人認識他。他住民宿，凌晨五點就去海邊。水讓他冷靜，不會糾結在各種難解的結裡面。</p>
+        <p>滑水時胸部上挺，起乘時手平貼板面，更重要的是要愛自然。志雄（貓）這樣說道。</p>
+        <p>我們繼續撿貝殼。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月18日</span><span class="piece-title">海浪與骨折</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓，昨天與海浪一起隨波逐流。海浪有的時候劇烈，有的時候溫柔，是藍色的星辰，也是白色的棉花糖。</p>
+        <p>一千個名字的貓在永不間斷的昨天裡，被海浪乘載著，包覆著。然後，海面的天空下起了雪。雪花與浪花，將一千個名字的貓，甩到了消波塊上。</p>
+        <p>一千個名字的貓，右小腿骨折了，耳朵也破破爛爛的，腹部的傷口，因為海水的鹽分刺刺的。血將他灰色的毛皮染黑，他在沙灘上，感受雪碰到皮膚的感覺，他吐出白色的霧氣，感受身體的溫度。</p>
+        <p>他知道今天的夕陽落下之後，他會離開沙灘，往城市的光前進。</p>
+        <p>但此刻他還在沙灘的邊緣，看著遠方海平線輕輕飄動，像是心電圖的頻率上下起伏，記錄著他的現在。</p>
+        <p>一千個名字的貓，今天沒有名字，因為誰都沒說。海與他沒有說出口的話，都是真實的。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">6月16日</span><span class="piece-title">新貓</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓，在里長家叫做阿富，有時候也被叫做貓里長。貓里長阿富下午的時候帶我去停車場看新出生的小貓。有六隻小貓，五隻是黑的，一隻是白的，大概都不滿一個月大，他們在鐵皮搭成的停車場裡面跑來跑去，什麼都不怕的樣子。</p>
+        <p>他們有名字嗎？我問。沒有，他們現在都叫做新貓。是你的孩子嗎？怎麼可能，是大頭和小月做的。小月是對面公園的貓老大，那裏最兇悍的黑貓就是他。大頭則是小貓們的媽媽，一隻胖胖的白貓，在角落睡覺。小貓好像很喜歡你。小貓們在貓里長的附近轉來轉去，跟在他的後面。因為他們很呆。貓里長其實很喜歡新貓，但是又不表現出來，究竟是為什麼呢，或許貓就是這樣吧，喜歡但是不能表現出來，究竟是為什麼呢。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">6月18日</span><span class="piece-title">秘密任務</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓，在送外送的時候執行秘密任務。</p>
+        <p>拯救野生浣熊的文件，藏在便當盒後面。</p>
+        <p>手搖飲的傳單，關係著海豹們的未來。</p>
+        <p>一邊計算著白雲的形狀，破解大樓管理員的人際網絡。</p>
+        <p>他小心不在陽光曬到臉上時露出破綻。</p>
+        <p>這些都是為了在與自己進行的心理戰中獲勝。</p>
+        <p>要如何才能什麼都不計畫，自然的將心意傳給他？</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">11月8日</span><span class="piece-title">在月亮消失的日子</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>與白白約好要一起看月亮。和他很久沒見面了。</p>
+        <p>我們都很安靜。因為發生了太多事情。</p>
+        <p>你覺得接下來會怎樣？我問白白。將冰淇淋遞給他。</p>
+        <p>都好吧。他將空盒子還給我。</p>
+        <p>說的也是。我們一起看月亮。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">11月8日</span><span class="piece-title">與月光</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>一千個名字的貓，在頂樓加蓋的屋頂上，看紅色的月亮。</p>
+        <p>昨天下午他在公園，聽見有人對月亮許願，說他最想要的，是被人好好理解。那時貓咪想代替月亮回答，說，我覺得我可以理解你呀！</p>
+        <p>但月光沒有說話，貓咪也沒有。他待在沒有盡頭的圍牆上，看著校園的遠方，直到操場的小學生都回家。</p>
+        <p>他知道，紅色的月亮，會在每一次的潮汐間受傷，然後在日出時治療所有蚌殼的傷口。無論如何，他都想要盡量真實。</p>
+        <p>大家都是完整的。一點都不寂寞。貓咪對自己說。他也在不斷的理解著自己⋯</p>
+        <p>他想像紅色的月亮與藍色的海洋一起，感覺流動在他緩慢的心。</p>
+      </div></div>
+    </div>
+
+    <span class="sub-label">山與海</span>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月9日</span><span class="piece-title">烤布蕾</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>山與海在山海交界的那間咖啡廳，他們點了一份烤布蕾分著吃，山不開心因為海太貪心，吃了一大口，烤布蕾剩下四分之一。海吃東西很急，吃得很大口，被罵了還笑嘻嘻，說不好意思不要生氣，山覺得海說話聲音太大在那間小店裡。山叫海安靜。</p>
+        <p>海暫時安靜了。山把剩下的烤布蕾吃掉，看起來不太高興。過了一陣子。海把音量放低說我們再點一個好嗎？山說不用了，有嚐到味道就可以了。</p>
+        <p>好吧。你開心嗎？開心啊，有什麼好不開心的。但你看起來很生氣。開心不能看起來很生氣嗎？而且為什麼一定要開心。難道不能不開心嗎？</p>
+        <p>我只是希望你開心。說不定我想要不開心。喔。欸你知道為什麼我容易開心嗎？因為你很呆。不是。是因為三不五時，就會海嘯阿。⋯⋯智障喔。山心情好像好一點了。然後他們又點了一份烤布蕾。海吃了一大口，烤布蕾這次剩下三分之一。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">4月16日</span><span class="piece-title">期待出去玩</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>期待出去玩，在山谷間的停車場停下，在車上吃漢堡。對面是一片山壁。海問山說，你覺得上面有多少樹，應該有很多顆吧，大樹下面有小樹，小樹下面還有小小樹。那是有多少樹？可能是數不完噢。樹不完。山又在說冷笑話。海沒有理他。他想著，一顆樹倒下了，另一顆又冒出來了？那麼漢堡也是樹長出來的嗎？我也不知道。山回答海內心的疑問。漢堡吃完了，海盯著包裝紙沉思。他說，因為有著太多期待，所以有了預設，預設帶來恐懼，或是更多期待，期待也意味著失望，若是一開始就沒有期待，也就不會不滿足了。海這樣說。灰暗系漢堡美食家，山露出很佩服的表情。灰暗很好，我最喜歡颶風過境之後的平靜了。那個時候，海邊一個人都沒有。海這樣說。山上倒是很熱鬧。是嗎？動物的家都沒了吧。不會啊，小小樹、小樹，大樹都倒光了，家也還是在啊。那被鋪上水泥，蓋上高壓電塔呢？無論事情變怎樣，都會在啊，就像我現在不在你身邊，也一樣在啊。海沒有回應他，只是望向想像中，彼岸的地平線，穿越山壁、高速公路與休息站，那裏有著被霧氣壟罩的高樓群，以及一座又一座的高壓電塔。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">6月16日</span><span class="piece-title">八個月的夏天</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>山與海有一段時間沒有見面了，他們都在做自己的事，過各自的生活。連續八個月的夏天，為他們帶來了許多新朋友和保特瓶蓋，在每個收拾殘局的早上，他們都默默地想念彼此。</p>
+        <p>他們想念彼此的幻想，和那些美化過的回憶。</p>
+        <p>山每次洗冷水澡的時候都會想到海，海每次抽寶亨涼菸的時候都會想到山。</p>
+        <p>他們沒有整理手機相簿，也沒有更換撥放清單。</p>
+        <p>因為沒有真正擁有過，也就不能真的失去。一切永遠都在前進著。</p>
+      </div></div>
+    </div>
+
+    <span class="sub-label">白白</span>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月2日</span><span class="piece-title">與白白 hang out</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>與我的幻想朋友白白一起 hang out。一如往常的平凡下午，我們在討論哲學問題，關於幻想究竟是什麼，有沒有限制或是絕對不會改變的本質之類的。白白說討論這話題很可怕欸，如果你引發我的存在危機怎麼辦。我笑了。白白還是一樣幽默。</p>
+        <p>說真的，我真的在想這個問題。我這樣說。嗯，幻想的限制，就是必須是幻想吧。白白回答。也就是說他不能是真的。對阿。不然就不是幻想了。也是。還有呢。沒有了。所以什麼都可以？什麼都可以。白白甩了甩尾巴。可以是飛天馬爾濟斯，或是奶昔深海魚宗師。那聽起來很高。也可以說很深。所以說，幻想不能真的存在。對，不然就不是幻想了。就跟你一樣。對，就跟我一樣。</p>
+        <p>那什麼是真的存在？是你現在意識到的體驗。看到的。聽到的。感覺到的。除此之外還有什麼？剩下幻想。但我正在幻想與你說話，這不是意識到的體驗嗎？</p>
+        <p>是阿，你正在幻想著我，只是沒有意識到，當你意識到的時候，我也就成為了你最終的幻想體驗，真實存在了。</p>
+        <p>所以，當此時此刻，我意識到我正在幻想你的時候，也就是我體驗到你以幻想的形式，真實存在我意識裡的時刻。對嗎？白白？</p>
+        <p>白白沒有回答。我的問題就像是投入平靜湖泊的石頭一樣，安靜的聽不見水花聲。我知道接下來的答案只能由我自己告訴自己。因為一如往常。我在湖底閉眼傾聽。一如往常。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">5月27日</span><span class="piece-title">月亮</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>Fly me to the moon（Evangelion），The dark side of the moon（Pink Floyd），Clair de lune（Debussy）</p>
+        <p>晚上與白白一起看月亮。</p>
+        <p>小時候我會怕月亮。起因是叔叔對我說了一個關於月亮的傳說，說如果用手指向月亮的話，月亮會跟著你，然後，在某一天的晚上，割下你的耳朵，做成滷味。像這樣。叔叔用筷子夾起一片豬耳朵放進我的碗裡，要小心囉。</p>
+        <p>我不介意叔叔捉弄我，但月亮的事一直被我放在心上。</p>
+        <p>安親班下課後，我在後母的機車後座上，偷偷觀察著月亮的動向。月亮真的一直跟著我！但很快的我也發現，是因為看著月亮，月亮才會跟著，如果不看的話，月亮其實是不存在的，月亮消失在世界裡，又出現在世界上，只要不去看，月亮也就不存在，所以根本不用害怕月亮。</p>
+        <p>後來我也發現，這樣的規則，或許可以用在所有事情上。無論是白白還是月亮，生活是印象與傳說，交織而成的網，身為網的空隙，可以隨時的進入與離開，只要還記得⋯⋯</p>
+        <p>那我呢？你看不見也聽不到我啊。白白突然說話了。他的聲音回響著，似乎在提醒我一件重要的事。</p>
+        <p>我看著頭頂的月亮，顏色，形狀，試著飛越模糊的月海（據說月海不是海），我曾經仔細看過月亮嗎？至少我不記得⋯⋯如果不記得的事，就像是沒發生過一樣。</p>
+        <p>我記得，小時候我很怕月亮⋯⋯然後是記憶裡的月亮，似乎有幾次在深夜的公路上，還有在東部的海邊。輕薄，模糊的記憶像雲朵一樣散開。月光在此時此刻漂浮著，白白與我都安靜了，就只是看著月亮。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">8月2日</span><span class="piece-title">與安靜無關的謎語</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>因為想要接受混亂想法的願望，我在黑洞結束之前的流星雨裡潛水，那時超級星際貓，正在下雨的公園裡，追逐著藍紫色的麻雀，對我們來說，遊戲的過程不一定要當作比賽，但依然需要遵守超越（或是不超越）自然的規則。</p>
+        <p>超級星際貓（千分之一等級）在把麻雀送回玄關之後（他家是日式兩層樓的木造房子，庭院有一些排水問題。）招待我到客廳，那裏有暖爐桌和泡好的熱茶，他問我還有什麼問題，我說沒有，這時，音樂撥放的是，周杰倫的安靜。</p>
+        <p>只剩下鋼琴陪我彈了一天，睡著的大提琴，安靜的舊舊的。一陣子之後，我終究屈服了，我說，或許，直到最後，我還是想要有一個人可以理解我的吧。不是我想像中，溫柔的你，也不是那個，如此害怕的自己。</p>
+        <p>美麗的貓用眼神對我說話，直到宇宙的盡頭，答案永遠都與問題一起，永遠一起。</p>
+      </div></div>
+    </div>
+
+    <span class="sub-label">橘子</span>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月9日</span><span class="piece-title">橘子</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>橘子每次感覺到孤獨的時候，或許都不是孤獨的。光是在她住的社區裡面，至少就有十五或十六人與她有類似的心情。但若仔細看進每個人孤獨的樣貌，仍然會發現絕對的不同。沒錯，每個人都是獨一無二的孤獨。</p>
+        <p>每次那樣的心情發酵時，為了轉移注意力，她會去尋找合適的歌單，覺得非得要找到才行。</p>
+        <p>橘子不停地重新整理。首頁上，有著各式各樣的情境、地點。不同的 lofi hip-hop 歌單。夜晚的城市樓頂、韓國的咖啡館，下雨的清晨和夏日的海。</p>
+        <p>橘子不停地重新整理。希望大數據可以推薦一段命中注定的樂曲。找到之後她要放到睡著。睡醒之後繼續活下去。</p>
+        <p>為什麼？是為了分心然後忘記。忘記什麼？忘記自己。為什麼要忘記自己？因為沒辦法接受。接受什麼？現在的自己。為什麼沒辦法？因為過去。但她不想繼續追究了，她會開始想到未來的事。</p>
+        <p>橘子想著，若睡不著，還可以算數學，用等差數列換算等比，或是思考哲學問題來分心，關於什麼是想法？嘗試了解，關於想法只是想法。感覺感覺。區分感覺與被感覺。還有是誰在想著這些問題？那是無法用語言述說的迷。</p>
+        <p>橘子發現，無論是橘子，還是橘子的世界，都是由很多想法，再加上很多感覺組成的。那麼究竟有多少想法和感覺？要多少就有多少。她回答自己。因為那是一個幻想世界。橘子就活在幻想世界裡。</p>
+        <p>橘子想像，橘子的故事已經結束了。一切都結束了那樣的心情。但她還是在那裡。一直在那裡。</p>
+        <p>推薦歌單自動撥放，先是凌晨兩點新鮮的空氣，之後是咖啡爵士混合和吉普力精選BGM，和冬日大雪的森林，不斷燃燒的火焰搭配著弦樂器。音樂的變化與幻想世界的情境一樣，無窮無盡。</p>
+        <p>在幻想世界裡，我與橘子一起，穿越概念與想法，在現實的邊界，發現幻想裡面還有幻想，就像是沒有中心的漩渦，旋轉，手牽著手。我們在一片寂靜裡。</p>
+      </div></div>
+    </div>
+
+    <span class="sub-label">其他</span>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">2月17日</span><span class="piece-title">米米</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>米米習慣在飛行之前將翅膀放進抽屜裡，放在鉛筆盒後面，排列整齊，然後靠著牆倒立。</p>
+        <p>那裡是上下顛倒的世界，他感受血液流向額頭，胸骨與脊椎被拉扯著，就像要回到漩渦的中央一樣。</p>
+        <p>這種感覺他體驗過，那時他被上昇氣流擁抱著，往沒有盡頭的天空飛去，那裡沒有氧氣，也沒有恐懼。</p>
+        <p>然後風停下來，他下墜，雲後面有城市的光，那裡有無數個，空的房間。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">3月12日</span><span class="piece-title">鴿子</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>繞著四十六號大樓西側飛行，大概需要十二分鐘。天空霧濛濛的。好像剛下過雨。應該要搭電梯，但我不喜歡那個電梯接待員。那紅色短褲讓我有些不自在。哨音響起。被攔了下來。他要我交出飛行執照但我沒帶。接下來的對話很瑣碎。總之我被開了單。離開前他說爪甲過長已經違規，但這次先給警告就算了。我不喜歡鴿子。但那也沒什麼好說的。</p>
+        <p>電梯接待員沉默著。七十二樓謝謝。我說。</p>
+        <p>在飛行站等待的空檔。用爪子撕開菸草的包裝紙，拿出火柴點菸。</p>
+        <p>一對母子在不遠處竊竊私語，他們的臉曬得黑黑的，好像剛從什麼很遠的地方旅行回來。從身體姿勢看來，他們對話似乎不是很愉快。母親將全身的重量都放在椅上。兒子向母親問了一個問題，然後母親將雙手攤開，擺出無奈的表情。兒子眼睛則看向左邊無人的空間。他棉褲的毛線垂落在地板。</p>
+        <p>我想像著他們的對話，大概是：總之，我沒有什麼想說的話，我想說的話都已經說過了。那麼，你又想要聽什麼呢？這時她看向我。我別開視線。想起以前的事。那時我更常受傷。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">5月10日</span><span class="piece-title">自由</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>自由走在街上，已經習慣了他的生活，不去介意別人的生活，那是他的自由。</p>
+        <p>那天，他對自己說，他一點都不知道別人的生活，因為生活充滿著無限個細節，身為有限的他，連他自己的生活，也只能知道其中一些些，例如預約牙醫，吃粥，做愛，閱讀新聞，在慢跑機上面慢跑，睡前要吃兩顆史蒂諾斯，那是他的生活。他的正常生活。</p>
+        <p>正常是不覺得不正常，是在無限細節之間穿梭。青春期的他整天想著線上遊戲的事情，那時他覺得自己線上遊戲的角色比自己真實。</p>
+        <p>現在的他也一樣，只是他忘記了樂趣在哪裡，每天在方格子裡面打電話，傳訊息，處理著進出口的貨單，聯絡廠商，企劃預算。</p>
+        <p>一切都很正常，或者有時候不太正常，漸漸地他喪失判斷的能力，因為他並不是一直都記得什麼是正常的感覺，隨著生活，隨著火焰升起熄滅。</p>
+        <p>自由在屋頂抽菸，想著，自己或許擅長好像了解著各種事情，又同時記得對於細節的不了解，例如香菸的包裝紙的生產方式，打火機如何維持穩定不燒黑手心，這些與那些，日常，他習以為常卻又不了解的日常。</p>
+        <p>自由別好名牌，去搭電梯，他不介意別人的想法，與他如何不一樣，那是他們的自由。</p>
+      </div></div>
+    </div>
+
+    <div class="piece-item">
+      <div class="piece-header" onclick="toggle(this)">
+        <div class="piece-meta"><span class="piece-date">10月20日</span><span class="piece-title">雲</span></div>
+        <span class="piece-toggle">+</span>
+      </div>
+      <div class="piece-body"><div class="piece-content">
+        <p>早晨，整理翅膀，點燃香菸，打開冰箱，喝剩下的麥茶。</p>
+        <p>開電視，轉到動物星球頻道，他將便條紙，貼滿茶几的周圍，然後開始練習遺忘。</p>
+        <p>世界的位置，在快速與緩慢之間的相對，他想像如何思考，思考如何想像，然後在起身的同時出發。</p>
+        <p>閉上眼睛，跟著音樂，深呼吸，開始一天的飛行。</p>
+        <p>在無風無雨的街道，所有白雲的形狀在變化著。世界的氣味，被他遺落在，藍色的記憶裡。</p>
+        <p>其中一張便條紙上寫著，注意保暖，氣溫轉涼。</p>
+      </div></div>
+    </div>
+
+  </div>
+
+  <nav class="page-nav">
+    <a href="archive-wo.html">← 我</a>
+    <a href="archive-colors.html">顏色 →</a>
+  </nav>
+</div>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  const body = header.nextElementSibling;
+  const isOpen = item.classList.contains('open');
+  const siblings = item.parentElement.querySelectorAll('.piece-item.open');
+  siblings.forEach(s => {
+    if (s !== item) {
+      s.classList.remove('open');
+      s.querySelector('.piece-body').classList.remove('open');
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    body.classList.remove('open');
+  } else {
+    item.classList.add('open');
+    body.classList.add('open');
+    setTimeout(() => { header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  }
+}
+</script>
+</body>
+</html>
