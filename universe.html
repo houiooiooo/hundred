@@ -446,7 +446,6 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-
 </div>
 
 <script>
-const API_KEY = 'YOUR_API_KEY_HERE';
 const MAX_TURNS = 10;
 
 let currentGod = null;
@@ -491,11 +490,11 @@ async function startSummon() {
   bridgeText.textContent = '載入中⋯⋯';
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        
         max_tokens: 150,
         messages: [
           { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
@@ -532,11 +531,11 @@ async function selectGod(name, num, vibe) {
 
   try {
     const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[name] || `你是${name}，十一宇宙的詩神。`);
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        
         max_tokens: 200,
         messages: [
           { role: 'system', content: systemPrompt + '\n\n用一到三句話作為你的開場。完全符合你的語氣與本質。' },
@@ -574,11 +573,11 @@ async function sendMessage() {
 
   try {
     const systemPrompt = TONE_ANCHOR + '\n\n' + (GOD_PROMPTS[currentGod] || `你是${currentGod}，十一宇宙的詩神。`);
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('https://11universe.monbaician.workers.dev', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${API_KEY}` },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        
         max_tokens: 300,
         messages: [
           { role: 'system', content: systemPrompt },
@@ -612,6 +611,10 @@ function changeGod() {
   document.getElementById('god-select-screen').style.display = 'block';
   conversationHistory = [];
   turnCount = 0;
+  document.getElementById('chat-input').disabled = false;
+  document.getElementById('chat-send').disabled = false;
+  document.getElementById('chat-input').value = '';
+  updateCounter();
 }
 
 function addMessage(text, type, name) {
