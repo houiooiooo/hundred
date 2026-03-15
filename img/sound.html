@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聲音 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#e8e4df;font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:#e8e4df;color:var(--ink)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:#5a5650;text-decoration:none;transition:color .3s;}
+.back:hover{color:#e8e4df}
+.page{max-width:900px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;letter-spacing:.25em;color:#e8e4df;margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:#5a5650;text-transform:uppercase;display:block;margin-bottom:2rem;}
+.divider{width:100%;height:1px;background:#2a2a2a;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.section{margin-top:5rem;opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
+.section.visible{opacity:1;transform:translateY(0);}
+.section-label{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#5a5650;margin-bottom:1rem;display:block;}
+.section-title{font-size:1.3rem;font-weight:300;letter-spacing:.15em;color:#e8e4df;padding-bottom:1rem;border-bottom:1px solid #2a2a2a;margin-bottom:2rem;}
+
+.bio{font-size:1rem;line-height:2.3;color:#b0a99f;max-width:680px;}
+.bio p{margin-bottom:1.5rem;}
+.bio .en{font-family:'Cormorant Garamond',serif;font-size:.92rem;color:#5a5650;font-style:italic;line-height:1.9;}
+
+.genre-list{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;}
+.genre-tag{border:1px solid #2a2a2a;padding:.3rem .9rem;font-family:'Cormorant Garamond',serif;font-size:.78rem;letter-spacing:.1em;color:#7a756f;}
+
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:1rem;}
+.event-item{aspect-ratio:1;overflow:hidden;background:#111;position:relative;}
+.event-item img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .4s;}
+.event-item:hover img{opacity:1;}
+.event-placeholder{aspect-ratio:1;border:1px dashed #2a2a2a;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#3a3530;font-style:italic;text-align:center;padding:1rem;}
+
+.soundcloud-wrap{margin-top:2rem;}
+.soundcloud-wrap iframe{width:100%;border:none;}
+
+.links-block{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+.ext-link{display:inline-block;padding:.8rem 2rem;border:1px solid #5a5650;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#e8e4df;transition:all .4s;}
+.ext-link:hover{background:#e8e4df;color:var(--ink);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .back{left:1.5rem}
+  .page{padding:6rem 1.5rem 8rem}
+  .events-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<a href="index.html" class="back">← Index</a>
+<div class="page">
+
+  <header class="page-header">
+    <h1 class="page-title">聲音</h1>
+    <span class="page-title-en">Sound</span>
+  </header>
+  <div class="divider"></div>
+
+  <section class="section">
+    <span class="section-label">About</span>
+    <h2 class="section-title">DJ · 百 / loo</h2>
+    <div class="bio">
+      <p>2023年開始放歌。與恩師 Wayland（已故）一起辦活動，後創立 Heart of U，結合新媒體藝術家探索電音與身體、空間、意識的邊界。</p>
+      <p class="en">Playing since 2023. Began with the late DJ Wayland — teacher and collaborator. Founded Heart of U, a collective bringing together new media artists to explore the edges of electronic music, body, and space.</p>
+    </div>
+    <div class="genre-list">
+      <span class="genre-tag">Ambient</span>
+      <span class="genre-tag">Techno</span>
+      <span class="genre-tag">Drum &amp; Bass</span>
+      <span class="genre-tag">Fourth World</span>
+      <span class="genre-tag">Experimental</span>
+      <span class="genre-tag">Film Score</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Collective</span>
+    <h2 class="section-title">Heart of U</h2>
+    <div class="bio">
+      <p>結合新媒體藝術家、舞者、視覺藝術家，探索電音活動的可能性。嘗試不同聲響的邊界，在音樂、身體與空間之間尋找共振。</p>
+      <p class="en">A collective of new media artists, dancers, and visual creators — exploring the possibilities of electronic music events, finding resonance between sound, body, and space.</p>
+    </div>
+    <div class="links-block">
+      <a href="https://www.instagram.com/heart_of_uni" target="_blank" class="ext-link">Heart of U IG →</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Events</span>
+    <h2 class="section-title">活動紀錄</h2>
+   <div class="events-grid">
+  <div class="event-item"><img src="img/sound/s1.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s2.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s3.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s4.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s5.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s6.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s7.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s8.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s9.jpg" alt="活動"></div>
+  <div class="event-item"><img src="img/sound/s10.jpg" alt="活動"></div>
+</div>
+    <p style="margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-size:.78rem;color:#3a3530;font-style:italic;">將活動海報存至 img/sound/ 資料夾並更新圖片路徑</p>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Listen</span>
+    <h2 class="section-title">SoundCloud</h2>
+    <div class="soundcloud-wrap">
+  <iframe width="100%" height="450" scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/houiooiooo&color=%23e8e4df&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+</div>
+    <div class="links-block">
+      <a href="https://on.soundcloud.com/itLSqcNf90cRoO0EW2" target="_blank" class="ext-link">Listen on SoundCloud →</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
