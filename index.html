@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>百 Hundred — 刺青 · 文字 · 塔羅 · 意識</title>
-<meta name="description" content="百 Hundred — 水墨刺青師、寫作者、塔羅師、十一宇宙建造者。台北。">
+<title>百 Hundred — 水墨刺青・文字・塔羅・台北</title>
+<meta name="description" content="百 Hundred（侯百謙）— 台北水墨轉譯刺青師、文學寫作者、塔羅諮詢師。將東方筆墨邏輯直接轉譯於皮膚，每件作品皆為一次性即興創作。">
+<meta property="og:title" content="百 Hundred — 水墨刺青・文字・塔羅・台北">
+<meta property="og:description" content="台北水墨轉譯刺青師、文學寫作者、塔羅諮詢師。將東方筆墨邏輯直接轉譯於皮膚。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/shoulder-bird.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -32,14 +36,12 @@ section{padding:8rem 3rem;max-width:1200px;margin:0 auto}
 .section-title-zh{font-size:clamp(2rem,4vw,3.5rem);font-weight:300;letter-spacing:.2em;color:var(--ink);margin-bottom:.5rem}
 .section-title-en{font-family:'Cormorant Garamond',serif;font-size:clamp(.85rem,1.2vw,1rem);letter-spacing:.25em;color:var(--grey);text-transform:uppercase;margin-bottom:3rem}
 
-/* About with portrait */
 .about-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .about-text p{font-size:.95rem;font-weight:400;line-height:2.1;margin-bottom:1.5rem}
 .about-text .en{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--grey);line-height:1.9}
 .about-right{display:flex;flex-direction:column;gap:3rem}
 .portrait-wrap{width:100%;max-width:320px}
 .portrait-wrap img{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(30%)}
-.about-details{}
 .about-detail-item{margin-bottom:1.5rem}
 .about-detail-label{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:.3rem}
 .about-detail-value{font-size:.9rem;font-weight:400;line-height:1.8}
@@ -60,6 +62,31 @@ section{padding:8rem 3rem;max-width:1200px;margin:0 auto}
 .work-link a{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);text-decoration:none;border-bottom:1px solid var(--light-grey);transition:border-color .3s,color .3s}
 .work-link a:hover{color:var(--ink);border-color:var(--ink)}
 
+/* CTA after work */
+.work-cta-block{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--light-grey);text-align:center}
+.work-cta-label{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--grey);margin-bottom:1.5rem;font-style:italic}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.cta-btn{display:inline-block;padding:.7rem 1.8rem;border:1px solid var(--ink);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);transition:all .4s}
+.cta-btn:hover{background:var(--ink);color:var(--paper)}
+
+/* FAQ */
+.faq-block{text-align:left;max-width:700px;margin:0 auto}
+.faq-title{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:1.5rem}
+.faq-item{border-bottom:1px solid var(--light-grey);padding:1.2rem 0}
+.faq-item:first-of-type{border-top:1px solid var(--light-grey)}
+.faq-q{font-size:.9rem;font-weight:500;margin-bottom:.4rem;letter-spacing:.03em}
+.faq-a{font-size:.88rem;color:var(--grey);line-height:1.9}
+.faq-a-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--light-grey);line-height:1.8;margin-top:.2rem;font-style:italic}
+
+/* Steps */
+.steps-block{max-width:700px;margin:3rem auto 0;text-align:left}
+.steps-title{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:1.5rem}
+.step-item{display:flex;gap:1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--light-grey)}
+.step-item:first-of-type{border-top:1px solid var(--light-grey)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--light-grey);letter-spacing:.1em;flex-shrink:0;padding-top:.15rem}
+.step-text{font-size:.88rem;line-height:1.9}
+.step-text-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--grey);line-height:1.8;margin-top:.2rem;font-style:italic}
+
 .studio-banner{width:100%;max-width:none;margin:0;padding:0;height:50vh;overflow:hidden}
 .studio-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
 
@@ -69,36 +96,32 @@ section{padding:8rem 3rem;max-width:1200px;margin:0 auto}
 .writing-section .section-title-zh{color:var(--paper)}
 .writing-section .section-title-en{color:var(--grey)}
 .writing-excerpt{max-width:680px;margin:2rem 0}
-.writing-excerpt p{font-size:.95rem;font-weight:300;line-height:2.2;margin-bottom:1.5rem;opacity:.85}
+.writing-excerpt p{font-size:1.05rem;font-weight:300;line-height:2.4;margin-bottom:1.5rem;opacity:.85}
 .writing-excerpt .en{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--grey);line-height:1.9;font-style:italic}
 .btn-outline{display:inline-block;margin-top:2rem;padding:.8rem 2.5rem;border:1px solid var(--grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--paper);transition:all .4s}
 .btn-outline:hover{background:var(--paper);color:var(--ink)}
+.writing-controls{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.shuffle-btn{background:none;border:1px solid rgba(245,242,237,.2);color:rgba(245,242,237,.5);padding:.4rem 1rem;font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.shuffle-btn:hover{border-color:rgba(245,242,237,.5);color:var(--paper)}
 
 .sound-section{padding:6rem 3rem;max-width:1200px;margin:0 auto;text-align:center}
-.sound-desc{margin-top:1.5rem;font-size:.9rem;font-weight:300;color:var(--grey);line-height:1.8}
-.sound-link{display:inline-block;margin-top:2rem;padding:.8rem 2.5rem;border:1px solid var(--ink);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);transition:all .4s}
+.sound-desc{margin-top:1.5rem;font-size:.9rem;font-weight:300;color:var(--grey);line-height:2;max-width:600px;margin-left:auto;margin-right:auto}
+.sound-desc-en{font-family:'Cormorant Garamond',serif;font-size:.88rem;color:var(--light-grey);line-height:1.9;max-width:600px;margin:1rem auto 0;font-style:italic}
+.sound-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+.sound-link{display:inline-block;padding:.8rem 2.5rem;border:1px solid var(--ink);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);transition:all .4s}
 .sound-link:hover{background:var(--ink);color:var(--paper)}
 
-.universe-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.universe-rules{list-style:none;counter-reset:rules}
-.universe-rules li{counter-increment:rules;padding:1.5rem 0;border-bottom:1px solid var(--light-grey);font-weight:400;font-size:.9rem;line-height:1.8}
-.universe-rules li::before{content:counter(rules,decimal-leading-zero);font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.15em;color:var(--grey);display:block;margin-bottom:.5rem}
-.en-rule{font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--grey);display:block;margin-top:.3rem}
-.universe-desc p{font-size:.95rem;font-weight:400;line-height:2.1;margin-bottom:1.5rem}
-.universe-desc .en{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--grey);line-height:1.9}
-
-/* Tarot */
 .tarot-section{background:var(--ink);color:var(--paper);padding:8rem 3rem;margin:0;max-width:none}
 .tarot-inner{max-width:1200px;margin:0 auto;text-align:center}
 .tarot-section .section-label{color:var(--grey)}
 .tarot-section .section-title-zh{color:var(--paper)}
 .tarot-section .section-title-en{color:var(--grey)}
-.tarot-info{margin-top:2rem;font-weight:300;font-size:.9rem;line-height:2.2;color:rgba(245,242,237,.7)}
+.tarot-info{margin-top:2rem;font-weight:300;font-size:.9rem;line-height:2.2;color:rgba(245,242,237,.7);max-width:600px;margin-left:auto;margin-right:auto}
 .tarot-price{margin-top:1.5rem;font-size:1.1rem;font-weight:400;color:var(--paper);letter-spacing:.1em}
-.tarot-cta{display:inline-block;margin-top:2.5rem;padding:.8rem 2.5rem;border:1px solid var(--grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--paper);transition:all .4s}
+.tarot-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem}
+.tarot-cta{display:inline-block;padding:.8rem 2.5rem;border:1px solid var(--grey);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--paper);transition:all .4s}
 .tarot-cta:hover{background:var(--paper);color:var(--ink)}
 
-/* Booking */
 .booking-section{text-align:center;padding:10rem 3rem;max-width:1200px;margin:0 auto}
 .booking-info{margin-top:2rem;font-weight:400;font-size:.9rem;line-height:2.2;color:var(--grey)}
 .booking-info a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--light-grey);transition:border-color .3s}
@@ -117,25 +140,16 @@ footer{padding:4rem 3rem;display:flex;justify-content:space-between;align-items:
 .reveal.visible{opacity:1;transform:translateY(0)}
 .vertical-accent{position:fixed;right:2rem;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:'Cormorant Garamond',serif;font-size:.6rem;letter-spacing:.3em;color:var(--light-grey);z-index:50}
 
+/* Lightbox */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.95);z-index:1000;align-items:center;justify-content:center;cursor:pointer}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:absolute;top:2rem;right:2rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-size:1.5rem;cursor:pointer;transition:color .3s;line-height:1}
+.lightbox-close:hover{color:var(--white)}
+
 @keyframes fadeIn{to{opacity:1}}
 @keyframes lineGrow{to{height:80px}}
 
-@media(max-width:768px){
-nav{padding:1rem 1.5rem}.nav-links{gap:1rem}.nav-links a{font-size:.6rem}
-section{padding:5rem 1.5rem}
-.about-content{grid-template-columns:1fr;gap:2rem}
-.portrait-wrap{max-width:260px}
-.work-grid{grid-template-columns:repeat(2,1fr)}
-.writing-section{padding:5rem 1.5rem}
-.tarot-section{padding:5rem 1.5rem}
-.universe-content{grid-template-columns:1fr;gap:2rem}
-.booking-section{padding:6rem 1.5rem}
-.full-image{height:60vh}.studio-banner{height:35vh}
-footer{flex-direction:column;gap:1.5rem;align-items:center}
-.vertical-accent{display:none}
-.sound-section{padding:4rem 1.5rem}
-.booking-buttons{flex-direction:column;align-items:center}
-}
 .calendar-wrap{margin:3rem auto;max-width:380px}
 .calendar-title{font-size:.9rem;font-weight:400;margin-bottom:1.5rem;line-height:1.8}
 .calendar{border:1px solid var(--light-grey);padding:1rem}
@@ -147,9 +161,31 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
 .cal-day.past{color:var(--light-grey)}
 .cal-day.today{border-bottom:2px solid var(--ink)}
 .calendar-hint{margin-top:1rem;font-size:.8rem;color:var(--grey);line-height:1.8}
+
+@media(max-width:768px){
+nav{padding:1rem 1.5rem}.nav-links{gap:1rem}.nav-links a{font-size:.6rem}
+section{padding:5rem 1.5rem}
+.about-content{grid-template-columns:1fr;gap:2rem}
+.portrait-wrap{max-width:260px}
+.work-grid{grid-template-columns:repeat(2,1fr)}
+.writing-section{padding:5rem 1.5rem}
+.tarot-section{padding:5rem 1.5rem}
+.booking-section{padding:6rem 1.5rem}
+.full-image{height:60vh}.studio-banner{height:35vh}
+footer{flex-direction:column;gap:1.5rem;align-items:center}
+.vertical-accent{display:none}
+.sound-section{padding:4rem 1.5rem}
+.booking-buttons{flex-direction:column;align-items:center}
+.cta-buttons{flex-direction:column;align-items:center}
+}
 </style>
 </head>
 <body>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
 
 <div class="vertical-accent">HUNDRED — TAIPEI</div>
 
@@ -157,11 +193,11 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   <a href="#" class="nav-logo">百</a>
   <div class="nav-links">
     <a href="#about">About</a>
+    <a href="#booking">Book</a>
     <a href="#work">Work</a>
     <a href="#writing">Writing</a>
     <a href="#tarot">Tarot</a>
     <a href="#sound">Sound</a>
-    <a href="#booking">Booking</a>
   </div>
 </nav>
 
@@ -172,7 +208,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
 </section>
 
 <div class="full-image">
-  <img src="img/shoulder-bird.jpeg" alt="水墨刺青" style="object-position:center 70%">
+  <img src="img/shoulder-bird.jpeg" alt="水墨刺青" style="object-position:center 70%" loading="lazy">
 </div>
 
 <!-- About -->
@@ -184,21 +220,25 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   </div>
   <div class="about-content reveal">
     <div class="about-text">
-      <p>侯百謙（百）。刺青師、寫作者、塔羅師、十一宇宙的建造者。</p>
+      <p>侯百謙（百）。刺青師、寫作者、塔羅師，跨媒體創作者。</p>
       <p>社運記者出身，帶著田野訓練和底層勞動的視角進入創作。現以水墨邏輯刺青——不是模仿水墨的視覺效果，而是將筆墨的運筆邏輯直接轉譯到皮膚上。每一件作品皆為即興與筆感的一次性創作。</p>
       <p>同時持續文學寫作，已累積近十萬字散文與小說、詩作，並建構了一套名為「十一宇宙」的創作系統。</p>
       <p class="en">Hou Bai-Qian (Hundred). Tattoo artist, writer, tarot reader, builder of the Eleven Universe. A former social movement journalist who entered creation through fieldwork and labor. His tattoo practice translates the brushwork logic of East Asian ink wash directly onto skin — each piece is a one-time improvisation of gesture and ink.</p>
     </div>
     <div class="about-right">
       <div class="portrait-wrap">
-        <img src="img/portrait.jpeg" alt="百謙">
+        <img src="img/portrait.jpeg" alt="百謙" loading="lazy">
       </div>
       <div class="about-details">
         <div class="about-detail-item"><p class="about-detail-label">Location</p><p class="about-detail-value">台北 Taipei</p></div>
         <div class="about-detail-item"><p class="about-detail-label">Studio</p><p class="about-detail-value">百 Hundred 刺青<br>Counter 9 Tattoo 九號櫃檯</p></div>
         <div class="about-detail-item"><p class="about-detail-label">Approach</p><p class="about-detail-value">水墨轉譯 Ink Wash Translation<br>即興運筆 Improvisational Brushwork</p></div>
         <div class="about-detail-item"><p class="about-detail-label">Background</p><p class="about-detail-value"><a href="https://www.eventsinfocus.org/news/2997" target="_blank">社運記者 — 焦點事件 2014–2019</a><br>塔羅諮詢師 — 西門町台北貓塔羅駐店<br>文學寫作 Since 2020<br>刺青實踐 Since 2023</p></div>
-        <div class="about-detail-item"><p class="about-detail-label">Contact</p><p class="about-detail-value"><a href="https://instagram.com/houiooiooo" target="_blank">@houiooiooo</a></p></div>
+        <div class="about-detail-item"><p class="about-detail-label">Contact</p><p class="about-detail-value">
+          <a href="https://instagram.com/houiooiooo" target="_blank">@houiooiooo</a><br>
+          <a href="https://line.me/ti/p/@451indkb" target="_blank">Line 官方帳號 @451indkb</a><br>
+          <a href="mailto:monbaician@gmail.com">monbaician@gmail.com</a>
+        </p></div>
       </div>
     </div>
   </div>
@@ -210,62 +250,107 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
     <p class="section-label">02</p>
     <h2 class="section-title-zh">作品</h2>
     <p class="section-title-en">Tattoo · Ink Painting</p>
-<div style="text-align: right; margin-bottom: 1rem;">
-  <button onclick="refreshWorks()" style="background: none; border: 1px solid var(--light-grey); color: var(--grey); padding: 5px 15px; cursor: pointer; font-family: 'Cormorant Garamond', serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s;">
-    Shuffle Works ↺
-  </button>
-</div>
+    <div style="text-align:right;margin-bottom:1rem;">
+      <button onclick="refreshWorks()" style="background:none;border:1px solid var(--light-grey);color:var(--grey);padding:5px 15px;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;transition:all .3s;">Shuffle Works ↺</button>
+    </div>
   </div>
-  <div class="work-grid reveal" id="work-grid">
-  </div>
- <script>
-// 這是一個可以被按鈕點擊執行的「功能箱」
-function refreshWorks() {
+  <div class="work-grid reveal" id="work-grid"></div>
+
+  <script>
+  function refreshWorks() {
     var grid = document.getElementById('work-grid');
-    
-    // 1. 設定總張數（你有幾張就寫幾張）
-    var totalWorks = 24; 
-    
-    // 2. 設定副檔名（已確認為 jpg）
-    var fileExtension = '.jpg'; 
-
+    var totalWorks = 24;
+    var fileExtension = '.jpg';
     var workIndices = [];
-
-    // 建立數字清單 [1, 2, 3...24]
-    for (var i = 1; i <= totalWorks; i++) {
-      workIndices.push(i);
-    }
-
-    // 洗牌邏輯：隨機打亂數字順序
+    for (var i = 1; i <= totalWorks; i++) { workIndices.push(i); }
     workIndices.sort(function() { return Math.random() - 0.5; });
-
-    // 設定顯示數量（目前設定全部 24 張都顯示）
-    var displayCount = Math.min(9, workIndices.length); 
-    
-    // 清空網頁上舊的作品圖片
+    var displayCount = Math.min(9, workIndices.length);
     grid.innerHTML = '';
-
-    // 依照隨機後的順序，重新生成圖片並放進網格
     for (var k = 0; k < displayCount; k++) {
       var num = workIndices[k];
       var div = document.createElement('div');
       div.className = 'work-item';
-      
-      // 指向 img/works/ 資料夾
-      div.innerHTML = '<img src="img/works/' + num + fileExtension + '" alt="作品' + num + '">' +
-                      '<div class="work-item-overlay"><span>作品 ' + num + '</span></div>';
+      var src = 'img/works/' + num + fileExtension;
+      div.innerHTML = '<img src="' + src + '" alt="作品' + num + '" loading="lazy"><div class="work-item-overlay"><span>作品 ' + num + '</span></div>';
+      div.querySelector('img').addEventListener('click', (function(s){ return function(){ openLightbox(s); }; })(src));
       grid.appendChild(div);
     }
-}
+  }
+  refreshWorks();
+  </script>
 
-// 重要：這行是為了讓網頁一打開時，就先自動跑一次（否則一開始作品區會是空的）
-refreshWorks();
-</script>
   <div class="work-link reveal"><a href="https://instagram.com/houiooiooo" target="_blank">View all on Instagram →</a></div>
+
+  <!-- 有興趣？ -->
+  <div class="work-cta-block reveal">
+    <p class="work-cta-label">有興趣？</p>
+    <div class="cta-buttons">
+      <a href="https://instagram.com/houiooiooo" target="_blank" class="cta-btn">Instagram</a>
+      <a href="https://line.me/ti/p/@451indkb" target="_blank" class="cta-btn">Line</a>
+      <a href="mailto:monbaician@gmail.com" class="cta-btn">Email</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-block reveal">
+      <p class="faq-title">常見問題 FAQ</p>
+
+      <div class="faq-item">
+        <p class="faq-q">風格是什麼？</p>
+        <p class="faq-a">寫意當代水墨、嶺南派風格水墨轉譯刺青，也接書法字、中英文字體、線條插畫風格。</p>
+        <p class="faq-a-en">Contemporary ink wash tattoo — translated from East Asian brushwork logic. Also available: calligraphy, Chinese / English typography, and illustrative line work.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">價格範圍？</p>
+        <p class="faq-a">十公分以下字體、黑白線條小圖僅收開針費 NT$3,000。十公分以上來店現場評估討論。</p>
+        <p class="faq-a-en">Lettering and small line work under 10cm — from NT$3,000. Larger pieces quoted in person.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">可以帶圖嗎？</p>
+        <p class="faq-a">可以。原則上接水墨、中英文字體、插畫風格。如需寫實、美式等風格，九號櫃台內有其他刺青師可以轉介。</p>
+        <p class="faq-a-en">Yes. Ink wash, typography, and illustration styles are preferred. For realism or American traditional, other artists at Counter 9 can be referred.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">在哪裡刺青？</p>
+        <p class="faq-a">九號櫃台刺青店，新北市新莊區西盛街441號二樓。<br>
+        <a href="https://share.google/MJEUCnfQ6ItuLbtBF" target="_blank" style="color:var(--grey);border-bottom:1px solid var(--light-grey);">Google Maps →</a>　
+        <a href="https://www.instagram.com/counter_9_tattoo/" target="_blank" style="color:var(--grey);border-bottom:1px solid var(--light-grey);">九號櫃台 IG →</a></p>
+        <p class="faq-a-en">Counter 9 Tattoo Studio, 2F, No. 441, Xisheng St., Xinzhuang Dist., New Taipei City.</p>
+      </div>
+    </div>
+
+    <!-- 預約步驟 -->
+    <div class="steps-block reveal">
+      <p class="steps-title">預約步驟 How to Book</p>
+      <div class="step-item">
+        <span class="step-num">01</span>
+        <div>
+          <p class="step-text">透過 IG 私訊、官方 Line 或 email：monbaician@gmail.com 聯繫</p>
+          <p class="step-text-en">Contact via Instagram DM, Line official account, or email: monbaician@gmail.com</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">02</span>
+        <div>
+          <p class="step-text">提供刺青部位、大小（幾 cm）、想法需求，或合作創作、認領現有圖案</p>
+          <p class="step-text-en">Share the body placement, size (cm), and your idea — or explore a collaborative design</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">03</span>
+        <div>
+          <p class="step-text">討論後報價，支付訂金，預約日期來店完成刺青作品</p>
+          <p class="step-text-en">Discuss, receive a quote, pay deposit, and schedule your appointment</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Studio Wall -->
-<div class="studio-banner"><img src="img/studio-wall.jpeg" alt="工作室"></div>
+<div class="studio-banner"><img src="img/studio-wall.jpeg" alt="工作室" loading="lazy"></div>
 
 <!-- Writing -->
 <section class="writing-section" id="writing">
@@ -276,11 +361,13 @@ refreshWorks();
       <p class="section-title-en">Writing</p>
     </div>
     <div class="writing-excerpt reveal">
-      <p>在公園的側邊，鄰居們將累積多日的垃圾拿出來等車來，不久後，一貫的《給愛麗絲》響起，廣播提醒著回收是資源，亂丟是垃圾。等待的過程一切都井然有序，結束後阿姨們坐在鐵椅上，敲著膝蓋聊天。他戴著耳機，裡面沒有音樂。散步回家。</p>
-      <p>這些例行公事，有時會讓他想起剩餘的一些些感情，和曾經與誰一起的記憶。但他的世界已經沒有垃圾會被亂丟，沒有資源可以回收。</p>
+      <p id="writing-quote">載入中⋯</p>
       <p class="en">His prose documents the texture of being alive — childhood, solitude, desire, and the weight of things that have already passed. Nearly 100,000 words of literary prose, written not for publication, but for the completeness of living.</p>
     </div>
-    <div class="reveal"><a href="writing.html" class="btn-outline">Read More</a></div>
+    <div class="writing-controls reveal">
+      <a href="writing.html" class="btn-outline">Read More</a>
+      <button class="shuffle-btn" onclick="shuffleQuote()">換一句 ↺</button>
+    </div>
   </div>
 </section>
 
@@ -292,13 +379,15 @@ refreshWorks();
       <h2 class="section-title-zh">塔羅</h2>
       <p class="section-title-en">Tarot Reading</p>
       <p class="tarot-info">
-        於西門町台北貓塔羅駐店，面對面服務百位諮詢者。<br>
-        現提供線上與實體塔羅諮詢。<br><br>
-        Two years of in-person tarot practice in Ximending, Taipei.<br>
-        Hundreds of readings. Now available online and in person.
+        我用塔羅作為工具，不給答案，給觀點。每個人都是自己生命的主人——我在解牌過程中扮演另一個意識，讓你看見自己意識不到的角度。<br><br>
+        <em style="font-family:'Cormorant Garamond',serif;font-size:.85rem;color:rgba(245,242,237,.5);">Tarot as a tool — not for answers, but for perspective. I become another consciousness in the reading, offering the angle you cannot see from inside yourself.</em><br><br>
+        於西門町台北貓塔羅駐店，面對面服務百位諮詢者。現提供線上與實體塔羅諮詢。
       </p>
       <p class="tarot-price">15 分鐘 — NT$400</p>
-      <a href="https://line.me/ti/p/o5Do5sV27j" target="_blank" class="tarot-cta">Book via Line</a>
+      <div class="tarot-buttons">
+        <a href="https://line.me/ti/p/@451indkb" target="_blank" class="tarot-cta">Book via Line</a>
+        <a href="tarot.html" class="tarot-cta">了解更多</a>
+      </div>
     </div>
   </div>
 </section>
@@ -309,8 +398,12 @@ refreshWorks();
     <p class="section-label">05</p>
     <h2 class="section-title-zh">聲音</h2>
     <p class="section-title-en">Sound</p>
-    <p class="sound-desc">DJ sets · Techno · 節奏與意識的交界</p>
-    <a href="https://on.soundcloud.com/itLSqcNf90cRoO0EW2" target="_blank" class="sound-link">Listen on SoundCloud →</a>
+    <p class="sound-desc">2023年開始放歌。與恩師 Wayland（已故）一起辦活動，後創立 Heart of U，結合新媒體藝術家探索電音與身體、空間、意識的邊界。曲風橫跨 ambient、techno、drum &amp; bass、fourth world 與實驗音樂。</p>
+    <p class="sound-desc-en">Playing since 2023. Began with the late DJ Wayland — teacher and collaborator. Founded Heart of U, a collective exploring the edges of electronic music, body, and space. Sounds: ambient, techno, drum &amp; bass, fourth world, and the experimental.</p>
+    <div class="sound-links">
+      <a href="https://on.soundcloud.com/itLSqcNf90cRoO0EW2" target="_blank" class="sound-link">Listen on SoundCloud →</a>
+      <a href="sound.html" class="sound-link">了解更多</a>
+    </div>
   </div>
 </section>
 
@@ -323,42 +416,44 @@ refreshWorks();
     <p class="booking-info">
       水墨轉譯刺青｜僅限預約<br>
       塔羅諮詢｜線上或實體｜15分鐘 NT$400<br><br>
-      Ink wash tattoo · Limited availability · By appointment only<br>
+      Ink wash tattoo · By appointment only<br>
       Tarot reading · Online or in person · 15 min NT$400
-    </p><div class="calendar-wrap">
-  <p class="calendar-title">2026 年 3 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — March 2026</span></p>
-  <div class="calendar">
-    <div class="cal-header">
-      <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+    </p>
+    <div class="calendar-wrap">
+      <p class="calendar-title">2026 年 3 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — March 2026</span></p>
+      <div class="calendar">
+        <div class="cal-header">
+          <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+        </div>
+        <div class="cal-body" id="cal-body"></div>
+      </div>
+      <p class="calendar-hint">點選綠色日期透過 Line 預約<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;">Tap a green date to book via Line</span></p>
     </div>
-    <div class="cal-body" id="cal-body"></div>
-  </div>
-  <p class="calendar-hint">點選綠色日期透過 Line 預約<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;">Tap a green date to book via Line</span></p>
-</div>
-<script>
-(function(){
-  var available=[22,23,27,28,29,30];
-  var year=2026,month=3;
-  var firstDay=new Date(year,month-1,1).getDay();
-  var daysInMonth=new Date(year,month,0).getDate();
-  var today=new Date();
-  var todayDate=(today.getFullYear()===year&&today.getMonth()===month-1)?today.getDate():-1;
-  var body=document.getElementById('cal-body');
-  for(var i=0;i<firstDay;i++){var empty=document.createElement('div');empty.className='cal-day';body.appendChild(empty);}
-  for(var d=1;d<=daysInMonth;d++){
-    var el=document.createElement('div');
-    el.className='cal-day';
-    el.textContent=d;
-    if(available.indexOf(d)!==-1&&d>=todayDate){el.className='cal-day active';el.onclick=function(){window.open('https://line.me/ti/p/o5Do5sV27j','_blank');};}
-    else if(d<todayDate){el.className='cal-day past';}
-    if(d===todayDate)el.className+=' today';
-    body.appendChild(el);
-  }
-})();
-</script>
+    <script>
+    (function(){
+      var available=[22,23,27,28,29,30];
+      var year=2026,month=3;
+      var firstDay=new Date(year,month-1,1).getDay();
+      var daysInMonth=new Date(year,month,0).getDate();
+      var today=new Date();
+      var todayDate=(today.getFullYear()===year&&today.getMonth()===month-1)?today.getDate():-1;
+      var body=document.getElementById('cal-body');
+      for(var i=0;i<firstDay;i++){var empty=document.createElement('div');empty.className='cal-day';body.appendChild(empty);}
+      for(var d=1;d<=daysInMonth;d++){
+        var el=document.createElement('div');
+        el.className='cal-day';
+        el.textContent=d;
+        if(available.indexOf(d)!==-1&&d>=todayDate){el.className='cal-day active';el.onclick=function(){window.open('https://line.me/ti/p/@451indkb','_blank');};}
+        else if(d<todayDate){el.className='cal-day past';}
+        if(d===todayDate)el.className+=' today';
+        body.appendChild(el);
+      }
+    })();
+    </script>
     <div class="booking-buttons">
       <a href="https://instagram.com/houiooiooo" target="_blank" class="booking-cta">Instagram</a>
-      <a href="https://line.me/ti/p/o5Do5sV27j" target="_blank" class="booking-cta">Line</a>
+      <a href="https://line.me/ti/p/@451indkb" target="_blank" class="booking-cta">Line</a>
+      <a href="mailto:monbaician@gmail.com" class="booking-cta">Email</a>
     </div>
   </div>
 </section>
@@ -373,6 +468,56 @@ refreshWorks();
   </div>
 </footer>
 
+<!-- Lightbox -->
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLightbox(); });
+</script>
+
+<!-- Writing random quotes -->
+<script>
+var quotes = [
+  '橋下，拍賣結束後的清晨，血在水桶裡，與地上的污泥混在一起。',
+  '昨天想起她時，是關於鞦韆的事。晚上我們去公園散步。那時已接近午夜，白天下過雨，公園的空氣冷冷的。',
+  '在公園的側邊，鄰居們將累積多日的垃圾拿出來等車來，不久後，一貫的《給愛麗絲》響起。',
+  '過去的記憶飄浮在空氣裡，呼吸起來沒有味道，他每天都會懷疑一陣子關於過去是不是真實存在著。',
+  '她醒來後發現沒關係了。過去幾個禮拜，她都在為自己即將死去的這件事痛苦。',
+  '那天下午。我遇見了什麼都不是。若要說的準確一點，大概是兩點十分左右，多一些，或是少一些。',
+  '一千個名字的貓，昨天與海浪一起隨波逐流。海浪有的時候劇烈，有的時候溫柔，是藍色的星辰，也是白色的棉花糖。',
+  '橘子每次感覺到孤獨的時候，或許都不是孤獨的。光是在她住的社區裡面，至少就有十五或十六人與她有類似的心情。',
+  '我所選擇的語法是，每個字都有重量的，不容質疑的，無法說謊的，擁有情緒的，存在。',
+  '新年的第一個滿月，月光在太平洋一片無人海域，對齊',
+  '凌晨，河堤橋下的sub邊，她點燃今晚第七根藍莓，看遠方的煙火爆炸，感覺到，心臟自己在跳',
+  '孤獨是美好的，安靜的，確實的。是在凌晨騎車回家的藍色光線，正在調和著霓虹燈的顏色，為柏油路劃出波紋。',
+  '練習是練習，所以結果沒關係。因為練習就是練習。練習的過程，就是目的。',
+  '早晨，整理翅膀，點燃香菸，打開冰箱，喝剩下的麥茶。',
+  '山與海在山海交界的那間咖啡廳，他們點了一份烤布蕾分著吃。',
+  '曾經那位，喜愛紫色的國王，有著一個願望。他要打造一萬面，紫色海螺的國旗。',
+  '小學的時候，英文老師將他喜歡的女生取名Alice。討厭的男生，叫做Mike。輪到他的時候，老師說，你就叫做Blue吧。',
+  '過去那個少年，總是在，鐘響之前，在頂樓的樓梯間，看著，綠色的油漆。',
+  '昨天在永康街的塗鴉市集遇見彤彤。彤彤和外婆一起來，她七歲又四個月。',
+  '存在合理。覺得不合理也沒關係，存在還是存在。',
+];
+
+var lastIdx = -1;
+function shuffleQuote() {
+  var idx;
+  do { idx = Math.floor(Math.random() * quotes.length); } while (idx === lastIdx && quotes.length > 1);
+  lastIdx = idx;
+  document.getElementById('writing-quote').textContent = quotes[idx];
+}
+shuffleQuote();
+</script>
+
+<!-- Scroll reveal -->
 <script>
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.12});

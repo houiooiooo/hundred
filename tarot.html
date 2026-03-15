@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塔羅 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#f5f2ed;--ink:#1a1a1a;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#e8e4df;font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden;}
+::selection{background:#e8e4df;color:var(--ink)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;}
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:#5a5650;text-decoration:none;transition:color .3s;}
+.back:hover{color:#e8e4df}
+.page{max-width:780px;margin:0 auto;padding:8rem 3rem 10rem;}
+.page-header{margin-bottom:5rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2.5rem,5vw,4rem);font-weight:300;letter-spacing:.25em;color:#e8e4df;margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:#5a5650;text-transform:uppercase;display:block;margin-bottom:2rem;}
+.divider{width:100%;height:1px;background:#2a2a2a;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+
+.section{margin-top:5rem;opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s;}
+.section.visible{opacity:1;transform:translateY(0);}
+.section-label{font-family:'Cormorant Garamond',serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:#5a5650;margin-bottom:1rem;display:block;}
+.section-title{font-size:1.3rem;font-weight:300;letter-spacing:.15em;color:#e8e4df;padding-bottom:1rem;border-bottom:1px solid #2a2a2a;margin-bottom:2rem;}
+
+.philosophy{font-size:1rem;line-height:2.3;color:#b0a99f;max-width:620px;}
+.philosophy p{margin-bottom:1.5rem;}
+.philosophy .en{font-family:'Cormorant Garamond',serif;font-size:.92rem;color:#5a5650;font-style:italic;line-height:1.9;}
+
+.price-block{margin-top:2rem;padding:2rem;border:1px solid #2a2a2a;}
+.price-line{display:flex;justify-content:space-between;align-items:baseline;padding:.8rem 0;border-bottom:1px solid #1a1a1a;}
+.price-line:last-child{border-bottom:none;}
+.price-item{font-size:.9rem;color:#b0a99f;}
+.price-value{font-family:'Cormorant Garamond',serif;font-size:1rem;color:#e8e4df;letter-spacing:.05em;}
+
+.booking-block{margin-top:3rem;text-align:center;}
+.booking-desc{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:#5a5650;font-style:italic;margin-bottom:2rem;}
+.book-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.book-btn{display:inline-block;padding:.9rem 2.5rem;border:1px solid #5a5650;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:#e8e4df;transition:all .4s;}
+.book-btn:hover{background:#e8e4df;color:var(--ink);}
+
+.blog-grid{display:grid;gap:1.5rem;margin-top:1rem;}
+.blog-item{padding:1.5rem;border:1px solid #2a2a2a;transition:border-color .3s;}
+.blog-item:hover{border-color:#5a5650;}
+.blog-date{font-family:'Cormorant Garamond',serif;font-size:.75rem;color:#5a5650;letter-spacing:.1em;margin-bottom:.5rem;display:block;}
+.blog-title{font-size:.95rem;color:#e8e4df;margin-bottom:.5rem;}
+.blog-excerpt{font-size:.85rem;color:#7a756f;line-height:1.8;}
+.blog-placeholder{padding:3rem;border:1px dashed #2a2a2a;text-align:center;font-family:'Cormorant Garamond',serif;font-size:.85rem;color:#3a3530;font-style:italic;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.back{left:1.5rem}.page{padding:6rem 1.5rem 8rem}}
+</style>
+</head>
+<body>
+<a href="index.html" class="back">← Index</a>
+<div class="page">
+
+  <header class="page-header">
+    <h1 class="page-title">塔羅</h1>
+    <span class="page-title-en">Tarot Reading</span>
+  </header>
+  <div class="divider"></div>
+
+  <section class="section">
+    <span class="section-label">Philosophy</span>
+    <h2 class="section-title">解牌哲學</h2>
+    <div class="philosophy">
+      <p>我用塔羅作為工具，不給答案，給觀點。每個人都是自己生命的主人——我在解牌過程中扮演另一個意識，讓你看見自己意識不到的角度。意識在意識裡，是意識不到自己原先意識不到的角度的，需要另一個意識給與意見。這個過程對我來說也是共同的學習成長。</p>
+      <p class="en">Tarot as a tool — not for answers, but for perspective. Each person is the author of their own life. In a reading, I become another consciousness alongside yours — offering the angle you cannot see from inside yourself. This is a mutual learning, for both of us.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Service</span>
+    <h2 class="section-title">諮詢方式與價格</h2>
+    <div class="price-block">
+      <div class="price-line">
+        <span class="price-item">線上諮詢 Online Reading</span>
+        <span class="price-value">15 分鐘 — NT$400</span>
+      </div>
+      <div class="price-line">
+        <span class="price-item">實體諮詢 In-person Reading</span>
+        <span class="price-value">15 分鐘 — NT$400</span>
+      </div>
+    </div>
+    <div class="booking-block">
+      <p class="booking-desc">透過 Line 或 Instagram 預約，說明想諮詢的主題即可。<br>Contact via Line or Instagram to book — just share what you'd like to explore.</p>
+      <div class="book-buttons">
+        <a href="https://line.me/ti/p/@451indkb" target="_blank" class="book-btn">Book via Line</a>
+        <a href="https://instagram.com/houiooiooo" target="_blank" class="book-btn">Instagram</a>
+        <a href="mailto:monbaician@gmail.com" class="book-btn">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Background</span>
+    <h2 class="section-title">經歷</h2>
+    <div class="philosophy">
+      <p>曾駐店於西門町台北貓塔羅，面對面服務百位諮詢者。現提供線上與實體塔羅諮詢。</p>
+      <p class="en">Two years of in-person tarot practice at Taipei Cat Tarot in Ximending. Hundreds of readings. Now available online and in person.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <span class="section-label">Blog</span>
+    <h2 class="section-title">身心靈筆記</h2>
+    <div class="blog-grid">
+      <div class="blog-placeholder">文章陸續更新中⋯⋯<br><span style="font-size:.75rem;">Essays coming soon</span></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
