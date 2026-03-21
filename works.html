@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品 — 百 Hundred</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#f5f2ed;--text:#2a2a2a;--grey:#7a756f;--light-grey:#d4d0cb;--ink:#1a1a1a;--paper:#f5f2ed}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--text);font-family:'Noto Serif TC',serif;font-weight:400;line-height:1.9;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--paper)}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+.back{position:fixed;top:1.5rem;left:3rem;z-index:100;font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .3s;}
+.back:hover{color:var(--ink)}
+
+.page{max-width:1200px;margin:0 auto;padding:8rem 3rem 10rem;}
+
+.page-header{margin-bottom:4rem;opacity:0;animation:fadeUp .8s ease forwards .2s;}
+.page-title{font-size:clamp(2rem,4vw,3.5rem);font-weight:300;letter-spacing:.2em;color:var(--ink);margin-bottom:.3rem;}
+.page-title-en{font-family:'Cormorant Garamond',serif;font-size:.85rem;letter-spacing:.3em;color:var(--grey);text-transform:uppercase;display:block;margin-bottom:2rem;}
+
+/* Filter buttons */
+.filter-bar{display:flex;gap:1rem;margin-bottom:3rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .3s;}
+.filter-btn{background:transparent;border:1px solid var(--light-grey);color:var(--grey);padding:.5rem 1.5rem;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s;}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink);}
+.filter-btn.active{border-color:var(--ink);color:var(--ink);background:var(--ink);color:var(--paper);}
+
+/* Gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;opacity:0;animation:fadeUp .8s ease forwards .4s;}
+.gallery-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer;background:#111;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.25,0,.25,1),opacity .5s;opacity:.92;}
+.gallery-item:hover img{transform:scale(1.05);opacity:1;}
+.gallery-item.hidden{display:none;}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.96);z-index:1000;align-items:center;justify-content:center;cursor:pointer;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
+.lightbox-close{position:absolute;top:2rem;right:2rem;color:var(--grey);font-family:'Cormorant Garamond',serif;font-size:1.5rem;cursor:pointer;transition:color .3s;line-height:1;}
+.lightbox-close:hover{color:var(--white);}
+
+/* CTA */
+.page-cta{margin-top:5rem;padding-top:3rem;border-top:1px solid var(--light-grey);text-align:center;}
+.page-cta p{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--grey);font-style:italic;margin-bottom:1.5rem;}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta-btn{display:inline-block;padding:.7rem 1.8rem;border:1px solid var(--ink);font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);transition:all .4s;}
+.cta-btn:hover{background:var(--ink);color:var(--paper);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .back{left:1.5rem}
+  .page{padding:6rem 1.5rem 8rem}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-buttons{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<a href="index.html" class="back">← Index</a>
+
+<div class="page">
+
+  <header class="page-header">
+    <h1 class="page-title">作品</h1>
+    <span class="page-title-en">Works · Ink · Tattoo</span>
+  </header>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all', this)">全部 All</button>
+    <button class="filter-btn" onclick="filter('paint', this)">畫作 Painting</button>
+    <button class="filter-btn" onclick="filter('tattoo', this)">刺青 Tattoo</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- Paint -->
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-1.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-2.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-3.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-4.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-5.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-6.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-7.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-8.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-9.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-10.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-11.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-12.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-13.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="paint"><img src="img/gallery/paint-14.jpg" alt="畫作" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <!-- Tattoo -->
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-1.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-2.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-3.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-4.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-5.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-6.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-7.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-8.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-9.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-10.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+    <div class="gallery-item" data-cat="tattoo"><img src="img/gallery/tattoo-11.jpg" alt="刺青" loading="lazy" onclick="openLightbox(this.src)"></div>
+  </div>
+
+  <div class="page-cta">
+    <p>有興趣？</p>
+    <div class="cta-buttons">
+      <a href="https://instagram.com/houiooiooo" target="_blank" class="cta-btn">Instagram</a>
+      <a href="https://line.me/ti/p/@451indkb" target="_blank" class="cta-btn">Line</a>
+      <a href="mailto:monbaician@gmail.com" class="cta-btn">Email</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function filter(cat, btn) {
+  // Update buttons
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Show/hide items
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+}
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>
