@@ -259,7 +259,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   <script>
   function refreshWorks() {
     var grid = document.getElementById('work-grid');
-    var totalWorks = 24;
+    var totalWorks = 25;
     var fileExtension = '.jpg';
     var workIndices = [];
     for (var i = 1; i <= totalWorks; i++) { workIndices.push(i); }
@@ -279,7 +279,10 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   refreshWorks();
   </script>
 
-  <div class="work-link reveal"><a href="https://instagram.com/houiooiooo" target="_blank">View all on Instagram →</a></div>
+  <div class="work-link reveal" style="display:flex;gap:2rem;justify-content:center;">
+  <a href="works.html">View All Works →</a>
+  <a href="https://instagram.com/houiooiooo" target="_blank">Instagram →</a>
+</div>
 
   <!-- 有興趣？ -->
   <div class="work-cta-block reveal">
