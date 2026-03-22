@@ -24,6 +24,8 @@ nav a{color:var(--white);text-decoration:none;font-family:'Cormorant Garamond',s
 nav a:hover{opacity:.5}
 .nav-logo{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;letter-spacing:.3em}
 .nav-links{display:flex;gap:2rem}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:101}
+.hamburger span{display:block;width:20px;height:1px;background:var(--white);margin:5px 0;transition:all .3s}
 
 .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30vh;background:linear-gradient(transparent,var(--paper));pointer-events:none}
@@ -163,7 +165,13 @@ footer{padding:4rem 3rem;display:flex;justify-content:space-between;align-items:
 .calendar-hint{margin-top:1rem;font-size:.8rem;color:var(--grey);line-height:1.8}
 
 @media(max-width:768px){
-nav{padding:1rem 1.5rem}.nav-links{gap:1rem}.nav-links a{font-size:.6rem}
+nav{padding:1rem 1.5rem}
+.hamburger{display:block}
+.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,.95);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:100}
+.nav-links.open{display:flex}
+.nav-links a{font-size:1rem;letter-spacing:.25em}
+.hamburger.active span:first-child{transform:rotate(45deg) translate(2px,3px)}
+.hamburger.active span:last-child{transform:rotate(-45deg) translate(2px,-3px)}
 section{padding:5rem 1.5rem}
 .about-content{grid-template-columns:1fr;gap:2rem}
 .portrait-wrap{max-width:260px}
@@ -188,14 +196,17 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
 
 <nav>
   <a href="#" class="nav-logo">百</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#booking">Book</a>
-    <a href="#work">Work</a>
-    <a href="#writing">Writing</a>
-    <a href="#tarot">Tarot</a>
-    <a href="#sound">Sound</a>
-    <a href="#webdesign">Web</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#booking" onclick="closeMenu()">Book</a>
+    <a href="#work" onclick="closeMenu()">Work</a>
+    <a href="#writing" onclick="closeMenu()">Writing</a>
+    <a href="#tarot" onclick="closeMenu()">Tarot</a>
+    <a href="#sound" onclick="closeMenu()">Sound</a>
+    <a href="#webdesign" onclick="closeMenu()">Web</a>
   </div>
 </nav>
 
@@ -512,6 +523,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   <div class="footer-left">© 2026 百 Hundred</div>
   <div class="footer-right">
     <a href="https://instagram.com/houiooiooo" target="_blank">Instagram</a>
+    <a href="https://www.threads.net/@houiooiooo" target="_blank">Threads</a>
     <a href="https://on.soundcloud.com/itLSqcNf90cRoO0EW2" target="_blank">SoundCloud</a>
     <a href="universe.html">Eleven Universe</a>
   </div>
@@ -571,6 +583,17 @@ shuffleQuote();
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.12});
 reveals.forEach(el=>observer.observe(el));
+</script>
+<!-- Hamburger menu -->
+<script>
+function toggleMenu(){
+  document.querySelector('.nav-links').classList.toggle('open');
+  document.querySelector('.hamburger').classList.toggle('active');
+}
+function closeMenu(){
+  document.querySelector('.nav-links').classList.remove('open');
+  document.querySelector('.hamburger').classList.remove('active');
+}
 </script>
 </body>
 </html>
