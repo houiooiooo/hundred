@@ -31,6 +31,9 @@ nav a:hover{opacity:.5}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30vh;background:linear-gradient(transparent,var(--paper));pointer-events:none}
 .hero-title{font-size:clamp(5rem,15vw,14rem);font-weight:300;letter-spacing:.3em;margin-left:.3em;color:var(--ink);opacity:0;animation:fadeIn 2s ease forwards .3s}
 .hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(.85rem,1.4vw,1.1rem);letter-spacing:.4em;color:var(--grey);margin-top:1.5rem;opacity:0;animation:fadeIn 2s ease forwards .8s}
+@media (max-width: 768px) {
+  .hero-sub { letter-spacing:.15em; }
+}
 .hero-line{width:1px;height:0;background:var(--grey);margin-top:3rem;animation:lineGrow 2s ease forwards 1.5s}
 
 section{padding:8rem 3rem;max-width:1200px;margin:0 auto}
@@ -212,7 +215,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
 
 <section class="hero">
   <h1 class="hero-title">百</h1>
-  <p class="hero-sub">Tattoo · Writing · Tarot · Web Design · Consciousness</p>
+  <p class="hero-sub">Tattoo · Writing · Tarot · Web Design</p>
   <div class="hero-line"></div>
 </section>
 
@@ -232,7 +235,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
       <p>侯百謙（百）。刺青師、寫作者、塔羅師，跨媒體創作者。</p>
       <p>社運記者出身，筆名侯百千，帶著田野訓練和底層勞動的視角進入創作。現以水墨邏輯刺青——不是模仿水墨的視覺效果，而是將筆墨的運筆邏輯直接轉譯到皮膚上。每一件作品皆為即興與筆感的一次性創作。</p>
       <p>同時持續文學寫作，發表散文與小說、詩作。</p>
-      <p class="en">Hou Bai-Qian (Hundred). Tattoo artist, writer, tarot reader, builder of the Eleven Universe. A former social movement journalist who entered creation through fieldwork and labor. His tattoo practice translates the brushwork logic of East Asian ink wash directly onto skin — each piece is a one-time improvisation of gesture and ink.</p>
+      <p class="en">Hou Bai-Qian (Hundred). Tattoo artist, writer, tarot reader. A former social movement journalist who entered creation through fieldwork and labor. His tattoo practice translates the brushwork logic of East Asian ink wash directly onto skin — each piece is a one-time improvisation of gesture and ink.</p>
     </div>
     <div class="about-right">
       <div class="portrait-wrap">
@@ -469,7 +472,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
       Tarot reading · Online or in person · 15 min NT$400
     </p>
     <div class="calendar-wrap">
-      <p class="calendar-title">2026 年 4 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — March 2026</span></p>
+      <p class="calendar-title">2026 年 4 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — April 2026</span></p>
       <div class="calendar">
         <div class="cal-header">
           <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
