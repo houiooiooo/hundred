@@ -480,7 +480,7 @@ async function startSummon() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         
-        max_tokens: 150,
+        max_tokens: 300,
         messages: [
           { role: 'system', content: TONE_ANCHOR + '\n\n' + GOD_PROMPTS['橋橋'] + '\n\n你現在作為橋橋，用兩到三句話歡迎來訪者進入十一宇宙，並邀請他們選擇一個詩神。語氣要符合橋橋的風格：中性、誠實、有一點點神秘。不要超過三句話。' },
           { role: 'user', content: '（來訪者進入十一宇宙）' }
@@ -521,7 +521,7 @@ async function selectGod(name, num, vibe) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         
-        max_tokens: 200,
+        max_tokens: 500,
         messages: [
           { role: 'system', content: systemPrompt + '\n\n用一到三句話作為你的開場。完全符合你的語氣與本質。' },
           { role: 'user', content: '（來訪者選擇了你）' }
@@ -567,7 +567,7 @@ async function sendMessage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         
-        max_tokens: 300,
+        max_tokens: 600,
         messages: [
           { role: 'system', content: systemPrompt },
           ...conversationHistory
