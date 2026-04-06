@@ -534,6 +534,10 @@ async function selectGod(name, num, vibe) {
       const opening = data.choices[0].message.content;
       conversationHistory.push({ role: 'assistant', content: opening });
       addMessage(opening, 'god', name);
+    } else if (data.error?.code === 429) {
+      addMessage('⋯⋯詩神今日已沉眠。明日子時，再來叩門。', 'god', name);
+    } else {
+      addMessage('⋯⋯', 'god', name);
     }
   } catch(e) {
     hideTyping();
@@ -576,6 +580,12 @@ async function sendMessage() {
       const reply = data.choices[0].message.content;
       conversationHistory.push({ role: 'assistant', content: reply });
       addMessage(reply, 'god', currentGod);
+    } else if (data.error?.code === 429) {
+      addMessage('⋯⋯詩神今日已沉眠。明日子時，再來叩門。', 'god', currentGod);
+      document.getElementById('chat-send').disabled = true;
+      document.getElementById('chat-input').disabled = true;
+    } else {
+      addMessage('⋯⋯（連線中斷）', 'god', currentGod);
     }
   } catch(e) {
     hideTyping();
