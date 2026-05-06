@@ -271,7 +271,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   <script>
   function refreshWorks() {
     var grid = document.getElementById('work-grid');
-    var totalWorks = 27;
+    var totalWorks = 32;
     var fileExtension = '.jpg';
     var workIndices = [];
     for (var i = 1; i <= totalWorks; i++) { workIndices.push(i); }
@@ -472,7 +472,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
       Tarot reading · Online or in person · 15 min NT$400
     </p>
     <div class="calendar-wrap">
-      <p class="calendar-title">2026 年 4 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — April 2026</span></p>
+      <p class="calendar-title">2026 年 5 月 可預約日期<br><span style="font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--grey);">Available Dates — May 2026</span></p>
       <div class="calendar">
         <div class="cal-header">
           <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
@@ -483,8 +483,8 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
     </div>
     <script>
     (function(){
-      var available=[3,4,6,7,9,10,13,14,16,17,18,20,21,23,24,25,27,28,30,31];
-      var year=2026,month=4;
+      var available=[3,4,6,9,13,16,17,20,23,25,30];
+      var year=2026,month=5;
       var firstDay=new Date(year,month-1,1).getDay();
       var daysInMonth=new Date(year,month,0).getDate();
       var today=new Date();
