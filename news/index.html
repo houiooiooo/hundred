@@ -7,6 +7,10 @@
 <meta name="description" content="百千報：一期一期出的白話小報。新聞、反方、意識科學、手藝、遠方。">
 <meta property="og:title" content="百千報">
 <meta property="og:description" content="一期一期出的白話小報：新聞、反方、意識科學、手藝、遠方。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://houiooiooo.github.io/hundred/news/">
+<meta property="og:image" content="https://houiooiooo.github.io/hundred/img/studio-wall.jpeg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -49,6 +53,8 @@
   .cover .date{font-family:"Noto Serif TC",serif;font-size:15px;color:var(--ink2);margin:6px 0 26px}
   .cover .line{font-family:"Noto Serif TC",serif;font-weight:600;font-size:27px;line-height:1.6}
   .cover .toc{margin-top:34px;font-size:14px;color:var(--ink3);line-height:2}
+  .cover .home{margin-top:18px;font-size:13px;letter-spacing:.12em}
+  .cover .home a{color:var(--ink2);text-decoration:none;border-bottom:1px solid var(--line)}
   .cover .hint{margin-top:30px;font-size:12px;color:var(--ink3);letter-spacing:.15em}
   .carry{text-align:center;font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.75;padding:30px 0}
   .end{text-align:center}
@@ -75,7 +81,7 @@
 <body>
 <div class="top">
   <div class="bars" id="bars"></div>
-  <div class="head"><div class="brand">百千報</div><div class="issue" id="issue"></div></div>
+  <div class="head"><a class="brand" href="../" style="color:inherit;text-decoration:none">百千報</a><div class="issue" id="issue"></div></div>
 </div>
 <div class="deck" id="deck"><section class="card"><div class="state">載入中⋯</div></section></div>
 <button class="nav l" id="prev" aria-label="上一張"></button>
@@ -117,13 +123,13 @@
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
        card('手藝',x.craft&&x.craft.domain||'',x.craft), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
     }
-    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div></div>');
+    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     const carry = night ? x.sleep : x.carry;
     if(carry) cards.push('<div class="inner cover"><div class="tag"><b>'+(night?'帶進睡眠':'帶著出門')+'</b></div><div class="carry">'+esc(carry)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
       '<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
-      '<div class="credit">百千報由 Claude 撰寫，<a href="../index.html">侯百千</a>發行。<br>一期一期出，讀完會結束。</div></div>');
+      '<div class="credit">百千報由 Claude 撰寫，<a href="../">侯百千</a>發行。<br>一期一期出，讀完會結束。<br><a href="../">到侯百千的主頁 →</a></div></div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');
     deck.scrollLeft = 0; mark(0);
