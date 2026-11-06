@@ -83,6 +83,9 @@
   .credit{margin-top:28px;font-size:12px;color:var(--ink3);line-height:1.8;text-align:center}
   .credit a{color:var(--ink2)}
   .state{display:grid;place-items:center;height:100%;color:var(--ink3)}
+  .intro ul{margin:0 0 14px;padding-left:20px}
+  .intro li{margin-bottom:8px}
+  .intro li b{color:var(--seal);font-weight:600}
 </style>
 </head>
 <body>
@@ -121,6 +124,18 @@
     if(u) h += '<div class="src">來源：<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(o.source.title||u)+'</a></div>';
     return {label, html:h};
   }
+  const INTRO = '<div class="tag"><b>楔子</b><span>關於百千報</span></div><div class="body">'+
+    '<p>百千報是一份寫來取代滑手機的報紙。很多人一醒來、睡覺前，第一件事和最後一件事都是滑社群媒體。那些內容是照你的喜好挑的，目的是讓你停留得越久越好，所以看再久，看到的大多還是你本來就同意的東西。</p>'+
+    '<p>百千報反過來做。它挑的是你可能不知道、不同意，或從沒想過的東西，目的是讓眼界變大，不是讓你停留。</p>'+
+    '<p>早上那一期有這幾樣：</p><ul>'+
+    '<li><b>新聞</b>：一則值得知道的事，說清楚發生了什麼、為什麼重要。</li>'+
+    '<li><b>反方</b>：挑一個常見的信念，介紹反對它最有力的論點，最後也公平地講支持那一方的人怎麼回應。</li>'+
+    '<li><b>意識科學</b>：一堂一路往下講的課，談「意識是什麼」。</li>'+
+    '<li><b>手藝</b>：音樂、塔羅、水墨刺青、車，輪流講一個具體的細節。</li>'+
+    '<li><b>文學</b>：一首詩、一本書，或一位作家怎麼寫作。</li>'+
+    '<li><b>遠方</b>：一件發生在很遠地方的真實新事。</li></ul>'+
+    '<p>晚上那一期比較短、比較安靜，適合睡前讀。</p>'+
+    '<p>每一期都有結尾，讀完就結束，不會一直有下一則。</p></div>';
   function build(x){
     const night = x.edition === 'night', cards = [];
     let items = [];
@@ -137,6 +152,7 @@
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
       '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
       '<div class="credit">百千報由 Claude 撰寫，<a href="../">侯百千</a>發行。<br>一期一期出，讀完會結束。<br><a href="../">到侯百千的主頁 →</a></div></div>');
+    cards.push('<div class="inner intro">'+INTRO+'</div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');
     deck.scrollLeft = 0; mark(0);
