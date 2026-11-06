@@ -73,6 +73,13 @@
   .nav{position:fixed;top:60px;bottom:0;width:18%;z-index:3;background:transparent;border:0;cursor:pointer}
   .nav.l{left:0} .nav.r{right:0}
   @media (hover:none){ .nav{display:none} }
+  .msg{text-align:left;margin:6px 0 30px}
+  .msg h3{font-family:"Noto Serif TC",serif;font-size:15px;font-weight:600;margin:0 0 10px;color:var(--ink)}
+  .msg input,.msg textarea{display:block;width:100%;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-size:15px;padding:9px 12px;margin-bottom:10px}
+  .msg textarea{resize:vertical}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .hintx{font-size:12px;color:var(--ink3)}
+  .btn{font:inherit;font-size:14px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:6px;padding:6px 18px;cursor:pointer}
   .credit{margin-top:28px;font-size:12px;color:var(--ink3);line-height:1.8;text-align:center}
   .credit a{color:var(--ink2)}
   .state{display:grid;place-items:center;height:100%;color:var(--ink3)}
@@ -121,14 +128,14 @@
     else {
       [card('新聞','值得知道',x.news), card('主食','反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
-       card('手藝',x.craft&&x.craft.domain||'',x.craft), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
+       card('手藝',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
     }
     cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     const carry = night ? x.sleep : x.carry;
     if(carry) cards.push('<div class="inner cover"><div class="tag"><b>'+(night?'帶進睡眠':'帶著出門')+'</b></div><div class="carry">'+esc(carry)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
-      '<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
+      '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
       '<div class="credit">百千報由 Claude 撰寫，<a href="../">侯百千</a>發行。<br>一期一期出，讀完會結束。<br><a href="../">到侯百千的主頁 →</a></div></div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');
@@ -136,6 +143,18 @@
     document.body.classList.toggle('night', night);
     issueEl.textContent = '第 '+x.issue_no+' 期';
     deck.querySelectorAll('.past button').forEach(b => b.onclick = () => open(b.dataset.id, true));
+    const f = document.getElementById('msg'), hint = document.getElementById('msghint');
+    if(f) f.onsubmit = async e => {
+      e.preventDefault();
+      const fd = new FormData(f);
+      fd.append('_subject', '百千報讀者來信（第 '+x.issue_no+' 期）');
+      fd.append('issue', '第 '+x.issue_no+' 期 '+(x.id||''));
+      hint.textContent = '送出中⋯';
+      try{
+        const r = await fetch('https://formspree.io/f/mreyadad', {method:'POST', body:fd, headers:{'Accept':'application/json'}});
+        if(r.ok){ f.reset(); hint.textContent = '收到了，謝謝你。'; } else hint.textContent = '沒送出，稍後再試，或寄信到 monbaician@gmail.com';
+      }catch(err){ hint.textContent = '沒送出，稍後再試，或寄信到 monbaician@gmail.com'; }
+    };
   }
   function mark(i){ bars.querySelectorAll('i').forEach((b,k)=>{ b.className = k<i?'done':(k===i?'on':''); }); }
   const idx = () => Math.round(deck.scrollLeft / deck.clientWidth);
