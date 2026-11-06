@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>百千報 — 侯百千</title>
-<meta name="description" content="百千報：一期一期出的白話小報。新聞、反方、意識科學、手藝、遠方。">
+<meta name="description" content="百千報：一期一期出的白話小報。新聞、反方、意識科學、興趣的藝術、文學、遠方。">
 <meta property="og:title" content="百千報">
-<meta property="og:description" content="一期一期出的白話小報：新聞、反方、意識科學、手藝、遠方。">
+<meta property="og:description" content="一期一期出的白話小報：新聞、反方、意識科學、興趣的藝術、文學、遠方。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://houiooiooo.github.io/hundred/news/">
 <meta property="og:image" content="https://houiooiooo.github.io/hundred/img/studio-wall.jpeg">
@@ -125,17 +125,18 @@
     return {label, html:h};
   }
   const INTRO = '<div class="tag"><b>楔子</b><span>關於百千報</span></div><div class="body">'+
-    '<p>百千報是一份寫來取代滑手機的報紙。很多人一醒來、睡覺前，第一件事和最後一件事都是滑社群媒體。那些內容是照你的喜好挑的，目的是讓你停留得越久越好，所以看再久，看到的大多還是你本來就同意的東西。</p>'+
-    '<p>百千報反過來做。它挑的是你可能不知道、不同意，或從沒想過的東西，目的是讓眼界變大，不是讓你停留。</p>'+
+    '<p>百千報是一個小小的嘗試：用一份報紙，換掉早上醒來和睡前滑手機的那段時間。</p>'+
+    '<p>社群媒體很懂我們喜歡什麼，所以很容易一滑就停不下來，看到的也多半是本來就同意的東西。我們自己也是這樣。</p>'+
+    '<p>百千報想試試另一種方式：挑一些可能沒聽過、不一定同意，或從沒想過的東西，放在一起讀。它不一定每次都挑對，也可能寫錯，歡迎寫信來指正。</p>'+
     '<p>早上那一期有這幾樣：</p><ul>'+
     '<li><b>新聞</b>：一則值得知道的事，說清楚發生了什麼、為什麼重要。</li>'+
-    '<li><b>反方</b>：挑一個常見的信念，介紹反對它最有力的論點，最後也公平地講支持那一方的人怎麼回應。</li>'+
+    '<li><b>反方</b>：挑一個常見的信念，整理反對它的有力論點，也公平地講支持的一方怎麼回應。</li>'+
     '<li><b>意識科學</b>：一堂一路往下講的課，談「意識是什麼」。</li>'+
-    '<li><b>手藝</b>：音樂、塔羅、水墨刺青、車，輪流講一個具體的細節。</li>'+
+    '<li><b>興趣的藝術</b>：音樂、刺青、繪畫、心理學與塔羅和占星工具、車，輪流講一個具體的細節。</li>'+
     '<li><b>文學</b>：一首詩、一本書，或一位作家怎麼寫作。</li>'+
     '<li><b>遠方</b>：一件發生在很遠地方的真實新事。</li></ul>'+
     '<p>晚上那一期比較短、比較安靜，適合睡前讀。</p>'+
-    '<p>每一期都有結尾，讀完就結束，不會一直有下一則。</p></div>';
+    '<p>每一期都有結尾。希望讀完的時候，眼界比讀之前大一點點。</p></div>';
   function build(x){
     const night = x.edition === 'night', cards = [];
     let items = [];
@@ -143,7 +144,7 @@
     else {
       [card('新聞','值得知道',x.news), card('主食','反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
-       card('手藝',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
+       card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
     }
     cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
