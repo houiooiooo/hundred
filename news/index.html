@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>百千報 — 侯百千</title>
+<meta name="description" content="百千報：一期一期出的白話小報。新聞、反方、意識科學、手藝、遠方。">
+<meta property="og:title" content="百千報">
+<meta property="og:description" content="一期一期出的白話小報：新聞、反方、意識科學、手藝、遠方。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --paper:#f4f0e8; --ink:#1b1a18; --ink2:#55514a; --ink3:#8d877c; --line:#d9d2c4; --seal:#b0342a; --card:#fbf8f2; }
+  @media (prefers-color-scheme: dark){ :root{ --paper:#121110; --ink:#ebe6dc; --ink2:#b3ac9f; --ink3:#7a7469; --line:#2c2a26; --seal:#d0574a; --card:#1a1917; } }
+  body.night{ --paper:#0e0e10; --ink:#e4e0d6; --ink2:#a9a397; --ink3:#6e6a62; --line:#25242a; --seal:#c9a35a; --card:#17171b; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);overflow:hidden}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased;transition:background .3s}
+  .top{position:fixed;top:0;left:0;right:0;z-index:5;padding:10px 16px 8px;background:linear-gradient(var(--paper) 70%,transparent)}
+  .bars{display:flex;gap:4px;max-width:640px;margin:0 auto 8px}
+  .bars i{flex:1;height:3px;border-radius:2px;background:var(--line)}
+  .bars i.done{background:var(--ink2)} .bars i.on{background:var(--seal)}
+  .head{display:flex;justify-content:space-between;align-items:center;max-width:640px;margin:0 auto}
+  .brand{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;letter-spacing:.12em}
+  .issue{font-size:12px;color:var(--ink3);letter-spacing:.08em}
+  .deck{position:fixed;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .deck::-webkit-scrollbar{display:none}
+  .card{flex:0 0 100%;height:100%;scroll-snap-align:start;overflow-y:auto;padding:84px 22px 60px}
+  .inner{max-width:600px;margin:0 auto}
+  .tag{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+  .tag b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:14px;color:var(--seal);letter-spacing:.18em}
+  .tag span{font-size:12px;color:var(--ink3);letter-spacing:.06em}
+  h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:23px;line-height:1.5;margin:0 0 14px}
+  .target{font-size:13px;color:var(--ink2);border-left:2px solid var(--seal);padding-left:10px;margin:0 0 14px}
+  .body p{margin:0 0 14px}
+  sup.fn{color:var(--seal);font-size:11px;margin-left:1px;font-weight:600}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-top:8px;font-family:"Noto Serif TC",serif}
+  .q::before{content:"問　";color:var(--seal);font-weight:900}
+  details{margin-top:14px}
+  details>summary{cursor:pointer;color:var(--ink3);font-size:13px;list-style:none}
+  details>summary::-webkit-details-marker{display:none}
+  details.notes{border-top:1px dashed var(--line);padding-top:8px}
+  details.notes ol{margin:8px 0 0;padding-left:20px;font-size:14px;line-height:1.75;color:var(--ink2)}
+  details.notes li{margin-bottom:8px}
+  details.more>summary{color:var(--seal);font-size:14px}
+  .src{font-size:13px;color:var(--ink3);margin-top:10px} .src a{color:var(--ink2)}
+  .cover{display:flex;flex-direction:column;justify-content:center;min-height:calc(100% - 40px)}
+  .cover .ed{font-family:"Noto Serif TC",serif;font-size:14px;color:var(--seal);letter-spacing:.3em}
+  .cover .date{font-family:"Noto Serif TC",serif;font-size:15px;color:var(--ink2);margin:6px 0 26px}
+  .cover .line{font-family:"Noto Serif TC",serif;font-weight:600;font-size:27px;line-height:1.6}
+  .cover .toc{margin-top:34px;font-size:14px;color:var(--ink3);line-height:2}
+  .cover .hint{margin-top:30px;font-size:12px;color:var(--ink3);letter-spacing:.15em}
+  .carry{text-align:center;font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.75;padding:30px 0}
+  .end{text-align:center}
+  .end .big{font-family:"Noto Serif TC",serif;font-weight:900;font-size:30px;margin:10px 0 6px}
+  .end .sub{color:var(--ink3);font-size:14px;margin-bottom:30px}
+  .reply{text-align:left;margin-top:10px}
+  textarea{width:100%;min-height:100px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-size:15px;padding:10px 12px;resize:vertical}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px}
+  .hintx{font-size:12px;color:var(--ink3)}
+  .btn{font:inherit;font-size:14px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:6px;padding:6px 18px;cursor:pointer}
+  .past{margin-top:36px;text-align:left}
+  .past h3{font-family:"Noto Serif TC",serif;font-size:13px;color:var(--ink3);font-weight:400;letter-spacing:.2em;margin:0 0 8px;text-align:center}
+  .past button{display:flex;justify-content:space-between;width:100%;font:inherit;font-size:14px;background:transparent;color:var(--ink2);border:0;border-bottom:1px solid var(--line);padding:8px 2px;cursor:pointer;text-align:left}
+  .past button span{color:var(--ink3);font-size:12px;white-space:nowrap;margin-left:10px}
+  .past button.on{color:var(--seal)}
+  .nav{position:fixed;top:60px;bottom:0;width:18%;z-index:3;background:transparent;border:0;cursor:pointer}
+  .nav.l{left:0} .nav.r{right:0}
+  @media (hover:none){ .nav{display:none} }
+  .credit{margin-top:28px;font-size:12px;color:var(--ink3);line-height:1.8;text-align:center}
+  .credit a{color:var(--ink2)}
+  .state{display:grid;place-items:center;height:100%;color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="bars" id="bars"></div>
+  <div class="head"><div class="brand">百千報</div><div class="issue" id="issue"></div></div>
+</div>
+<div class="deck" id="deck"><section class="card"><div class="state">載入中⋯</div></section></div>
+<button class="nav l" id="prev" aria-label="上一張"></button>
+<button class="nav r" id="next" aria-label="下一張"></button>
+<script>
+(function(){
+  const deck = document.getElementById('deck'), bars = document.getElementById('bars'), issueEl = document.getElementById('issue');
+  let list = [], cur = null, cache = {};
+  const WD = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const paras = s => String(s ?? '').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean)
+    .map(p=>'<p>'+esc(p).replace(/\n/g,'<br>').replace(/\[(\d{1,2})\]/g,'<sup class="fn">$1</sup>')+'</p>').join('');
+  const safeUrl = u => /^https?:\/\//i.test(u||'') ? u : null;
+  function when(x){
+    const p = x.published ? new Date(x.published) : null;
+    if(!p || isNaN(p)) return x.date || '';
+    const t = new Date(p.getTime() + (8*60 + p.getTimezoneOffset())*60000); // 台北時間
+    return (t.getMonth()+1)+'月'+t.getDate()+'日 '+WD[t.getDay()]+' '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+  }
+  function card(label, sub, o){
+    if(!o) return null;
+    let h = '<div class="tag"><b>'+esc(label)+'</b><span>'+esc(sub||'')+'</span></div>';
+    if(o.title) h += '<h2>'+esc(o.title)+'</h2>';
+    if(o.target) h += '<div class="target">'+esc(o.target)+'</div>';
+    h += '<div class="body">'+paras(o.body)+'</div>';
+    if(o.question) h += '<div class="q">'+esc(o.question)+'</div>';
+    if(Array.isArray(o.notes) && o.notes.length)
+      h += '<details class="notes"><summary>附註（'+o.notes.length+'）</summary><ol>'+o.notes.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ol></details>';
+    const u = o.source && safeUrl(o.source.url);
+    if(u) h += '<div class="src">來源：<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(o.source.title||u)+'</a></div>';
+    return {label, html:h};
+  }
+  function build(x){
+    const night = x.edition === 'night', cards = [];
+    let items = [];
+    if(night){ (x.items||[]).forEach(it => { const c = card(it.tag, it.sub, it); if(c) items.push(c); }); }
+    else {
+      [card('新聞','值得知道',x.news), card('主食','反方',x.main),
+       card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
+       card('手藝',x.craft&&x.craft.domain||'',x.craft), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
+    }
+    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div></div>');
+    items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
+    const carry = night ? x.sleep : x.carry;
+    if(carry) cards.push('<div class="inner cover"><div class="tag"><b>'+(night?'帶進睡眠':'帶著出門')+'</b></div><div class="carry">'+esc(carry)+'</div></div>');
+    cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
+      '<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
+      '<div class="credit">百千報由 Claude 撰寫，<a href="../index.html">侯百千</a>發行。<br>一期一期出，讀完會結束。</div></div>');
+    deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
+    bars.innerHTML = cards.map(()=>'<i></i>').join('');
+    deck.scrollLeft = 0; mark(0);
+    document.body.classList.toggle('night', night);
+    issueEl.textContent = '第 '+x.issue_no+' 期';
+    deck.querySelectorAll('.past button').forEach(b => b.onclick = () => open(b.dataset.id, true));
+  }
+  function mark(i){ bars.querySelectorAll('i').forEach((b,k)=>{ b.className = k<i?'done':(k===i?'on':''); }); }
+  const idx = () => Math.round(deck.scrollLeft / deck.clientWidth);
+  deck.addEventListener('scroll', () => mark(idx()), {passive:true});
+  const go = d => deck.scrollTo({left:(idx()+d)*deck.clientWidth, behavior:'smooth'});
+  document.getElementById('prev').onclick = () => go(-1);
+  document.getElementById('next').onclick = () => go(1);
+  document.addEventListener('keydown', e => { if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1); });
+  const fail = m => { deck.innerHTML = '<section class="card"><div class="state">'+m+'</div></section>'; };
+  async function open(id, push){
+    try{
+      const x = cache[id] || (cache[id] = await (await fetch('issues/'+encodeURIComponent(id)+'.json', {cache:'no-cache'})).json());
+      x.id = id; cur = id; build(x);
+      if(push) history.replaceState(null,'','#'+id);
+    }catch(e){ fail('這一期讀不到，稍後再試。'); }
+  }
+  (async () => {
+    try{
+      list = (await (await fetch('issues/index.json', {cache:'no-cache'})).json()).issues || [];
+      list.sort((a,b) => String(b.published).localeCompare(String(a.published)));
+      if(!list.length) return fail('第一期還在準備。');
+      const want = location.hash.slice(1);
+      open(list.some(y=>y.id===want) ? want : list[0].id, false);
+    }catch(e){ fail('現在讀不到內容，稍後再打開一次。'); }
+  })();
+})();
+</script>
+</body>
+</html>
