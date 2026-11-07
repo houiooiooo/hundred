@@ -132,9 +132,10 @@
     '<li><b>新聞</b>：一則值得知道的事，說清楚發生了什麼、為什麼重要。</li>'+
     '<li><b>反方</b>：挑一個常見的信念，整理反對它的有力論點，也公平地講支持的一方怎麼回應。</li>'+
     '<li><b>意識科學</b>：一堂一路往下講的課，談「意識是什麼」。</li>'+
-    '<li><b>興趣的藝術</b>：音樂、刺青、繪畫、心理學與塔羅和占星工具、車，輪流講一個具體的細節。</li>'+
+    '<li><b>刺青</b>：刺青的傳統、工具、方法與身體，每期一個具體的細節。</li>'+
+    '<li><b>電子音樂</b>：電子與實驗音樂的歷史、場景、製作與唱片，每期一個具體的細節。</li>'+
     '<li><b>文學</b>：一首詩、一本書，或一位作家怎麼寫作。</li>'+
-    '<li><b>遠方</b>：一件發生在很遠地方的真實新事。</li></ul>'+
+    '<li>另外三樣輪流，每期一篇：<b>興趣的藝術</b>（繪畫、心理學與塔羅和占星工具、電影、車的一個具體細節）、<b>百千</b>（侯百千自己寫的一篇作品）、<b>遠方</b>（一件發生在很遠地方的真實新事）。</li></ul>'+
     '<p>每天清晨出一期，每一期都有結尾。希望讀完的時候，眼界比讀之前大一點點。</p></div>';
   function build(x){
     const night = x.edition === 'night', cards = [];
@@ -143,12 +144,12 @@
     else {
       [card('新聞','值得知道',x.news), card('主食','反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
+       card('刺青',x.tattoo&&x.tattoo.topic||'',x.tattoo), card('電子音樂',x.music&&x.music.topic||'',x.music),
        card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
     }
     cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
-    const carry = night ? x.sleep : x.carry;
-    if(carry) cards.push('<div class="inner cover"><div class="tag"><b>'+(night?'帶進睡眠':'帶著出門')+'</b></div><div class="carry">'+esc(carry)+'</div></div>');
+    if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
       '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
       '<div class="credit">百千報由 Claude 撰寫，<a href="../">侯百千</a>主編並發行。<br>一期一期出，讀完會結束。<br><a href="../">到侯百千的主頁 →</a></div></div>');
