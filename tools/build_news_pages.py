@@ -109,8 +109,47 @@ h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:
 .src{font-size:13px;color:var(--ink3);margin-top:10px}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
+.intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
+.letter h3{font-family:"Noto Serif TC",serif;font-weight:600;font-size:18px;margin:0 0 12px}
+form.msg input,form.msg textarea{display:block;width:100%;margin:0 0 10px;padding:10px 12px;font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px}
+form.msg .row{display:flex;justify-content:space-between;align-items:center;gap:12px}.hintx{font-size:13px;color:var(--ink3)}
+form.msg button{font:inherit;font-size:15px;padding:8px 20px;border:0;border-radius:8px;background:var(--seal);color:#fff;cursor:pointer}
 ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line);padding:10px 2px}ul.list small{display:block;color:var(--ink3)}
 """
+
+
+def intro_html():
+    """楔子只寫在 news/index.html 的 INTRO 一處；單頁從那裡讀，改一處兩邊一起變。"""
+    src = (NEWS / "index.html").read_text("utf-8")
+    m = re.search(r"const INTRO = (.*?);\n", src, re.S)
+    if not m:
+        return ""
+    return "".join(re.findall(r"'((?:[^'\\]|\\.)*)'", m.group(1)))
+
+
+FORMSPREE = "https://formspree.io/f/mreyadad"
+
+
+def letter_form(no, iid):
+    return (f'<section class="letter"><h3>寫信給侯百千</h3>'
+            f'<form class="msg" action="{FORMSPREE}" method="POST">'
+            f'<input type="hidden" name="_subject" value="百千報讀者來信（第 {esc(no)} 期）">'
+            f'<input type="hidden" name="issue" value="第 {esc(no)} 期 {esc(iid)}">'
+            '<input type="text" name="name" placeholder="你的名字" required>'
+            '<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'
+            '<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'
+            '<div class="row"><span class="hintx"></span><button type="submit">送出</button></div></form></section>')
+
+
+# 有 JavaScript 時留在原頁顯示結果；沒有 JavaScript 時表單照常送出到 Formspree
+FORM_JS = """<script>
+document.querySelectorAll('form.msg').forEach(f=>f.addEventListener('submit',async e=>{
+  e.preventDefault();const h=f.querySelector('.hintx');h.textContent='送出中⋯';
+  try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
+    if(r.ok){f.reset();h.textContent='收到了，謝謝你。';}else h.textContent='沒送出，稍後再試，或寄信到 monbaician@gmail.com';}
+  catch(err){h.textContent='沒送出，稍後再試，或寄信到 monbaician@gmail.com';}
+}));
+</script>"""
 
 
 def page(title, desc, canonical, body, og=None):
@@ -151,6 +190,7 @@ def main():
     issues.sort(key=lambda i: str(i.get("published")))
     OUT.mkdir(exist_ok=True)
     keep = set()
+    INTRO = intro_html()
     for n, meta in enumerate(issues):
         iid = meta["id"]
         x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
@@ -170,7 +210,9 @@ def main():
                 f"<h1>{esc(headline)}</h1>"
                 f'<p class="open">{esc(x.get("opening"))}</p>'
                 f'<div class="swipe"><a href="../#{esc(iid)}">用滑卡讀這一期，也可以寫信給侯百千 →</a></div>'
-                f"{sections(x)}{pn}")
+                f"{sections(x)}"
+                f'<section class="intro">{INTRO}</section>'
+                f"{letter_form(no, iid)}{pn}{FORM_JS}")
         og = None
         if (NEWS / "og" / f"{iid}.png").exists():
             og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報第 {no} 期：{headline}"}
