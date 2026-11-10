@@ -107,7 +107,16 @@ ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line)
 """
 
 
-def page(title, desc, canonical, body):
+def page(title, desc, canonical, body, og=None):
+    if og:
+        img = (f'<meta property="og:image" content="{esc(og["url"])}">\n'
+               f'<meta property="og:image:width" content="1200">\n'
+               f'<meta property="og:image:height" content="630">\n'
+               f'<meta property="og:image:alt" content="{esc(og["alt"])}">\n'
+               f'<meta name="twitter:card" content="summary_large_image">\n'
+               f'<meta name="twitter:image" content="{esc(og["url"])}">')
+    else:
+        img = f'<meta property="og:image" content="{SITE}img/studio-wall.jpeg">'
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -120,7 +129,7 @@ def page(title, desc, canonical, body):
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{esc(canonical)}">
-<meta property="og:image" content="{SITE}img/studio-wall.jpeg">
+{img}
 <style>{CSS}</style>
 </head>
 <body><main>
@@ -156,7 +165,10 @@ def main():
                 f'<p class="open">{esc(x.get("opening"))}</p>'
                 f'<div class="swipe"><a href="../#{esc(iid)}">用滑卡讀這一期，也可以寫信給侯百千 →</a></div>'
                 f"{sections(x)}{pn}")
-        (OUT / f"{iid}.html").write_text(page(title, desc, url, body), "utf-8")
+        og = None
+        if (NEWS / "og" / f"{iid}.png").exists():
+            og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報第 {no} 期：{headline}"}
+        (OUT / f"{iid}.html").write_text(page(title, desc, url, body, og), "utf-8")
         keep.add(f"{iid}.html")
     for f in OUT.glob("*.html"):
         if f.name not in keep:
