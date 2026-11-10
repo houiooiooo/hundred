@@ -161,7 +161,7 @@
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
       '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
-      '<div class="credit">百千報由 AI 協作撰寫，<a href="../">侯百千</a>主編並發行。<br>一期一期出，讀完會結束。<br><a href="../">到侯百千的主頁 →</a></div></div>');
+      '<div class="credit">百千報由 AI 協作撰寫，<a href="../">侯百千</a>主編並發行。<br>一期一期出，讀完會結束。<br><a href="archive.html">所有期數（文字版）</a>・<a href="../">到侯百千的主頁 →</a></div></div>');
     cards.push('<div class="inner intro">'+INTRO+'</div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');
