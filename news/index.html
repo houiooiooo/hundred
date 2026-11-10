@@ -151,10 +151,15 @@
     let items = [];
     if(night){ (x.items||[]).forEach(it => { const c = card(it.tag, it.sub, it); if(c) items.push(c); }); }
     else {
-      [card('新聞','值得知道',x.news), card('主食','反方',x.main),
+      const ks = ['news','main','lesson','tattoo','music','own','craft','lit','far'];
+      const cs = [card('新聞','值得知道',x.news), card('主食','反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
        card('刺青',x.tattoo&&x.tattoo.topic||'',x.tattoo), card('電子音樂',x.music&&x.music.topic||'',x.music),
-       card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('調味','遠方',x.far)].forEach(c => c && items.push(c));
+       card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('調味','遠方',x.far)];
+      // 期數 JSON 有 order（欄位名陣列）時照它排，沒寫的欄位接在後面；沒有 order 的舊期維持原順序
+      const idx = ks.map((k,i)=>i);
+      if(Array.isArray(x.order)) idx.sort((i,j)=>{const a=x.order.indexOf(ks[i]),b=x.order.indexOf(ks[j]);return (a<0?99+i:a)-(b<0?99+j:b);});
+      idx.forEach(i => cs[i] && items.push(cs[i]));
     }
     cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));

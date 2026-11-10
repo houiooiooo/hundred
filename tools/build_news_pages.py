@@ -70,17 +70,23 @@ def sections(x):
     les = x.get("lesson") or {}
     sub = (les.get("series") or "") + (f"・第 {les['no']} 課" if les.get("no") else "")
     g = lambda k, f, d="": (x.get(k) or {}).get(f) or d
-    return "".join([
-        section("新聞", "值得知道", x.get("news")),
-        section("主食", "反方", x.get("main")),
-        section("主線", sub, x.get("lesson")),
-        section("刺青", g("tattoo", "topic"), x.get("tattoo")),
-        section("電子音樂", g("music", "topic"), x.get("music")),
-        section("百千", g("own", "kind", "自己寫的"), x.get("own")),
-        section("興趣的藝術", g("craft", "domain"), x.get("craft")),
-        section("文學", g("lit", "kind", "讀"), x.get("lit")),
-        section("調味", "遠方", x.get("far")),
-    ])
+    parts = [
+        ("news", section("新聞", "值得知道", x.get("news"))),
+        ("main", section("主食", "反方", x.get("main"))),
+        ("lesson", section("主線", sub, x.get("lesson"))),
+        ("tattoo", section("刺青", g("tattoo", "topic"), x.get("tattoo"))),
+        ("music", section("電子音樂", g("music", "topic"), x.get("music"))),
+        ("own", section("百千", g("own", "kind", "自己寫的"), x.get("own"))),
+        ("craft", section("興趣的藝術", g("craft", "domain"), x.get("craft"))),
+        ("lit", section("文學", g("lit", "kind", "讀"), x.get("lit"))),
+        ("far", section("調味", "遠方", x.get("far"))),
+    ]
+    # 期數 JSON 有 order 時照它排；沒有 order 的舊期維持原順序
+    order = x.get("order")
+    if isinstance(order, list):
+        pos = lambda i: order.index(parts[i][0]) if parts[i][0] in order else 99 + i
+        parts = [parts[i] for i in sorted(range(len(parts)), key=pos)]
+    return "".join(h for _, h in parts)
 
 
 CSS = """

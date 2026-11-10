@@ -93,5 +93,14 @@
    "title": "侯百千・顏色",
    "url": "https://houiooiooo.github.io/hundred/archive-colors.html"
   }
- }
+ },
+ "order": [
+  "news",
+  "main",
+  "lesson",
+  "tattoo",
+  "music",
+  "far",
+  "own"
+ ]
 }
