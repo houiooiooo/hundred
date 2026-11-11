@@ -27,6 +27,7 @@
   .head{display:flex;justify-content:space-between;align-items:center;max-width:640px;margin:0 auto}
   .brand{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;letter-spacing:.12em}
   .issue{font-size:12px;color:var(--ink3);letter-spacing:.08em}
+  .brand .en{font-size:.62em;font-weight:400;letter-spacing:.1em;color:var(--ink3);margin-left:.5em}
   .deck{position:fixed;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none}
   .deck::-webkit-scrollbar{display:none}
   .card{flex:0 0 100%;height:100%;scroll-snap-align:start;overflow-y:auto;padding:84px 22px 60px}
@@ -95,7 +96,7 @@
 <body>
 <div class="top">
   <div class="bars" id="bars"></div>
-  <div class="head"><a class="brand" href="../" style="color:inherit;text-decoration:none">百千報 The Hundred</a><div class="issue" id="issue"></div></div>
+  <div class="head"><a class="brand" href="../" style="color:inherit;text-decoration:none">百千報<span class="en">The Hundred</span></a><div class="issue" id="issue"></div></div>
 </div>
 <div class="deck" id="deck"><section class="card"><div class="state">載入中⋯</div></section></div>
 <button class="nav l" id="prev" aria-label="上一張"></button>
@@ -163,7 +164,7 @@
       if(Array.isArray(x.order)) idx.sort((i,j)=>{const a=x.order.indexOf(ks[i]),b=x.order.indexOf(ks[j]);return (a<0?99+i:a)-(b<0?99+j:b);});
       idx.forEach(i => cs[i] && items.push(cs[i]));
     }
-    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">The Hundred</span>')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
+    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">THE HUNDRED</span>')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+

@@ -95,6 +95,7 @@ CSS = """
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}
 main{max-width:640px;margin:0 auto;padding:40px 22px 80px}a{color:var(--ink2)}
 .brand{font-family:"Noto Serif TC",serif;font-weight:900;letter-spacing:.3em;color:var(--seal);text-decoration:none}
+.brand .en{font-size:.62em;font-weight:400;letter-spacing:.1em;color:var(--ink3);margin-left:.5em}
 .date{color:var(--ink2);font-family:"Noto Serif TC",serif;margin:6px 0 18px}
 h1{font-family:"Noto Serif TC",serif;font-weight:600;font-size:26px;line-height:1.6;margin:0 0 10px}
 .open{font-family:"Noto Serif TC",serif;font-size:19px;color:var(--ink2);margin:0 0 10px}
@@ -206,7 +207,7 @@ def main():
             f'<a href="{prev_["id"]}.html">← 第 {prev_["issue_no"]} 期</a>' if prev_ else "") + \
             '</span><a href="../archive.html">所有期數</a><span>' + (
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
-        body = (f'<a class="brand" href="../">百千報 The Hundred</a>'
+        body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
                 f'<div class="date">第 {esc(no)} 期　{esc(when(x))}{"　夜刊" if x.get("edition") == "night" else ""}</div>'
                 f"<h1>{esc(headline)}</h1>"
                 f'<p class="open">{esc(x.get("opening"))}</p>'
@@ -229,7 +230,7 @@ def main():
         for i in reversed(issues))
     archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：一期一期出的白話小報，新聞、反方、意識科學、刺青、電子音樂與侯百千的作品。",
                    f"{SITE}news/archive.html",
-                   '<a class="brand" href="./">百千報 The Hundred</a><h1>所有期數</h1>'
+                   '<a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>所有期數</h1>'
                    '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p>'
                    f'<ul class="list">{items}</ul>')
     (NEWS / "archive.html").write_text(archive.replace('href="../../', 'href="../'), "utf-8")
