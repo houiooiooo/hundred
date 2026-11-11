@@ -170,6 +170,7 @@ def page(title, desc, canonical, body, og=None):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{esc(canonical)}">
+<link rel="icon" href="../../favicon.ico" sizes="any"><link rel="icon" type="image/png" href="../../icon-192.png"><link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="article">
@@ -231,7 +232,7 @@ def main():
                    '<a class="brand" href="./">百千報</a><h1>所有期數</h1>'
                    '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p>'
                    f'<ul class="list">{items}</ul>')
-    (NEWS / "archive.html").write_text(archive.replace('href="../../"', 'href="../"'), "utf-8")
+    (NEWS / "archive.html").write_text(archive.replace('href="../../', 'href="../'), "utf-8")
 
     urls = [SITE] + [SITE + p.name for p in sorted(ROOT.glob("*.html")) if p.name != "index.html" and not p.name.startswith("google")]
     urls += [SITE + "news/", SITE + "news/archive.html"]
