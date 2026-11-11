@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>百千報 — 侯百千</title>
+<title>百千報 The Hundred — 侯百千</title>
 <meta name="description" content="百千報：一期一期出的白話小報。新聞、反方、意識科學、刺青、電子音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
-<meta property="og:title" content="百千報">
+<meta property="og:title" content="百千報 The Hundred">
 <meta property="og:description" content="一期一期出的白話小報：新聞、反方、意識科學、刺青、電子音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://houiooiooo.github.io/hundred/news/">
@@ -52,6 +52,7 @@
   .src{font-size:13px;color:var(--ink3);margin-top:10px} .src a{color:var(--ink2)}
   .cover{display:flex;flex-direction:column;justify-content:center;min-height:calc(100% - 40px)}
   .cover .ed{font-family:"Noto Serif TC",serif;font-size:14px;color:var(--seal);letter-spacing:.3em}
+  .cover .ed .en{display:block;margin-top:4px;font-size:12px;letter-spacing:.12em;opacity:.85}
   .cover .date{font-family:"Noto Serif TC",serif;font-size:15px;color:var(--ink2);margin:6px 0 26px}
   .cover .line{font-family:"Noto Serif TC",serif;font-weight:600;font-size:27px;line-height:1.6}
   .cover .toc{margin-top:34px;font-size:14px;color:var(--ink3);line-height:2}
@@ -94,7 +95,7 @@
 <body>
 <div class="top">
   <div class="bars" id="bars"></div>
-  <div class="head"><a class="brand" href="../" style="color:inherit;text-decoration:none">百千報</a><div class="issue" id="issue"></div></div>
+  <div class="head"><a class="brand" href="../" style="color:inherit;text-decoration:none">百千報 The Hundred</a><div class="issue" id="issue"></div></div>
 </div>
 <div class="deck" id="deck"><section class="card"><div class="state">載入中⋯</div></section></div>
 <button class="nav l" id="prev" aria-label="上一張"></button>
@@ -162,7 +163,7 @@
       if(Array.isArray(x.order)) idx.sort((i,j)=>{const a=x.order.indexOf(ks[i]),b=x.order.indexOf(ks[j]);return (a<0?99+i:a)-(b<0?99+j:b);});
       idx.forEach(i => cs[i] && items.push(cs[i]));
     }
-    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
+    cards.push('<div class="inner cover"><div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">The Hundred</span>')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+

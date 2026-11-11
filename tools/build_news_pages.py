@@ -197,7 +197,7 @@ def main():
         x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
         headline = meta.get("title") or (x.get("main") or {}).get("title") or ""
         no = x.get("issue_no", meta.get("issue_no"))
-        title = f"{headline}｜百千報第 {no} 期"
+        title = f"{headline}｜百千報 The Hundred 第 {no} 期"
         desc = x.get("opening") or headline
         url = f"{SITE}news/p/{iid}.html"
         prev_ = issues[n - 1] if n > 0 else None
@@ -206,7 +206,7 @@ def main():
             f'<a href="{prev_["id"]}.html">← 第 {prev_["issue_no"]} 期</a>' if prev_ else "") + \
             '</span><a href="../archive.html">所有期數</a><span>' + (
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
-        body = (f'<a class="brand" href="../">百千報</a>'
+        body = (f'<a class="brand" href="../">百千報 The Hundred</a>'
                 f'<div class="date">第 {esc(no)} 期　{esc(when(x))}{"　夜刊" if x.get("edition") == "night" else ""}</div>'
                 f"<h1>{esc(headline)}</h1>"
                 f'<p class="open">{esc(x.get("opening"))}</p>'
@@ -216,7 +216,7 @@ def main():
                 f"{letter_form(no, iid)}{pn}{FORM_JS}")
         og = None
         if (NEWS / "og" / f"{iid}.png").exists():
-            og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報第 {no} 期：{headline}"}
+            og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報 The Hundred 第 {no} 期：{headline}"}
         (OUT / f"{iid}.html").write_text(page(title, desc, url, body, og), "utf-8")
         keep.add(f"{iid}.html")
     for f in OUT.glob("*.html"):
@@ -227,9 +227,9 @@ def main():
         f'<li><a href="p/{i["id"]}.html">第 {i["issue_no"]} 期　{esc(i.get("title"))}</a>'
         f'<small>{esc(when(i))}{"・夜刊" if i.get("edition") == "night" else ""}</small></li>'
         for i in reversed(issues))
-    archive = page("所有期數｜百千報", "百千報往期目錄：一期一期出的白話小報，新聞、反方、意識科學、刺青、電子音樂與侯百千的作品。",
+    archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：一期一期出的白話小報，新聞、反方、意識科學、刺青、電子音樂與侯百千的作品。",
                    f"{SITE}news/archive.html",
-                   '<a class="brand" href="./">百千報</a><h1>所有期數</h1>'
+                   '<a class="brand" href="./">百千報 The Hundred</a><h1>所有期數</h1>'
                    '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p>'
                    f'<ul class="list">{items}</ul>')
     (NEWS / "archive.html").write_text(archive.replace('href="../../', 'href="../'), "utf-8")

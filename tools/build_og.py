@@ -81,6 +81,8 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
     brand = load(ImageFont, fonts["black"], 46)
     d.text((M, 62), "百 千 報", font=brand, fill=SEAL)
     small = load(ImageFont, fonts["regular"], 28)
+    # 英文名 The Hundred（2026-11-11 主編定），放在報頭右側
+    d.text((M + d.textlength("百 千 報", font=brand) + 22, 76), "The Hundred", font=small, fill=SEAL)
     no = f"第 {x.get('issue_no', meta.get('issue_no'))} 期"
     d.text((W - M - d.textlength(no, font=small), 74), no, font=small, fill=INK2)
     d.line((M, 140, W - M, 140), fill=INK, width=2)
