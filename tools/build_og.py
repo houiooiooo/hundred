@@ -74,7 +74,7 @@ def wrap(draw, text, font, maxw):
 
 
 ART_DIR = ROOT / "news" / "art"
-ART_COUNT = 19
+ART_COUNT = 20
 DARK, CREAM, CREAM2, CREAM3, SEAL_D = "#121110", "#ebe6dc", "#b3ac9f", "#7a7469", "#d0574a"
 
 
