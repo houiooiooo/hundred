@@ -167,7 +167,7 @@
       if(Array.isArray(x.order)) idx.sort((i,j)=>{const a=x.order.indexOf(ks[i]),b=x.order.indexOf(ks[j]);return (a<0?99+i:a)-(b<0?99+j:b);});
       idx.forEach(i => cs[i] && items.push(cs[i]));
     }
-    const artN = night ? 0 : (Number(x.art) >= 1 && Number(x.art) <= ART_COUNT ? Number(x.art) : (Number(x.issue_no) > 0 ? ((Number(x.issue_no) - 1) % ART_COUNT) + 1 : 0)); // 每期 JSON 的 art 欄指定第幾張（出刊時隨機、一輪不重複）；沒寫的舊期依期數輪
+    const artN = night ? 0 : (Number(x.art) >= 1 && Number(x.art) <= ART_COUNT ? Number(x.art) : (Number(x.issue_no) > 0 ? ((Number(x.issue_no) - 1) % ART_COUNT) + 1 : 0)); // 每期 JSON 的 art 欄指定第幾張（寫稿時依 meta/editor.art_notes 挑最適合當期的、一輪不重複）；沒寫的舊期依期數輪
     const artSrc = artN ? 'art/'+String(artN).padStart(2,'0')+'.webp' : '';
     const artHtml = artN ? '<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url('+artSrc+');mask-image:url('+artSrc+')"></div>' : '';
     cards.push('<div class="inner cover">'+artHtml+'<div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">THE HUNDRED</span>')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
