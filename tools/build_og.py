@@ -96,8 +96,14 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
     img = Image.new("RGB", (W, H), DARK)
     d = ImageDraw.Draw(img)
     no_i = int(x.get("issue_no") or meta.get("issue_no") or 0)
-    if no_i > 0:
-        paste_art(img, Image, (no_i - 1) % ART_COUNT + 1, (50, 50, 570, 580))
+    try:
+        art_n = int(x.get("art") or 0)
+    except (TypeError, ValueError):
+        art_n = 0
+    if not 1 <= art_n <= ART_COUNT:
+        art_n = (no_i - 1) % ART_COUNT + 1 if no_i > 0 else 0
+    if art_n:
+        paste_art(img, Image, art_n, (50, 50, 570, 580))
     L, R = 630, W - 70
     brand = load(ImageFont, fonts["black"], 40)
     d.text((L, 70), "百 千 報", font=brand, fill=SEAL_D)
