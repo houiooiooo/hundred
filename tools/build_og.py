@@ -110,7 +110,8 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
     en = load(ImageFont, fonts["regular"], 22)
     d.text((L + d.textlength("百 千 報", font=brand) + 18, 86), "The Hundred", font=en, fill=CREAM3)
     small = load(ImageFont, fonts["regular"], 26)
-    d.text((L, 134), f"第 {no_i} 期　{when(x)}", font=small, fill=CREAM2)
+    head = meta['special'] if meta.get("special") else f"第 {no_i} 期"
+    d.text((L, 134), f"{head}　{when(x)}", font=small, fill=CREAM2)
     text = x.get("opening") or meta.get("title") or ""
     for size in (46, 42, 38, 34, 30):
         f = load(ImageFont, fonts["semibold"], size)
@@ -166,7 +167,9 @@ def main():
         iid = meta["id"]
         if a.only and iid not in a.only:
             continue
-        if not a.only and int(meta.get("issue_no") or 0) < 11:
+        if meta.get("lang") == "en":
+            continue  # 英文版沿用預設分享圖
+        if not a.only and not meta.get("special") and int(meta.get("issue_no") or 0) < 11:
             continue  # 2026-11-11 他定：從第 11 期開始，舊期不補
         out = OUT / f"{iid}.png"
         if out.exists() and not a.force:

@@ -39,6 +39,9 @@ def paras(s):
     return "".join(out)
 
 
+EN = False  # 英文版（每期 JSON 的 lang 為 "en"）時切換介面文字
+
+
 def section(label, sub, o):
     if not o:
         return ""
@@ -49,14 +52,14 @@ def section(label, sub, o):
         h.append(f'<div class="target">{esc(o["target"])}</div>')
     h.append(f'<div class="body">{paras(o.get("body"))}</div>')
     if o.get("question"):
-        h.append(f'<div class="q">{esc(o["question"])}</div>')
+        h.append(f'<div class="q{" en" if EN else ""}">{esc(o["question"])}</div>')
     notes = o.get("notes") or []
     if notes:
-        h.append('<div class="notes"><div class="nt">附註</div><ol>'
+        h.append('<div class="notes"><div class="nt">' + ("Notes" if EN else "附註") + '</div><ol>'
                  + "".join(f"<li>{esc(n)}</li>" for n in notes) + "</ol></div>")
     src = o.get("source") or {}
     if re.match(r"^https?://", src.get("url") or ""):
-        h.append(f'<div class="src">來源：<a href="{esc(src["url"])}" rel="noopener">{esc(src.get("title") or src["url"])}</a></div>')
+        h.append(f'<div class="src">{"Source: " if EN else "來源："}<a href="{esc(src["url"])}" rel="noopener">{esc(src.get("title") or src["url"])}</a></div>')
     h.append("</section>")
     return "".join(h)
 
@@ -70,16 +73,20 @@ def sections(x):
     les = x.get("lesson") or {}
     sub = (les.get("series") or "") + (f"・第 {les['no']} 課" if les.get("no") else "")
     g = lambda k, f, d="": (x.get(k) or {}).get(f) or d
+    T = ({"news": "News", "main": "Main", "lesson": "Thread", "tattoo": "Tattoo", "music": "Electronic music",
+          "own": "Hundred", "craft": "Arts", "lit": "Literature", "far": "Far away"} if EN else
+         {"news": "新聞", "main": "主食", "lesson": "主線", "tattoo": "刺青", "music": "電子音樂",
+          "own": "百千", "craft": "興趣的藝術", "lit": "文學", "far": "調味"})
     parts = [
-        ("news", section("新聞", "值得知道", x.get("news"))),
-        ("main", section("主食", "反方", x.get("main"))),
-        ("lesson", section("主線", sub, x.get("lesson"))),
-        ("tattoo", section("刺青", g("tattoo", "topic"), x.get("tattoo"))),
-        ("music", section("電子音樂", g("music", "topic"), x.get("music"))),
-        ("own", section("百千", g("own", "kind", "自己寫的"), x.get("own"))),
-        ("craft", section("興趣的藝術", g("craft", "domain"), x.get("craft"))),
-        ("lit", section("文學", g("lit", "kind", "讀"), x.get("lit"))),
-        ("far", section("調味", "遠方", x.get("far"))),
+        ("news", section(T["news"], "Worth knowing" if EN else "值得知道", x.get("news"))),
+        ("main", section(T["main"], g("main", "label", "反方"), x.get("main"))),  # 特輯的主食可另標（如「入門」）
+        ("lesson", section(T["lesson"], sub, x.get("lesson"))),
+        ("tattoo", section(T["tattoo"], g("tattoo", "topic"), x.get("tattoo"))),
+        ("music", section(T["music"], g("music", "topic"), x.get("music"))),
+        ("own", section(T["own"], g("own", "kind", "自己寫的"), x.get("own"))),
+        ("craft", section(T["craft"], g("craft", "domain"), x.get("craft"))),
+        ("lit", section(T["lit"], g("lit", "kind", "讀"), x.get("lit"))),
+        ("far", section(T["far"], "遠方", x.get("far"))),
     ]
     # 期數 JSON 有 order 時照它排；沒有 order 的舊期維持原順序
     order = x.get("order")
@@ -105,7 +112,7 @@ section{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}
 h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:1.5;margin:0 0 12px}
 .target{font-size:13px;color:var(--ink2);border-left:2px solid var(--seal);padding-left:10px;margin:0 0 14px}
 .body p{margin:0 0 14px}sup.fn{color:var(--seal);font-size:11px;font-weight:600}
-.q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"Noto Serif TC",serif}.q::before{content:"問　";color:var(--seal);font-weight:900}
+.q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"Noto Serif TC",serif}.q::before{content:"問　";color:var(--seal);font-weight:900}.q.en::before{content:"Q  "}
 .notes{font-size:14px;color:var(--ink2);margin-top:14px}.nt{color:var(--ink3);font-size:13px}.notes ol{padding-left:20px;margin:6px 0}
 .src{font-size:13px;color:var(--ink3);margin-top:10px}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
@@ -131,11 +138,22 @@ def intro_html():
 FORMSPREE = "https://formspree.io/f/mreyadad"
 
 
-def letter_form(no, iid):
+def letter_form_en(label, iid):
+    return (f'<section class="letter"><h3>Write to Hou Bai-Qian</h3>'
+            f'<form class="msg" action="{FORMSPREE}" method="POST">'
+            f'<input type="hidden" name="_subject" value="百千報讀者來信（{esc(label)}）">'
+            f'<input type="hidden" name="issue" value="{esc(label)} {esc(iid)}">'
+            '<input type="text" name="name" placeholder="Your name" required>'
+            '<input type="email" name="email" placeholder="Email (he will reply here)" required>'
+            '<textarea name="message" rows="4" placeholder="Thoughts, disagreements, ideas" required></textarea>'
+            '<div class="row"><span class="hintx"></span><button type="submit">Send</button></div></form></section>')
+
+
+def letter_form(label, iid):
     return (f'<section class="letter"><h3>寫信給侯百千</h3>'
             f'<form class="msg" action="{FORMSPREE}" method="POST">'
-            f'<input type="hidden" name="_subject" value="百千報讀者來信（第 {esc(no)} 期）">'
-            f'<input type="hidden" name="issue" value="第 {esc(no)} 期 {esc(iid)}">'
+            f'<input type="hidden" name="_subject" value="百千報讀者來信（{esc(label)}）">'
+            f'<input type="hidden" name="issue" value="{esc(label)} {esc(iid)}">'
             '<input type="text" name="name" placeholder="你的名字" required>'
             '<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'
             '<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'
@@ -187,37 +205,62 @@ def page(title, desc, canonical, body, og=None):
 """
 
 
+def lab(i):
+    """特輯（index.json 有 special）不佔期數，標「特輯・名稱」。"""
+    return f'特輯・{i["special"]}' if i.get("special") else f'第 {i.get("issue_no")} 期'
+
+
 def main():
     issues = json.loads((ISSUES / "index.json").read_text("utf-8"))["issues"]
     issues.sort(key=lambda i: str(i.get("published")))
+    regular = [i for i in issues if not i.get("special")]
     OUT.mkdir(exist_ok=True)
     keep = set()
     INTRO = intro_html()
+    global EN
     for n, meta in enumerate(issues):
         iid = meta["id"]
         x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
+        EN = x.get("lang") == "en" or meta.get("lang") == "en"
+        alt = x.get("alt") or {}
+        alt_link = (f'<div class="swipe"><a href="{esc(alt["id"])}.html">{esc(alt.get("label") or alt["id"])} →</a></div>'
+                    if alt.get("id") else "")
         headline = meta.get("title") or (x.get("main") or {}).get("title") or ""
         no = x.get("issue_no", meta.get("issue_no"))
-        title = f"{headline}｜百千報 The Hundred 第 {no} 期"
+        L = lab(meta)
+        title = f"{headline}｜百千報 The Hundred {L}" if not EN else f"{headline} | The Hundred (百千報)"
         desc = x.get("opening") or headline
         url = f"{SITE}news/p/{iid}.html"
-        prev_ = issues[n - 1] if n > 0 else None
-        next_ = issues[n + 1] if n + 1 < len(issues) else None
+        if EN:
+            t = datetime.fromisoformat(x["published"]).astimezone(TPE)
+            en_when = f"{t:%A} {t.day} {t:%B %Y}"
+        # 上一期／下一期只在常規期之間跳；特輯頁沒有上下期，只連回所有期數
+        r = regular.index(meta) if meta in regular else None
+        prev_ = regular[r - 1] if r else None
+        next_ = regular[r + 1] if r is not None and r + 1 < len(regular) else None
         pn = '<nav class="pn"><span>' + (
             f'<a href="{prev_["id"]}.html">← 第 {prev_["issue_no"]} 期</a>' if prev_ else "") + \
             '</span><a href="../archive.html">所有期數</a><span>' + (
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
-        body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
-                f'<div class="date">第 {esc(no)} 期　{esc(when(x))}{"　夜刊" if x.get("edition") == "night" else ""}</div>'
+        if EN:
+            body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+                    f'<div class="date">{esc(meta.get("special") or "")}　{esc(en_when)}</div>'
+                    f"<h1>{esc(headline)}</h1>"
+                    f'<p class="open">{esc(x.get("opening"))}</p>{alt_link}'
+                    f"{sections(x)}"
+                    f'{letter_form_en(L, iid)}<nav class="pn"><span></span><a href="../archive.html">All issues (in Chinese)</a><span></span></nav>{FORM_JS}')
+        else:
+          body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+                f'<div class="date">{esc(L)}　{esc(when(x))}{"　夜刊" if x.get("edition") == "night" else ""}</div>'
                 f"<h1>{esc(headline)}</h1>"
                 f'<p class="open">{esc(x.get("opening"))}</p>'
-                f'<div class="swipe"><a href="../#{esc(iid)}">用滑卡讀這一期，也可以寫信給侯百千 →</a></div>'
+                f'{alt_link}<div class="swipe"><a href="../#{esc(iid)}">用滑卡讀這一期，也可以寫信給侯百千 →</a></div>'
                 f"{sections(x)}"
                 f'<section class="intro">{INTRO}</section>'
-                f"{letter_form(no, iid)}{pn}{FORM_JS}")
+                f"{letter_form(L, iid)}{pn}{FORM_JS}")
         og = None
         if (NEWS / "og" / f"{iid}.png").exists():
-            og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報 The Hundred 第 {no} 期：{headline}"}
+            og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報 The Hundred {L}：{headline}"}
         (OUT / f"{iid}.html").write_text(page(title, desc, url, body, og), "utf-8")
         keep.add(f"{iid}.html")
     for f in OUT.glob("*.html"):
@@ -225,9 +268,9 @@ def main():
             f.unlink()
 
     items = "".join(
-        f'<li><a href="p/{i["id"]}.html">第 {i["issue_no"]} 期　{esc(i.get("title"))}</a>'
+        f'<li><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
         f'<small>{esc(when(i))}{"・夜刊" if i.get("edition") == "night" else ""}</small></li>'
-        for i in reversed(issues))
+        for i in reversed(issues) if i.get("lang") != "en")  # 英文版不另列，從中文頁的連結進入
     archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：一期一期出的白話小報，新聞、反方、意識科學、刺青、電子音樂與侯百千的作品。",
                    f"{SITE}news/archive.html",
                    '<a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>所有期數</h1>'

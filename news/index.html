@@ -158,7 +158,7 @@
     if(night){ (x.items||[]).forEach(it => { const c = card(it.tag, it.sub, it); if(c) items.push(c); }); }
     else {
       const ks = ['news','main','lesson','tattoo','music','own','craft','lit','far'];
-      const cs = [card('新聞','值得知道',x.news), card('主食','反方',x.main),
+      const cs = [card('新聞','值得知道',x.news), card('主食',x.main&&x.main.label||'反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
        card('刺青',x.tattoo&&x.tattoo.topic||'',x.tattoo), card('電子音樂',x.music&&x.music.topic||'',x.music),
        card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('調味','遠方',x.far)];
@@ -170,25 +170,25 @@
     const artN = night ? 0 : (Number(x.art) >= 1 && Number(x.art) <= ART_COUNT ? Number(x.art) : (Number(x.issue_no) > 0 ? ((Number(x.issue_no) - 1) % ART_COUNT) + 1 : 0)); // 每期 JSON 的 art 欄指定第幾張（寫稿時依 meta/editor.art_notes 挑最適合當期的、一輪不重複）；沒寫的舊期依期數輪
     const artSrc = artN ? 'art/'+String(artN).padStart(2,'0')+'.webp' : '';
     const artHtml = artN ? '<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url('+artSrc+');mask-image:url('+artSrc+')"></div>' : '';
-    cards.push('<div class="inner cover">'+artHtml+'<div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">THE HUNDRED</span>')+'</div><div class="date">第 '+esc(x.issue_no)+' 期　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div><div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
+    cards.push('<div class="inner cover">'+artHtml+'<div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">THE HUNDRED</span>')+'</div><div class="date">'+esc(lab(x))+'　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div>'+(x.alt&&x.alt.id?'<div class="hint"><a href="p/'+esc(x.alt.id)+'.html">'+esc(x.alt.label||'English')+' →</a></div>':'')+'<div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
-      '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">第 '+esc(y.issue_no)+' 期　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
+      '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">'+esc(lab(y))+'　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
       '<div class="credit">百千報由 AI 協作撰寫，<a href="../">侯百千</a>主編並發行。<br>一期一期出，讀完會結束。<br><a href="archive.html">所有期數（文字版）</a>・<a href="../">到侯百千的主頁 →</a></div></div>');
     cards.push('<div class="inner intro">'+INTRO+'</div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');
     deck.scrollLeft = 0; mark(0);
     document.body.classList.toggle('night', night);
-    issueEl.textContent = '第 '+x.issue_no+' 期';
+    issueEl.textContent = lab(x);
     deck.querySelectorAll('.past button').forEach(b => b.onclick = () => open(b.dataset.id, true));
     const f = document.getElementById('msg'), hint = document.getElementById('msghint');
     if(f) f.onsubmit = async e => {
       e.preventDefault();
       const fd = new FormData(f);
-      fd.append('_subject', '百千報讀者來信（第 '+x.issue_no+' 期）');
-      fd.append('issue', '第 '+x.issue_no+' 期 '+(x.id||''));
+      fd.append('_subject', '百千報讀者來信（'+lab(x)+'）');
+      fd.append('issue', lab(x)+' '+(x.id||''));
       hint.textContent = '送出中⋯';
       try{
         const r = await fetch('https://formspree.io/f/mreyadad', {method:'POST', body:fd, headers:{'Accept':'application/json'}});
@@ -203,6 +203,7 @@
   document.getElementById('prev').onclick = () => go(-1);
   document.getElementById('next').onclick = () => go(1);
   document.addEventListener('keydown', e => { if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1); });
+  const lab = y => y.special ? '特輯・'+y.special : '第 '+y.issue_no+' 期'; // 特輯不佔期數
   const fail = m => { deck.innerHTML = '<section class="card"><div class="state">'+m+'</div></section>'; };
   async function open(id, push){
     try{
@@ -214,10 +215,12 @@
   (async () => {
     try{
       list = (await (await fetch('issues/index.json', {cache:'no-cache'})).json()).issues || [];
+      list = list.filter(y=>y.lang!=='en'); // 英文版只有文字頁，不進滑卡
       list.sort((a,b) => String(b.published).localeCompare(String(a.published)));
       if(!list.length) return fail('第一期還在準備。');
       const want = location.hash.slice(1);
-      open(list.some(y=>y.id===want) ? want : list[0].id, false);
+      const reg = list.filter(y=>!y.special); // 特輯（special）不當首頁，只能從網址或往期進入
+      open(list.some(y=>y.id===want) ? want : (reg[0]||list[0]).id, false);
     }catch(e){ fail('現在讀不到內容，稍後再打開一次。'); }
   })();
 })();
