@@ -188,6 +188,7 @@ def page(title, desc, canonical, body, og=None):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
+<meta name="author" content="侯百千">
 <link rel="canonical" href="{esc(canonical)}">
 <link rel="icon" href="../../favicon.ico" sizes="any"><link rel="icon" type="image/png" href="../../icon-192.png"><link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <meta property="og:title" content="{esc(title)}">
