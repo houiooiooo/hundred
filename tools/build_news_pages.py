@@ -162,7 +162,7 @@ def page(title, desc, canonical, body, og=None):
                f'<meta name="twitter:card" content="summary_large_image">\n'
                f'<meta name="twitter:image" content="{esc(og["url"])}">')
     else:
-        img = f'<meta property="og:image" content="{SITE}img/studio-wall.jpeg">'
+        img = f'<meta property="og:image" content="{SITE}news/og/default.png">'
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>

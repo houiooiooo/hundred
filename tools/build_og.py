@@ -73,43 +73,65 @@ def wrap(draw, text, font, maxw):
     return lines
 
 
+ART_DIR = ROOT / "news" / "art"
+ART_COUNT = 19
+DARK, CREAM, CREAM2, CREAM3, SEAL_D = "#121110", "#ebe6dc", "#b3ac9f", "#7a7469", "#d0574a"
+
+
+def paste_art(img, Image, n, box):
+    """把侯百千的畫（米白線、透明底）縮放貼進 box=(x0,y0,x1,y1)，置中。"""
+    p = ART_DIR / f"{n:02d}.webp"
+    if not p.exists():
+        return
+    art = Image.open(p).convert("RGBA")
+    bw, bh = box[2] - box[0], box[3] - box[1]
+    art.thumbnail((bw, bh), Image.LANCZOS)
+    color = Image.new("RGBA", art.size, CREAM)
+    color.putalpha(art.getchannel("A"))
+    img.paste(color, (box[0] + (bw - art.width) // 2, box[1] + (bh - art.height) // 2), color)
+
+
 def render(meta, x, fonts, ImageFont, Image, ImageDraw):
-    img = Image.new("RGB", (W, H), PAPER)
+    """2026-11-12 主編定：分享縮圖用侯百千的畫＋開場白，不放新聞標題。畫依期數輪流，與滑卡封面同一張。"""
+    img = Image.new("RGB", (W, H), DARK)
     d = ImageDraw.Draw(img)
-    M = 80
-    # 報頭
-    brand = load(ImageFont, fonts["black"], 46)
-    d.text((M, 62), "百 千 報", font=brand, fill=SEAL)
-    small = load(ImageFont, fonts["regular"], 28)
-    # 英文名 The Hundred（2026-11-11 主編定），放在報頭右側
-    en = load(ImageFont, fonts["regular"], 24)
-    d.text((M + d.textlength("百 千 報", font=brand) + 20, 80), "The Hundred", font=en, fill=INK3)
-    no = f"第 {x.get('issue_no', meta.get('issue_no'))} 期"
-    d.text((W - M - d.textlength(no, font=small), 74), no, font=small, fill=INK2)
-    d.line((M, 140, W - M, 140), fill=INK, width=2)
-    # 主標題：最多 3 行，放不下就縮字
-    title = meta.get("title") or (x.get("main") or {}).get("title") or ""
-    for size in (72, 66, 60, 54, 48, 44, 40):
+    no_i = int(x.get("issue_no") or meta.get("issue_no") or 0)
+    if no_i > 0:
+        paste_art(img, Image, (no_i - 1) % ART_COUNT + 1, (50, 50, 570, 580))
+    L, R = 630, W - 70
+    brand = load(ImageFont, fonts["black"], 40)
+    d.text((L, 70), "百 千 報", font=brand, fill=SEAL_D)
+    en = load(ImageFont, fonts["regular"], 22)
+    d.text((L + d.textlength("百 千 報", font=brand) + 18, 86), "The Hundred", font=en, fill=CREAM3)
+    small = load(ImageFont, fonts["regular"], 26)
+    d.text((L, 134), f"第 {no_i} 期　{when(x)}", font=small, fill=CREAM2)
+    text = x.get("opening") or meta.get("title") or ""
+    for size in (46, 42, 38, 34, 30):
         f = load(ImageFont, fonts["semibold"], size)
-        lines = wrap(d, title, f, W - 2 * M)
-        if len(lines) <= 3:
+        lines = wrap(d, text, f, R - L)
+        if len(lines) <= 6:
             break
-    # 平衡各行長度，避免最後一行只剩一兩個字
-    if len(lines) > 1:
-        target = d.textlength(title, font=f) / len(lines) + size * 0.6
-        balanced = wrap(d, title, f, min(target, W - 2 * M))
-        if len(balanced) == len(lines):
-            lines = balanced
-    lh = int(size * 1.42)
-    block = lh * len(lines)
-    top = 140 + (440 - 140 - block) // 2 + 10
+    lh = int(size * 1.55)
+    top = 200 + (470 - 200 - lh * len(lines)) // 2 + 20
     for i, ln in enumerate(lines):
-        d.text((M, top + i * lh), ln, font=f, fill=INK)
-    # 底部
-    d.line((M, 500, W - M, 500), fill=LINE, width=1)
-    d.text((M, 528), when(x), font=small, fill=INK2)
+        d.text((L, top + i * lh), ln, font=f, fill=CREAM)
     credit = "侯百千 主編"
-    d.text((W - M - d.textlength(credit, font=small), 528), credit, font=small, fill=INK3)
+    d.text((L, 540), credit, font=small, fill=CREAM3)
+    return img
+
+
+def render_default(fonts, ImageFont, Image, ImageDraw):
+    """網站預設分享圖 news/og/default.png：一張畫＋報頭。"""
+    img = Image.new("RGB", (W, H), DARK)
+    d = ImageDraw.Draw(img)
+    paste_art(img, Image, 3, (50, 50, 570, 580))
+    L = 630
+    brand = load(ImageFont, fonts["black"], 64)
+    d.text((L, 210), "百 千 報", font=brand, fill=SEAL_D)
+    en = load(ImageFont, fonts["regular"], 30)
+    d.text((L + 4, 300), "The Hundred", font=en, fill=CREAM3)
+    small = load(ImageFont, fonts["regular"], 28)
+    d.text((L + 4, 380), "侯百千 主編", font=small, fill=CREAM2)
     return img
 
 
@@ -127,6 +149,10 @@ def main():
     if not all(fonts.values()):
         print("警告：找不到 Noto Serif CJK 字型（apt 套件 fonts-noto-cjk），略過縮圖；文字頁會沿用預設分享圖")
         return
+    if a.force or not (OUT / "default.png").exists():
+        OUT.mkdir(exist_ok=True)
+        render_default(fonts, ImageFont, Image, ImageDraw).save(OUT / "default.png", optimize=True)
+        print("預設分享圖：news/og/default.png")
     issues = json.loads((ISSUES / "index.json").read_text("utf-8"))["issues"]
     OUT.mkdir(exist_ok=True)
     made = 0
