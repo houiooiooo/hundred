@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>百千報 The Hundred — 侯百千</title>
 <meta name="author" content="侯百千">
-<meta name="description" content="《百千報》：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、電子音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
+<meta name="description" content="《百千報》：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Periodical", "name": "百千報", "alternateName": "The Hundred", "url": "https://houiooiooo.github.io/hundred/news/", "inLanguage": "zh-Hant", "description": "侯百千主編、發行，AI 協作的刊物。", "editor": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}, "publisher": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}}</script>
 <meta property="og:title" content="百千報 The Hundred">
-<meta property="og:description" content="侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報：新聞、反方、意識科學、刺青、電子音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
+<meta property="og:description" content="侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報：新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://houiooiooo.github.io/hundred/news/">
 <meta property="og:image" content="https://houiooiooo.github.io/hundred/news/og/default.png">
@@ -149,7 +149,7 @@
     '<li><b>反方</b>：挑一個常見的信念，整理反對它的有力論點，也公平地講支持的一方怎麼回應。</li>'+
     '<li><b>意識科學</b>：一堂一路往下講的課，談「意識是什麼」。</li>'+
     '<li><b>刺青</b>：刺青的傳統、工具、方法與身體，每期一個具體的細節。</li>'+
-    '<li><b>電子音樂</b>：電子與實驗音樂的歷史、場景、製作與唱片，每期一個具體的細節。</li>'+
+    '<li><b>音樂</b>：從 DJ 的耳朵出發，電子音樂為主，也聽 fourth world、搖滾與一切值得聽的；歷史、場景、製作與唱片，每期一個具體的細節。</li>'+
     '<li><b>百千</b>：侯百千自己寫的一篇作品。</li>'+
     '<li>另外三樣輪流，每期一篇：<b>文學</b>（一首詩、一本書，或一位作家怎麼寫作）、<b>興趣的藝術</b>（繪畫、心理學與塔羅和占星工具、電影、車的一個具體細節）、<b>遠方</b>（一件發生在很遠地方的真實新事）。</li></ul>'+
     '<p>每天清晨出一期，每一期都有結尾。希望讀完的時候，眼界比讀之前大一點點。</p></div>';
@@ -162,7 +162,7 @@
       const ks = ['news','main','lesson','tattoo','music','own','craft','lit','far'];
       const cs = [card('新聞','值得知道',x.news), card('主食',x.main&&x.main.label||'反方',x.main),
        card('主線',x.lesson?(x.lesson.series||'')+(x.lesson.no?'・第 '+x.lesson.no+' 課':''):'',x.lesson),
-       card('刺青',x.tattoo&&x.tattoo.topic||'',x.tattoo), card('電子音樂',x.music&&x.music.topic||'',x.music),
+       card('刺青',x.tattoo&&x.tattoo.topic||'',x.tattoo), card('音樂',x.music&&x.music.topic||'',x.music),
        card('百千',x.own&&x.own.kind||'自己寫的',x.own), card('興趣的藝術',x.craft&&x.craft.domain||'',x.craft), card('文學',x.lit&&x.lit.kind||'讀',x.lit), card('調味','遠方',x.far)];
       // 期數 JSON 有 order（欄位名陣列）時照它排，沒寫的欄位接在後面；沒有 order 的舊期維持原順序
       const idx = ks.map((k,i)=>i);
