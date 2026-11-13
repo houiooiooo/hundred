@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>百千報 The Hundred — 侯百千</title>
 <meta name="author" content="侯百千">
-<meta name="description" content="《百千報》：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Periodical", "name": "百千報", "alternateName": "The Hundred", "url": "https://houiooiooo.github.io/hundred/news/", "inLanguage": "zh-Hant", "description": "侯百千主編、發行，AI 協作的刊物。", "editor": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}, "publisher": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}}</script>
+<meta name="description" content="《百千報》：侯百千主編、發行的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Periodical", "name": "百千報", "alternateName": "The Hundred", "url": "https://houiooiooo.github.io/hundred/news/", "inLanguage": "zh-Hant", "description": "侯百千主編、發行的刊物。", "editor": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}, "publisher": {"@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred"], "url": "https://houiooiooo.github.io/hundred/"}}</script>
 <meta property="og:title" content="百千報 The Hundred">
-<meta property="og:description" content="侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報：新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
+<meta property="og:description" content="侯百千主編、發行的刊物。一期一期出的白話小報：新聞、反方、意識科學、刺青、音樂、百千，加上輪流出的文學、興趣的藝術與遠方。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://houiooiooo.github.io/hundred/news/">
 <meta property="og:image" content="https://houiooiooo.github.io/hundred/news/og/default.png">
@@ -177,7 +177,7 @@
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
       '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">'+esc(lab(y))+'　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
-      '<div class="credit"><a href="../">侯百千</a>主編、發行，AI 協作的刊物。<br>一期一期出，讀完會結束。<br><a href="archive.html">所有期數（文字版）</a>・<a href="../">到侯百千的主頁 →</a></div></div>');
+      '<div class="credit"><a href="../">侯百千</a>主編、發行的刊物。<br>一期一期出，讀完會結束。<br><a href="archive.html">所有期數（文字版）</a>・<a href="../">到侯百千的主頁 →</a></div></div>');
     cards.push('<div class="inner intro">'+INTRO+'</div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
     bars.innerHTML = cards.map(()=>'<i></i>').join('');

@@ -200,7 +200,7 @@ def page(title, desc, canonical, body, og=None):
 </head>
 <body><main>
 {body}
-<footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。</footer>
+<footer><a href="../../">侯百千</a>主編、發行的刊物。</footer>
 </main></body>
 </html>
 """
@@ -272,7 +272,7 @@ def main():
         f'<li><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
         f'<small>{esc(when(i))}{"・夜刊" if i.get("edition") == "night" else ""}</small></li>'
         for i in reversed(issues) if i.get("lang") != "en")  # 英文版不另列，從中文頁的連結進入
-    archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂與侯百千的作品。",
+    archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：侯百千主編、發行的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂與侯百千的作品。",
                    f"{SITE}news/archive.html",
                    '<a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>所有期數</h1>'
                    '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p>'
