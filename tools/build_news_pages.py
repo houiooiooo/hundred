@@ -105,6 +105,7 @@ html.dark{--paper:#121110;--ink:#ebe6dc;--ink2:#b3ac9f;--ink3:#7a7469;--line:#2c
 .mode button.on{border-color:var(--seal);color:var(--seal)}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}
 main{max-width:640px;margin:0 auto;padding:40px 22px 80px}a{color:var(--ink2)}
+.art{width:100%;height:38vh;max-height:360px;margin:22px auto 8px;background:var(--ink);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
 .brand{font-family:"Noto Serif TC",serif;font-weight:900;letter-spacing:.3em;color:var(--seal);text-decoration:none}
 .brand .en{font-size:.62em;font-weight:400;letter-spacing:.1em;color:var(--ink3);margin-left:.5em}
 .date{color:var(--ink2);font-family:"Noto Serif TC",serif;margin:6px 0 18px}
@@ -288,15 +289,19 @@ def main():
             f'<a href="{prev_["id"]}.html">← 第 {prev_["issue_no"]} 期</a>' if prev_ else "") + \
             '</span><a href="../archive.html">所有期數</a><span>' + (
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
+        ART_COUNT = 20  # 與 news/index.html 的 ART_COUNT 一致；加畫時兩邊都要改
+        a = x.get("art")
+        art_n = 0 if x.get("edition") == "night" else (int(a) if isinstance(a, int) and 1 <= a <= ART_COUNT else ((int(no) - 1) % ART_COUNT + 1 if isinstance(no, int) and no > 0 else 0))
+        art = (f'<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url(../art/{art_n:02d}.webp);mask-image:url(../art/{art_n:02d}.webp)"></div>' if art_n else "")
         if EN:
-            body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+            body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>{art}'
                     f'<div class="date">{esc(meta.get("special") or "")}　{esc(en_when)}</div>'
                     f"<h1>{esc(headline)}</h1>"
                     f'<p class="open">{esc(x.get("opening"))}</p>{alt_link}'
                     f"{sections(x)}"
                     f'{letter_form_en(L, iid)}<nav class="pn"><span></span><a href="../archive.html">All issues (in Chinese)</a><span></span></nav>{FORM_JS}')
         else:
-          body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+          body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>{art}'
                 f'<div class="date">{esc(L)}　{esc(when(x))}{"　夜刊" if x.get("edition") == "night" else ""}</div>'
                 f"<h1>{esc(headline)}</h1>"
                 f'<p class="open">{esc(x.get("opening"))}</p>'
