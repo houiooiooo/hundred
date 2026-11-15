@@ -17,9 +17,8 @@
 :root{--paper:#f4f0e8;--ink:#1b1a18;--ink2:#55514a;--ink3:#8d877c;--line:#d9d2c4;--seal:#b0342a;--card:#fbf8f2}
 html.dark{--paper:#121110;--ink:#ebe6dc;--ink2:#b3ac9f;--ink3:#7a7469;--line:#2c2a26;--seal:#d0574a;--card:#1a1917}
 .mode{position:fixed;top:10px;right:14px;display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);letter-spacing:.06em;background:var(--paper);padding:2px 4px;border-radius:6px}
-.mode .clk{font-variant-numeric:tabular-nums;margin-right:4px}
 .mode button{font:inherit;font-family:"Noto Serif TC",serif;font-size:11px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink3);cursor:pointer}
-.mode button.on{border-color:var(--seal);color:var(--seal)}
+.mode button{border-color:var(--seal);color:var(--seal);padding:3px 6px}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}
 main{max-width:640px;margin:0 auto;padding:40px 22px 80px}a{color:var(--ink2)}
 .art{width:100%;height:38vh;max-height:360px;margin:22px auto 8px;background:var(--ink);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
@@ -72,18 +71,17 @@ ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line)
     var now=Date.now(), st=state(now), o=get(), day=st.day;
     if(o && now<o.until) day=(o.m==='day'); else if(o) put(null);
     document.documentElement.classList.toggle('dark',!day);
-    var b=document.querySelectorAll('.mode button');
-    for(var i=0;i<b.length;i++) b[i].classList.toggle('on',(b[i].dataset.m==='day')===day);
-    var c=document.getElementById('clk');
-    if(c){ var d=new Date(now); c.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+    var b=document.getElementById('modebtn');
+    if(b){ b.textContent=day?'日':'夜'; b.setAttribute('aria-label',day?'目前日間，按一下切換到夜間':'目前夜間，按一下切換到日間'); }
+    window.hundredDay=day;
   }
-  window.hundredMode=function(m){ put({m:m,until:state(Date.now()).next}); apply(); };
+  window.hundredMode=function(m){ if(m==='toggle') m=window.hundredDay?'night':'day'; put({m:m,until:state(Date.now()).next}); apply(); };
   apply();
-  document.addEventListener('DOMContentLoaded',function(){ apply(); setInterval(apply,20000); });
+  document.addEventListener('DOMContentLoaded',function(){ apply(); setInterval(apply,60000); });
 })();
 </script>
 </head>
-<body><div class="mode"><span class="clk" id="clk"></span><button type="button" data-m="day" onclick="hundredMode('day')" aria-label="日間模式">日</button><button type="button" data-m="night" onclick="hundredMode('night')" aria-label="夜間模式">夜</button></div><main>
+<body><div class="mode"><button type="button" id="modebtn" onclick="hundredMode('toggle')" aria-label="切換日夜">日</button></div><main>
 <a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>所有期數</h1><p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p><ul class="list"><li><a href="p/20261115-0334.html">第 15 期　王維〈鳥鳴澗〉：月亮出來，把鳥嚇醒</a><small>2026年11月15日 星期日 03:34</small></li><li><a href="p/20261114-0334.html">第 14 期　它拿到名字的時候，已經消失一百年</a><small>2026年11月14日 星期六 03:34</small></li><li><a href="p/20261113-0333.html">第 13 期　讓她把咖啡煮完：《珍妮德爾曼》的攝影機放在哪裡</a><small>2026年11月13日 星期五 03:33</small></li><li><a href="p/20261112-1600.html">特輯・巴勒斯坦特輯</a><small>2026年11月12日 星期四 16:00</small></li><li><a href="p/20261112-0348.html">第 12 期　一場返校派對，和兩張一樣的唱片</a><small>2026年11月12日 星期四 03:48</small></li><li><a href="p/20261111-0333.html">第 11 期　把「原創」當成最高價值，歷史並不長</a><small>2026年11月11日 星期三 03:33</small></li><li><a href="p/20261110-0333.html">第 10 期　同一週在倫敦出生的兩千一百個人</a><small>2026年11月10日 星期二 03:33</small></li><li><a href="p/20261109-0340.html">第 9 期　撞擊測試裡的「一般人」，身高 177 公分、體重 78 公斤</a><small>2026年11月9日 星期一 03:40</small></li><li><a href="p/20261108-0334.html">第 8 期　同一場選舉，民調可以差到 28 個百分點</a><small>2026年11月8日 星期日 03:34</small></li><li><a href="p/20261107-0824.html">第 7 期　把牌義說反了，客人還是覺得很準</a><small>2026年11月7日 星期六 08:24</small></li><li><a href="p/20261107-0334.html">第 6 期　直覺很準，和直覺只是很有把握</a><small>2026年11月7日 星期六 03:34</small></li><li><a href="p/20261106-2348.html">第 5 期　去日本買東西，現在要先付稅、出境再拿回來</a><small>2026年11月6日 星期五 23:48・夜刊</small></li><li><a href="p/20261106-1527.html">第 4 期　微中子穿過你，什麼也沒留下</a><small>2026年11月6日 星期五 15:27</small></li><li><a href="p/20261106-1355.html">第 3 期　牙痛的時候，你還是虛無主義者嗎？</a><small>2026年11月6日 星期五 13:55</small></li><li><a href="p/20261106-1245.html">第 2 期　一場讓占星師自己出題的考試</a><small>2026年11月6日 星期五 12:45</small></li><li><a href="p/20261106-1145.html">第 1 期　一劑麻醉藥的反駁</a><small>2026年11月6日 星期五 11:45</small></li></ul>
 <footer><a href="../">侯百千</a>主編、發行，AI 協作的刊物。</footer>
 </main></body>

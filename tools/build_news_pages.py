@@ -100,9 +100,8 @@ CSS = """
 :root{--paper:#f4f0e8;--ink:#1b1a18;--ink2:#55514a;--ink3:#8d877c;--line:#d9d2c4;--seal:#b0342a;--card:#fbf8f2}
 html.dark{--paper:#121110;--ink:#ebe6dc;--ink2:#b3ac9f;--ink3:#7a7469;--line:#2c2a26;--seal:#d0574a;--card:#1a1917}
 .mode{position:fixed;top:10px;right:14px;display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);letter-spacing:.06em;background:var(--paper);padding:2px 4px;border-radius:6px}
-.mode .clk{font-variant-numeric:tabular-nums;margin-right:4px}
 .mode button{font:inherit;font-family:"Noto Serif TC",serif;font-size:11px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink3);cursor:pointer}
-.mode button.on{border-color:var(--seal);color:var(--seal)}
+.mode button{border-color:var(--seal);color:var(--seal);padding:3px 6px}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}
 main{max-width:640px;margin:0 auto;padding:40px 22px 80px}a{color:var(--ink2)}
 .art{width:100%;height:38vh;max-height:360px;margin:22px auto 8px;background:var(--ink);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
@@ -157,18 +156,17 @@ MODE_JS = """<script>
     var now=Date.now(), st=state(now), o=get(), day=st.day;
     if(o && now<o.until) day=(o.m==='day'); else if(o) put(null);
     document.documentElement.classList.toggle('dark',!day);
-    var b=document.querySelectorAll('.mode button');
-    for(var i=0;i<b.length;i++) b[i].classList.toggle('on',(b[i].dataset.m==='day')===day);
-    var c=document.getElementById('clk');
-    if(c){ var d=new Date(now); c.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+    var b=document.getElementById('modebtn');
+    if(b){ b.textContent=day?'日':'夜'; b.setAttribute('aria-label',day?'目前日間，按一下切換到夜間':'目前夜間，按一下切換到日間'); }
+    window.hundredDay=day;
   }
-  window.hundredMode=function(m){ put({m:m,until:state(Date.now()).next}); apply(); };
+  window.hundredMode=function(m){ if(m==='toggle') m=window.hundredDay?'night':'day'; put({m:m,until:state(Date.now()).next}); apply(); };
   apply();
-  document.addEventListener('DOMContentLoaded',function(){ apply(); setInterval(apply,20000); });
+  document.addEventListener('DOMContentLoaded',function(){ apply(); setInterval(apply,60000); });
 })();
 </script>"""
 
-MODE_HTML = '<div class="mode"><span class="clk" id="clk"></span><button type="button" data-m="day" onclick="hundredMode(\'day\')" aria-label="日間模式">日</button><button type="button" data-m="night" onclick="hundredMode(\'night\')" aria-label="夜間模式">夜</button></div>'
+MODE_HTML = '<div class="mode"><button type="button" id="modebtn" onclick="hundredMode(\'toggle\')" aria-label="切換日夜">日</button></div>'
 
 
 def intro_html():
