@@ -39,6 +39,17 @@ def paras(s):
     return "".join(out)
 
 
+def body_html(s):
+    """正文；有「背景｜標題」段落時，從那段到結尾顯示成獨立方框（與滑卡 news/index.html 的 bodyHtml 一致）。"""
+    ps = [p.strip() for p in re.split(r"\n\s*\n", str(s or "")) if p.strip()]
+    i = next((k for k, p in enumerate(ps) if p.startswith("背景｜")), -1)
+    if i < 0:
+        return f'<div class="body">{paras(s)}</div>'
+    head = re.sub(r"\[(\d{1,2})\]", r'<sup class="fn">\1</sup>', esc(ps[i]))
+    return (f'<div class="body">{paras((chr(10)*2).join(ps[:i]))}</div>'
+            f'<aside class="bg"><div class="bgt">{head}</div><div class="body">{paras((chr(10)*2).join(ps[i+1:]))}</div></aside>')
+
+
 EN = False  # 英文版（每期 JSON 的 lang 為 "en"）時切換介面文字
 
 
@@ -53,7 +64,7 @@ def section(label, sub, o):
         h.append(f"<h2>{esc(o['title'])}</h2>")
     if o.get("target"):
         h.append(f'<div class="target">{esc(o["target"])}</div>')
-    h.append(f'<div class="body">{paras(o.get("body"))}</div>')
+    h.append(body_html(o.get("body")))
     if o.get("question"):
         h.append(f'<div class="q{" en" if EN else ""}">{esc(o["question"])}</div>')
     notes = o.get("notes") or []
@@ -120,6 +131,8 @@ section{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}
 h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:1.5;margin:0 0 12px}
 .target{font-size:13px;color:var(--ink2);border-left:2px solid var(--seal);padding-left:10px;margin:0 0 14px}
 .body p{margin:0 0 14px}sup.fn{color:var(--seal);font-size:11px;font-weight:600}
+.bg{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px 2px;margin:20px 0 8px;font-size:15px;color:var(--ink2)}
+.bg .bgt{font-family:"Noto Serif TC",serif;font-weight:600;color:var(--ink);margin-bottom:8px}
 .q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"Noto Serif TC",serif}.q::before{content:"問　";color:var(--seal);font-weight:900}.q.en::before{content:"Q  "}
 .notes{font-size:14px;color:var(--ink2);margin-top:14px}.nt{color:var(--ink3);font-size:13px}.notes ol{padding-left:20px;margin:6px 0}
 .src{font-size:13px;color:var(--ink3);margin-top:10px}
