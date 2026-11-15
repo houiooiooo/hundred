@@ -272,7 +272,12 @@ def main():
         alt = x.get("alt") or {}
         alt_link = (f'<div class="swipe"><a href="{esc(alt["id"])}.html">{esc(alt.get("label") or alt["id"])} →</a></div>'
                     if alt.get("id") else "")
-        headline = meta.get("title") or (x.get("main") or {}).get("title") or ""
+        # 標題跟滑卡一致：有 order 就用第一張卡的標題（2026-11-15 主編定），沒有 order 的舊期照 index.json
+        # 第 12 期起開場白跟著第一張卡走；特輯與第 11 期以前照原本標題
+        first = None if meta.get("special") or not isinstance(x.get("issue_no"), int) or x["issue_no"] < 12 else \
+            next((x.get(k) for k in (x.get("order") or []) if isinstance(x.get(k), dict) and x[k].get("title")), None)
+        headline = (first or {}).get("title") or meta.get("title") or (x.get("main") or {}).get("title") or ""
+        meta["_headline"] = headline
         no = x.get("issue_no", meta.get("issue_no"))
         L = lab(meta)
         title = f"{headline}｜百千報 The Hundred {L}" if not EN else f"{headline} | The Hundred (百千報)"
@@ -319,7 +324,7 @@ def main():
             f.unlink()
 
     items = "".join(
-        f'<li><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
+        f'<li><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("_headline") or i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
         f'<small>{esc(when(i))}{"・夜刊" if i.get("edition") == "night" else ""}</small></li>'
         for i in reversed(issues) if i.get("lang") != "en")  # 英文版不另列，從中文頁的連結進入
     archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂與侯百千的作品。",
