@@ -194,7 +194,7 @@
     '<li><b>百千</b>：侯百千自己寫的一篇作品。</li>'+
     '<li>另外三樣輪流，每期一篇：<b>文學</b>（一首詩、一本書，或一位作家怎麼寫作）、<b>興趣的藝術</b>（畫、占、影：從漫畫到麥田圈的各種畫，玄學、身心靈與占卜工具，電影，每次一個有意思的細節）、<b>遠方</b>（一件發生在很遠地方的真實新事）。</li></ul>'+
     '<p>每天清晨出一期，每一期都有結尾。希望讀完的時候，眼界比讀之前大一點點。</p></div>';
-  const ART_COUNT = 20; // 侯百千的畫，news/art/01–20.webp，依期數輪流（2026-11-12）
+  const LEGACY_ROTATION = 20; // 只給沒寫 art 的舊期（第 1–11 期）依期數輪流用，固定不改；畫的張數只記在百千報 db 的 meta/editor.art_count，加畫不用改這裡
   function build(x){
     const night = x.edition === 'night', cards = [];
     let items = [];
@@ -210,7 +210,7 @@
       if(Array.isArray(x.order)) idx.sort((i,j)=>{const a=x.order.indexOf(ks[i]),b=x.order.indexOf(ks[j]);return (a<0?99+i:a)-(b<0?99+j:b);});
       idx.forEach(i => cs[i] && items.push(cs[i]));
     }
-    const artN = night ? 0 : (Number(x.art) >= 1 && Number(x.art) <= ART_COUNT ? Number(x.art) : (Number(x.issue_no) > 0 ? ((Number(x.issue_no) - 1) % ART_COUNT) + 1 : 0)); // 每期 JSON 的 art 欄指定第幾張（寫稿時依 meta/editor.art_notes 挑最適合當期的、一輪不重複）；沒寫的舊期依期數輪
+    const artN = night ? 0 : (Number.isInteger(Number(x.art)) && Number(x.art) >= 1 ? Number(x.art) : (Number(x.issue_no) > 0 ? ((Number(x.issue_no) - 1) % LEGACY_ROTATION) + 1 : 0)); // 每期 JSON 的 art 欄指定第幾張（寫稿時依 meta/editor.art_notes 挑最適合當期的、一輪不重複）；沒寫的舊期依期數輪
     const artSrc = artN ? 'art/'+String(artN).padStart(2,'0')+'.webp' : '';
     const artHtml = artN ? '<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url('+artSrc+');mask-image:url('+artSrc+')"></div>' : '';
     cards.push('<div class="inner cover">'+artHtml+'<div class="ed">'+(night?'夜　刊':'百 千 報<span class="en">THE HUNDRED</span>')+'</div><div class="date">'+esc(lab(x))+'　'+esc(when(x))+'</div><div class="line">'+esc(x.opening||'')+'</div><div class="toc">'+esc(items.map(c=>c.label).join('・'))+'</div>'+(x.alt&&x.alt.id?'<div class="hint"><a href="p/'+esc(x.alt.id)+'.html">'+esc(x.alt.label||'English')+' →</a></div>':'')+'<div class="hint">往左滑 →</div><div class="home"><a href="../">侯百千・刺青 文字 聲音 →</a></div></div>');

@@ -293,9 +293,9 @@ def main():
             f'<a href="{prev_["id"]}.html">← 第 {prev_["issue_no"]} 期</a>' if prev_ else "") + \
             '</span><a href="../archive.html">所有期數</a><span>' + (
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
-        ART_COUNT = 20  # 與 news/index.html 的 ART_COUNT 一致；加畫時兩邊都要改
+        LEGACY_ROTATION = 20  # 只給沒寫 art 的舊期輪流用，固定不改；畫的張數只記在 meta/editor.art_count
         a = x.get("art")
-        art_n = 0 if x.get("edition") == "night" else (int(a) if isinstance(a, int) and 1 <= a <= ART_COUNT else ((int(no) - 1) % ART_COUNT + 1 if isinstance(no, int) and no > 0 else 0))
+        art_n = 0 if x.get("edition") == "night" else (int(a) if isinstance(a, int) and a >= 1 else ((int(no) - 1) % LEGACY_ROTATION + 1 if isinstance(no, int) and no > 0 else 0))
         art = (f'<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url(../art/{art_n:02d}.webp);mask-image:url(../art/{art_n:02d}.webp)"></div>' if art_n else "")
         if EN:
             body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>{art}'

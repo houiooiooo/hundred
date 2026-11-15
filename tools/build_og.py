@@ -74,7 +74,7 @@ def wrap(draw, text, font, maxw):
 
 
 ART_DIR = ROOT / "news" / "art"
-ART_COUNT = 20
+LEGACY_ROTATION = 20  # 只給沒寫 art 的舊期輪流用，固定不改；畫的張數只記在 meta/editor.art_count
 DARK, CREAM, CREAM2, CREAM3, SEAL_D = "#121110", "#ebe6dc", "#b3ac9f", "#7a7469", "#d0574a"
 
 
@@ -100,8 +100,8 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
         art_n = int(x.get("art") or 0)
     except (TypeError, ValueError):
         art_n = 0
-    if not 1 <= art_n <= ART_COUNT:
-        art_n = (no_i - 1) % ART_COUNT + 1 if no_i > 0 else 0
+    if art_n < 1 or not (ART_DIR / f"{art_n:02d}.webp").exists():
+        art_n = (no_i - 1) % LEGACY_ROTATION + 1 if no_i > 0 else 0
     if art_n:
         paste_art(img, Image, art_n, (50, 50, 570, 580))
     L, R = 630, W - 70
