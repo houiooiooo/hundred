@@ -98,7 +98,11 @@ def sections(x):
 
 CSS = """
 :root{--paper:#f4f0e8;--ink:#1b1a18;--ink2:#55514a;--ink3:#8d877c;--line:#d9d2c4;--seal:#b0342a;--card:#fbf8f2}
-@media (prefers-color-scheme:dark){:root{--paper:#121110;--ink:#ebe6dc;--ink2:#b3ac9f;--ink3:#7a7469;--line:#2c2a26;--seal:#d0574a;--card:#1a1917}}
+html.dark{--paper:#121110;--ink:#ebe6dc;--ink2:#b3ac9f;--ink3:#7a7469;--line:#2c2a26;--seal:#d0574a;--card:#1a1917}
+.mode{position:fixed;top:10px;right:14px;display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);letter-spacing:.06em;background:var(--paper);padding:2px 4px;border-radius:6px}
+.mode .clk{font-variant-numeric:tabular-nums;margin-right:4px}
+.mode button{font:inherit;font-family:"Noto Serif TC",serif;font-size:11px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink3);cursor:pointer}
+.mode button.on{border-color:var(--seal);color:var(--seal)}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:17px;line-height:1.85;overflow-wrap:anywhere}
 main{max-width:640px;margin:0 auto;padding:40px 22px 80px}a{color:var(--ink2)}
 .brand{font-family:"Noto Serif TC",serif;font-weight:900;letter-spacing:.3em;color:var(--seal);text-decoration:none}
@@ -124,6 +128,46 @@ form.msg .row{display:flex;justify-content:space-between;align-items:center;gap:
 form.msg button{font:inherit;font-size:15px;padding:8px 20px;border:0;border-radius:8px;background:var(--seal);color:#fff;cursor:pointer}
 ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line);padding:10px 2px}ul.list small{display:block;color:var(--ink3)}
 """
+
+
+MODE_JS = """<script>
+/* 日夜：依台北日出日落自動切換；按「日」「夜」手動切換，維持到下一次日出或日落 */
+(function(){
+  var LAT=25.04, LON=121.56, R=Math.PI/180;
+  function sun(dayMs){ // dayMs: 該日任一時刻；回傳 [日出ms, 日落ms]
+    var jd=Math.floor((dayMs+28800000)/86400000)+2440588;
+    var n=Math.ceil(jd-2451545.0+0.0008), js=n-LON/360;
+    var M=(357.5291+0.98560028*js)%360, C=1.9148*Math.sin(M*R)+0.02*Math.sin(2*M*R)+0.0003*Math.sin(3*M*R);
+    var L=(M+C+180+102.9372)%360, jt=2451545+js+0.0053*Math.sin(M*R)-0.0069*Math.sin(2*L*R);
+    var d=Math.asin(Math.sin(L*R)*Math.sin(23.4397*R));
+    var w=Math.acos((Math.sin(-0.833*R)-Math.sin(LAT*R)*Math.sin(d))/(Math.cos(LAT*R)*Math.cos(d)))/R;
+    var ms=function(j){return (j-2440587.5)*86400000;};
+    return [ms(jt-w/360), ms(jt+w/360)];
+  }
+  function state(now){
+    var t=sun(now), r=t[0], s=t[1];
+    if(now<r){ var y=sun(now-86400000); if(now<y[1]) return {day:true,next:y[1]}; return {day:false,next:r}; }
+    if(now<s) return {day:true,next:s};
+    return {day:false,next:sun(now+86400000)[0]};
+  }
+  function get(){ try{ return JSON.parse(localStorage.getItem('hundred-mode')||'null'); }catch(e){ return null; } }
+  function put(v){ try{ localStorage.setItem('hundred-mode',JSON.stringify(v)); }catch(e){} }
+  function apply(){
+    var now=Date.now(), st=state(now), o=get(), day=st.day;
+    if(o && now<o.until) day=(o.m==='day'); else if(o) put(null);
+    document.documentElement.classList.toggle('dark',!day);
+    var b=document.querySelectorAll('.mode button');
+    for(var i=0;i<b.length;i++) b[i].classList.toggle('on',(b[i].dataset.m==='day')===day);
+    var c=document.getElementById('clk');
+    if(c){ var d=new Date(now); c.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2); }
+  }
+  window.hundredMode=function(m){ put({m:m,until:state(Date.now()).next}); apply(); };
+  apply();
+  document.addEventListener('DOMContentLoaded',function(){ apply(); setInterval(apply,20000); });
+})();
+</script>"""
+
+MODE_HTML = '<div class="mode"><span class="clk" id="clk"></span><button type="button" data-m="day" onclick="hundredMode(\'day\')" aria-label="日間模式">日</button><button type="button" data-m="night" onclick="hundredMode(\'night\')" aria-label="夜間模式">夜</button></div>'
 
 
 def intro_html():
@@ -197,8 +241,9 @@ def page(title, desc, canonical, body, og=None):
 <meta property="og:url" content="{esc(canonical)}">
 {img}
 <style>{CSS}</style>
+{MODE_JS}
 </head>
-<body><main>
+<body>{MODE_HTML}<main>
 {body}
 <footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。</footer>
 </main></body>
