@@ -111,7 +111,12 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
     d.text((L + d.textlength("百 千 報", font=brand) + 18, 86), "The Hundred", font=en, fill=CREAM3)
     small = load(ImageFont, fonts["regular"], 26)
     head = meta['special'] if meta.get("special") else f"第 {no_i} 期"
-    d.text((L, 134), f"{head}　{when(x)}", font=small, fill=CREAM2)
+    line = f"{head}　{when(x)}"
+    if d.textlength(line, font=small) > R - L:  # 特輯名稱太長時日期換到下一行，避免被裁掉
+        d.text((L, 134), head, font=small, fill=CREAM2)
+        d.text((L, 168), when(x), font=small, fill=CREAM2)
+    else:
+        d.text((L, 134), line, font=small, fill=CREAM2)
     text = x.get("opening") or meta.get("title") or ""
     for size in (46, 42, 38, 34, 30):
         f = load(ImageFont, fonts["semibold"], size)

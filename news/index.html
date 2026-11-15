@@ -170,6 +170,7 @@
   }
   function card(label, sub, o){
     if(!o) return null;
+    if(o.tag) label = o.tag; if(o.sub != null) sub = o.sub; // 特輯可在欄位裡改卡片標籤
     let h = '<div class="tag"><b>'+esc(label)+'</b><span>'+esc(sub||'')+'</span></div>';
     if(o.title) h += '<h2>'+esc(o.title)+'</h2>';
     if(o.target) h += '<div class="target">'+esc(o.target)+'</div>';

@@ -45,6 +45,9 @@ EN = False  # 英文版（每期 JSON 的 lang 為 "en"）時切換介面文字
 def section(label, sub, o):
     if not o:
         return ""
+    # 特輯可在欄位裡寫 tag／sub 改卡片標籤（例如把第二篇反方放在 craft 欄、標成「主線・反方」）
+    label = o.get("tag") or label
+    sub = o.get("sub") if o.get("sub") is not None else sub
     h = [f'<section><div class="tag"><b>{esc(label)}</b><span>{esc(sub)}</span></div>']
     if o.get("title"):
         h.append(f"<h2>{esc(o['title'])}</h2>")
