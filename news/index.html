@@ -21,7 +21,8 @@
   .hr{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
   .mode{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);letter-spacing:.06em}
   .mode button{font:inherit;font-family:"Noto Serif TC",serif;font-size:11px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink3);cursor:pointer}
-  .mode button{border-color:var(--seal);color:var(--seal);padding:3px 6px}
+  .mode button{width:16px;height:16px;padding:0;border:1.5px solid var(--ink2);border-radius:50%;color:transparent;font-size:0;background:transparent}
+  html.dark .mode button{background:var(--ink);border-color:var(--ink)}
   body.night{ --paper:#0e0e10; --ink:#e4e0d6; --ink2:#a9a397; --ink3:#6e6a62; --line:#25242a; --seal:#c9a35a; --card:#17171b; }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);overflow:hidden}
