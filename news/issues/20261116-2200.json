@@ -12,7 +12,8 @@
     "main",
     "lesson",
     "news",
-    "music"
+    "music",
+    "own"
   ],
   "craft": {
     "title": "手機貼紙：你交出去的是什麼",
@@ -95,6 +96,22 @@
       "rave",
       "大腦",
       "科學"
+    ]
+  },
+  "own": {
+    "title": "2026 連載中・Free rave party",
+    "body": "凌晨，河堤橋下的sub邊\n\n她點燃今晚第七根藍莓\n\n看遠方的煙火爆炸\n\n感覺到，心臟自己在跳",
+    "notes": [],
+    "question": "",
+    "source": {
+      "title": "侯百千・2026 連載中",
+      "url": "https://houiooiooo.github.io/hundred/series-2026.html"
+    },
+    "kind": "連載",
+    "public": true,
+    "tags": [
+      "詩",
+      "rave"
     ]
   }
 }
