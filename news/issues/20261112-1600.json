@@ -29,7 +29,12 @@
    "title": "Crack Magazine：Sama' Abdulhadi 專訪（2018）",
    "url": "https://crackmagazine.net/?p=109944"
   },
-  "topic": "場景"
+  "topic": "場景",
+  "tags": [
+   "巴勒斯坦",
+   "DJ",
+   "女性"
+  ]
  },
  "tattoo": {
   "title": "耶路撒冷的刺青印章，和巴勒斯坦女人的繡線",
@@ -44,7 +49,13 @@
    "title": "Razzouk Tattoo：家族歷史",
    "url": "https://razzouktattoo.com/pages/history"
   },
-  "topic": "傳統"
+  "topic": "傳統",
+  "tags": [
+   "巴勒斯坦",
+   "刺青史",
+   "工藝",
+   "女性"
+  ]
  },
  "main": {
   "title": "巴勒斯坦在哪裡？先看懂一張地圖",
@@ -56,7 +67,11 @@
   ],
   "question": "",
   "label": "入門",
-  "target": ""
+  "target": "",
+  "tags": [
+   "巴勒斯坦",
+   "戰爭"
+  ]
  },
  "news": {
   "title": "西岸南部的牧羊村：房子被拆之後",
@@ -70,7 +85,13 @@
   "source": {
    "title": "半島電視台：Villagers vow to rebuild despite devastating mass demolition in West Bank（2026 年 9 月 4 日）",
    "url": "https://www.aljazeera.com/news/2026/9/4/villagers-vow-rebuild-despite-devastating-mass-demolition-west-bank"
-  }
+  },
+  "tags": [
+   "巴勒斯坦",
+   "土地",
+   "社會運動",
+   "中東"
+  ]
  },
  "lesson": {
   "title": "抵制以色列，有用嗎？",
@@ -82,7 +103,11 @@
    "南非：Neta Crawford 與 Audie Klotz 編《How Sanctions Work》（1999）：https://link.springer.com/book/10.1057/9781403915917 。挪威基金出脫見挪威央行投資管理局公告：https://www.nbim.no/en/news-and-insights/the-press/press-releases/2025/decisions-on-exclusion/ ；國會要求檢討與臨時準則見挪威財政部 2025 年 11 月 7 日：https://www.regjeringen.no/en/whats-new/the-government-follows-up-on-the-parliaments-decision-regarding-the-ethical-framework-for-the-pension-fund/id3136331/ 。西班牙見 Dawn：https://www.dawn.com/news/1947551 。歐盟見路透 2026 年 4 月 21 日：https://www.reuters.com/world/eu-divided-suspension-israel-pact-spain-pushes-action-2026-04-21/ 與 Euronews：https://www.euronews.com/2026/04/21/eu-ministers-reject-calls-to-suspend-israeli-trade-agreement-over-war-crimes"
   ],
   "question": "",
-  "series": "反方"
+  "series": "反方",
+  "tags": [
+   "巴勒斯坦",
+   "地緣政治"
+  ]
  },
  "own": {
   "title": "2026 連載中・dj rum",
@@ -94,7 +119,12 @@
    "url": "https://houiooiooo.github.io/hundred/series-2026.html"
   },
   "kind": "連載",
-  "public": true
+  "public": true,
+  "tags": [
+   "散文",
+   "DJ",
+   "連載"
+  ]
  },
  "lit": {
   "title": "達爾維什：不想只當「抵抗詩人」的巴勒斯坦詩人",
@@ -109,7 +139,11 @@
    "title": "PalQuest（巴勒斯坦研究所）：Mahmoud Darwish",
    "url": "https://www.palquest.org/en/node/6550"
   },
-  "kind": "詩人"
+  "kind": "詩人",
+  "tags": [
+   "巴勒斯坦",
+   "詩"
+  ]
  },
  "alt": {
   "id": "20261112-1600-en",

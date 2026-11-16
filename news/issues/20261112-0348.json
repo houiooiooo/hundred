@@ -17,7 +17,12 @@
    "title": "Reuters（Dawn 轉載）：Millions of Spaniards stage first general strike in 14 years as anger rages over housing",
    "url": "https://www.dawn.com/news/2043822/millions-of-spaniards-stage-first-general-strike-in-14-years-as-anger-rages-over-housing"
   },
-  "question": ""
+  "question": "",
+  "tags": [
+   "歐洲",
+   "勞動",
+   "社會運動"
+  ]
  },
  "main": {
   "title": "被注射了熱情的薛西弗斯",
@@ -28,7 +33,11 @@
    "Wolf 的 Tanner 講座，2007 年 11 月 7 日，原文：「meaning arises when subjective attraction meets objective attractiveness」；大麻與填字謎見講座第 78 頁，金魚與《戰爭與和平》見第 83 頁。2010 年出版為《Meaning in Life and Why It Matters》，Haidt 與 Arpaly 的回應收在同書。https://tannerlectures.org/wp-content/uploads/sites/105/2024/07/Wolf_07.pdf",
    "Wolf 的自承見講座第 97、99、104 頁。主觀論與客觀論的整理，可參考史丹佛哲學百科〈The Meaning of Life〉。https://plato.stanford.edu/entries/life-meaning/"
   ],
-  "question": "一件你投入很深的事，如果幾乎沒有人覺得它有價值，你還會說它有意義嗎？"
+  "question": "一件你投入很深的事，如果幾乎沒有人覺得它有價值，你還會說它有意義嗎？",
+  "tags": [
+   "虛無主義",
+   "倫理"
+  ]
  },
  "lesson": {
   "series": "意識科學",
@@ -40,7 +49,12 @@
    "小腦「由片狀小模組組成、彼此大致獨立」的說法，見 Tononi 與 Koch〈Consciousness: here, there and everywhere?〉（2015）：https://arxiv.org/abs/1405.7089 。Aaronson 的批評與 Tononi 的回應見 https://scottaaronson.blog/?p=1823 ；公開信見《自然》2023 年 9 月 20 日新聞：https://www.nature.com/articles/d41586-023-02971-1",
    "Casarotto 等，《Annals of Neurology》2016 年，DOI 10.1002/ana.24779（https://air.unimi.it/handle/2434/453773 ）。PCI 是「代理指標而非近似值」、結果也相容於其他理論；小腦與皮質 Φ 的差異是理論推測，不是已在真實大腦中直接計算得出的測量值。見 Barrett、Seth 等 2026 年預印本：https://arxiv.org/abs/2604.11482"
   ],
-  "question": ""
+  "question": "",
+  "tags": [
+   "意識",
+   "大腦",
+   "意識理論"
+  ]
  },
  "tattoo": {
   "topic": "傳統",
@@ -55,7 +69,12 @@
    "title": "國家文化記憶庫：Puljetji 佳興部落手紋",
    "url": "https://tcmb.culture.tw/zh-tw/detail?id=20230509000001&indexCode=BOCH_CountryCulture_51"
   },
-  "question": ""
+  "question": "",
+  "tags": [
+   "原住民",
+   "女性",
+   "殖民"
+  ]
  },
  "music": {
   "topic": "DJ",
@@ -70,7 +89,13 @@
    "title": "SPIN：The SPIN Interview: DJ Kool Herc",
    "url": "https://www.spinmagazine.com/2023/08/the-spin-interview-dj-kool-herc/"
   },
-  "question": ""
+  "question": "",
+  "tags": [
+   "DJ",
+   "嘻哈",
+   "女性",
+   "移民"
+  ]
  },
  "own": {
   "kind": "散文",
@@ -81,7 +106,11 @@
   "source": {
    "title": "侯百千・關於我們如何學會語言",
    "url": "https://houiooiooo.github.io/hundred/archive-lang.html"
-  }
+  },
+  "tags": [
+   "散文",
+   "關於我們如何學會語言"
+  ]
  },
  "lit": {
   "kind": "讀",
@@ -96,7 +125,11 @@
    "title": "韓江 2024 年諾貝爾文學獎演講",
    "url": "https://www.nobelprize.org/prizes/literature/2024/han/lecture/"
   },
-  "question": ""
+  "question": "",
+  "tags": [
+   "小說",
+   "女性"
+  ]
  },
  "order": [
   "music",

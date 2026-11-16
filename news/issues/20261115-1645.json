@@ -29,7 +29,12 @@
   "source": {
    "title": "ASML：The hottest thing about ASML machines",
    "url": "https://www.asml.com/en/discover/hot-machines"
-  }
+  },
+  "tags": [
+   "半導體",
+   "歐洲",
+   "科技"
+  ]
  },
  "main": {
   "title": "台積電運動會上，為什麼有人喊 Jensen",
@@ -44,7 +49,12 @@
   ],
   "label": "入門",
   "target": "",
-  "question": ""
+  "question": "",
+  "tags": [
+   "半導體",
+   "AI",
+   "台灣"
+  ]
  },
  "news": {
   "title": "60 萬顆晶片，卡在兩道門之間",
@@ -58,7 +68,13 @@
   "source": {
    "title": "Reuters：Nvidia chips pile up in Hong Kong as China withholds import approval（2026 年 11 月 5 日）",
    "url": "https://www.reuters.com/world/china/nvidia-chips-pile-up-hong-kong-china-withholds-import-approval-2026-11-05/"
-  }
+  },
+  "tags": [
+   "半導體",
+   "AI",
+   "中國",
+   "美國"
+  ]
  },
  "lesson": {
   "title": "如果世界不再那麼需要台灣的晶片",
@@ -71,7 +87,12 @@
   ],
   "target": "被挑戰的立場：「矽盾」——全世界都依賴台灣的晶片，所以不會讓台灣打仗",
   "series": "反方",
-  "question": ""
+  "question": "",
+  "tags": [
+   "半導體",
+   "台灣",
+   "地緣政治"
+  ]
  },
  "craft": {
   "title": "用美國的晶片，做台灣的主權 AI",
@@ -89,7 +110,12 @@
   "source": {
    "title": "Stanford HAI：The Commercial Landscape of AI Sovereignty Offerings",
    "url": "https://hai.stanford.edu/policy/the-commercial-landscape-of-ai-sovereignty-offerings"
-  }
+  },
+  "tags": [
+   "AI",
+   "台灣",
+   "半導體"
+  ]
  },
  "music": {
   "title": "一顆晶片，讓八〇年代聽起來像八〇年代",
@@ -105,7 +131,11 @@
   "source": {
    "title": "Stanford News Service（1994）：Music synthesis approaches sound quality of real instruments",
    "url": "https://news.stanford.edu/pr/94/940607Arc4222.html"
-  }
+  },
+  "tags": [
+   "器材",
+   "日本"
+  ]
  },
  "lit": {
   "title": "石黑一雄《克拉拉與太陽》：一台機器怎麼看人",
@@ -118,7 +148,11 @@
   "source": {
    "title": "Star Tribune：Review: 'Klara and the Sun,' by Kazuo Ishiguro",
    "url": "https://www.startribune.com/review-klara-and-the-sun-by-kazuo-ishiguro/600027814"
-  }
+  },
+  "tags": [
+   "小說",
+   "AI"
+  ]
  },
  "own": {
   "title": "材料・椅子上發呆",
@@ -129,6 +163,10 @@
   "source": {
    "title": "侯百千・材料",
    "url": "https://houiooiooo.github.io/hundred/archive-material.html"
-  }
+  },
+  "tags": [
+   "散文",
+   "材料"
+  ]
  }
 }

@@ -17,7 +17,12 @@
     "source": {
       "title": "Middle East Eye：Gaza families struggle as rain floods shelters（另參路透、法新社 11/7 報導，聯合國 OCHA 11/5 情勢報告）",
       "url": "https://www.middleeasteye.net/news/we-do-not-want-die-cold-gaza-families-struggle-rain-floods-shelters"
-    }
+    },
+    "tags": [
+      "巴勒斯坦",
+      "戰爭",
+      "中東"
+    ]
   },
   "main": {
     "title": "同一場選舉，民調可以差到 28 個百分點",
@@ -28,7 +33,12 @@
       "聯合報調查期間為 10 月 20 日至 25 日，市話加手機抽樣，看好度的部分另有 16% 表示無法判斷。",
       "論文是 Vallone、Lee Ross、Mark Lepper 1985 年發表的〈敵意媒體現象〉，受試者 144 人，影片是美國三大電視網約 36 分鐘的新聞片段。後來的統合分析整理了 34 項研究，效應確實存在，對議題越投入越明顯。"
     ],
-    "question": "如果一份民調的結果你不喜歡，你會先去看它的抽樣方法，還是先懷疑它被操作了？"
+    "question": "如果一份民調的結果你不喜歡，你會先去看它的抽樣方法，還是先懷疑它被操作了？",
+    "tags": [
+      "政治",
+      "媒體",
+      "心理學"
+    ]
   },
   "lesson": {
     "no": 7,
@@ -40,7 +50,11 @@
       "Dennett 在 1991 年《意識的解釋》中，把這兩種說法分別叫做「歐威爾式」（竄改紀錄）與「史達林式」（事前擺好的審判），並以此提出「多重草稿模型」，反對腦中有一個「笛卡兒劇場」。",
       "「錯覺論」一詞由英國哲學家 Keith Frankish 在 2016 年推廣。哲學家 Galen Strawson 是最尖銳的反對者之一，他在 2018 年稱否認意識存在是史上最愚蠢的主張。"
     ],
-    "question": ""
+    "question": "",
+    "tags": [
+      "意識",
+      "意識理論"
+    ]
   },
   "tattoo": {
     "topic": "傳統",
@@ -55,7 +69,12 @@
     "source": {
       "title": "原教界：泰雅族的紋面文化（李台元，2016）",
       "url": "https://web.alcd.center/aew/76/chapter/1998"
-    }
+    },
+    "tags": [
+      "原住民",
+      "女性",
+      "殖民"
+    ]
   },
   "music": {
     "topic": "製作",
@@ -70,7 +89,11 @@
     "source": {
       "title": "MusicTech：Landmark Productions — BBC Radiophonic Workshop, Doctor Who Theme（另參 Wikipedia：Doctor Who theme music）",
       "url": "https://musictech.com/guides/essential-guide/landmark-productions-bbc-radiophonic-workshop-doctor-who-theme/"
-    }
+    },
+    "tags": [
+      "女性",
+      "取樣"
+    ]
   },
   "own": {
     "kind": "散文",
@@ -81,7 +104,12 @@
     "source": {
       "title": "侯百千・材料",
       "url": "https://houiooiooo.github.io/hundred/archive-material.html"
-    }
+    },
+    "tags": [
+      "散文",
+      "移民",
+      "材料"
+    ]
   },
   "far": {
     "title": "人不愛蟲，所以連牠們有沒有消失都不知道",
@@ -95,6 +123,9 @@
     "source": {
       "title": "EurekAlert!：洛杉磯郡立自然史博物館新聞稿（論文刊於《Ecography》，2026/11/4）",
       "url": "https://www.eurekalert.org/news-releases/1149342"
-    }
+    },
+    "tags": [
+      "保育"
+    ]
   }
 }

@@ -18,7 +18,11 @@
   "source": {
    "title": "Criterion：A Matter of Time（Ivone Margulies）",
    "url": "https://www.criterion.com/current/posts/1215-a-matter-of-time-jeanne-dielman-23-quai-du-commerce-1080-bruxelles"
-  }
+  },
+  "tags": [
+   "電影",
+   "女性"
+  ]
  },
  "own": {
   "kind": "散文",
@@ -29,7 +33,11 @@
   "source": {
    "title": "侯百千・材料",
    "url": "https://houiooiooo.github.io/hundred/archive-material.html"
-  }
+  },
+  "tags": [
+   "散文",
+   "材料"
+  ]
  },
  "tattoo": {
   "topic": "工具與墨",
@@ -44,7 +52,11 @@
   "source": {
    "title": "德國聯邦風險評估研究所（BfR）意見 039/2020",
    "url": "https://www.bfr.bund.de/cm/349/tattoo-inks-risk-assessment-for-pigment-blue-15-3-and-pigment-green-7.pdf"
-  }
+  },
+  "tags": [
+   "工具與墨",
+   "歐洲"
+  ]
  },
  "news": {
   "title": "孟加拉成衣工人再停工：調薪答應了，金額要等到十二月",
@@ -58,7 +70,11 @@
   "source": {
    "title": "The Daily Star：RMG unrest continues in Savar, Ashulia",
    "url": "https://www.thedailystar.net/news/bangladesh/news/rmg-unrest-continues-savar-ashulia-4321521"
-  }
+  },
+  "tags": [
+   "勞動",
+   "女性"
+  ]
  },
  "main": {
   "title": "量子力學裡的「觀察」，不需要有人在看",
@@ -69,7 +85,12 @@
    "Hackermüller、Hornberger、Brezger、Zeilinger、Arndt〈Decoherence of matter waves by thermal emission of radiation〉，《Nature》427（2004）；分子內部溫度升到約 3000 K 時，量子行為完全消失。原文：“Decoherence by emission of thermal radiation is a general mechanism that should be relevant to all macroscopic bodies.” Carroll 的話出自他 2016 年部落格文章下的留言回覆。https://arxiv.org/abs/quant-ph/0402146 https://preposterousuniverse.com/blog/?p=12904",
    "意識塌縮的思想史見史丹佛哲學百科〈Quantum Approaches to Consciousness〉；退相干本身不解決測量問題，見同百科〈The Role of Decoherence in Quantum Mechanics〉。Chalmers 與 McQueen 也承認簡單版本已被量子芝諾效應排除。Kent 的話見 Plus Magazine〈Is it us?〉（2016）。https://plato.stanford.edu/entries/qm-decoherence/ https://arxiv.org/abs/2105.02314 https://plus.maths.org/content/it-us"
   ],
-  "question": "如果量子力學裡的「觀察」只是交互作用，「一切是意識」還需要量子力學來撐嗎？"
+  "question": "如果量子力學裡的「觀察」只是交互作用，「一切是意識」還需要量子力學來撐嗎？",
+  "tags": [
+   "物理",
+   "意識",
+   "觀念論"
+  ]
  },
  "lesson": {
   "series": "意識科學",
@@ -81,7 +102,12 @@
    "演講為 TED 2017〈Your brain hallucinates your conscious reality〉，引語依第三方逐字稿：“The remarkable thing is the sensory information coming into the brain hasn't changed at all.” Seth 在 Aeon 的文章（2016）引用心理學家 Chris Frith，說知覺是「一個與現實吻合的幻想」，並把「真正的問題」定義為 “how to account for the various properties of consciousness in terms of biological mechanisms”。https://singjupost.com/anil-seth-your-brain-hallucinates-your-conscious-reality-full-transcript/ https://aeon.co/essays/the-hard-problem-of-consciousness-is-a-distraction-from-the-real-one",
    "Teufel 等，PNAS 2015；另一組 40 位健康受試者中，表現與精神病傾向分數呈連續相關。本文依劍橋大學新聞稿，未讀到效果量。暗室問題見 Friston、Thornton、Clark 2012；Clark 書評見 Naturalism.org。https://www.cam.ac.uk/node/159422 https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2012.00130/full https://www.naturalism.org/node/385"
   ],
-  "question": ""
+  "question": "",
+  "tags": [
+   "意識",
+   "大腦",
+   "知覺"
+  ]
  },
  "music": {
   "topic": "唱片",
@@ -96,7 +122,11 @@
   "source": {
    "title": "Red Bull Music Academy：Isao Tomita 講座",
    "url": "https://redbullmusicacademy.com/lectures/isao-tomita"
-  }
+  },
+  "tags": [
+   "器材",
+   "日本"
+  ]
  },
  "order": [
   "craft",

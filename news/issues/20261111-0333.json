@@ -18,7 +18,12 @@
   "source": {
    "title": "AP（OPB 轉載）：France blames Iran for a cyberattack that heated supermarket refrigerators",
    "url": "https://www.opb.org/article/2026/11/09/france-blames-iran-for-a-cyberattack-that-heated-supermarket-refrigerators/"
-  }
+  },
+  "tags": [
+   "科技",
+   "歐洲",
+   "中東"
+  ]
  },
  "main": {
   "title": "把「原創」當成最高價值，歷史並不長",
@@ -29,6 +34,10 @@
    "原告於 2026 年 7 月 8 日在美國加州中區聯邦地院起訴，11 月 4 日自願撤訴（保留再訴權利），未揭露是否和解。https://www.musicbusinessworldwide.com/bts-swim-copyright-lawsuit-against-hybe-dropped-by-songwriters-less-than-four-months-after-filing/ https://sports.khan.co.kr/en/article/202611051040007/",
    "Young 原文見 https://rpo.library.utoronto.ca/content/conjectures-original-composition-1759 。也有學者指出這篇的觀點不少承襲前人，例如 Addison 談天才的文章（https://ojs.elte.hu/theanachronist/article/download/2756/2477/4906）。高居翰對董其昌的解讀，引自吳堅旭〈創造性模仿在繪畫藝術中的意義〉，原刊《深圳大學學報》2009 年第 4 期：https://m-news.artron.net/news/20250311/n845932.html",
    "判決為 Feist v. Rural（1991）：https://cyber.harvard.edu/IPCoop/91feis1.html 。Boden 的三種創造力見 https://www.interaliamag.org/articles/margaret-boden-creativity-in-a-nutshell/"
+  ],
+  "tags": [
+   "創作",
+   "藝術史"
   ]
  },
  "lesson": {
@@ -41,7 +50,12 @@
   ],
   "question": "",
   "series": "意識科學",
-  "no": 10
+  "no": 10,
+  "tags": [
+   "意識",
+   "大腦",
+   "意識理論"
+  ]
  },
  "tattoo": {
   "title": "兩千三百年前，一位刺青師留下了接針的痕跡",
@@ -56,7 +70,11 @@
    "title": "Caspari 等，〈High-resolution near-infrared data reveal Pazyryk tattooing methods〉，《Antiquity》，2025 年 7 月 31 日",
    "url": "https://doi.org/10.15184/aqy.2025.10150"
   },
-  "topic": "考古"
+  "topic": "考古",
+  "tags": [
+   "刺青史",
+   "女性"
+  ]
  },
  "music": {
   "title": "一個人的聲音，最後變成房間的聲音",
@@ -67,7 +85,10 @@
    "作品 1969 年在 Brandeis 大學的電子音樂工作室首次錄製，1970 年在紐約古根漢美術館演出，同年隨《Source》雜誌的唱片首次發行。1981 年 Lovely Music 發行的版本，是 Lucier 1980 年 10 月 29 日與 31 日在康乃狄克州米德爾敦家中客廳重新錄製的（https://b2b.forcedexposure.com/onesheets/LCD1013CD_ST.pdf ）。現場演出時，Lucier 會把開頭的「different from」（和你所在的不同）改成「the same as」（和你所在的同一個）。https://en.wikipedia.org/wiki/I_Am_Sitting_in_a_Room"
   ],
   "question": "",
-  "topic": "作品"
+  "topic": "作品",
+  "tags": [
+   "實驗音樂"
+  ]
  },
  "far": {
   "title": "太平洋垃圾帶的海，變青了一點",
@@ -81,7 +102,11 @@
   "source": {
    "title": "CNN（KEYT 轉載）：The Great Pacific Garbage Patch may now have so much plastic it’s changing the color of the ocean",
    "url": "https://keyt.com/news/national-world/cnn-other/2026/11/05/the-great-pacific-garbage-patch-may-now-have-so-much-plastic-its-changing-the-color-of-the-ocean/"
-  }
+  },
+  "tags": [
+   "科學",
+   "環境"
+  ]
  },
  "own": {
   "title": "顏色・藍色",
@@ -92,7 +117,11 @@
   "source": {
    "title": "侯百千・顏色",
    "url": "https://houiooiooo.github.io/hundred/archive-colors.html"
-  }
+  },
+  "tags": [
+   "散文",
+   "顏色"
+  ]
  },
  "order": [
   "news",

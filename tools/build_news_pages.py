@@ -5,6 +5,7 @@
 每次新增或修改 news/issues/*.json 之後跑一次，再一起 commit。
 """
 import html, json, re
+from urllib.parse import quote
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -53,7 +54,50 @@ def body_html(s):
 EN = False  # 英文版（每期 JSON 的 lang 為 "en"）時切換介面文字
 
 
-def section(label, sub, o):
+CUR = None  # 正在產生的那一期 id；section() 用它組出單篇網址
+
+KEYS = ["news", "main", "lesson", "tattoo", "music", "own", "craft", "lit", "far"]
+COL = {"news": "新聞", "tattoo": "刺青", "music": "音樂", "own": "百千", "craft": "興趣的藝術", "lit": "文學", "far": "遠方"}
+CON = ("反方", "Counterpoint")
+
+
+def column(key, o):
+    """欄位標籤：讀者在頁面上看到的欄名（特輯另標的照特輯）。"""
+    if re.fullmatch(r"n\d+", key):  # 夜刊
+        return {"回顧": "意識科學", "聽": "音樂"}.get(o.get("tag"), o.get("tag") or "夜刊")
+    if o.get("sub") in CON or o.get("series") in CON or o.get("label") in CON:
+        return "反方"
+    if key == "main":
+        return {"Primer": "入門"}.get(o.get("label"), o.get("label") or "反方")
+    if key == "lesson":
+        return o.get("series") or "意識科學"
+    return COL.get(key, key)
+
+
+def article_tags(o, key):
+    ts = [column(key, o)]
+    for t in o.get("tags") or []:
+        t = str(t).strip()
+        if t and t not in ts:
+            ts.append(t)
+    return ts
+
+
+def tag_href(t, prefix="../"):
+    return f"{prefix}t/{quote(t)}.html"
+
+
+def tag_chips(o, key, prefix="../"):
+    """單篇網址＋標籤（欄位標籤在前、主題標籤在後）。"""
+    if not CUR or not key:
+        return ""
+    ts = article_tags(o, key)
+    chips = "".join(f'<a class="chip" href="{tag_href(t, prefix)}">#{esc(t)}</a>' for t in ts)
+    one = ("Permalink" if EN else "單篇網址")
+    return f'<div class="meta"><a href="{prefix}a/{esc(CUR)}-{esc(key)}.html">{one}</a>{chips}</div>'
+
+
+def section(label, sub, o, key=None):
     if not o:
         return ""
     # 特輯可在欄位裡寫 tag／sub 改卡片標籤（例如把第二篇反方放在 craft 欄、標成「主線・反方」）
@@ -62,6 +106,15 @@ def section(label, sub, o):
     h = [f'<section><div class="tag"><b>{esc(label)}</b><span>{esc(sub)}</span></div>']
     if o.get("title"):
         h.append(f"<h2>{esc(o['title'])}</h2>")
+    h.append(inner(o))
+    h.append(tag_chips(o, key))
+    h.append("</section>")
+    return "".join(h)
+
+
+def inner(o):
+    """一篇的內文（副標、正文、提問、附註、來源）；每期頁和單篇頁共用。"""
+    h = []
     if o.get("target"):
         h.append(f'<div class="target">{esc(o["target"])}</div>')
     h.append(body_html(o.get("body")))
@@ -74,13 +127,12 @@ def section(label, sub, o):
     src = o.get("source") or {}
     if re.match(r"^https?://", src.get("url") or ""):
         h.append(f'<div class="src">{"Source: " if EN else "來源："}<a href="{esc(src["url"])}" rel="noopener">{esc(src.get("title") or src["url"])}</a></div>')
-    h.append("</section>")
     return "".join(h)
 
 
 def sections(x):
     if x.get("edition") == "night":
-        s = "".join(section(it.get("tag", ""), it.get("sub", ""), it) for it in x.get("items") or [])
+        s = "".join(section(it.get("tag", ""), it.get("sub", ""), it, f"n{i + 1}") for i, it in enumerate(x.get("items") or []))
         if x.get("sleep"):
             s += f'<section><div class="tag"><b>帶進睡眠</b></div><div class="body">{paras(x["sleep"])}</div></section>'
         return s
@@ -92,15 +144,15 @@ def sections(x):
          {"news": "新聞", "main": "主食", "lesson": "主線", "tattoo": "刺青", "music": "音樂",
           "own": "百千", "craft": "興趣的藝術", "lit": "文學", "far": "調味"})
     parts = [
-        ("news", section(T["news"], "Worth knowing" if EN else "值得知道", x.get("news"))),
-        ("main", section(T["main"], g("main", "label", "反方"), x.get("main"))),  # 特輯的主食可另標（如「入門」）
-        ("lesson", section(T["lesson"], sub, x.get("lesson"))),
-        ("tattoo", section(T["tattoo"], g("tattoo", "topic"), x.get("tattoo"))),
-        ("music", section(T["music"], g("music", "topic"), x.get("music"))),
-        ("own", section(T["own"], g("own", "kind", "自己寫的"), x.get("own"))),
-        ("craft", section(T["craft"], g("craft", "domain"), x.get("craft"))),
-        ("lit", section(T["lit"], g("lit", "kind", "讀"), x.get("lit"))),
-        ("far", section(T["far"], "遠方", x.get("far"))),
+        ("news", section(T["news"], "Worth knowing" if EN else "值得知道", x.get("news"), "news")),
+        ("main", section(T["main"], g("main", "label", "反方"), x.get("main"), "main")),  # 特輯的主食可另標（如「入門」）
+        ("lesson", section(T["lesson"], sub, x.get("lesson"), "lesson")),
+        ("tattoo", section(T["tattoo"], g("tattoo", "topic"), x.get("tattoo"), "tattoo")),
+        ("music", section(T["music"], g("music", "topic"), x.get("music"), "music")),
+        ("own", section(T["own"], g("own", "kind", "自己寫的"), x.get("own"), "own")),
+        ("craft", section(T["craft"], g("craft", "domain"), x.get("craft"), "craft")),
+        ("lit", section(T["lit"], g("lit", "kind", "讀"), x.get("lit"), "lit")),
+        ("far", section(T["far"], "遠方", x.get("far"), "far")),
     ]
     # 期數 JSON 有 order 時照它排；沒有 order 的舊期維持原順序
     order = x.get("order")
@@ -136,6 +188,13 @@ h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:
 .q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"Noto Serif TC",serif}.q::before{content:"問　";color:var(--seal);font-weight:900}.q.en::before{content:"Q  "}
 .notes{font-size:14px;color:var(--ink2);margin-top:14px}.nt{color:var(--ink3);font-size:13px}.notes ol{padding-left:20px;margin:6px 0}
 .src{font-size:13px;color:var(--ink3);margin-top:10px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;margin-top:14px;color:var(--ink3)}.meta a{color:var(--ink3);text-decoration:none}.meta a:first-child{color:var(--seal)}
+.chip{white-space:nowrap}a.chip:hover,.meta a:hover{text-decoration:underline}
+.crumb{font-size:14px;color:var(--ink2);margin:6px 0 18px}.crumb a{color:var(--ink2)}
+.cloud{display:flex;flex-wrap:wrap;gap:8px 14px;margin:8px 0 22px}.cloud a{text-decoration:none;color:var(--ink)}.cloud small{color:var(--ink3);margin-left:3px}
+h3.sub{font-family:"Noto Serif TC",serif;font-weight:600;font-size:15px;color:var(--ink3);letter-spacing:.12em;margin:26px 0 6px}
+input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;margin:6px 0 4px}
+ul.list li .tg{font-size:12px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -231,7 +290,13 @@ document.querySelectorAll('form.msg').forEach(f=>f.addEventListener('submit',asy
 </script>"""
 
 
-def page(title, desc, canonical, body, og=None):
+def ld_tag(ld):
+    if not ld:
+        return ""
+    return '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
+
+
+def page(title, desc, canonical, body, og=None, ld=None):
     if og:
         img = (f'<meta property="og:image" content="{esc(og["url"])}">\n'
                f'<meta property="og:image:width" content="1200">\n'
@@ -257,7 +322,7 @@ def page(title, desc, canonical, body, og=None):
 <meta property="og:url" content="{esc(canonical)}">
 {img}
 <style>{CSS}</style>
-{MODE_JS}
+{ld_tag(ld)}{MODE_JS}
 </head>
 <body>{MODE_HTML}<main>
 {body}
@@ -272,6 +337,162 @@ def lab(i):
     return f'特輯・{i["special"]}' if i.get("special") else f'第 {i.get("issue_no")} 期'
 
 
+# ───────── 單篇頁與標籤 ─────────
+ARTS = NEWS / "a"
+TAGS = NEWS / "t"
+COL_ORDER = ["新聞", "反方", "入門", "意識科學", "刺青", "音樂", "百千", "文學", "興趣的藝術", "遠方"]
+
+
+def labels(x, key, o):
+    """卡片上的欄名與小標，跟 sections() 一致。"""
+    if re.fullmatch(r"n\d+", key):
+        return o.get("tag", ""), o.get("sub", "")
+    T = ({"news": "News", "main": "Main", "lesson": "Thread", "tattoo": "Tattoo", "music": "Electronic music",
+          "own": "Hundred", "craft": "Arts", "lit": "Literature", "far": "Far away"} if EN else
+         {"news": "新聞", "main": "主食", "lesson": "主線", "tattoo": "刺青", "music": "音樂",
+          "own": "百千", "craft": "興趣的藝術", "lit": "文學", "far": "調味"})
+    sub = {"news": "Worth knowing" if EN else "值得知道", "main": o.get("label") or "反方",
+           "lesson": (o.get("series") or "") + (f"・第 {o['no']} 課" if o.get("no") else ""),
+           "tattoo": o.get("topic") or "", "music": o.get("topic") or "", "own": o.get("kind") or "自己寫的",
+           "craft": o.get("domain") or "", "lit": o.get("kind") or "讀", "far": "遠方"}[key]
+    label = o.get("tag") or T[key]
+    sub = o.get("sub") if o.get("sub") is not None else sub
+    return label, sub
+
+
+def collect(x, meta, headline, L, og):
+    """一期裡的每一篇（有正文的欄位），照這一期的卡片順序。"""
+    out = []
+    if x.get("items"):
+        keyed = [(f"n{i + 1}", it) for i, it in enumerate(x["items"])]
+    else:
+        ks = list(KEYS)
+        if isinstance(x.get("order"), list):
+            ks.sort(key=lambda k: x["order"].index(k) if k in x["order"] else 99 + KEYS.index(k))
+        keyed = [(k, x[k]) for k in ks if isinstance(x.get(k), dict)]
+    for n, (k, o) in enumerate(keyed):
+        if not o.get("body") or not o.get("title"):
+            continue
+        lab_, sub = labels(x, k, o)
+        out.append({"slug": f"{meta['id']}-{k}", "iid": meta["id"], "key": k, "o": o, "label": lab_, "sub": sub,
+                    "col": column(k, o), "tags": article_tags(o, k), "published": x.get("published") or meta.get("published"),
+                    "when": when(x), "L": L, "en": EN, "og": og, "n": n, "alt": (x.get("alt") or {}).get("id")})
+    return out
+
+
+def first_para(s, n=110):
+    p = next((q.strip() for q in re.split(r"\n\s*\n", str(s or "")) if q.strip()), "")
+    p = re.sub(r"\s*\[\d{1,2}\]", "", p)
+    return p if len(p) <= n else p[:n].rstrip() + "⋯"
+
+
+def build_articles(arts):
+    global EN, CUR
+    CUR = None
+    ARTS.mkdir(exist_ok=True)
+    TAGS.mkdir(exist_ok=True)
+    arts.sort(key=lambda a: (str(a["published"]), a["n"]))
+    zh = [a for a in arts if not a["en"]]
+    by_slug = {a["slug"]: a for a in arts}
+    urls, keep_a, keep_t = [], set(), set()
+
+    for a in arts:
+        EN = a["en"]
+        o = a["o"]
+        chain = [b for b in zh if b["col"] == a["col"]] if not EN else []
+        i = chain.index(a) if a in chain else None
+        prev_ = chain[i - 1] if i else None
+        next_ = chain[i + 1] if i is not None and i + 1 < len(chain) else None
+        chips = "".join(f'<a class="chip" href="{tag_href(t)}">#{esc(t)}</a>' for t in a["tags"])
+        url = f"{SITE}news/a/{a['slug']}.html"
+        if EN:
+            zh_slug = f"{a['alt']}-{a['key']}" if a.get("alt") else None
+            alt = (f'<div class="swipe"><a href="{esc(zh_slug)}.html">中文版 →</a></div>' if zh_slug in by_slug else "")
+            nav = (f'<nav class="pn"><span></span><a href="../p/{esc(a["iid"])}.html">Read the whole issue</a>'
+                   f'<a href="../tags.html">Tags (in Chinese)</a></nav>')
+            form = letter_form_en(f'{a["L"]}・{o["title"]}', a["slug"])
+        else:
+            en_slug = next((s for s in (f"{a['alt']}-{a['key']}",) if a.get("alt")), None)
+            alt = (f'<div class="swipe"><a href="{esc(en_slug)}.html">English →</a></div>' if en_slug in by_slug else "")
+            pn = lambda b, arrow: (f'<a href="{esc(b["slug"])}.html">{arrow}{esc(b["L"])}・{esc(b["o"]["title"])}</a>' if b else "")
+            nav = (f'<nav class="pn" style="flex-direction:column;gap:8px">'
+                   f'<div class="tg" style="color:var(--ink3);font-size:13px">同一欄的{"上一篇、下一篇" if prev_ or next_ else "文章"}（{esc(a["col"])}）</div>'
+                   f'<div>{pn(prev_, "← ")}</div><div>{pn(next_, "→ ")}</div>'
+                   f'<div style="margin-top:6px"><a href="../p/{esc(a["iid"])}.html">讀整期（{esc(a["L"])}）</a>・<a href="../tags.html">標籤索引</a>・<a href="../archive.html">所有期數</a></div></nav>')
+            form = letter_form(f'{a["L"]}・{o["title"]}', a["slug"])
+        body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+                f'<div class="crumb"><a href="../p/{esc(a["iid"])}.html">{esc(a["L"])}</a>　{esc(a["when"])}</div>'
+                f'<div class="tag"><b>{esc(a["label"])}</b><span>{esc(a["sub"])}</span></div>'
+                f'<h1>{esc(o["title"])}</h1>{alt}{inner(o)}<div class="meta">{chips}</div>'
+                f'{nav}{form}{FORM_JS}')
+        title = (f'{o["title"]}｜百千報 The Hundred {a["L"]}' if not EN else f'{o["title"]} | The Hundred (百千報)')
+        desc = first_para(o.get("body"))
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": o["title"], "url": url,
+              "datePublished": a["published"], "inLanguage": "en" if EN else "zh-Hant", "keywords": a["tags"],
+              "articleSection": a["col"], "author": {"@type": "Person", "name": "侯百千", "url": SITE},
+              "publisher": {"@type": "Person", "name": "侯百千", "url": SITE},
+              "isPartOf": {"@type": "Periodical", "name": "百千報", "alternateName": "The Hundred", "url": SITE + "news/"}}
+        if a["og"]:
+            ld["image"] = a["og"]["url"]
+        (ARTS / f"{a['slug']}.html").write_text(page(title, desc, url, body, a["og"], ld), "utf-8")
+        keep_a.add(f"{a['slug']}.html")
+        urls.append(url)
+    EN = False
+
+    # 標籤頁：只收中文文章（英文版從中文頁的連結進入）
+    groups = {}
+    for a in zh:
+        for t in a["tags"]:
+            groups.setdefault(t, []).append(a)
+    li = lambda a: (f'<li><a href="../a/{esc(a["slug"])}.html">{esc(a["o"]["title"])}</a>'
+                    f'<small>{esc(a["L"])}・{esc(a["col"])}・{esc(a["when"])}</small></li>')
+    for t, xs in groups.items():
+        body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
+                f'<div class="crumb"><a href="../tags.html">標籤索引</a></div>'
+                f'<h1>#{esc(t)}</h1><p class="open">{len(xs)} 篇</p>'
+                f'<ul class="list">{"".join(li(a) for a in reversed(xs))}</ul>'
+                '<nav class="pn"><span></span><a href="../tags.html">所有標籤</a><span></span></nav>')
+        url = f"{SITE}news/t/{quote(t)}.html"
+        (TAGS / f"{t}.html").write_text(page(f"#{t}｜百千報 The Hundred", f"百千報裡標成「{t}」的 {len(xs)} 篇文章。", url, body), "utf-8")
+        keep_t.add(f"{t}.html")
+        urls.append(url)
+
+    cols = [t for t in COL_ORDER if t in groups] + sorted(t for t in groups if t not in COL_ORDER and any(a["col"] == t for a in groups[t]))
+    topics = sorted((t for t in groups if t not in cols), key=lambda t: (-len(groups[t]), t))
+    cloud = lambda ts: '<div class="cloud">' + "".join(
+        f'<a href="t/{quote(t)}.html">#{esc(t)}<small>{len(groups[t])}</small></a>' for t in ts) + "</div>"
+    rows = "".join(
+        f'<li data-s="{esc((a["o"]["title"] + " " + " ".join(a["tags"]) + " " + a["L"]).lower())}">'
+        f'<a href="a/{esc(a["slug"])}.html">{esc(a["o"]["title"])}</a>'
+        f'<small>{esc(a["L"])}・{esc(a["when"])}</small><span class="tg">{" ".join("#" + esc(t) for t in a["tags"])}</span></li>'
+        for a in reversed(zh))
+    find_js = """<script>
+(function(){var q=document.getElementById('q'),ls=document.querySelectorAll('#all li'),n=document.getElementById('n');
+function f(){var w=q.value.trim().toLowerCase().replace(/#/g,'').split(/\\s+/).filter(Boolean),c=0;
+ls.forEach(function(l){var s=l.getAttribute('data-s'),ok=w.every(function(x){return s.indexOf(x)>=0;});l.style.display=ok?'':'none';if(ok)c++;});
+n.textContent=w.length?('找到 '+c+' 篇'):('共 '+ls.length+' 篇');}
+q.addEventListener('input',f);var h=decodeURIComponent(location.hash.slice(1));if(h){q.value=h;}f();})();
+</script>"""
+    body = ('<a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>標籤索引</h1>'
+            '<p class="open">每一篇都有自己的網址。用欄位或主題找，也可以直接搜標題。</p>'
+            '<input class="find" id="q" type="search" placeholder="搜尋標題或標籤，例如：女性　刺青" aria-label="搜尋">'
+            '<div class="tg" id="n" style="font-size:13px;color:var(--ink3)"></div>'
+            f'<h3 class="sub">欄位</h3>{cloud(cols)}<h3 class="sub">主題</h3>{cloud(topics)}'
+            f'<h3 class="sub">所有文章</h3><ul class="list" id="all">{rows}</ul>'
+            '<nav class="pn"><a href="./">最新一期</a><a href="archive.html">所有期數</a><span></span></nav>' + find_js)
+    html_ = page("標籤索引｜百千報 The Hundred", "百千報所有文章的標籤索引與搜尋：新聞、反方、意識科學、刺青、音樂、文學與侯百千的作品。",
+                 f"{SITE}news/tags.html", body)
+    (NEWS / "tags.html").write_text(html_.replace('href="../../', 'href="../'), "utf-8")
+    urls.append(f"{SITE}news/tags.html")
+
+    for d, keep in ((ARTS, keep_a), (TAGS, keep_t)):
+        for f in d.glob("*.html"):
+            if f.name not in keep:
+                f.unlink()
+    print(f"單篇 {len(keep_a)} 頁，標籤 {len(keep_t)} 個")
+    return urls
+
+
 def main():
     issues = json.loads((ISSUES / "index.json").read_text("utf-8"))["issues"]
     issues.sort(key=lambda i: str(i.get("published")))
@@ -279,11 +500,13 @@ def main():
     OUT.mkdir(exist_ok=True)
     keep = set()
     INTRO = intro_html()
-    global EN
+    global EN, CUR
+    arts = []
     for n, meta in enumerate(issues):
         iid = meta["id"]
         x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
         EN = x.get("lang") == "en" or meta.get("lang") == "en"
+        CUR = iid
         alt = x.get("alt") or {}
         alt_link = (f'<div class="swipe"><a href="{esc(alt["id"])}.html">{esc(alt.get("label") or alt["id"])} →</a></div>'
                     if alt.get("id") else "")
@@ -334,6 +557,7 @@ def main():
             og = {"url": f"{SITE}news/og/{iid}.png", "alt": f"百千報 The Hundred {L}：{headline}"}
         (OUT / f"{iid}.html").write_text(page(title, desc, url, body, og), "utf-8")
         keep.add(f"{iid}.html")
+        arts += collect(x, meta, headline, L, og)
     for f in OUT.glob("*.html"):
         if f.name not in keep:
             f.unlink()
@@ -345,13 +569,14 @@ def main():
     archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂與侯百千的作品。",
                    f"{SITE}news/archive.html",
                    '<a class="brand" href="./">百千報<span class="en">The Hundred</span></a><h1>所有期數</h1>'
-                   '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a></p>'
+                   '<p class="open">一期一期出的白話小報。最新一期用滑卡讀：<a href="./">百千報</a>。每一篇都有自己的網址，可以從<a href="tags.html">標籤索引</a>找。</p>'
                    f'<ul class="list">{items}</ul>')
     (NEWS / "archive.html").write_text(archive.replace('href="../../', 'href="../'), "utf-8")
 
     urls = [SITE] + [SITE + p.name for p in sorted(ROOT.glob("*.html")) if p.name != "index.html" and not p.name.startswith("google")]
     urls += [SITE + "news/", SITE + "news/archive.html"]
     urls += [f"{SITE}news/p/{i['id']}.html" for i in issues]
+    urls += build_articles(arts)
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += "".join(f"  <url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n"
     (ROOT / "sitemap.xml").write_text(sm, "utf-8")

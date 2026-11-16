@@ -32,7 +32,12 @@
   "source": {
    "title": "Crack Magazine: Sama' Abdulhadi interview (2018)",
    "url": "https://crackmagazine.net/?p=109944"
-  }
+  },
+  "tags": [
+   "巴勒斯坦",
+   "DJ",
+   "女性"
+  ]
  },
  "tattoo": {
   "title": "Tattoo stamps in Jerusalem, and the stitches of Palestinian women",
@@ -47,7 +52,13 @@
   "source": {
    "title": "Razzouk Tattoo: family history",
    "url": "https://razzouktattoo.com/pages/history"
-  }
+  },
+  "tags": [
+   "巴勒斯坦",
+   "刺青史",
+   "工藝",
+   "女性"
+  ]
  },
  "main": {
   "title": "Where is Palestine? Start with the map",
@@ -59,7 +70,11 @@
   ],
   "question": "",
   "target": "",
-  "label": "Primer"
+  "label": "Primer",
+  "tags": [
+   "巴勒斯坦",
+   "戰爭"
+  ]
  },
  "news": {
   "title": "Shepherd villages in the southern West Bank: after the demolitions",
@@ -73,7 +88,13 @@
   "source": {
    "title": "Al Jazeera: Villagers vow to rebuild despite devastating mass demolition in West Bank (4 September 2026)",
    "url": "https://www.aljazeera.com/news/2026/9/4/villagers-vow-rebuild-despite-devastating-mass-demolition-west-bank"
-  }
+  },
+  "tags": [
+   "巴勒斯坦",
+   "土地",
+   "社會運動",
+   "中東"
+  ]
  },
  "lesson": {
   "title": "Does boycotting Israel work?",
@@ -85,7 +106,11 @@
    "Opinion research: Guy Grossman, Devorah Manekin and Yotam Margalit, \"How Sanctions Affect Public Opinion in Target Countries,\" Comparative Political Studies, 2018: https://guygrossman.com/assets/pdf/2018_CPS_Conflict_how_sanctions.pdf . These are survey experiments and cannot directly show whether boycotts or sanctions change government policy. Economics: Dany Bahar and Natan Sachs, Brookings, 26 January 2018: https://www.brookings.edu/articles/how-much-does-bds-threaten-israels-economy/ ; on 2015 data, about half of Israel's exports by value were hard-to-replace differentiated goods and about 40 percent intermediate goods, versus over 60 percent commodities for South Africa then.",
    "South Africa: Neta Crawford and Audie Klotz (eds.), How Sanctions Work (1999): https://link.springer.com/book/10.1057/9781403915917 . Norway's divestment: Norges Bank Investment Management: https://www.nbim.no/en/news-and-insights/the-press/press-releases/2025/decisions-on-exclusion/ ; the review and temporary guidelines: Norwegian Ministry of Finance, 7 November 2025: https://www.regjeringen.no/en/whats-new/the-government-follows-up-on-the-parliaments-decision-regarding-the-ethical-framework-for-the-pension-fund/id3136331/ . Spain: Dawn: https://www.dawn.com/news/1947551 . EU: Reuters, 21 April 2026: https://www.reuters.com/world/eu-divided-suspension-israel-pact-spain-pushes-action-2026-04-21/ and Euronews: https://www.euronews.com/2026/04/21/eu-ministers-reject-calls-to-suspend-israeli-trade-agreement-over-war-crimes"
   ],
-  "question": ""
+  "question": "",
+  "tags": [
+   "巴勒斯坦",
+   "地緣政治"
+  ]
  },
  "own": {
   "title": "Serial 2026 · dj rum (original in Chinese)",
@@ -97,7 +122,12 @@
   "source": {
    "title": "Hou Bai-Qian · Serial 2026",
    "url": "https://houiooiooo.github.io/hundred/series-2026.html"
-  }
+  },
+  "tags": [
+   "散文",
+   "DJ",
+   "連載"
+  ]
  },
  "lit": {
   "title": "Darwish: the Palestinian poet who didn't want to be only a \"poet of resistance\"",
@@ -112,6 +142,10 @@
   "source": {
    "title": "PalQuest (Institute for Palestine Studies): Mahmoud Darwish",
    "url": "https://www.palquest.org/en/node/6550"
-  }
+  },
+  "tags": [
+   "巴勒斯坦",
+   "詩"
+  ]
  }
 }

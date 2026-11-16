@@ -28,7 +28,11 @@
    "title": "美術手帖：永井博が描く「光」はなぜ多くの人々を魅了するのか？（中島良平，2021）",
    "url": "https://bijutsutecho.com/magazine/interview/24377"
   },
-  "domain": "畫"
+  "domain": "畫",
+  "tags": [
+   "繪畫",
+   "日本"
+  ]
  },
  "music": {
   "title": "松武秀樹與 MC-8：樂團裡打數字的人",
@@ -43,7 +47,11 @@
    "title": "週刊 BCN 千人回峰：今回は何も起きませんように……神に祈ってライブを続けたYMO時代（松武秀樹）",
    "url": "https://www.bcnretail.com/hitoarite/detail/20250411_507720.html"
   },
-  "topic": "製作"
+  "topic": "製作",
+  "tags": [
+   "器材",
+   "日本"
+  ]
  },
  "tattoo": {
   "title": "她不只是被刺青的女人：Maud Wagner 的兩種工作",
@@ -60,7 +68,11 @@
    "title": "KCUR／KMUW，Julie Denesha、Mackenzie Martin，2026-07-17",
    "url": "https://www.kmuw.org/2026-07-17/maud-wagner-tattoo-artist-kansas"
   },
-  "topic": "刺青師"
+  "topic": "刺青師",
+  "tags": [
+   "刺青史",
+   "女性"
+  ]
  },
  "news": {
   "title": "一天 1,580 人：加那利群島的救援船，和接下來的路",
@@ -75,7 +87,12 @@
   "source": {
    "title": "EFE：11 月 14 日加那利航線單日救援紀錄最新統計（2026-11-15）",
    "url": "https://efe.com/canarias/2026-11-15/record-de-rescates-de-miergrantes-en-un-solo-dia-en-la-ruta-canaria/"
-  }
+  },
+  "tags": [
+   "移民",
+   "歐洲",
+   "海洋"
+  ]
  },
  "main": {
   "title": "一種只用 57 個密碼子的細菌",
@@ -88,7 +105,12 @@
    "Syn57 是將細菌實際使用的密碼子種類縮減至 57 種，並非三聯鹼基的數學組合從 64 種變成 57 種。它能反駁「生命必須使用全部 64 種密碼子」，但不能單憑這項實驗否定象徵系統本身；數目相同不構成可驗證的 DNA 對應。參見附註 1 所列《Science》論文與 MRC LMB。"
   ],
   "question": "一套說法如果只是象徵，還需要借用 DNA 的名字嗎？",
-  "target": "被挑戰的立場：人類圖（64 個閘門對應易經 64 卦與 DNA 的 64 個密碼子）"
+  "target": "被挑戰的立場：人類圖（64 個閘門對應易經 64 卦與 DNA 的 64 個密碼子）",
+  "tags": [
+   "人類圖",
+   "科學",
+   "科學驗證"
+  ]
  },
  "lesson": {
   "title": "裂腦：說話的那一半",
@@ -100,7 +122,11 @@
   ],
   "question": "",
   "series": "意識科學",
-  "no": 15
+  "no": 15,
+  "tags": [
+   "意識",
+   "大腦"
+  ]
  },
  "own": {
   "title": "我・樣品屋的街",
@@ -112,6 +138,9 @@
    "url": "https://houiooiooo.github.io/hundred/archive-wo.html"
   },
   "kind": "散文",
-  "public": true
+  "public": true,
+  "tags": [
+   "散文"
+  ]
  }
 }
