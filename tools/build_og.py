@@ -144,6 +144,8 @@ def column(key, o):
         return {"回顧": "意識科學", "聽": "音樂"}.get(o.get("tag"), o.get("tag") or "夜刊")
     if "反方" in (o.get("sub"), o.get("series"), o.get("label")) or "Counterpoint" in (o.get("series"), o.get("label")):
         return "反方"
+    if o.get("tag"):  # 特輯自己標的欄名（例如「rave 特輯」），跟 build_news_pages.py 一致
+        return o["tag"]
     if key == "main":
         return o.get("label") or "反方"
     if key == "lesson":
@@ -208,6 +210,8 @@ def render_article(meta, x, key, o, fonts, ImageFont, Image, ImageDraw):
     d.text((L + d.textlength("百 千 報", font=brand) + 18, 86), "The Hundred", font=en, fill=CREAM3)
     small = load(ImageFont, fonts["regular"], 26)
     head = meta["special"] if meta.get("special") else f"第 {no_i} 期"
+    if column(key, o) == head:  # 欄名就是特輯名時不重複
+        head = ""
     col = load(ImageFont, fonts["semibold"], 26)
     d.text((L, 134), column(key, o), font=col, fill=SEAL_D)
     d.text((L + d.textlength(column(key, o), font=col) + 16, 134), head, font=small, fill=CREAM2)
@@ -244,6 +248,8 @@ def render_story(meta, x, key, o, fonts, ImageFont, Image, ImageDraw):
     col = load(ImageFont, fonts["semibold"], 38)
     c = column(key, o)
     head = meta["special"] if meta.get("special") else f"第 {no_i} 期"
+    if column(key, o) == head:  # 欄名就是特輯名時不重複
+        head = ""
     d.text((L, 1120), c, font=col, fill=SEAL_D)
     d.text((L + d.textlength(c, font=col) + 22, 1120), head, font=small, fill=CREAM2)
     text = o.get("title") or ""

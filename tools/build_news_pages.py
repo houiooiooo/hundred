@@ -67,6 +67,8 @@ def column(key, o):
         return {"回顧": "意識科學", "聽": "音樂"}.get(o.get("tag"), o.get("tag") or "夜刊")
     if o.get("sub") in CON or o.get("series") in CON or o.get("label") in CON:
         return "反方"
+    if o.get("tag"):  # 特輯自己標的欄名（例如「rave 特輯」），單篇與標籤頁照它歸欄
+        return o["tag"]
     if key == "main":
         return {"Primer": "入門"}.get(o.get("label"), o.get("label") or "反方")
     if key == "lesson":
