@@ -197,7 +197,7 @@ input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16p
 ul.list li .tg{font-size:12px;color:var(--ink3)}
 .share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
 button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-button.sh::before{content:"↗ ";color:var(--seal)}button.sh.ig::before{content:"◎ "}.shm{font-size:13px;color:var(--ink3)}
+button.sh::before{content:"↗ ";color:var(--seal)}button.sh{display:inline-flex;align-items:center;gap:4px;height:36px;line-height:1}button.sh.ig{padding:0 12px;color:var(--seal)}button.sh.ig::before{content:none}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -392,7 +392,7 @@ def first_para(s, n=110):
 def share_btn(title, url, end=False, story=None):
     t = f"{title}｜百千報"
     label = "Share" if EN else "分享"
-    ig = (f'<button type="button" class="sh ig" data-u="{esc(url)}" data-img="{esc(story)}" data-name="{esc(story.rsplit("/", 1)[-1])}">限動</button>'
+    ig = (f'<button type="button" class="sh ig" data-u="{esc(url)}" data-img="{esc(story)}" data-name="{esc(story.rsplit("/", 1)[-1])}" aria-label="分享到 IG 限動" title="分享到 IG 限動"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" stroke-dasharray="3.2 2.4"/><path d="M12 8v8M8 12h8"/></svg></button>'
           if story else "")
     return (f'<div class="share{" end" if end else ""}"><button type="button" class="sh" data-t="{esc(t)}" data-u="{esc(url)}">'
             f'{label}</button>{ig}<span class="shm"></span></div>')
@@ -422,7 +422,7 @@ document.querySelectorAll('button.sh:not(.ig)').forEach(function(b){b.onclick=as
     var say = function(t){ if(m){ m.textContent = t; clearTimeout(m._t); m._t = setTimeout(function(){ m.textContent=''; }, 6000); } };
     try{ navigator.clipboard.writeText(u); }catch(err){}
     var blob = cache[src+'#b'];
-    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次「限動」'); }).catch(function(){ say('圖片載入失敗'); }); return; }
+    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次'); }).catch(function(){ say('圖片載入失敗'); }); return; }
     var file = new File([blob], name, {type:'image/jpeg'});
     if(navigator.canShare && navigator.canShare({files:[file]})){
       say('網址已複製：選 Instagram →「限時動態」，再加「連結」貼紙貼上');
