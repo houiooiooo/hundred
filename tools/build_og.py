@@ -225,6 +225,40 @@ def render_article(meta, x, key, o, fonts, ImageFont, Image, ImageDraw):
     return img
 
 
+SW, SH = 1080, 1920
+
+
+def render_story(meta, x, key, o, fonts, ImageFont, Image, ImageDraw):
+    """IG 限動用直式圖（1080×1920）：上半當期的畫，下半報頭、欄名・期數、篇名。連結貼紙由發的人自己加，所以下方留白。"""
+    img = Image.new("RGB", (SW, SH), DARK)
+    d = ImageDraw.Draw(img)
+    art_n, no_i = art_of(meta, x)
+    if art_n:
+        paste_art(img, Image, art_n, (140, 230, SW - 140, 930))
+    L, R = 110, SW - 110
+    brand = load(ImageFont, fonts["black"], 60)
+    d.text((L, 1020), "百 千 報", font=brand, fill=SEAL_D)
+    en = load(ImageFont, fonts["regular"], 32)
+    d.text((L + d.textlength("百 千 報", font=brand) + 24, 1044), "The Hundred", font=en, fill=CREAM3)
+    small = load(ImageFont, fonts["regular"], 38)
+    col = load(ImageFont, fonts["semibold"], 38)
+    c = column(key, o)
+    head = meta["special"] if meta.get("special") else f"第 {no_i} 期"
+    d.text((L, 1120), c, font=col, fill=SEAL_D)
+    d.text((L + d.textlength(c, font=col) + 22, 1120), head, font=small, fill=CREAM2)
+    text = o.get("title") or ""
+    for size in (76, 68, 62, 56, 50, 44):
+        f = load(ImageFont, fonts["semibold"], size)
+        lines = wrap_words(d, text, f, R - L)
+        if len(lines) <= 5 and len(lines[-1].strip()) > 1:  # 不讓最後一行只剩一個字
+            break
+    lh = int(size * 1.45)
+    for i, ln in enumerate(lines):
+        d.text((L, 1230 + i * lh), ln, font=f, fill=CREAM)
+    d.text((L, 1230 + len(lines) * lh + 40), "侯百千 主編", font=small, fill=CREAM3)
+    return img
+
+
 def render_default(fonts, ImageFont, Image, ImageDraw):
     """網站預設分享圖 news/og/default.png：一張畫＋報頭。"""
     img = Image.new("RGB", (W, H), DARK)
@@ -292,6 +326,21 @@ def main():
             render_article(meta, x, key, o, fonts, ImageFont, Image, ImageDraw).save(out, "JPEG", quality=86, optimize=True, progressive=True)
             made_a += 1
     print(f"產生 {made_a} 張單篇縮圖")
+    # 限動直式圖：news/og/s/<id>-<欄>.jpg（2026-11-16 主編同意，單篇頁與滑卡的「限動」鍵用）
+    (OUT / "s").mkdir(exist_ok=True)
+    made_s = 0
+    for meta in issues:
+        iid = meta["id"]
+        if meta.get("lang") == "en" or (a.only and iid not in a.only):
+            continue
+        x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
+        for key, o in articles(x):
+            out = OUT / "s" / f"{iid}-{key}.jpg"
+            if out.exists() and not a.force:
+                continue
+            render_story(meta, x, key, o, fonts, ImageFont, Image, ImageDraw).save(out, "JPEG", quality=84, optimize=True, progressive=True)
+            made_s += 1
+    print(f"產生 {made_s} 張限動圖")
 
 
 if __name__ == "__main__":

@@ -197,7 +197,7 @@ input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16p
 ul.list li .tg{font-size:12px;color:var(--ink3)}
 .share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
 button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-button.sh::before{content:"↗ ";color:var(--seal)}.shm{font-size:13px;color:var(--ink3)}
+button.sh::before{content:"↗ ";color:var(--seal)}button.sh.ig::before{content:"◎ "}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -389,22 +389,51 @@ def first_para(s, n=110):
     return p if len(p) <= n else p[:n].rstrip() + "⋯"
 
 
-def share_btn(title, url, end=False):
+def share_btn(title, url, end=False, story=None):
     t = f"{title}｜百千報"
     label = "Share" if EN else "分享"
+    ig = (f'<button type="button" class="sh ig" data-u="{esc(url)}" data-img="{esc(story)}" data-name="{esc(story.rsplit("/", 1)[-1])}">限動</button>'
+          if story else "")
     return (f'<div class="share{" end" if end else ""}"><button type="button" class="sh" data-t="{esc(t)}" data-u="{esc(url)}">'
-            f'{label}</button><span class="shm"></span></div>')
+            f'{label}</button>{ig}<span class="shm"></span></div>')
 
 
 # 手機叫出系統分享選單（Threads、IG、LINE…）；不支援時複製連結
 SHARE_JS = """<script>
-document.querySelectorAll('button.sh').forEach(function(b){b.onclick=async function(){
+document.querySelectorAll('button.sh:not(.ig)').forEach(function(b){b.onclick=async function(){
   var t=b.dataset.t,u=b.dataset.u,m=b.nextElementSibling;
   if(navigator.share){try{await navigator.share({title:t,text:t,url:u});return;}catch(e){if(e&&e.name==='AbortError')return;}}
   try{await navigator.clipboard.writeText(t+' '+u);m.textContent='已複製連結';}
   catch(e){window.prompt('複製這個連結',u);}
   setTimeout(function(){m.textContent='';},2500);
 };});
+</script>
+<script>
+/* 分享到 IG 限動：複製這篇的網址，再把直式限動圖交給手機的分享選單（選 Instagram → 限時動態，再加「連結」貼紙貼上網址）。
+   手機不支援分享圖片時，改成下載圖片＋複製網址。圖先預載，點下去才不會因為等下載而被瀏覽器擋掉。 */
+(function(){
+  var cache = {};
+  function load(src){ if(!cache[src]) cache[src] = fetch(src).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ cache[src+'#b'] = b; return b; }); return cache[src]; }
+  window.hundredStoryPreload = function(root){ (root||document).querySelectorAll('button.ig').forEach(function(b){ load(b.dataset.img).catch(function(){}); }); };
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button.ig'); if(!b) return;
+    var u = b.dataset.u, src = b.dataset.img, name = b.dataset.name || 'hundred-story.jpg';
+    var m = b.parentNode.querySelector('.shm');
+    var say = function(t){ if(m){ m.textContent = t; clearTimeout(m._t); m._t = setTimeout(function(){ m.textContent=''; }, 6000); } };
+    try{ navigator.clipboard.writeText(u); }catch(err){}
+    var blob = cache[src+'#b'];
+    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次「限動」'); }).catch(function(){ say('圖片載入失敗'); }); return; }
+    var file = new File([blob], name, {type:'image/jpeg'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      say('網址已複製：選 Instagram →「限時動態」，再加「連結」貼紙貼上');
+      navigator.share({files:[file]}).catch(function(err){ if(!err || err.name !== 'AbortError') say('沒分享出去，可以再試一次'); });
+    } else {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      say('已下載限動圖，網址也複製好了');
+    }
+  });
+})();
+hundredStoryPreload();
 </script>"""
 
 
@@ -427,6 +456,7 @@ def build_articles(arts):
         next_ = chain[i + 1] if i is not None and i + 1 < len(chain) else None
         chips = "".join(f'<a class="chip" href="{tag_href(t)}">#{esc(t)}</a>' for t in a["tags"])
         url = f"{SITE}news/a/{a['slug']}.html"
+        story = f"../og/s/{a['slug']}.jpg" if (NEWS / "og" / "s" / f"{a['slug']}.jpg").exists() else None
         if EN:
             zh_slug = f"{a['alt']}-{a['key']}" if a.get("alt") else None
             alt = (f'<div class="swipe"><a href="{esc(zh_slug)}.html">中文版 →</a></div>' if zh_slug in by_slug else "")
@@ -445,8 +475,8 @@ def build_articles(arts):
         body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
                 f'<div class="crumb"><a href="../p/{esc(a["iid"])}.html">{esc(a["L"])}</a>　{esc(a["when"])}</div>'
                 f'<div class="tag"><b>{esc(a["label"])}</b><span>{esc(a["sub"])}</span></div>'
-                f'<h1>{esc(o["title"])}</h1>{share_btn(o["title"], url)}{alt}{inner(o)}<div class="meta">{chips}</div>'
-                f'{share_btn(o["title"], url, end=True)}{SHARE_JS}'
+                f'<h1>{esc(o["title"])}</h1>{share_btn(o["title"], url, story=story)}{alt}{inner(o)}<div class="meta">{chips}</div>'
+                f'{share_btn(o["title"], url, end=True, story=story)}{SHARE_JS}'
                 f'{nav}{form}{FORM_JS}')
         title = (f'{o["title"]}｜百千報 The Hundred {a["L"]}' if not EN else f'{o["title"]} | The Hundred (百千報)')
         desc = first_para(o.get("body"))

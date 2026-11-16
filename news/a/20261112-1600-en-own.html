@@ -48,7 +48,7 @@ input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16p
 ul.list li .tg{font-size:12px;color:var(--ink3)}
 .share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
 button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-button.sh::before{content:"↗ ";color:var(--seal)}.shm{font-size:13px;color:var(--ink3)}
+button.sh::before{content:"↗ ";color:var(--seal)}button.sh.ig::before{content:"◎ "}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -97,13 +97,40 @@ ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line)
 </head>
 <body><div class="mode"><button type="button" id="modebtn" onclick="hundredMode('toggle')" aria-label="切換日夜">日</button></div><main>
 <a class="brand" href="../">百千報<span class="en">The Hundred</span></a><div class="crumb"><a href="../p/20261112-1600-en.html">特輯・Palestine Special</a>　2026年11月12日 星期四 16:00</div><div class="tag"><b>Hundred</b><span>Serial</span></div><h1>Serial 2026 · dj rum (original in Chinese)</h1><div class="share"><button type="button" class="sh" data-t="Serial 2026 · dj rum (original in Chinese)｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261112-1600-en-own.html">Share</button><span class="shm"></span></div><div class="swipe"><a href="20261112-1600-own.html">中文版 →</a></div><div class="body"><p>前兩天去朋友家拿花，知道他要來就決定要去了，刮了鬍子，穿了牛仔褲與外套，在柏油發亮的復興南路吸著寒流雨水的氣味前進，到了之後寒暄，有一個穿著綠色外套的外國人不明原因的在發啤酒，然後等著留容人數消化的過程，跟著人群排隊，玩不能用成語的成語接龍，接到富達片搭過後不久在2:40進入舞池，dubstep、drum and bass、breakcore、garage，再加上爵士和一點點古典、ambient、trip-hop還有聽到一個post punk樂團，結束後與人聊天，說agi的時代說不定快要降臨，到時說不定會有超厲害的ai dj，屆時所有現在還聽得到接歌時的失誤都會彌足珍貴，因為那都是人味⋯⋯</p></div><div class="src">Source: <a href="https://houiooiooo.github.io/hundred/series-2026.html" rel="noopener">Hou Bai-Qian · Serial 2026</a></div><div class="meta"><a class="chip" href="../t/%E7%99%BE%E5%8D%83.html">#百千</a><a class="chip" href="../t/%E6%95%A3%E6%96%87.html">#散文</a><a class="chip" href="../t/DJ.html">#DJ</a></div><div class="share end"><button type="button" class="sh" data-t="Serial 2026 · dj rum (original in Chinese)｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261112-1600-en-own.html">Share</button><span class="shm"></span></div><script>
-document.querySelectorAll('button.sh').forEach(function(b){b.onclick=async function(){
+document.querySelectorAll('button.sh:not(.ig)').forEach(function(b){b.onclick=async function(){
   var t=b.dataset.t,u=b.dataset.u,m=b.nextElementSibling;
   if(navigator.share){try{await navigator.share({title:t,text:t,url:u});return;}catch(e){if(e&&e.name==='AbortError')return;}}
   try{await navigator.clipboard.writeText(t+' '+u);m.textContent='已複製連結';}
   catch(e){window.prompt('複製這個連結',u);}
   setTimeout(function(){m.textContent='';},2500);
 };});
+</script>
+<script>
+/* 分享到 IG 限動：複製這篇的網址，再把直式限動圖交給手機的分享選單（選 Instagram → 限時動態，再加「連結」貼紙貼上網址）。
+   手機不支援分享圖片時，改成下載圖片＋複製網址。圖先預載，點下去才不會因為等下載而被瀏覽器擋掉。 */
+(function(){
+  var cache = {};
+  function load(src){ if(!cache[src]) cache[src] = fetch(src).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ cache[src+'#b'] = b; return b; }); return cache[src]; }
+  window.hundredStoryPreload = function(root){ (root||document).querySelectorAll('button.ig').forEach(function(b){ load(b.dataset.img).catch(function(){}); }); };
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button.ig'); if(!b) return;
+    var u = b.dataset.u, src = b.dataset.img, name = b.dataset.name || 'hundred-story.jpg';
+    var m = b.parentNode.querySelector('.shm');
+    var say = function(t){ if(m){ m.textContent = t; clearTimeout(m._t); m._t = setTimeout(function(){ m.textContent=''; }, 6000); } };
+    try{ navigator.clipboard.writeText(u); }catch(err){}
+    var blob = cache[src+'#b'];
+    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次「限動」'); }).catch(function(){ say('圖片載入失敗'); }); return; }
+    var file = new File([blob], name, {type:'image/jpeg'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      say('網址已複製：選 Instagram →「限時動態」，再加「連結」貼紙貼上');
+      navigator.share({files:[file]}).catch(function(err){ if(!err || err.name !== 'AbortError') say('沒分享出去，可以再試一次'); });
+    } else {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      say('已下載限動圖，網址也複製好了');
+    }
+  });
+})();
+hundredStoryPreload();
 </script><nav class="pn"><span></span><a href="../p/20261112-1600-en.html">Read the whole issue</a><a href="../tags.html">Tags (in Chinese)</a></nav><section class="letter"><h3>Write to Hou Bai-Qian</h3><form class="msg" action="https://formspree.io/f/mreyadad" method="POST"><input type="hidden" name="_subject" value="百千報讀者來信（特輯・Palestine Special・Serial 2026 · dj rum (original in Chinese)）"><input type="hidden" name="issue" value="特輯・Palestine Special・Serial 2026 · dj rum (original in Chinese) 20261112-1600-en-own"><input type="text" name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Email (he will reply here)" required><textarea name="message" rows="4" placeholder="Thoughts, disagreements, ideas" required></textarea><div class="row"><span class="hintx"></span><button type="submit">Send</button></div></form></section><script>
 document.querySelectorAll('form.msg').forEach(f=>f.addEventListener('submit',async e=>{
   e.preventDefault();const h=f.querySelector('.hintx');h.textContent='送出中⋯';

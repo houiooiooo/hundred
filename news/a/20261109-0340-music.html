@@ -53,7 +53,7 @@ input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16p
 ul.list li .tg{font-size:12px;color:var(--ink3)}
 .share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
 button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-button.sh::before{content:"↗ ";color:var(--seal)}.shm{font-size:13px;color:var(--ink3)}
+button.sh::before{content:"↗ ";color:var(--seal)}button.sh.ig::before{content:"◎ "}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -101,14 +101,41 @@ ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line)
 </script>
 </head>
 <body><div class="mode"><button type="button" id="modebtn" onclick="hundredMode('toggle')" aria-label="切換日夜">日</button></div><main>
-<a class="brand" href="../">百千報<span class="en">The Hundred</span></a><div class="crumb"><a href="../p/20261109-0340.html">第 9 期</a>　2026年11月9日 星期一 03:40</div><div class="tag"><b>音樂</b><span>器材</span></div><h1>一台賣不出去的鼓機，和一批不合格的電晶體</h1><div class="share"><button type="button" class="sh" data-t="一台賣不出去的鼓機，和一批不合格的電晶體｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html">分享</button><span class="shm"></span></div><div class="body"><p>1980 年，Roland 推出鼓機 TR-808，定價 1,195 美元。當時的對手錄下真鼓的聲音來播放，像今天的取樣；808 沒有錄音，每一個鼓聲都是電路當場合成出來的<sup class="fn">1</sup>。原因很實際：存聲音要記憶晶片，那時太貴。工程師菊本忠男帶的團隊改用類比電路，從無到有造出鼓聲。</p><p>結果它聽起來不像鼓。大鼓是一個正弦波，加上濾波器和音量控制；轉動 decay 旋鈕，尾巴能拖得很長，低到像一個音，還會微微往下沉。那時大家要的是逼真，808 被嫌假、嫌簡單，賣不到一萬兩千台，1983 年停產。</p><p>停產的原因很奇特。808 那種沙沙的嘶聲，來自一種電晶體的雜訊。Roland 用的是一批被判為不合格的 2SC828 電晶體，正因為「不良」，才產生那種雜訊<sup class="fn">2</sup>。後來製程進步，工廠再也做不出這麼剛好的瑕疵品，零件用完，808 也做不下去了。</p><p>停產後，它在二手市場常常不到一百美元，買得起的是沒什麼錢的年輕人。日本的黃色魔術交響樂團 1980 年就在武道館的演出用上它<sup class="fn">3</sup>；1982 年，馬文蓋〈Sexual Healing〉成了第一首用 808 的美國暢銷單曲，同年 Afrika Bambaataa〈Planet Rock〉用它打出未來感的節奏，影響了後來的邁阿密低音和底特律 techno。今天嘻哈和 trap 裡那個長長的低音，大家還是直接叫它「808」。</p><p>推薦三首。坂本龍一〈Riot in Lagos〉（1980），聽鼓機最早被當成樂器、而不是代替鼓手的樣子。馬文蓋〈Sexual Healing〉（1982），聽冷冷的機器節奏和溫熱的嗓音怎麼共處。Afrika Bambaataa &amp; the Soulsonic Force〈Planet Rock〉（1982），聽 808 的大鼓和沙沙聲怎麼撐起一整首。</p></div><div class="notes"><div class="nt">附註</div><ol><li>對手是用真鼓取樣的 Linn LM-1。TR 是 transistor rhythm（電晶體節奏）的縮寫。</li><li>依 Hackaday 2018 年的整理，這批 2SC828 不良品是 1970 年代賣給 Roland 的；維基百科寫 Roland 創辦人梯郁太郎是刻意買下不良電晶體。</li><li>演出曲目是〈1000 Knives〉；樂團 1981 年的專輯《BGM》也大量用到 808。</li></ol></div><div class="src">來源：<a href="https://hackaday.com/2018/09/06/you-cant-build-a-roland-tr-808-because-you-dont-have-faulty-transistors/" rel="noopener">Hackaday：You Can&#x27;t Build A Roland TR-808 Because You Don&#x27;t Have Faulty Transistors（2018，另參 Wikipedia：Roland TR-808）</a></div><div class="meta"><a class="chip" href="../t/%E9%9F%B3%E6%A8%82.html">#音樂</a><a class="chip" href="../t/%E5%99%A8%E6%9D%90.html">#器材</a><a class="chip" href="../t/%E5%98%BB%E5%93%88.html">#嘻哈</a></div><div class="share end"><button type="button" class="sh" data-t="一台賣不出去的鼓機，和一批不合格的電晶體｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html">分享</button><span class="shm"></span></div><script>
-document.querySelectorAll('button.sh').forEach(function(b){b.onclick=async function(){
+<a class="brand" href="../">百千報<span class="en">The Hundred</span></a><div class="crumb"><a href="../p/20261109-0340.html">第 9 期</a>　2026年11月9日 星期一 03:40</div><div class="tag"><b>音樂</b><span>器材</span></div><h1>一台賣不出去的鼓機，和一批不合格的電晶體</h1><div class="share"><button type="button" class="sh" data-t="一台賣不出去的鼓機，和一批不合格的電晶體｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html">分享</button><button type="button" class="sh ig" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html" data-img="../og/s/20261109-0340-music.jpg" data-name="20261109-0340-music.jpg">限動</button><span class="shm"></span></div><div class="body"><p>1980 年，Roland 推出鼓機 TR-808，定價 1,195 美元。當時的對手錄下真鼓的聲音來播放，像今天的取樣；808 沒有錄音，每一個鼓聲都是電路當場合成出來的<sup class="fn">1</sup>。原因很實際：存聲音要記憶晶片，那時太貴。工程師菊本忠男帶的團隊改用類比電路，從無到有造出鼓聲。</p><p>結果它聽起來不像鼓。大鼓是一個正弦波，加上濾波器和音量控制；轉動 decay 旋鈕，尾巴能拖得很長，低到像一個音，還會微微往下沉。那時大家要的是逼真，808 被嫌假、嫌簡單，賣不到一萬兩千台，1983 年停產。</p><p>停產的原因很奇特。808 那種沙沙的嘶聲，來自一種電晶體的雜訊。Roland 用的是一批被判為不合格的 2SC828 電晶體，正因為「不良」，才產生那種雜訊<sup class="fn">2</sup>。後來製程進步，工廠再也做不出這麼剛好的瑕疵品，零件用完，808 也做不下去了。</p><p>停產後，它在二手市場常常不到一百美元，買得起的是沒什麼錢的年輕人。日本的黃色魔術交響樂團 1980 年就在武道館的演出用上它<sup class="fn">3</sup>；1982 年，馬文蓋〈Sexual Healing〉成了第一首用 808 的美國暢銷單曲，同年 Afrika Bambaataa〈Planet Rock〉用它打出未來感的節奏，影響了後來的邁阿密低音和底特律 techno。今天嘻哈和 trap 裡那個長長的低音，大家還是直接叫它「808」。</p><p>推薦三首。坂本龍一〈Riot in Lagos〉（1980），聽鼓機最早被當成樂器、而不是代替鼓手的樣子。馬文蓋〈Sexual Healing〉（1982），聽冷冷的機器節奏和溫熱的嗓音怎麼共處。Afrika Bambaataa &amp; the Soulsonic Force〈Planet Rock〉（1982），聽 808 的大鼓和沙沙聲怎麼撐起一整首。</p></div><div class="notes"><div class="nt">附註</div><ol><li>對手是用真鼓取樣的 Linn LM-1。TR 是 transistor rhythm（電晶體節奏）的縮寫。</li><li>依 Hackaday 2018 年的整理，這批 2SC828 不良品是 1970 年代賣給 Roland 的；維基百科寫 Roland 創辦人梯郁太郎是刻意買下不良電晶體。</li><li>演出曲目是〈1000 Knives〉；樂團 1981 年的專輯《BGM》也大量用到 808。</li></ol></div><div class="src">來源：<a href="https://hackaday.com/2018/09/06/you-cant-build-a-roland-tr-808-because-you-dont-have-faulty-transistors/" rel="noopener">Hackaday：You Can&#x27;t Build A Roland TR-808 Because You Don&#x27;t Have Faulty Transistors（2018，另參 Wikipedia：Roland TR-808）</a></div><div class="meta"><a class="chip" href="../t/%E9%9F%B3%E6%A8%82.html">#音樂</a><a class="chip" href="../t/%E5%99%A8%E6%9D%90.html">#器材</a><a class="chip" href="../t/%E5%98%BB%E5%93%88.html">#嘻哈</a></div><div class="share end"><button type="button" class="sh" data-t="一台賣不出去的鼓機，和一批不合格的電晶體｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html">分享</button><button type="button" class="sh ig" data-u="https://houiooiooo.github.io/hundred/news/a/20261109-0340-music.html" data-img="../og/s/20261109-0340-music.jpg" data-name="20261109-0340-music.jpg">限動</button><span class="shm"></span></div><script>
+document.querySelectorAll('button.sh:not(.ig)').forEach(function(b){b.onclick=async function(){
   var t=b.dataset.t,u=b.dataset.u,m=b.nextElementSibling;
   if(navigator.share){try{await navigator.share({title:t,text:t,url:u});return;}catch(e){if(e&&e.name==='AbortError')return;}}
   try{await navigator.clipboard.writeText(t+' '+u);m.textContent='已複製連結';}
   catch(e){window.prompt('複製這個連結',u);}
   setTimeout(function(){m.textContent='';},2500);
 };});
+</script>
+<script>
+/* 分享到 IG 限動：複製這篇的網址，再把直式限動圖交給手機的分享選單（選 Instagram → 限時動態，再加「連結」貼紙貼上網址）。
+   手機不支援分享圖片時，改成下載圖片＋複製網址。圖先預載，點下去才不會因為等下載而被瀏覽器擋掉。 */
+(function(){
+  var cache = {};
+  function load(src){ if(!cache[src]) cache[src] = fetch(src).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ cache[src+'#b'] = b; return b; }); return cache[src]; }
+  window.hundredStoryPreload = function(root){ (root||document).querySelectorAll('button.ig').forEach(function(b){ load(b.dataset.img).catch(function(){}); }); };
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button.ig'); if(!b) return;
+    var u = b.dataset.u, src = b.dataset.img, name = b.dataset.name || 'hundred-story.jpg';
+    var m = b.parentNode.querySelector('.shm');
+    var say = function(t){ if(m){ m.textContent = t; clearTimeout(m._t); m._t = setTimeout(function(){ m.textContent=''; }, 6000); } };
+    try{ navigator.clipboard.writeText(u); }catch(err){}
+    var blob = cache[src+'#b'];
+    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次「限動」'); }).catch(function(){ say('圖片載入失敗'); }); return; }
+    var file = new File([blob], name, {type:'image/jpeg'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      say('網址已複製：選 Instagram →「限時動態」，再加「連結」貼紙貼上');
+      navigator.share({files:[file]}).catch(function(err){ if(!err || err.name !== 'AbortError') say('沒分享出去，可以再試一次'); });
+    } else {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      say('已下載限動圖，網址也複製好了');
+    }
+  });
+})();
+hundredStoryPreload();
 </script><nav class="pn" style="flex-direction:column;gap:8px"><div class="tg" style="color:var(--ink3);font-size:13px">同一欄的上一篇、下一篇（音樂）</div><div><a href="20261108-0334-music.html">← 第 8 期・沒有樂器的電子音樂：一首用剪刀做出來的主題曲</a></div><div><a href="20261110-0333-music.html">→ 第 10 期・一張不插電的打擊樂唱片，被自動播放找回來</a></div><div style="margin-top:6px"><a href="../p/20261109-0340.html">讀整期（第 9 期）</a>・<a href="../tags.html">標籤索引</a>・<a href="../archive.html">所有期數</a></div></nav><section class="letter"><h3>寫信給侯百千</h3><form class="msg" action="https://formspree.io/f/mreyadad" method="POST"><input type="hidden" name="_subject" value="百千報讀者來信（第 9 期・一台賣不出去的鼓機，和一批不合格的電晶體）"><input type="hidden" name="issue" value="第 9 期・一台賣不出去的鼓機，和一批不合格的電晶體 20261109-0340-music"><input type="text" name="name" placeholder="你的名字" required><input type="email" name="email" placeholder="Email（他會回信到這裡）" required><textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea><div class="row"><span class="hintx"></span><button type="submit">送出</button></div></form></section><script>
 document.querySelectorAll('form.msg').forEach(f=>f.addEventListener('submit',async e=>{
   e.preventDefault();const h=f.querySelector('.hintx');h.textContent='送出中⋯';

@@ -48,7 +48,7 @@ input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16p
 ul.list li .tg{font-size:12px;color:var(--ink3)}
 .share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
 button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
-button.sh::before{content:"↗ ";color:var(--seal)}.shm{font-size:13px;color:var(--ink3)}
+button.sh::before{content:"↗ ";color:var(--seal)}button.sh.ig::before{content:"◎ "}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -97,13 +97,40 @@ ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line)
 </head>
 <body><div class="mode"><button type="button" id="modebtn" onclick="hundredMode('toggle')" aria-label="切換日夜">日</button></div><main>
 <a class="brand" href="../">百千報<span class="en">The Hundred</span></a><div class="crumb"><a href="../p/20261112-1600-en.html">特輯・Palestine Special</a>　2026年11月12日 星期四 16:00</div><div class="tag"><b>Electronic music</b><span>Scene</span></div><h1>The dance floor in Ramallah</h1><div class="share"><button type="button" class="sh" data-t="The dance floor in Ramallah｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261112-1600-en-music.html">Share</button><span class="shm"></span></div><div class="swipe"><a href="20261112-1600-music.html">中文版 →</a></div><div class="body"><p>Ramallah is one of the main Palestinian cities in the West Bank, and the seat of the Palestinian government. In 2018 a bar there called Radio Bar threw a party, and about three hundred people danced as the sun went down. The British music streaming show Boiler Room broadcast it to the world — its first live stream from Palestine <sup class="fn">1</sup>.</p><p>The DJ playing techno was Sama&#x27; Abdulhadi. Born in 1990, she was between ten and sixteen during the Second Intifada, the years when the Palestinian uprising against Israeli occupation and the fighting on both sides were at their worst. At eighteen she went to Beirut, Lebanon, to study sound engineering, heard techno in a club for the first time, and started playing. The video of that party has since been viewed more than ten million times.</p><p>She doesn&#x27;t like being seen only as &quot;the Palestinian DJ.&quot; She has said: don&#x27;t book me because I&#x27;m Palestinian or because I&#x27;m a woman — book me for the music. But she also admits that politics follows her everywhere. In late 2020 she played at a historic site near Jericho. The organisers said they had a permit, yet the next day she was arrested by the Palestinian Authority and held for eight days before being released on bail. More than a hundred thousand people signed a petition for her release <sup class="fn">2</sup>.</p><p>She isn&#x27;t the only one. BLTNM is a label three friends started in Ramallah in 2016, making hip-hop and trap in Palestinian dialect. The band 47Soul joined the beat of dabke — the line dance people do at weddings and celebrations across the region — to electronic bass, and called it shamstep, Sham being the Arabic name for the region. In 2019 they played NPR&#x27;s Tiny Desk in the US, and one of them broke into dabke between the office desks <sup class="fn">3</sup>.</p><p>Sama&#x27; once explained why people at Palestinian parties go so hard: because it could always be the last one.</p></div><div class="notes"><div class="nt">Notes</div><ol><li>The Ramallah party, her background and quotes: Crack Magazine interview, 30 November 2018: https://crackmagazine.net/?p=109944 . Views: The Guardian (2023) reported over 11 million; Wikipedia gives over 14 million as of June 2025. Listen: her SoundCloud https://soundcloud.com/sama_abdulhadi ; Boiler Room&#x27;s documentary Palestine Underground: https://fourthree.boilerroom.tv/film/cs-palestine-underground</li><li>Arrest and bail: Resident Advisor, 4 January 2021: https://ra.co/news/74259 ; DJ Mag, 29 December 2020: https://djmag.com/news/palestinian-dj-sama-abdulhadi-arrested-following-event-historical-site . The site was Nabi Musa; the two reports give different dates for the party, so we say only &quot;late 2020.&quot;</li><li>BLTNM&#x27;s founding: i-D, 5 December 2019: https://i-d.co/article/bltnm-palestinian-record-label-interview/ ; listen at https://bltnm.bandcamp.com . 47Soul: NPR Tiny Desk, 26 August 2019 (with video): https://www.npr.org/2019/08/26/753733845/47soul-tiny-desk-concert ; listen at https://47soul.bandcamp.com</li></ol></div><div class="src">Source: <a href="https://crackmagazine.net/?p=109944" rel="noopener">Crack Magazine: Sama&#x27; Abdulhadi interview (2018)</a></div><div class="meta"><a class="chip" href="../t/%E9%9F%B3%E6%A8%82.html">#音樂</a><a class="chip" href="../t/%E5%B7%B4%E5%8B%92%E6%96%AF%E5%9D%A6.html">#巴勒斯坦</a><a class="chip" href="../t/DJ.html">#DJ</a><a class="chip" href="../t/%E5%A5%B3%E6%80%A7.html">#女性</a></div><div class="share end"><button type="button" class="sh" data-t="The dance floor in Ramallah｜百千報" data-u="https://houiooiooo.github.io/hundred/news/a/20261112-1600-en-music.html">Share</button><span class="shm"></span></div><script>
-document.querySelectorAll('button.sh').forEach(function(b){b.onclick=async function(){
+document.querySelectorAll('button.sh:not(.ig)').forEach(function(b){b.onclick=async function(){
   var t=b.dataset.t,u=b.dataset.u,m=b.nextElementSibling;
   if(navigator.share){try{await navigator.share({title:t,text:t,url:u});return;}catch(e){if(e&&e.name==='AbortError')return;}}
   try{await navigator.clipboard.writeText(t+' '+u);m.textContent='已複製連結';}
   catch(e){window.prompt('複製這個連結',u);}
   setTimeout(function(){m.textContent='';},2500);
 };});
+</script>
+<script>
+/* 分享到 IG 限動：複製這篇的網址，再把直式限動圖交給手機的分享選單（選 Instagram → 限時動態，再加「連結」貼紙貼上網址）。
+   手機不支援分享圖片時，改成下載圖片＋複製網址。圖先預載，點下去才不會因為等下載而被瀏覽器擋掉。 */
+(function(){
+  var cache = {};
+  function load(src){ if(!cache[src]) cache[src] = fetch(src).then(function(r){ if(!r.ok) throw 0; return r.blob(); }).then(function(b){ cache[src+'#b'] = b; return b; }); return cache[src]; }
+  window.hundredStoryPreload = function(root){ (root||document).querySelectorAll('button.ig').forEach(function(b){ load(b.dataset.img).catch(function(){}); }); };
+  document.addEventListener('click', function(e){
+    var b = e.target.closest && e.target.closest('button.ig'); if(!b) return;
+    var u = b.dataset.u, src = b.dataset.img, name = b.dataset.name || 'hundred-story.jpg';
+    var m = b.parentNode.querySelector('.shm');
+    var say = function(t){ if(m){ m.textContent = t; clearTimeout(m._t); m._t = setTimeout(function(){ m.textContent=''; }, 6000); } };
+    try{ navigator.clipboard.writeText(u); }catch(err){}
+    var blob = cache[src+'#b'];
+    if(!blob){ say('圖片準備中，請再按一次'); load(src).then(function(){ say('準備好了，再按一次「限動」'); }).catch(function(){ say('圖片載入失敗'); }); return; }
+    var file = new File([blob], name, {type:'image/jpeg'});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      say('網址已複製：選 Instagram →「限時動態」，再加「連結」貼紙貼上');
+      navigator.share({files:[file]}).catch(function(err){ if(!err || err.name !== 'AbortError') say('沒分享出去，可以再試一次'); });
+    } else {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      say('已下載限動圖，網址也複製好了');
+    }
+  });
+})();
+hundredStoryPreload();
 </script><nav class="pn"><span></span><a href="../p/20261112-1600-en.html">Read the whole issue</a><a href="../tags.html">Tags (in Chinese)</a></nav><section class="letter"><h3>Write to Hou Bai-Qian</h3><form class="msg" action="https://formspree.io/f/mreyadad" method="POST"><input type="hidden" name="_subject" value="百千報讀者來信（特輯・Palestine Special・The dance floor in Ramallah）"><input type="hidden" name="issue" value="特輯・Palestine Special・The dance floor in Ramallah 20261112-1600-en-music"><input type="text" name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Email (he will reply here)" required><textarea name="message" rows="4" placeholder="Thoughts, disagreements, ideas" required></textarea><div class="row"><span class="hintx"></span><button type="submit">Send</button></div></form></section><script>
 document.querySelectorAll('form.msg').forEach(f=>f.addEventListener('submit',async e=>{
   e.preventDefault();const h=f.querySelector('.hintx');h.textContent='送出中⋯';
