@@ -20,8 +20,8 @@
   "topic": "工具與墨",
   "body": "1876 年，愛迪生取得電筆專利，編號 US 180,857。手握的小機器，頂端有馬達，帶著針飛快上下戳，寫過的紙變成一排細孔，可以拿去大量複印。它曾經上市銷售，但後來被更方便的複印工具取代。[1]\n\n十五年後，紐約刺青師 Samuel O'Reilly 把它改成刺青機，可裝一到五根針。1891 年 12 月 8 日，他拿到第一個電動刺青機專利。[2] 手刺一身要好幾天的圖，縮短成幾個小時。[3]\n\n後來的主流卻不是馬達，而是電磁線圈，原理跟門鈴一樣：電流通過線圈，把一片鐵吸下來；鐵片一動，電路斷開，磁力消失，彈片把它彈回去，電路又接上。[4] 一吸一放，針就跟著打。刺青店裡的嗡嗡聲，就是這個電路在響。\n\n這套設計，愛迪生 1877 年也申請過專利；1904 年，接手 O'Reilly 店面的 Charlie Wagner 拿到線圈刺青機專利，從圖面看參照的正是愛迪生。[5]\n\n線圈機要會調：鐵片的距離、彈片的鬆緊、接點螺絲的位置，都會改變針打下去的力道和節奏。1978 年，德國的 Manfred Kohrs 做出新的旋轉式刺青機，馬達又回來了。[6]\n\n今天在線圈和馬達之間挑一台，挑的是一百多年前就已經存在的兩個答案。",
   "notes": [
-   "愛迪生 1876 年的電筆專利是 US 180,857；US 196,747 是 1877 年的電磁式改良專利，不是同一件。電筆曾在美國與海外銷售，後來敗給不需電池的競品；技術授權給芝加哥 A. B. Dick 公司，後者更看重模版複印法。https://invention.si.edu/invention-stories/whats-edison-got-do-tattoos ；https://www.inventionandtech.com/node/86289",
-   "O'Reilly（1854–1909）的機器以電池供電，馬達帶動一根或一排最多五根針；專利前他用改裝的牙科填補器替 dime museum 的展演者刺青。他與 Elmer Getchell 打過專利紛爭。專利號 US 464,801。https://en.wikipedia.org/wiki/Samuel_O%27Reilly",
+   "愛迪生 1876 年電筆相關專利為 US 180,857；US 196,747 是 1877 年的電磁式改良專利，不可混為同一件。https://electricpen.org/swagger-ui/Images/Images/Images/Images/patents.htm ；授權給芝加哥 A. B. Dick 公司，後者更看重模版複印法；歷史學者 Jill Cooper 指出電筆作為辦公機器從未成功。https://www.inventionandtech.com/node/86289",
+   "O'Reilly（1854–1909）的機器以電池供電，馬達帶動一根或一排最多五根針；專利前他用改裝的牙科填補器替 dime museum 的展演者刺青。他與 Elmer Getchell 打過專利紛爭。專利號本報未核，不寫。https://en.wikipedia.org/wiki/Samuel_O%27Reilly",
    "Invention & Technology：電動機讓全身刺青從好幾天縮短到好幾個小時；1920 年代廣告原文說對手的機器用的是「door buzzers, radio parts」。https://www.inventionandtech.com/node/86289",
    "英國的 Thomas Riley 曾把改裝的門鈴組件裝進黃銅盒做成刺青機；常見說法稱他 1891 年取得英國專利，但刺青史學者查不到紀錄。現代雙線圈配置由倫敦的 Alfred Charles South 取得專利。https://en.wikipedia.org/wiki/Tattoo_machine",
    "Tattoo Archive：愛迪生 1877 年另一個專利是雙電磁線圈加一片振動彈片；Wagner 專利號 768,413，是第一個線圈與針管同方向的刺青機專利。https://tattooarchive.com/history/tattoo_machine.php ；https://tattooarchive.com/history/wagner_charlie.php",
@@ -40,7 +40,7 @@
  "music": {
   "title": "被海浪調過音的鋼琴",
   "topic": "唱片",
-  "body": "2011 年三一一地震後，坂本龍一幾次到東北受災最重的地方，和當地學校一起修理、替換被海嘯毀掉的樂器。宮城縣一所學校的體育館裡，有一台泡過海水的平台鋼琴。[1]\n\n照一般的說法，這台琴走音了。坂本的看法相反。他說，我們以為海嘯讓它失了調；其實是海浪把它從人替它做的模子裡放了出來，讓它回到自然的狀態。他說，現在聽起來反而有點舒服。[2]\n\n這台琴的聲音，收進他 2017 年的專輯《async》，在〈ZURE〉這首曲子裡。[1] 那是他多年來第一張個人錄音室專輯，中間他得了咽頭癌。他說，生病之後想到這可能是最後一張，所以要做所有想做的事。[3]\n\nasync 的意思是「不同步」。他說這張專輯一開始只想收集自己想聽的聲音：下雨時很開心，每次都錄；用接觸式麥克風去聽東西本身的聲音；買來銅鑼和鈸，拿來摩擦。[4] 專輯裡還有一首，三位打擊樂手各敲一支三角鐵，一次錄完，沒有剪接。[3]\n\n聽〈ZURE〉時，可以留意那些音高不準的琴聲。它們沒有被修正。那台琴後來也只做了最少的修理，留著海浪替它調的音。[1]",
+  "body": "2011 年三一一地震後，坂本龍一幾次到東北受災最重的地方，和當地學校一起修理、替換被海嘯毀掉的樂器。宮城縣一所學校的體育館裡，有一台泡過海水的平台鋼琴。[1]\n\n照一般的說法，這台琴走音了。坂本的看法相反。他說，我們以為海嘯讓它失了調；其實是海浪把它從人替它做的模子裡放了出來，讓它回到自然的狀態。他說，現在聽起來反而有點舒服。[2]\n\n坂本本人在 2017 年訪談中證實，這台受海嘯浸泡的鋼琴用於《async》的〈ZURE〉。[1] 那是他多年來第一張個人錄音室專輯，中間他得了咽頭癌。他說，生病之後想到這可能是最後一張，所以要做所有想做的事。[3]\n\nasync 的意思是「不同步」。他說這張專輯一開始只想收集自己想聽的聲音：下雨時很開心，每次都錄；用接觸式麥克風去聽東西本身的聲音；買來銅鑼和鈸，拿來摩擦。[4] 專輯裡還有一首，三位打擊樂手各敲一支三角鐵，一次錄完，沒有剪接。[3]\n\n聽〈ZURE〉時，可以留意那些音高不準的琴聲。報導描述坂本刻意保留這台琴走音的聲響。那台琴後來也只做了最少的修理，留著海浪替它調的音。[1]",
   "notes": [
    "坂本龍一 2017 年 OTOTOY 專訪直接確認〈ZURE〉使用宮城縣閖上農業高校受海嘯浸泡的鋼琴，2012 年 1 月前往彈奏：https://ototoy.jp/feature/20170417 。FACT 轉載 The Vinyl Factory：琴在宮城縣一所學校的體育館發現，錄音收進〈ZURE〉；坂本把琴留下，修理減到最少以保留自然調音。紀錄片《坂本龍一：終章》導演 Stephen Nomura Schible 說坂本 2012 年 1 月在宮城縣名取市第一次見到這台琴。https://factmag.com/2018/03/28/watch-documentary-ryuichi-sakamoto-tsunami-damaged-piano ；https://mubi.com/en/notebook/posts/a-scene-at-the-checkpoint-remembering-ryuichi-sakamoto",
    "Time Out Tokyo 訪談原話：「the wave freed it from the cast we had put it in, letting it return to a natural state」「It actually sounds curiously pleasant to me now.」https://www.timeout.com/tokyo/music/interview-ryuichi-sakamoto",
