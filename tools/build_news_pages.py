@@ -326,7 +326,7 @@ def page(title, desc, canonical, body, og=None, ld=None):
 {img}
 <style>{CSS}</style>
 {ld_tag(ld)}<link rel="alternate" type="application/rss+xml" title="百千報 The Hundred" href="{SITE}news/feed.xml">
-<script data-goatcounter="https://houbaiqian.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SGQ2CTBMT4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-SGQ2CTBMT4');</script>
 {MODE_JS}
 </head>
 <body>{MODE_HTML}<main>
