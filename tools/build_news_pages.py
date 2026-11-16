@@ -195,6 +195,9 @@ h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:
 h3.sub{font-family:"Noto Serif TC",serif;font-weight:600;font-size:15px;color:var(--ink3);letter-spacing:.12em;margin:26px 0 6px}
 input.find{display:block;width:100%;padding:10px 12px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;margin:6px 0 4px}
 ul.list li .tg{font-size:12px;color:var(--ink3)}
+.share{display:flex;align-items:center;gap:10px;margin:0 0 16px}.share.end{margin:22px 0 0}
+button.sh{font:inherit;font-size:14px;padding:6px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
+button.sh::before{content:"↗ ";color:var(--seal)}.shm{font-size:13px;color:var(--ink3)}
 nav.pn{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:40px;padding-top:18px;font-size:14px}
 footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 .intro .body ul{padding-left:20px;margin:0 0 14px}.intro .body li{margin-bottom:6px}
@@ -386,6 +389,25 @@ def first_para(s, n=110):
     return p if len(p) <= n else p[:n].rstrip() + "⋯"
 
 
+def share_btn(title, url, end=False):
+    t = f"{title}｜百千報"
+    label = "Share" if EN else "分享"
+    return (f'<div class="share{" end" if end else ""}"><button type="button" class="sh" data-t="{esc(t)}" data-u="{esc(url)}">'
+            f'{label}</button><span class="shm"></span></div>')
+
+
+# 手機叫出系統分享選單（Threads、IG、LINE…）；不支援時複製連結
+SHARE_JS = """<script>
+document.querySelectorAll('button.sh').forEach(function(b){b.onclick=async function(){
+  var t=b.dataset.t,u=b.dataset.u,m=b.nextElementSibling;
+  if(navigator.share){try{await navigator.share({title:t,text:t,url:u});return;}catch(e){if(e&&e.name==='AbortError')return;}}
+  try{await navigator.clipboard.writeText(t+' '+u);m.textContent='已複製連結';}
+  catch(e){window.prompt('複製這個連結',u);}
+  setTimeout(function(){m.textContent='';},2500);
+};});
+</script>"""
+
+
 def build_articles(arts):
     global EN, CUR
     CUR = None
@@ -423,7 +445,8 @@ def build_articles(arts):
         body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>'
                 f'<div class="crumb"><a href="../p/{esc(a["iid"])}.html">{esc(a["L"])}</a>　{esc(a["when"])}</div>'
                 f'<div class="tag"><b>{esc(a["label"])}</b><span>{esc(a["sub"])}</span></div>'
-                f'<h1>{esc(o["title"])}</h1>{alt}{inner(o)}<div class="meta">{chips}</div>'
+                f'<h1>{esc(o["title"])}</h1>{share_btn(o["title"], url)}{alt}{inner(o)}<div class="meta">{chips}</div>'
+                f'{share_btn(o["title"], url, end=True)}{SHARE_JS}'
                 f'{nav}{form}{FORM_JS}')
         title = (f'{o["title"]}｜百千報 The Hundred {a["L"]}' if not EN else f'{o["title"]} | The Hundred (百千報)')
         desc = first_para(o.get("body"))
@@ -432,9 +455,12 @@ def build_articles(arts):
               "articleSection": a["col"], "author": {"@type": "Person", "name": "侯百千", "url": SITE},
               "publisher": {"@type": "Person", "name": "侯百千", "url": SITE},
               "isPartOf": {"@type": "Periodical", "name": "百千報", "alternateName": "The Hundred", "url": SITE + "news/"}}
-        if a["og"]:
-            ld["image"] = a["og"]["url"]
-        (ARTS / f"{a['slug']}.html").write_text(page(title, desc, url, body, a["og"], ld), "utf-8")
+        og = a["og"]
+        if (NEWS / "og" / "a" / f"{a['slug']}.jpg").exists():  # 單篇縮圖：當期的畫＋這一篇的標題（tools/build_og.py）
+            og = {"url": f"{SITE}news/og/a/{a['slug']}.jpg", "alt": f"百千報 The Hundred {a['L']}：{o['title']}"}
+        if og:
+            ld["image"] = og["url"]
+        (ARTS / f"{a['slug']}.html").write_text(page(title, desc, url, body, og, ld), "utf-8")
         keep_a.add(f"{a['slug']}.html")
         urls.append(url)
     EN = False

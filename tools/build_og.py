@@ -5,6 +5,8 @@
   python3 tools/build_og.py            # 只替第 11 期起、還沒有縮圖的期數產生（舊期不補）
   python3 tools/build_og.py --only ID  # 只處理指定期數（可重複）
   python3 tools/build_og.py --force    # 已有縮圖也重畫
+每一篇（單篇頁 news/a/<id>-<欄>.html）另有自己的縮圖 news/og/a/<id>-<欄>.jpg：當期的畫＋那一篇的標題
+（2026-11-16 主編定，所有中文篇都做，包括舊期；英文版沿用預設圖）。
 找不到中文明體字型時不產生任何圖片、印出警告並正常結束；
 沒有縮圖的期數，文字頁會自動沿用網站預設分享圖。
 """
@@ -132,6 +134,97 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
     return img
 
 
+KEYS = ["news", "main", "lesson", "tattoo", "music", "own", "craft", "lit", "far"]
+COL = {"news": "新聞", "tattoo": "刺青", "music": "音樂", "own": "百千", "craft": "興趣的藝術", "lit": "文學", "far": "遠方"}
+
+
+def column(key, o):
+    """欄名，跟 build_news_pages.py 的 column() 一致。"""
+    if key[0] == "n" and key[1:].isdigit():
+        return {"回顧": "意識科學", "聽": "音樂"}.get(o.get("tag"), o.get("tag") or "夜刊")
+    if "反方" in (o.get("sub"), o.get("series"), o.get("label")) or "Counterpoint" in (o.get("series"), o.get("label")):
+        return "反方"
+    if key == "main":
+        return o.get("label") or "反方"
+    if key == "lesson":
+        return o.get("series") or "意識科學"
+    return COL.get(key, key)
+
+
+def articles(x):
+    if x.get("items"):
+        return [(f"n{i + 1}", it) for i, it in enumerate(x["items"]) if it.get("title")]
+    return [(k, x[k]) for k in KEYS if isinstance(x.get(k), dict) and x[k].get("title") and x[k].get("body")]
+
+
+def art_of(meta, x):
+    no_i = int(x.get("issue_no") or meta.get("issue_no") or 0)
+    try:
+        n = int(x.get("art") or 0)
+    except (TypeError, ValueError):
+        n = 0
+    if n < 1 or not (ART_DIR / f"{n:02d}.webp").exists():
+        n = (no_i - 1) % LEGACY_ROTATION + 1 if no_i > 0 else 0
+    if x.get("edition") == "night":
+        n = 3  # 夜刊沒有封面畫，用預設圖那張
+    return n, no_i
+
+
+def wrap_words(draw, text, font, maxw):
+    """跟 wrap() 一樣逐字換行，但英文單字、數字不拆開。"""
+    import re
+    toks = re.findall(r"[A-Za-z0-9'’&.\-]+|\s+|.", text)
+    lines, cur = [], ""
+    for t in toks:
+        if draw.textlength(cur + t, font=font) <= maxw or not cur.strip():
+            cur += t
+        elif t.isspace():
+            lines.append(cur.rstrip()); cur = ""
+        elif len(t) == 1 and t in "，。、：；！？」』）》〉…—,.":
+            cur += t
+        else:
+            lines.append(cur.rstrip()); cur = t
+        while draw.textlength(cur, font=font) > maxw and len(cur) > 1:  # 單字比整行還長才拆
+            k = len(cur)
+            while k > 1 and draw.textlength(cur[:k], font=font) > maxw:
+                k -= 1
+            lines.append(cur[:k]); cur = cur[k:]
+    if cur.strip():
+        lines.append(cur.strip())
+    return lines
+
+
+def render_article(meta, x, key, o, fonts, ImageFont, Image, ImageDraw):
+    """單篇縮圖：當期的畫＋報頭＋期數・欄名＋這一篇的標題。"""
+    img = Image.new("RGB", (W, H), DARK)
+    d = ImageDraw.Draw(img)
+    art_n, no_i = art_of(meta, x)
+    if art_n:
+        paste_art(img, Image, art_n, (50, 50, 570, 580))
+    L, R = 630, W - 70
+    brand = load(ImageFont, fonts["black"], 40)
+    d.text((L, 70), "百 千 報", font=brand, fill=SEAL_D)
+    en = load(ImageFont, fonts["regular"], 22)
+    d.text((L + d.textlength("百 千 報", font=brand) + 18, 86), "The Hundred", font=en, fill=CREAM3)
+    small = load(ImageFont, fonts["regular"], 26)
+    head = meta["special"] if meta.get("special") else f"第 {no_i} 期"
+    col = load(ImageFont, fonts["semibold"], 26)
+    d.text((L, 134), column(key, o), font=col, fill=SEAL_D)
+    d.text((L + d.textlength(column(key, o), font=col) + 16, 134), head, font=small, fill=CREAM2)
+    text = o.get("title") or ""
+    for size in (50, 46, 42, 38, 34, 30):
+        f = load(ImageFont, fonts["semibold"], size)
+        lines = wrap_words(d, text, f, R - L)
+        if len(lines) <= 5:
+            break
+    lh = int(size * 1.5)
+    top = 200 + (500 - 200 - lh * len(lines)) // 2 + 10
+    for i, ln in enumerate(lines):
+        d.text((L, top + i * lh), ln, font=f, fill=CREAM)
+    d.text((L, 540), "侯百千 主編", font=small, fill=CREAM3)
+    return img
+
+
 def render_default(fonts, ImageFont, Image, ImageDraw):
     """網站預設分享圖 news/og/default.png：一張畫＋報頭。"""
     img = Image.new("RGB", (W, H), DARK)
@@ -184,6 +277,21 @@ def main():
         made += 1
         print(f"縮圖：news/og/{iid}.png")
     print(f"產生 {made} 張縮圖")
+    # 單篇縮圖：所有中文篇，缺的才畫（--force 全部重畫；--only 只畫那幾期）
+    (OUT / "a").mkdir(exist_ok=True)
+    made_a = 0
+    for meta in issues:
+        iid = meta["id"]
+        if meta.get("lang") == "en" or (a.only and iid not in a.only):
+            continue
+        x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
+        for key, o in articles(x):
+            out = OUT / "a" / f"{iid}-{key}.jpg"
+            if out.exists() and not a.force:
+                continue
+            render_article(meta, x, key, o, fonts, ImageFont, Image, ImageDraw).save(out, "JPEG", quality=86, optimize=True, progressive=True)
+            made_a += 1
+    print(f"產生 {made_a} 張單篇縮圖")
 
 
 if __name__ == "__main__":
