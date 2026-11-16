@@ -1,0 +1,152 @@
+{
+ "art": 20,
+ "date": "2026 年 11 月 17 日",
+ "edition": "morning",
+ "issue_no": 17,
+ "published": "2026-11-17T03:34:00+08:00",
+ "weekday": "星期二",
+ "opening": "刺青店裡那個嗡嗡聲，是從一個門鈴電路來的。",
+ "order": [
+  "tattoo",
+  "music",
+  "news",
+  "main",
+  "lesson",
+  "far",
+  "own"
+ ],
+ "tattoo": {
+  "title": "刺青機為什麼會嗡嗡響",
+  "topic": "工具與墨",
+  "body": "1876 年，愛迪生取得電筆專利，編號 US 180,857。手握的小機器，頂端有馬達，帶著針飛快上下戳，寫過的紙變成一排細孔，可以拿去大量複印。它曾經上市銷售，但後來被更方便的複印工具取代。[1]\n\n十五年後，紐約刺青師 Samuel O'Reilly 把它改成刺青機，可裝一到五根針。1891 年 12 月 8 日，他拿到第一個電動刺青機專利。[2] 手刺一身要好幾天的圖，縮短成幾個小時。[3]\n\n後來的主流卻不是馬達，而是電磁線圈，原理跟門鈴一樣：電流通過線圈，把一片鐵吸下來；鐵片一動，電路斷開，磁力消失，彈片把它彈回去，電路又接上。[4] 一吸一放，針就跟著打。刺青店裡的嗡嗡聲，就是這個電路在響。\n\n這套設計，愛迪生 1877 年也申請過專利；1904 年，接手 O'Reilly 店面的 Charlie Wagner 拿到線圈刺青機專利，從圖面看參照的正是愛迪生。[5]\n\n線圈機要會調：鐵片的距離、彈片的鬆緊、接點螺絲的位置，都會改變針打下去的力道和節奏。1978 年，德國的 Manfred Kohrs 做出新的旋轉式刺青機，馬達又回來了。[6]\n\n今天在線圈和馬達之間挑一台，挑的是一百多年前就已經存在的兩個答案。",
+  "notes": [
+   "愛迪生 1876 年的電筆專利是 US 180,857；US 196,747 是 1877 年的電磁式改良專利，不是同一件。電筆曾在美國與海外銷售，後來敗給不需電池的競品；技術授權給芝加哥 A. B. Dick 公司，後者更看重模版複印法。https://invention.si.edu/invention-stories/whats-edison-got-do-tattoos ；https://www.inventionandtech.com/node/86289",
+   "O'Reilly（1854–1909）的機器以電池供電，馬達帶動一根或一排最多五根針；專利前他用改裝的牙科填補器替 dime museum 的展演者刺青。他與 Elmer Getchell 打過專利紛爭。專利號 US 464,801。https://en.wikipedia.org/wiki/Samuel_O%27Reilly",
+   "Invention & Technology：電動機讓全身刺青從好幾天縮短到好幾個小時；1920 年代廣告原文說對手的機器用的是「door buzzers, radio parts」。https://www.inventionandtech.com/node/86289",
+   "英國的 Thomas Riley 曾把改裝的門鈴組件裝進黃銅盒做成刺青機；常見說法稱他 1891 年取得英國專利，但刺青史學者查不到紀錄。現代雙線圈配置由倫敦的 Alfred Charles South 取得專利。https://en.wikipedia.org/wiki/Tattoo_machine",
+   "Tattoo Archive：愛迪生 1877 年另一個專利是雙電磁線圈加一片振動彈片；Wagner 專利號 768,413，是第一個線圈與針管同方向的刺青機專利。https://tattooarchive.com/history/tattoo_machine.php ；https://tattooarchive.com/history/wagner_charlie.php",
+   "旋轉機以馬達帶針，聲音較小。Tattoo Archive 記載，1920 年代末之後約五十年沒有新的刺青機專利，下一個是 1979 年華盛頓特區的 Carol Nightingale。https://en.wikipedia.org/wiki/Tattoo_machine"
+  ],
+  "question": "",
+  "source": {
+   "title": "Invention & Technology: Edison's electric pen and the tattoo machine",
+   "url": "https://www.inventionandtech.com/node/86289"
+  },
+  "tags": [
+   "器材",
+   "刺青史"
+  ]
+ },
+ "music": {
+  "title": "被海浪調過音的鋼琴",
+  "topic": "唱片",
+  "body": "2011 年三一一地震後，坂本龍一幾次到東北受災最重的地方，和當地學校一起修理、替換被海嘯毀掉的樂器。宮城縣一所學校的體育館裡，有一台泡過海水的平台鋼琴。[1]\n\n照一般的說法，這台琴走音了。坂本的看法相反。他說，我們以為海嘯讓它失了調；其實是海浪把它從人替它做的模子裡放了出來，讓它回到自然的狀態。他說，現在聽起來反而有點舒服。[2]\n\n這台琴的聲音，收進他 2017 年的專輯《async》，在〈ZURE〉這首曲子裡。[1] 那是他多年來第一張個人錄音室專輯，中間他得了咽頭癌。他說，生病之後想到這可能是最後一張，所以要做所有想做的事。[3]\n\nasync 的意思是「不同步」。他說這張專輯一開始只想收集自己想聽的聲音：下雨時很開心，每次都錄；用接觸式麥克風去聽東西本身的聲音；買來銅鑼和鈸，拿來摩擦。[4] 專輯裡還有一首，三位打擊樂手各敲一支三角鐵，一次錄完，沒有剪接。[3]\n\n聽〈ZURE〉時，可以留意那些音高不準的琴聲。它們沒有被修正。那台琴後來也只做了最少的修理，留著海浪替它調的音。[1]",
+  "notes": [
+   "坂本龍一 2017 年 OTOTOY 專訪直接確認〈ZURE〉使用宮城縣閖上農業高校受海嘯浸泡的鋼琴，2012 年 1 月前往彈奏：https://ototoy.jp/feature/20170417 。FACT 轉載 The Vinyl Factory：琴在宮城縣一所學校的體育館發現，錄音收進〈ZURE〉；坂本把琴留下，修理減到最少以保留自然調音。紀錄片《坂本龍一：終章》導演 Stephen Nomura Schible 說坂本 2012 年 1 月在宮城縣名取市第一次見到這台琴。https://factmag.com/2018/03/28/watch-documentary-ryuichi-sakamoto-tsunami-damaged-piano ；https://mubi.com/en/notebook/posts/a-scene-at-the-checkpoint-remembering-ryuichi-sakamoto",
+   "Time Out Tokyo 訪談原話：「the wave freed it from the cast we had put it in, letting it return to a natural state」「It actually sounds curiously pleasant to me now.」https://www.timeout.com/tokyo/music/interview-ryuichi-sakamoto",
+   "The FADER 2017 年 5 月 5 日（Ruth Saxelby）。〈tri〉原話：「Three triangles, three players, in one shot. No edit.」坂本 2014 年發現中咽頭癌，async 2017 年 4 月發行。https://www.thefader.com/2017/05/05/ryuichi-sakamoto-async-interview ；https://www.timeout.jp/tokyo/ja/ryuichisakamoto",
+   "《美術手帖》2017 年 5 月號，詩人松井茂訪談。坂本說這份對「物」的興趣可能來自美術家李禹煥與「物派」。https://bijutsutecho.com/magazine/series/s67/26593"
+  ],
+  "question": "",
+  "source": {
+   "title": "Time Out Tokyo: Interview Ryuichi Sakamoto",
+   "url": "https://www.timeout.com/tokyo/music/interview-ryuichi-sakamoto"
+  },
+  "tags": [
+   "日本",
+   "實驗音樂",
+   "環境音樂"
+  ]
+ },
+ "news": {
+  "title": "葡萄牙：一手蓋房，一手加快趕人",
+  "body": "11 月 14 日星期六，葡萄牙三十多個城鎮有數萬人上街，抗議房價和房租。美聯社說，這是這波住房抗議到目前為止規模最大的一次。[1] 里斯本的遊行裡，有人舉著一張葡萄牙地圖，上面印著房仲廣告常用的一句話：「已售出」。[2]\n\n數字說明了為什麼。歐盟統計局上週公布，2015 到 2025 年，葡萄牙的房價相對所得上漲約 61%，是全歐盟漲最多的國家。[1] 42 歲的 Ana Encarnação 對記者說，事情已經到了無法忍受的地步。[1]\n\n政府不是沒有動作：降低新建住宅的稅、限制短租、承諾蓋 14.5 萬戶新房，但也承認效果不會馬上看到。[1] 抗議者在意的是另一份法案：葡萄牙國會已在 9 月 30 日初步通過政府的租賃修法，但仍須進一步審議，尚未成為法律。修法擬加快驅逐程序，抗議者擔心房客更容易失去住處。[3] 遊行的要求因此很具體：限制房租漲幅、加強對房客的保護、蓋更多公共住宅。[3][4]\n\n這波抗議已經持續幾週，有人在里斯本和波多的廣場上搭帳篷，警察帶著警犬驅散過，被批評手段太重。發起的人說，他們是受到鄰國西班牙上個月的住房抗議啟發。[1]\n\n新房子不會立刻蓋好，房客卻已經在擔心下一次搬家。政府的兩套政策，可能在同一個人身上碰撞。",
+  "notes": [
+   "美聯社 Barry Hatton，2026 年 11 月 14 日。歐盟統計局 2026-11-09 原始發布：2015–2025 年葡萄牙房價對所得比增加 60.8%，荷蘭增加 34.3%；此指標衡量房價變化相對每人家庭所得變化，不是買房需幾年薪水，也不代表房價單獨上漲 60.8%。https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261109-1 ；另一位受訪者 Pacheco 說最擔心年輕人買不起房。https://www.wral.com/news/ap/9605c-tens-of-thousands-march-in-portuguese-cities-against-surging-home-prices/ ；https://www.washingtontimes.com/news/2026/nov/14/thousands-march-portuguese-cities-surging-home-prices/",
+   "美聯社照片說明（Armando Franca 攝）：抗議者拿著印有房仲廣告標語「It's Gone」的葡萄牙地圖。正文譯為「已售出」。https://www.koin.com/news/international/ap-tens-of-thousands-march-in-portuguese-cities-against-surging-home-prices/",
+   "半島電視台 11 月 14 日：抗議發生在國會通過政府修法之後，修法讓租約更有彈性、加快驅逐程序；抗議者要求限制房租漲幅、加強房客的法律保護、增加可負擔住宅。葡萄牙國會官方紀錄：政府法案 103/XVII/1，2026 年 9 月 30 日僅通過原則性表決，進入委員會逐條審議，未成為法律。https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377135 ；https://www.aljazeera.com/news/2026/11/14/tens-of-thousands-march-in-latest-portugal-housing-protests",
+   "The Portugal News 11 月 16 日：32 個城鎮、由住房運動 Casa Para Viver 發起，要求政府重新考慮租賃法修正；Euronews 報導口號是「他們不會偷走我們住在這裡的權利」。https://www.theportugalnews.com/news/2026-11-16/thousands-protest-across-portugal-over-housing-crisis/1117143 ；https://www.euronews.com/2026/11/14/portugal-sees-fresh-protests-over-government-policies-seen-as-worsening-housing-crisis"
+  ],
+  "question": "",
+  "source": {
+   "title": "AP: Tens of thousands march in Portuguese cities against surging home prices",
+   "url": "https://www.wral.com/news/ap/9605c-tens-of-thousands-march-in-portuguese-cities-against-surging-home-prices/"
+  },
+  "tags": [
+   "歐洲",
+   "社會運動",
+   "經濟"
+  ]
+ },
+ "main": {
+  "title": "一副牌，在 1781 年變成古埃及",
+  "target": "被挑戰的立場：塔羅",
+  "body": "巴黎的新教牧師 Antoine Court de Gébelin 有一次去拜訪一位夫人，看到她和朋友在玩一種紙牌遊戲。1781 年，他在書裡寫道：這副牌其實是一本古埃及的書，是埃及那些宏偉圖書館唯一留下的殘片。[1]\n\n他說，牌上的「女教皇」原本是埃及的大祭司；「Tarot」這個字，他拆成兩個「埃及字根」，解成「生命的王道」。同一本書還收了另一位伯爵的文章，說這副牌就是埃及智慧之神托特的書。兩年後，巴黎的算命師 Etteilla 發展出一套塔羅占卜法。[2]\n\n問題是，1781 年沒有人讀得懂埃及文字。要到 1822 年，Champollion 才公布怎麼讀象形文字。[3] Court de Gébelin 認出的，是一個他讀不懂的埃及。\n\n塔羅的來歷，牛津邏輯學家 Michael Dummett 花了很多年查清楚：它在十五世紀的義大利出現，是一種有王牌、要吃墩的紙牌遊戲。之後三百多年，它在歐洲就只是遊戲；到 1780 年代，才被一小群法國人拿去算命。[4]\n\n論證的重點不是「塔羅很新」，很多有用的東西都很新。重點是：塔羅第一次被說成藏著神祕智慧時，權威來自一個沒有證據的古埃及；後來的牌義和對應系統，很多是沿著這個起點一層層蓋上去的。\n\n以塔羅為終身志業的研究者 Mary K. Greer 直說：塔羅不是起源於古埃及。但她也說，歷史給的是外在的真實，神話給的是內在的真實。[5] 後來很多塔羅師把牌義放在心理學與原型上，不再需要古老的血統。\n\n這個回應把爭點換了地方。如果牌的力量來自讀牌的人，不是牌的來歷，那牌本身在做什麼？",
+  "notes": [
+   "Court de Gébelin〈論塔羅遊戲〉，《原始世界》卷八，1781。他寫自己造訪「Madame C d.H.」時見到這副牌，並說「這本埃及書存在」，是埃及壯麗圖書館唯一的殘餘。拜訪的年份原文沒寫，1781 是出版年。英譯見：https://forum.tarothistory.com/viewtopic.php?p=20917",
+   "字源：Tar（道路）加 Ro（王）。那位伯爵是 de Mellet，他也首先把塔羅和占卜連在一起；Etteilla 1783 年發展塔羅占卜法，1788 年成立「托特之書詮釋者協會」。把大阿爾克那對應希伯來字母，一般歸功於十九世紀的 Éliphas Lévi。https://en.wikipedia.org/wiki/Taromancy",
+   "Champollion〈致達西耶先生的信〉，1822 年 9 月 27 日在法蘭西銘文與美文學院宣讀，主要靠羅塞塔石碑。https://en.wikipedia.org/wiki/Lettre_%C3%A0_M._Dacier",
+   "Dummett 曾任牛津大學 Wykeham 邏輯學講座教授，著有《The Game of Tarot》（1980），並與 Ronald Decker、Thierry Depaulis 合著《A Wicked Pack of Cards》（1996）。他寫道，直到 1780 年代，塔羅才被拿去算命。https://www.letarot.it/A-wicked-pack-of-cards_pag_pg632_eng.aspx?lng=ENG",
+   "Greer 2007 年文章原文：「Tarot did not originate in ancient Egypt」，以及「history tells us outer truth and inner lies, while myths tells us outer lies and inner truth」。Rachel Pollack、Greer 等人以心理學重新詮釋牌義。另有 Frances Yates 1981 年批評 Dummett 想證明塔羅「只是遊戲」。https://marykgreer.com/events/egypt-tarot-and-mystery-school-initiations/ ；https://www.tarot.nl/en/the-history-of-the-tarot/"
+  ],
+  "question": "如果塔羅的意義不是古人留下的，它的力量從哪裡來？",
+  "tags": [
+   "塔羅",
+   "歐洲"
+  ]
+ },
+ "lesson": {
+  "series": "意識科學",
+  "no": 16,
+  "title": "沒反應，不等於沒意識",
+  "body": "全身麻醉時，醫師通常也會給肌肉鬆弛劑，病人連一根手指都動不了。所以有一種老方法：給鬆弛劑之前，先用止血帶綁住病人一隻上臂，讓藥流不進那隻前臂。手術中，醫師對病人說：如果聽得到，握一下我的手。[1]\n\n有人握了。2017 年一項在六個地點、260 位成人身上做的研究裡，插管後有 12 人回應，約二十分之一；其中 5 人再用握手表示自己會痛。[2] 他們事後多半不記得。\n\n這個數字容易被讀成「手術中有人醒著」。它說的其實是：沒有反應，跟沒有意識是兩件事。研究者把麻醉中可能的狀態分成三種：完全沒有意識；有意識但跟外界斷線，像做夢；有意識，而且接收得到外界，聽得見手術室的聲音。[3] 麻醉照護不只要避免病人察覺手術過程，也要避免痛苦；有沒有反應、有沒有記憶，不能當成同一個問題。\n\n做夢可以幫助理解第二種狀態：睡著的人不回應你，但夢裡有一整個世界。麻醉中如果有類似的狀態，從外面完全看不出來，現在常用的麻醉深度指標也分不出這三種。[4]\n\n那麻醉藥到底對腦做了什麼？以常用的丙泊酚為例，失去意識時，一種叫 α 的腦波會從後腦移到前額，變強，各處越來越同步。大腦沒有被關掉，只是太整齊了：像一座城市所有人同時喊同一句話，聲音很大，卻沒有人在交換訊息。Laura Lewis 等人記錄到，失去意識的那一刻，腦中的網路迅速碎成彼此不通的區塊。[5]\n\n病人沒有握手，不一定表示當下沒有經驗；病人醒來不記得，也不能證明當時什麼都沒有發生。麻醉讓一個平常很難分開的問題變得具體：我們究竟如何知道另一個人有沒有意識？",
+  "notes": [
+   "孤立前臂技術：給肌肉鬆弛劑前在上臂綁氣壓止血帶，讓這隻前臂不麻痺，醫師可以口頭要求握手；事後通常沒有明確回憶，但可能有內隱記憶。見 Bonhomme 等 2019 年回顧（Olivia Gosseries、Steven Laureys 團隊），文中也指出全身麻醉不一定造成意識完全消失。https://www.frontiersin.org/articles/10.3389/fnsys.2019.00036/full",
+   "Sanders 等 2017，《Anesthesiology》126(2): 214–222。260 人中 12 人（4.6%）插管後有反應，5 人表示痛；作者稱這是保守估計。更早的回顧資料中位數是 37%，那是疼痛刺激後的數字，情境不同，不可混用。https://pubmed.ncbi.nlm.nih.gov/27984262/",
+   "Sanders、Tononi、Laureys、Sleigh 2012，〈Unresponsiveness ≠ Unconsciousness〉，《Anesthesiology》116(4): 946–959。https://pmc.ncbi.nlm.nih.gov/articles/PMC3311716",
+   "例如雙頻譜指數（BIS）。https://pmc.ncbi.nlm.nih.gov/articles/PMC6703193",
+   "Purdon 等 2013（PNAS）：失去意識時 α 節律移到前方、變強且空間上同步。Lewis、Brown、Purdon 等 2012（PNAS 109(49)），題目是神經網路在丙泊酚引發無意識開始時迅速碎裂。機制仍有爭議：有研究認為關鍵在丘腦與皮質之間，也有研究認為在皮質與皮質之間。https://pmc.ncbi.nlm.nih.gov/articles/PMC4573341/figure/F7 ；https://libmast.utm.my/Record/mit-1721.1%2F77240/Details ；https://pmc.ncbi.nlm.nih.gov/articles/PMC6931391"
+  ],
+  "question": "",
+  "tags": [
+   "意識理論",
+   "大腦",
+   "科學驗證"
+  ]
+ },
+ "far": {
+  "title": "湖上的鳥看起來沒少",
+  "body": "普通潛鳥印在加拿大的一元硬幣上，夏天的湖面常傳來牠拉長的叫聲。從湖邊看，牠們好像一直都在。\n\n10 月 22 日，加拿大保育組織 Birds Canada 的研究者發表一份分析：北美北部 3,421 座湖、49 年的觀察。他們不數成鳥，數的是每對親鳥一年養到六週大的幼鳥。結果 12 個區域裡有 10 個在下降，平均少了約四成。[1]\n\n幼鳥少了四成，湖上的鳥為什麼看起來沒少？潛鳥能活二十年以上，通常每年回到同一片湖。[2] 就算一對親鳥幾年都沒養大孩子，湖上照樣有兩隻鳥。\n\n威斯康辛一項追蹤 27 年的研究看到更細的過程。每片好湖都有主人，旁邊還有一群還沒繁殖的年輕潛鳥在等空位。主人死了，牠們就補上，所以湖一直有鳥住。研究推估，2002 至 2004 年和 2017 至 2019 年相比，這群候補少了 46%。研究者寫道，候補會把族群的大幅下滑藏起來。[3]\n\n原因還不知道，研究者明講這次沒有檢驗；他們懷疑開發、鉛製釣具、酸雨，還有暴雨讓湖水變濁。[4] 能看見這些，靠的是四十多年來四千多名志工，年年回到湖邊數小鳥。[5]\n\n一片湖年年都有成鳥，不代表下一代同樣多。等到湖面終於空下來，警訊可能已經持續很多年。",
+  "notes": [
+   "2026 年 10 月 22 日發表於期刊 FACETS（DOI 10.1139/facets-2025-0344），一半資料來自加拿大湖泊潛鳥調查的志工。大西洋沿岸省份降 74%、草原三省降 65%（1992–2023）；魁北克與美國緬因州大致持平。研究者 Matt Fuirst 說每年平均約降 1.5%。原文頁面本報未能讀取；本報採 CTV 與 The Weather Network 的媒體轉述，未獨立核對原論文（主編同意此處採轉述）。https://www.cp24.com/news/world/2026/11/05/this-iconic-canadian-bird-is-becoming-less-common-as-baby-numbers-decline/ ；https://www.theweathernetwork.com/ca/news/article/canadas-second-most-iconic-bird-is-in-danger-what-you-can-do-common-loon",
+   "成鳥野外壽命超過 20 年，通常每年回到同一繁殖領域。Birds Canada 估計每對每年要有 0.48 隻六週大的幼鳥，族群才能維持。加拿大約有全球 94% 的普通潛鳥繁殖族群。https://www.birdscanada.org/wp-content/uploads/2021/08/CLLS-40-yr-report-FINAL-EN.pdf",
+   "Piper 等 2020，《The Condor》122(4)，〈Plunging floater survival causes cryptic population decline in the Common Loon〉。同期成鳥減少 22%、幼鳥體重降 11%，領域佔領率不變。這是另一份研究，不是 FACETS 那份。https://pmc.ncbi.nlm.nih.gov/articles/PMC11363150/",
+   "Fuirst：「We didn't test what is causing these declines.」他也說潛鳥在加拿大整體狀況仍然很好。緬因州奧杜邦學會的 Sally Stockwell 則說，近年有限的監測顯示幼鳥數可能不足以長期維持族群。https://www.ctpublic.org/2026-11-03/loon-study-reveals-troubling-trends-but-maine-may-be-a-bright-spot",
+   "加拿大湖泊潛鳥調查 1981 年開始，四千多名志工、約三萬五千次繁殖紀錄。https://www.birdscanada.org/?p=24255"
+  ],
+  "question": "",
+  "source": {
+   "title": "CP24/CTV: This iconic Canadian bird is becoming less common as baby numbers decline",
+   "url": "https://www.cp24.com/news/world/2026/11/05/this-iconic-canadian-bird-is-becoming-less-common-as-baby-numbers-decline/"
+  },
+  "tags": [
+   "科學",
+   "保育"
+  ]
+ },
+ "own": {
+  "kind": "散文",
+  "title": "材料・花語",
+  "body": "世間的血與水相連在一起，所有事物以無限的角度，不斷循環著分離與融合。花的姿態是沉默的答案。翻開一本介紹花朵的書，上面寫著花語。\n\n三色堇是堅定的靈魂，鳳尾百合的是休息。貝母是謙虛的心，刻球花是小小的勇氣。麥是豐收，陽光百合則是溫暖的心。迷你鳳梨，你是完整的。澤蘭是想起那一天。\n\n刺芹是隱藏的愛。繡球花是冷酷。泡盛草是自由。孔雀柏是悲傷，紅果金絲桃則是悲傷不會持續下去。寒丁子是夢。香豌豆，記得我，細小的快樂。",
+  "notes": [],
+  "public": true,
+  "source": {
+   "title": "侯百千・材料",
+   "url": "https://houiooiooo.github.io/hundred/archive-material.html"
+  },
+  "tags": [
+   "散文",
+   "材料"
+  ]
+ }
+}
