@@ -325,11 +325,13 @@ def page(title, desc, canonical, body, og=None, ld=None):
 <meta property="og:url" content="{esc(canonical)}">
 {img}
 <style>{CSS}</style>
-{ld_tag(ld)}{MODE_JS}
+{ld_tag(ld)}<link rel="alternate" type="application/rss+xml" title="百千報 The Hundred" href="{SITE}news/feed.xml">
+<script data-goatcounter="https://houbaiqian.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{MODE_JS}
 </head>
 <body>{MODE_HTML}<main>
 {body}
-<footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。</footer>
+<footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。<br>© 侯百千。歡迎附上原文連結分享、引用；轉載全文或商業使用請先來信。・<a href="../feed.xml">RSS 訂閱</a></footer>
 </main></body>
 </html>
 """
@@ -535,11 +537,30 @@ q.addEventListener('input',f);var h=decodeURIComponent(location.hash.slice(1));i
             '<div class="tg" id="n" style="font-size:13px;color:var(--ink3)"></div>'
             f'<h3 class="sub">欄位</h3>{cloud(cols)}<h3 class="sub">主題</h3>{cloud(topics)}'
             f'<h3 class="sub">所有文章</h3><ul class="list" id="all">{rows}</ul>'
-            '<nav class="pn"><a href="./">最新一期</a><a href="archive.html">所有期數</a><span></span></nav>' + find_js)
+            '<nav class="pn"><a href="./">最新一期</a><a href="archive.html">所有期數</a><a href="feed.xml">RSS 訂閱</a></nav>' + find_js)
     html_ = page("標籤索引｜百千報 The Hundred", "百千報所有文章的標籤索引與搜尋：新聞、反方、意識科學、刺青、音樂、文學與侯百千的作品。",
                  f"{SITE}news/tags.html", body)
     (NEWS / "tags.html").write_text(html_.replace('href="../../', 'href="../'), "utf-8")
     urls.append(f"{SITE}news/tags.html")
+
+    # RSS：最新 60 篇單篇（中文），讀者可以用閱讀器訂閱
+    from email.utils import format_datetime
+    items = []
+    for a in list(reversed(zh))[:60]:
+        try:
+            pd = format_datetime(datetime.fromisoformat(str(a["published"])))
+        except Exception:
+            pd = ""
+        link = f"{SITE}news/a/{a['slug']}.html"
+        cats = "".join(f"<category>{esc(t)}</category>" for t in a["tags"])
+        items.append(f"<item><title>{esc(a['o']['title'])}</title><link>{link}</link><guid isPermaLink=\"true\">{link}</guid>"
+                     f"<pubDate>{pd}</pubDate>{cats}<description>{esc(first_para(a['o'].get('body'), 160))}</description></item>")
+    rss = ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>'
+           f'<title>百千報 The Hundred</title><link>{SITE}news/</link>'
+           f'<atom:link href="{SITE}news/feed.xml" rel="self" type="application/rss+xml"/>'
+           '<description>侯百千主編、發行，AI 協作的刊物。每天清晨一期：新聞、反方、意識科學、刺青、音樂與侯百千的作品。</description>'
+           '<language>zh-Hant</language>' + "".join(items) + '</channel></rss>\n')
+    (NEWS / "feed.xml").write_text(rss, "utf-8")
 
     for d, keep in ((ARTS, keep_a), (TAGS, keep_t)):
         for f in d.glob("*.html"):
