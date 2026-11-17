@@ -333,7 +333,7 @@ def page(title, desc, canonical, body, og=None, ld=None):
 </head>
 <body>{MODE_HTML}<main>
 {body}
-<footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。<br>© 侯百千。歡迎附上原文連結分享、引用；轉載全文或商業使用請先來信。・<a href="../feed.xml">RSS 訂閱</a></footer>
+<footer><a href="../../">侯百千</a>主編、發行，AI 協作的刊物。<br>© 侯百千。歡迎附上原文連結分享、引用；轉載全文或商業使用請先來信。・<a href="{SITE}news/feed.xml">RSS 訂閱</a></footer>
 </main></body>
 </html>
 """

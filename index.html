@@ -8,11 +8,13 @@
 <meta name="description" content="侯百千（本名侯百謙），刺青師、寫作者，記者出身，主編《百千報》。駐店於台北信義安和「奇幻販賣所」，預約制。">
 <meta name="author" content="侯百千">
 <meta property="og:title" content="侯百千 Hundred｜刺青・寫作">
-<meta property="og:description" content="刺青。預約制。">
+<meta property="og:description" content="侯百千（本名侯百謙），刺青師、寫作者，記者出身，主編《百千報》。台北信義安和，預約制。">
+<meta property="og:url" content="https://houiooiooo.github.io/hundred/">
+<link rel="canonical" href="https://houiooiooo.github.io/hundred/">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "侯百千", "alternateName": ["侯百謙", "Hundred", "Hou Bai-Qian", "百 Hundred"], "url": "https://houiooiooo.github.io/hundred/", "jobTitle": ["刺青師", "寫作者"], "description": "侯百千（本名侯百謙），台灣刺青師、寫作者，曾任《焦點事件》記者，《百千報》主編。", "sameAs": ["https://instagram.com/houiooiooo", "https://www.threads.net/@houiooiooo", "https://on.soundcloud.com/itLSqcNf90cRoO0EW2"]}</script>
 
-<meta property="og:image" content="img/shoulder-bird.jpeg">
+<meta property="og:image" content="https://houiooiooo.github.io/hundred/img/shoulder-bird.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -184,6 +186,8 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
 .cta-buttons{flex-direction:column;align-items:center}
 }
 </style>
+</head>
+<body>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGQ2CTBMT4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SGQ2CTBMT4');</script>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">×</span>
@@ -199,10 +203,10 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   </button>
   <div class="nav-links">
     <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#booking" onclick="closeMenu()">Book</a>
     <a href="#work" onclick="closeMenu()">Work</a>
     <a href="#writing" onclick="closeMenu()">Writing</a>
     <a href="#sound" onclick="closeMenu()">Sound</a>
+    <a href="#booking" onclick="closeMenu()">Book</a>
     <a href="news/" onclick="closeMenu()">News</a>
   </div>
 </nav>
@@ -228,7 +232,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
     <div class="about-text">
       <p>侯百謙（百）。刺青師、寫作者。</p>
       <p>記者出身，筆名侯百千，持續寫作，發表散文與小說、詩作與各類創作。</p>
-      <p class="en">Hou Bai-Qian (Hundred). Tattoo artist and writer. A former journalist who writes under the pen name Hou Bai-Qian (侯百千), publishing essays, fiction, poetry and other work.</p>
+      <p class="en">Hou Bai-Qian (Hundred). Tattoo artist and writer. A former journalist who writes under the pen name 侯百千, publishing essays, fiction, poetry and other work.</p>
     </div>
     <div class="about-right">
       <div class="portrait-wrap">
@@ -264,10 +268,7 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
   <script>
   function refreshWorks() {
     var grid = document.getElementById('work-grid');
-    var totalWorks = 46;
-    var fileExtension = '.jpg';
-    var workIndices = [];
-    for (var i = 1; i <= totalWorks; i++) { workIndices.push(i); }
+    var workIndices = ["tattoo-1", "tattoo-2", "tattoo-3", "tattoo-4", "tattoo-5", "tattoo-6", "tattoo-7", "tattoo-8", "tattoo-9", "tattoo-10", "tattoo-11", "tattoo-12", "tattoo-13", "tattoo-14", "tattoo-15", "tattoo-16", "tattoo-17", "tattoo-18", "tattoo-19", "tattoo-20", "tattoo-21", "tattoo-22", "tattoo-23", "tattoo-24", "tattoo-25", "tattoo-26", "tattoo-27", "paint-1", "paint-2", "paint-3", "paint-4", "paint-5", "paint-6", "paint-7", "paint-8", "paint-9", "paint-10", "paint-11", "paint-12", "paint-13", "paint-14", "paint-15", "paint-16", "paint-17", "paint-18", "home-17"];
     workIndices.sort(function() { return Math.random() - 0.5; });
     var displayCount = Math.min(9, workIndices.length);
     grid.innerHTML = '';
@@ -275,8 +276,8 @@ footer{flex-direction:column;gap:1.5rem;align-items:center}
       var num = workIndices[k];
       var div = document.createElement('div');
       div.className = 'work-item';
-      var src = 'img/works/' + num + fileExtension;
-      div.innerHTML = '<img src="' + src + '" alt="作品' + num + '" loading="lazy"><div class="work-item-overlay"><span>作品 ' + num + '</span></div>';
+      var src = 'img/gallery/' + num + '.jpg';
+      div.innerHTML = '<img src="' + src + '" alt="作品" loading="lazy"><div class="work-item-overlay"><span>作品</span></div>';
       div.querySelector('img').addEventListener('click', (function(s){ return function(){ openLightbox(s); }; })(src));
       grid.appendChild(div);
     }
