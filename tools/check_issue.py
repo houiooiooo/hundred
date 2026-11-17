@@ -171,7 +171,10 @@ def check(doc):
                 warn.append(f"第 {no} 期輪替欄應該是{NAME[want]}，這期有的是：{'、'.join(NAME[k] for k in got) or '沒有'}")
         for k in ("news", "main", "lesson", "tattoo", "music", "own"):
             if k not in cols:
-                warn.append(f"少了固定欄：{NAME[k]}")
+                if k == "news":  # 2026-11-17 主編批准新聞空欄試行（meta/rules.morning.news_trial）
+                    warn.append("新聞空欄：試行期間可以，why.cols.news 要寫一句為什麼空")
+                else:
+                    warn.append(f"少了固定欄：{NAME[k]}")
         opening = re.sub(r"\s", "", doc.get("opening") or "")
         if not opening:
             warn.append("沒有 opening")
