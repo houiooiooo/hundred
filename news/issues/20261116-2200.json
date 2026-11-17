@@ -9,10 +9,10 @@
   "opening": "從門口那張貼住鏡頭的貼紙，到天亮後早餐店裡用吼的點餐。",
   "order": [
     "craft",
-    "main",
-    "lesson",
     "news",
     "music",
+    "lesson",
+    "main",
     "own"
   ],
   "craft": {
@@ -41,7 +41,7 @@
     ],
     "question": "",
     "tag": "rave 特輯",
-    "sub": "二",
+    "sub": "五",
     "tags": [
       "rave",
       "大腦",
@@ -57,7 +57,7 @@
     ],
     "question": "",
     "tag": "rave 特輯",
-    "sub": "三",
+    "sub": "四",
     "tags": [
       "rave",
       "心理學"
@@ -74,7 +74,7 @@
     ],
     "question": "",
     "tag": "rave 特輯",
-    "sub": "四",
+    "sub": "二",
     "tags": [
       "rave",
       "台灣",
@@ -92,7 +92,7 @@
     ],
     "question": "",
     "tag": "rave 特輯",
-    "sub": "五",
+    "sub": "三",
     "tags": [
       "rave",
       "大腦",
