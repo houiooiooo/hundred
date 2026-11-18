@@ -18,7 +18,7 @@
 <style>
   :root{ --paper:#f4f0e8; --ink:#1b1a18; --ink2:#55514a; --ink3:#8d877c; --line:#d9d2c4; --seal:#b0342a; --card:#fbf8f2; }
   html.dark{ --paper:#121110; --ink:#ebe6dc; --ink2:#b3ac9f; --ink3:#7a7469; --line:#2c2a26; --seal:#d0574a; --card:#1a1917; }
-  .hr{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+  .hr{display:flex;flex-direction:column;align-items:flex-end;gap:2px;min-width:0;margin-left:12px}
   .mode{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--ink3);letter-spacing:.06em}
   .mode button{font:inherit;font-family:"Noto Serif TC",serif;font-size:11px;line-height:1;padding:3px 5px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink3);cursor:pointer}
   .mode button{width:16px;height:16px;padding:0;border:1.5px solid var(--ink2);border-radius:50%;color:transparent;font-size:0;background:transparent}
@@ -32,8 +32,8 @@
   .bars i{flex:1;height:3px;border-radius:2px;background:var(--line)}
   .bars i.done{background:var(--ink2)} .bars i.on{background:var(--seal)}
   .head{display:flex;justify-content:space-between;align-items:center;max-width:640px;margin:0 auto}
-  .brand{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;letter-spacing:.12em}
-  .issue{font-size:12px;color:var(--ink3);letter-spacing:.08em}
+  .brand{font-family:"Noto Serif TC",serif;font-weight:900;font-size:18px;letter-spacing:.12em;white-space:nowrap;flex-shrink:0}
+  .issue{font-size:12px;color:var(--ink3);letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
   .brand .en{font-size:.62em;font-weight:400;letter-spacing:.1em;color:var(--ink3);margin-left:.5em}
   .deck{position:fixed;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none}
   .deck::-webkit-scrollbar{display:none}
@@ -260,7 +260,7 @@
     items.forEach(c => cards.push('<div class="inner">'+c.html+'</div>'));
     if(night && x.sleep) cards.push('<div class="inner cover"><div class="tag"><b>帶進睡眠</b></div><div class="carry">'+esc(x.sleep)+'</div></div>');
     cards.push('<div class="inner end"><div class="big">'+(night?'晚安':'讀完了')+'</div><div class="sub">'+(night?'放下手機吧。':'這一期到這裡。')+'</div>'+
-      '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">'+esc(lab(y))+'　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||''))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
+      '<form class="msg" id="msg"><h3>寫信給侯百千</h3>'+'<input type="text" name="name" placeholder="你的名字" required>'+'<input type="email" name="email" placeholder="Email（他會回信到這裡）" required>'+'<textarea name="message" rows="4" placeholder="讀完想說的話、反駁、題目建議都可以" required></textarea>'+'<div class="row"><span class="hintx" id="msghint"></span><button class="btn" type="submit">送出</button></div></form>'+'<div class="past"><h3>往期</h3>'+list.map(y=>'<button data-id="'+esc(y.id)+'" class="'+(y.id===x.id?'on':'')+'">'+esc(lab(y))+(y.special&&y.title===y.special?'':'　'+esc((y.edition==='night'?'夜刊・':'')+(y.title||'')))+'<span>'+esc(when(y))+'</span></button>').join('')+'</div>'+
       '<div class="credit"><a href="../">侯百千</a>主編、發行，AI 協作的刊物。<br>一期一期出，讀完會結束。<br><a href="archive.html">所有期數（文字版）</a>・<a href="tags.html">標籤索引</a>・<a href="feed.xml">RSS 訂閱</a>・<a href="../">到侯百千的主頁 →</a><br>© 侯百千。歡迎附上原文連結分享、引用；轉載全文或商業使用請先來信。</div></div>');
     cards.push('<div class="inner intro">'+INTRO+'</div>');
     deck.innerHTML = cards.map(h => '<section class="card">'+h+'</section>').join('');
