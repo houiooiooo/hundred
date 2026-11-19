@@ -10,6 +10,7 @@
     "craft",
     "music",
     "tattoo",
+    "news",
     "main",
     "lesson",
     "own"
@@ -88,27 +89,32 @@
     "topic": "考古"
   },
   "main": {
-    "title": "讓你自己勾選，真的比較自由嗎？",
-    "body": "有家公司替員工辦退休儲蓄。以前，想參加的人得自己填表；後來公司改了規則：所有人自動加入，不想存錢的人再填表退出。\n\n選擇其實沒有少。你仍然可以加入、退出，也可以調整存多少。但改完規則，參加的人明顯變多了。[1]\n\n這是美國一項研究追蹤到的變化。研究者發現，人們不只容易留在制度裡，還常沿用公司預先設定的存款比例和投資方式。原來，光是改變「什麼都不做」時會發生的事，就能影響許多人的選擇。[1]\n\n有人會說，這不是很好嗎？退休儲蓄對很多人有幫助，忙碌或拖延的人少了一道手續。又沒有人禁止退出，何必要求每個人先填一張表？\n\n但另一邊也有道理。當制度把其中一個選項設成預設值，它就在替人指一條路。即使退出自由還在，不想花時間研究的人，也很容易留在原地。誰替我們設定預設值，就握有一些影響選擇的力量。\n\n而且，參加的人變多，不表示多年後真的存下同樣多的錢。2024 年一組研究追蹤九個退休計畫，發現員工換工作、提領存款等情況，會削弱自動加入長期增加儲蓄的效果。[2] 早期研究本身也有侷限：它觀察的是一家公司的制度變更，不能把所有差異都確定歸因於自動加入。[3]\n\n所以這裡不是「自由」與「強迫」的簡單二選一。有些人需要的是少一個麻煩的步驟；有些人擔心的是制度替所有人設定了同一條路。",
+    "target": "被挑戰的立場：性別觀（常見的男性視角預設）",
+    "title": "半顆安眠藥",
+    "body": "2013 年 1 月，美國食品藥物管理局（FDA）改了一種安眠藥的建議劑量：女性從一顆 10 毫克，減成半顆。[1]\n\n這種藥叫 zolpidem，1992 年核准上市，二十一年來男女吃一樣的量。FDA 的理由是，女性身體清掉這種藥比較慢。吃完八小時、該起床開車上班的時候，女性血裡的藥仍高到可能影響駕駛的比例，比男性高得多。[2]\n\n這是「男性預設」批評常舉的例子：藥從試驗到定劑量，長期以男性身體為準，差異要等上市多年才被看見。2020 年，兩位美國研究者整理出 86 種男女代謝有明顯差異的藥，幾乎都是女性體內濃度較高，多數案例裡女性的副作用也較多。[3]\n\n反方的論證從下一步開始。2019 年，三位長年研究這類藥物的學者重新整理資料。[4] 他們不否認差異，女性血裡的藥確實比較多。他們問的是：多出來的藥，有沒有變成真的傷害？在他們整理的上路駕駛研究裡，吃 10 毫克八小時後，看不到開車變差；療效和副作用的試驗，也看不出男女有別。他們的結論是，女性減量缺乏證據支持，還可能讓失眠治療不足。\n\nFDA 那一邊也不是只看血。它同時參考了模擬駕駛與清醒度的測試，並提醒：人覺得自己醒了，仍可能已經受到影響。[1]\n\n兩邊都看見了差異。分歧在於要用哪一種證據定劑量：血裡的濃度、開車的表現，還是失眠有沒有被治好。「男性預設」的批評讓女性的身體被量到；量出來的差別算不算傷害，要靠另一種研究回答。",
     "notes": [
-      "Madrian、Shea（2001），The Quarterly Journal of Economics，觀察一家美國公司的 401(k) 退休儲蓄計畫從申請加入改為自動加入，並分析預設提撥率影響。401(k) 是美國雇主提供的退休儲蓄制度，不等於台灣勞退。https://www.nber.org/papers/w7682",
-      "Choukhmane 等（2024），Smaller than We Thought? The Effect of Automatic Savings Policies，以九個 401(k) 計畫觀察中長期儲蓄，認為離職、提領、取消自動調高比例使長期效果小於短期參與率看似顯示的效果。https://www.nber.org/papers/w32828",
-      "美國勞工部 CLEAR 評估 Madrian／Shea 研究時，認為其因果證據強度偏低，因同時有其他制度變化、單一公司樣本等限制；所以正文只寫「追蹤到的變化」，不寫單一實驗已證明因果。https://beta.dol.gov/research-data/clear/studies/power-suggestion-inertia-in-401k-participation-and-savings-behavior-madrian-shea-2001"
+      "FDA 2013 年 1 月 10 日藥品安全通訊：速效劑型（Ambien、Edluar、Zolpimist）女性建議劑量由 10 mg 降為 5 mg，緩釋劑型 Ambien CR 由 12.5 mg 降為 6.25 mg；對男性只要求標示建議醫師「考慮」同樣的較低劑量，不是強制。FDA 原句：「Women appear to be more susceptible to this risk because they eliminate zolpidem from their bodies more slowly than men.」https://www.drugs.com/fda/zolpidem-containing-products-safety-communication-fda-requires-lower-recommended-doses-13231.html ；https://www.fda.gov/drugs/drugsafety/ucm334041.htm ；https://mdedge.com/neurology/article/73725/sleep-medicine/fda-requires-lower-dose-certain-sleep-drugs FDA 問答也說明，降低劑量的依據除了血中濃度，還有模擬駕駛與警覺度研究，並提醒患者即使自覺清醒仍可能受損：https://www.fda.gov/drugs/drug-safety-and-availability/questions-and-answers-risk-next-morning-impairment-after-use-insomnia-drugs-fda-requires-lower",
+      "15% 與 3% 出自 Harward 等 2015 年（Primary Care Companion for CNS Disorders）引述的 FDA 資料，門檻是每毫升 50 奈克，駕駛研究中超過這個濃度的人有顯著損害；緩釋劑型為女性 33%、男性 25%。速效 zolpidem 1992 年核准，亦見同文。寫這篇的我沒有讀到 FDA 的原始表格。https://www.psychiatrist.com/wp-content/uploads/2021/03/26110_zolpidem-dosing-change.pdf",
+      "Irving Zucker（柏克萊）與 Brian Prendergast（芝加哥大學）2020 年刊於《Biology of Sex Differences》；報導指出美國國家衛生院 1993 年起要求臨床試驗納入兩性，之前核准的藥仍在市面；96% 的案例中女性副作用顯著較多，按體重調整劑量後仍如此。Prendergast 原話：「These drugs are optimized from the beginning to work on male bodies.」此處只讀到大學新聞稿，未讀原論文。https://news.uchicago.edu/story/women-are-overmedicated-because-drug-dosage-trials-are-done-men-study-finds",
+      "Greenblatt、Harmatz、Roth，〈Zolpidem and Gender: Are Women Really At Risk?〉，《Journal of Clinical Psychopharmacology》2019 年 39(3):189–199。部分實驗室研究發現女性損害較大，但到八小時時藥物與安慰劑已無法區分。正文的「上路駕駛研究」指這篇回顧整理的特定研究與條件，不代表所有駕駛研究。結論原句：「Dosage reduction in women is not supported by available scientific evidence.」https://scholarlycommons.henryford.com/sleepmedicine_articles/10 。另一種資料：南韓 2015–2019 年的自發性不良反應通報，女性夢遊等異睡症通報較多，男性則是認知相關較多；作者說明這類通報不能推因果：https://frontiersin.org/articles/10.3389/fphar.2023.1256245/full"
     ],
-    "question": "讓每個人自己去申請，和讓每個人自動加入、可以隨時退出，哪一種更尊重選擇？",
+    "question": "血液裡的藥多一點，要到什麼程度，才算身體上的差別？",
     "tags": [
-      "經濟",
-      "心理學",
-      "思想實驗"
+      "女性",
+      "科學驗證"
     ],
-    "pre": "公司替員工辦退休儲蓄，原本要自己申請，後來改成自動加入、不想參加再退出。參加的人變多了，但這種「替人先決定」究竟是在幫忙，還是在偷走選擇？"
+    "pre": "同一種安眠藥，為什麼女性的建議劑量被減半？這不只關乎藥物代謝，也關乎我們如何在血中濃度、隔天駕駛風險與治療效果之間衡量證據。"
   },
   "lesson": {
-    "title": "按鍵之前，大腦已經決定了嗎？",
-    "body": "一個人坐在實驗室裡，想動手指就動。研究者發現，在他自己覺得「我要動了」之前，大腦就已經出現活動。\n\n這個發現很容易讓人想到：如果大腦比我早一步，我真的有自己決定嗎？[1]\n\n但這個實驗有個問題：受試者根本不需要考慮要不要動。他們只是隨便找個時間動手指。\n\n後來，研究者換了個做法。他們請受試者按左邊或右邊的鍵，做兩種選擇。[2]\n\n第一種，按哪邊都沒差，兩家公益團體會各收到五百美元。\n\n第二種，按左邊，一千美元全捐給左邊的團體；按右邊，就全捐給右邊的團體。這一次，受試者得想想自己比較想支持誰。\n\n結果，隨便按的時候，先前發現的那種腦部活動又出現了；但認真選擇捐款對象時，研究者沒有觀察到同樣的訊號。\n\n這不能證明自由意志存在。沒看到某一種腦波，也不等於大腦什麼都沒做。\n\n它只告訴我們：隨便動一下手指，和做一個自己在乎的選擇，可能不是同一回事。我們不能只靠前一種實驗，就說所有決定都是大腦替我們做好的。",
+    "series": "意識科學",
+    "no": 18,
+    "title": "一千美元的按鍵",
+    "body": "加州帕沙迪納的一間實驗室裡，受試者兩根食指各放在一個鍵上，螢幕左右各出現一家真實的公益團體。有些回合，按哪邊，一千美元就捐給哪一家；有些回合，不管按哪邊，兩家都各拿五百。[1]\n\n研究者在找一道腦波。1983 年，美國神經科學家 Libet 請受試者想動手腕時就動，事後回報自己「想動」的那一刻。結果，頭皮上的電壓在「想動」之前大約三分之一秒就開始往下沉，畫出一道斜坡，叫準備電位。[2] 腦先開始，意識後來才知道。這後來常被當成自由意志不存在的證據。\n\n但那個動作是刻意沒有理由的：不要計畫，想動就動。2012 年，另一組研究者提出更樸素的解釋。腦裡的神經活動本來就一直隨機起伏，沒有理由可依的時候，起伏剛好碰到門檻，手就動了。把幾十次動作對齊來平均，隨機的起伏也會疊成一道斜坡。[3] 那道斜坡可能不是「決定」，只是等待時的雜訊，雖然他們也說這還沒被證明。\n\n帕沙迪納的實驗把兩種選擇放在一起比。按哪邊都無所謂的回合，斜坡照常出現；一千美元真的有去處的回合，研究者沒有找到它。[4]\n\n這不證明自由意志存在，沒看到一道腦波，也不等於大腦什麼都沒做。它說明的是：從隨便動一下手指得出的結論，不能直接搬到在乎的選擇上。腦比你先開始的，也許只是那些你本來就無所謂的事。",
     "notes": [
-      "Libet 等，1983，《Brain》：腦部準備電位早於受試者主觀報告的意圖時間。量測與解釋仍有爭議；此研究不能直接證明自由意志不存在。https://training.incf.org/sites/default/files/2023-05/Libet%20-%20Time%20of%20Conscious%20Intention%20to%20Act.pdf",
-      "Maoz 等，2019，《eLife》：18 人分析樣本、真實非營利組織的 1,000 美元捐款；arbitrary choice 有典型準備電位，deliberate choice 未觀察到相同的準備電位。這是特定實驗的結果，不可推論所有深思決定都沒有神經先兆。https://pmc.ncbi.nlm.nih.gov/articles/PMC6809608/"
+      "Maoz、Yaffe、Koch、Mudrik，〈Neural precursors of decisions that matter—an ERP study of deliberate and arbitrary choice〉，《eLife》2019 年 10 月。受試者為加州理工學院學生與帕沙迪納居民，分析 18 人；刺激是 50 個真實非營利組織，受試者先替每一家打支持度分數，再兩兩配對。https://people.socsci.tau.ac.il/mu/mudriklab/files/2020/09/elife_2019.pdf ；https://doaj.org/article/3e3f2d210064457c9629b83612df1bd5 論文摘要原話：「While we found the expected RPs for arbitrary decisions, they were strikingly absent for deliberate ones.」統計以動作前最後 500 毫秒為準，深思決定的振幅與零沒有顯著差異；貝氏分析在部分基準下結果「不確定」，所以這裡寫「沒有找到」，不寫「證明沒有」。作者原話：「our study does not provide positive evidence that consciousness is more involved in deliberate decisions」。https://people.socsci.tau.ac.il/mu/mudriklab/files/2020/09/elife_2019.pdf",
+      "準備電位（Bereitschaftspotential）由德國的 Kornhuber 與 Deecke 發現，1965 年發表。Deecke 2014 年回憶，1964 年他們在弗萊堡沒有電腦可用，把錄了腦波與肌電圖的磁帶盤拆下翻面倒著播放，以動作開始為準來平均（當事人事後回憶）：https://worldneurologyonline.com/article/experiments-readiness-action-50th-anniversary-bereitschaftspotential/ 。Libet、Gleason、Wright、Pearl 1983 年刊於《Brain》106:623，受試者是右撇子大學生（論文寫六名；有摘要轉述為五名），每一系列做 40 次再平均：https://training.incf.org/sites/default/files/2023-05/Libet%20-%20Time%20of%20Conscious%20Intention%20to%20Act.pdf 數字都以肌電圖起點為零：完全沒有預先計畫的系列，準備電位平均約在 -550 毫秒開始，「想動」的回報時間平均約 -200 毫秒，兩者相差約 350 毫秒（最少約 150）。有預先計畫的系列，準備電位約在 -1025 毫秒開始。Libet 自己保留了一條退路：意識也許不負責啟動動作，而能「否決」它；他 1999 年寫道，受試者能在預定動作前 100 到 200 毫秒內喊停。https://www.opessoa.fflch.usp.br/sites/opessoa.fflch.usp.br/files/Libet-1999.pdf",
+      "Schurger、Sitt、Dehaene 2012 年《美國國家科學院院刊》的累加器模型：自發動作的時間點「很大程度由閾值下的自發神經活動波動決定」；作者也寫明模型並未證明準備電位就是這種波動。https://core.ac.uk/download/215800611.pdf 。合著 2021 年回顧的哲學家 Adina Roskies 說，新解釋能說明資料，同時瓦解了認為它挑戰自由意志的理由：https://philosophy.dartmouth.edu/news/2021/06/dartmouths-adina-roskies-explores-nature-free-will",
+      "主張「腦先決定」的一方另有證據，但實驗裡的選擇同樣是隨便按一個鍵。Fried、Mukamel、Kreiman 2011 年《Neuron》：12 名植入深部電極的癲癇病人，記錄 1019 個神經元；輔助運動區 256 個神經元的群體活動，可在自覺決定前 700 毫秒預測選擇，準確率超過八成。https://klab.tch.harvard.edu/publications/PDFs/gk2630.pdf 。Soon、Haynes 等 2008 年用功能性磁振造影，自由選左右手的決定可在進入意識前最多 10 秒解碼，但準確率只比亂猜高一些，不宜說成準確預測：https://www.nature.com/neuro/journal/v11/n5/abs/nn.2112.html"
     ],
     "question": "",
     "tags": [
@@ -116,9 +122,7 @@
       "大腦",
       "意識理論"
     ],
-    "pre": "有個實驗發現，人在覺得自己決定之前，大腦就開始活動了。這是否表示自由意志不存在？另一個實驗發現，隨便按鍵和認真選擇捐款對象，可能不是同一回事。",
-    "series": "意識科學",
-    "no": 18
+    "pre": "大腦真的比我們自己更早決定嗎？從隨意動手指，到會影響真實捐款的選擇，研究者發現兩種決定的腦波未必相同，也重新檢查自由意志實驗的界線。"
   },
   "own": {
     "title": "一千個名字的貓・自由",
@@ -134,5 +138,27 @@
     },
     "kind": "散文",
     "public": true
+  },
+  "news": {
+    "title": "開普敦，水壩還剩七成",
+    "body": "11 月 16 日星期一，南非水利與衛生部長 Pemmy Majodina 宣布，西開普省的供水配額從這個水年起削減：家庭與工業少 7%，農業灌溉少 15%。[1]\n\n供應開普敦與周邊城鎮、農場的六座水壩，11 月初蓄水約七成二，一年前是八成四，低於部裡希望的八成；預報還說可能出現強烈的聖嬰現象。[2]\n\n部長的說法是：「趁現在行動，不要等水壩空了。」這句話背後是 2018 年。那年開普敦的「零日」，也就是關掉住家自來水、改去取水站排隊的日子，一度預估在 7 月 9 日；居民每人每天限用 50 公升。[3]\n\n後來沒有停水。行為經濟學者 Martine Visser 的團隊算過，約四十萬戶獨棟住宅的用水中位數，三年內從每天 540 公升降到 280 公升。[4] 有用的不只是限水和漲價。市政府把每戶用量畫成公開地圖，用顏色標出來；研究發現，高收入戶對鄰居的眼光反應較大，低收入戶對價格反應較大。[5]\n\n這次提早動手，代價也有人先說：商業農民組織 Agri Western Cape 估計，限水可能讓經濟損失超過 10 億蘭特，馬鈴薯、葡萄、核果、莓果首當其衝；他們支持避免重演零日，要的是各方都信得過的模型。[6]\n\n2018 年的經驗顯示，限水、價格與居民行為的改變，可以讓城市大幅減少用水。這次要試的是另一件事：在還沒有人排隊提水的時候，讓大家相信要省。",
+    "notes": [
+      "南非政府新聞社 SAnews 2026 年 11 月 16 日：依水利與衛生部對西開普供水系統（WCWSS）的年度運作分析，2026/27 水年家庭與工業配額減 7%（每年約省 2,720 萬立方公尺），灌溉減 15%（約 2,960 萬立方公尺），合計約 5,680 萬立方公尺；部長原話「Let us act now, not when our dams are empty.」https://www.sanews.gov.za/node/85678 。EWN 同日報導部方強調西開普「不是水危機」，限水是為 2027 年可能的乾旱預作準備；新的市議會可訂更嚴的限水級別，但不能低於全國最低標準：https://www.ewn.co.za/2026/11/16/department-insists-western-cape-is-not-facing-a-water-crisis",
+      "六座相連水壩總容量約 8.982 億立方公尺；2026 年 11 月 2 日蓄水 72.5%，前一年同期 84.4%，十年平均 84.49%，仍遠高於 2016/17 年乾旱時。年雨量 2024/25 年 722.7 毫米、2025/26 年 752.8 毫米，長期平均 964 毫米。https://www.sanews.gov.za/node/85678",
+      "開普大學新聞 2018 年 3 月 1 日（Martine Visser、Johanna Brühl，原刊 Daily Maverick）：水壩降到 13.5% 時啟動零日，居民改到約 200 個取水點每人每天領 25 公升；當時依用量推估零日在 2018 年 7 月 9 日；2018 年 2 月起每人每天限 50 公升。零日後來因冬雨補滿水壩而取消。https://news.uct.ac.za/article/-2018-03-01-cape-town-did-come-together-to-save-water",
+      "同上：2015 年 1 月每日 540 公升、2018 年 1 月 280 公升，樣本約 40 萬戶獨棟住宅；富裕家庭的降幅部分來自水井與雨水桶。瑞典斯德哥爾摩國際水研究所（SIWI）2020 年報導：乾旱前夏季尖峰全市每日用水約 12 至 15 億公升，2019 年 11 月約 6.5 億公升。https://siwi.org/news/how-cape-town-saved-itself-from-day-zero",
+      "SIWI 同上：市府公開每週用水與水壩儀表板、每戶以色點標示用量的水地圖、寄信給高用量戶、分級水價。市府水務官員 Xanthea Limberg：「We ultimately overcame the drought through demand management.」研究者 Brühl 說，高收入戶對社會壓力反應較大，低收入戶對價格反應較大。https://siwi.org/news/how-cape-town-saved-itself-from-day-zero",
+      "EWN 2026 年 10 月 27 日：Agri Western Cape 執行長 Jannie Strydom，原話「We welcome a process that's well thought through.」，並要求各方都能同意、信任的模型。https://www.ewn.co.za/agri-western-cape-proposed-water-restrictions-could-cost-economy-over-r1bn/ 。官員也呼籲居民別一窩蜂鑽井：Breede Olifants 集水區管理局的 Derril Daniels：「The last drought the Western Cape experienced, people started drilling boreholes left, right and centre.」規範私人鑽井的新法正在研擬。https://www.ewn.co.za/2026/11/16/department-insists-western-cape-is-not-facing-a-water-crisis"
+    ],
+    "question": "",
+    "tags": [
+      "環境",
+      "經濟"
+    ],
+    "source": {
+      "title": "SAnews：Western Cape water users face allocation cuts amid El Niño risks（2026-11-16）",
+      "url": "https://www.sanews.gov.za/node/85678"
+    },
+    "pre": "開普敦的水壩還有七成水，政府就先減少配額。回看 2018 年的缺水危機，這篇想問：要怎麼讓人們在危機真正到來之前，就願意改變用水習慣？"
   }
 }
