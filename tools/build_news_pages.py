@@ -119,6 +119,12 @@ def inner(o):
     h = []
     if o.get("target"):
         h.append(f'<div class="target">{esc(o["target"])}</div>')
+    fig = o.get("figure") or {}
+    if re.match(r"^https://", fig.get("src") or ""):  # 作品圖（2026-11-20 夜刊起：公眾領域館藏圖，熱連結官方原圖）
+        img = f'<img src="{esc(fig["src"])}" alt="{esc(fig.get("alt") or "")}" loading="lazy" decoding="async">'
+        if re.match(r"^https?://", fig.get("href") or ""):
+            img = f'<a href="{esc(fig["href"])}" rel="noopener">{img}</a>'
+        h.append(f'<figure class="work">{img}<figcaption>{esc(fig.get("caption") or "")}</figcaption></figure>')
     if o.get("pre"):  # 讀前小卡：正文前的獨立導讀（2026-11-18《世界的晶片》兩集試行）
         h.append(f'<aside class="pre"><div class="pret">讀前｜這篇在說什麼</div>{paras(o["pre"])}</aside>')
     h.append(body_html(o.get("body")))
@@ -186,7 +192,7 @@ section{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}
 .tag{display:flex;gap:10px;align-items:baseline;margin-bottom:8px}.tag b{font-family:"Noto Serif TC",serif;font-weight:900;font-size:14px;color:var(--seal);letter-spacing:.18em}.tag span{font-size:12px;color:var(--ink3)}
 h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:1.5;margin:0 0 12px}
 .target{font-size:13px;color:var(--ink2);border-left:2px solid var(--seal);padding-left:10px;margin:0 0 14px}
-.pre{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--seal);border-radius:8px;padding:12px 16px 0;margin:4px 0 22px;font-size:15px;line-height:1.8;color:var(--ink2)}.pre .pret{font-size:12px;font-weight:600;color:var(--seal);letter-spacing:.12em;margin-bottom:6px}.pre p{margin:0 0 12px}
+.work{margin:6px 0 24px}.work img{display:block;width:100%;height:auto;border-radius:6px;background:var(--card)}.work figcaption{font-size:12px;line-height:1.6;color:var(--ink2);margin-top:8px}.pre{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--seal);border-radius:8px;padding:12px 16px 0;margin:4px 0 22px;font-size:15px;line-height:1.8;color:var(--ink2)}.pre .pret{font-size:12px;font-weight:600;color:var(--seal);letter-spacing:.12em;margin-bottom:6px}.pre p{margin:0 0 12px}
 .body p{margin:0 0 14px}sup.fn{color:var(--seal);font-size:11px;font-weight:600}
 .bg{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px 2px;margin:20px 0 8px;font-size:15px;color:var(--ink2)}
 .bg .bgt{font-family:"Noto Serif TC",serif;font-weight:600;color:var(--ink);margin-bottom:8px}

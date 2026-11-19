@@ -44,6 +44,7 @@
   .tag span{font-size:12px;color:var(--ink3);letter-spacing:.06em}
   h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:23px;line-height:1.5;margin:0 0 14px}
   .target{font-size:13px;color:var(--ink2);border-left:2px solid var(--seal);padding-left:10px;margin:0 0 14px}
+  .work{margin:6px 0 22px}.work img{display:block;width:100%;height:auto;max-height:52vh;object-fit:contain;border-radius:6px}.work figcaption{font-size:12px;line-height:1.6;color:var(--ink2);margin-top:8px}
   .pre{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--seal);border-radius:8px;padding:12px 16px 0;margin:4px 0 22px;font-size:15px;line-height:1.8;color:var(--ink2)}
   .pre .pret{font-size:12px;font-weight:600;color:var(--seal);letter-spacing:.12em;margin-bottom:6px}
   .pre p{margin:0 0 12px}
@@ -192,6 +193,11 @@
     let h = '<div class="tag"><b>'+esc(label)+'</b><span>'+esc(sub||'')+'</span></div>';
     if(o.title) h += '<h2>'+esc(o.title)+'</h2>';
     if(o.target) h += '<div class="target">'+esc(o.target)+'</div>';
+    if(o.figure && /^https:\/\//.test(o.figure.src||'')){ // 作品圖（2026-11-20 夜刊起）
+      let im = '<img src="'+esc(o.figure.src)+'" alt="'+esc(o.figure.alt||'')+'" loading="lazy" decoding="async">';
+      const fu = safeUrl(o.figure.href); if(fu) im = '<a href="'+esc(fu)+'" target="_blank" rel="noopener">'+im+'</a>';
+      h += '<figure class="work">'+im+'<figcaption>'+esc(o.figure.caption||'')+'</figcaption></figure>';
+    }
     if(o.pre) h += '<aside class="pre"><div class="pret">讀前｜這篇在說什麼</div>'+paras(o.pre)+'</aside>'; // 讀前小卡（2026-11-18 試行）
     h += bodyHtml(o.body);
     if(o.question) h += '<div class="q">'+esc(o.question)+'</div>';
