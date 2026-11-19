@@ -575,6 +575,27 @@ q.addEventListener('input',f);var h=decodeURIComponent(location.hash.slice(1));i
     return urls
 
 
+def sync_night_art(issues):
+    """2026-11-20 主編定：夜刊封面共用同期日刊的畫。夜刊 JSON 沒寫 art 時，從同期數的日刊抄進去並存檔，滑卡、單篇頁、縮圖都讀同一個欄位。"""
+    morning = {}
+    for i in issues:
+        if i.get("edition") != "night" and not i.get("special"):
+            try:
+                a = json.loads((ISSUES / f"{i['id']}.json").read_text("utf-8")).get("art")
+            except FileNotFoundError:
+                continue
+            if isinstance(a, int) and a >= 1:
+                morning[i.get("issue_no")] = a
+    for i in issues:
+        if i.get("edition") != "night":
+            continue
+        f = ISSUES / f"{i['id']}.json"
+        x = json.loads(f.read_text("utf-8"))
+        if not x.get("art") and morning.get(x.get("issue_no")):
+            x["art"] = morning[x["issue_no"]]
+            f.write_text(json.dumps(x, ensure_ascii=False, indent=1) + "\n", "utf-8")
+
+
 def main():
     issues = json.loads((ISSUES / "index.json").read_text("utf-8"))["issues"]
     issues.sort(key=lambda i: str(i.get("published")))
@@ -583,6 +604,7 @@ def main():
     keep = set()
     INTRO = intro_html()
     global EN, CUR
+    sync_night_art(issues)
     arts = []
     for n, meta in enumerate(issues):
         iid = meta["id"]
@@ -616,7 +638,7 @@ def main():
             f'<a href="{next_["id"]}.html">第 {next_["issue_no"]} 期 →</a>' if next_ else "") + "</span></nav>"
         LEGACY_ROTATION = 20  # 只給沒寫 art 的舊期輪流用，固定不改；畫的張數只記在 meta/editor.art_count
         a = x.get("art")
-        art_n = 0 if x.get("edition") == "night" else (int(a) if isinstance(a, int) and a >= 1 else ((int(no) - 1) % LEGACY_ROTATION + 1 if isinstance(no, int) and no > 0 else 0))
+        art_n = (int(a) if isinstance(a, int) and a >= 1 else 0) if x.get("edition") == "night" else (int(a) if isinstance(a, int) and a >= 1 else ((int(no) - 1) % LEGACY_ROTATION + 1 if isinstance(no, int) and no > 0 else 0))
         art = (f'<div class="art" role="img" aria-label="侯百千的畫" style="-webkit-mask-image:url(../art/{art_n:02d}.webp);mask-image:url(../art/{art_n:02d}.webp)"></div>' if art_n else "")
         if EN:
             body = (f'<a class="brand" href="../">百千報<span class="en">The Hundred</span></a>{art}'

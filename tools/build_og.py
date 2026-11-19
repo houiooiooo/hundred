@@ -167,8 +167,8 @@ def art_of(meta, x):
         n = 0
     if n < 1 or not (ART_DIR / f"{n:02d}.webp").exists():
         n = (no_i - 1) % LEGACY_ROTATION + 1 if no_i > 0 else 0
-    if x.get("edition") == "night":
-        n = 3  # 夜刊沒有封面畫，用預設圖那張
+    if x.get("edition") == "night" and not (isinstance(x.get("art"), int) and x["art"] >= 1):
+        n = 3  # 夜刊共用同期日刊的畫（sync_night_art 寫進 art）；找不到才用預設圖那張
     return n, no_i
 
 
