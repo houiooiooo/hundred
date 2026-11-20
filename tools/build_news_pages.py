@@ -216,7 +216,7 @@ footer{margin-top:30px;font-size:13px;color:var(--ink3)}
 form.msg input,form.msg textarea{display:block;width:100%;margin:0 0 10px;padding:10px 12px;font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px}
 form.msg .row{display:flex;justify-content:space-between;align-items:center;gap:12px}.hintx{font-size:13px;color:var(--ink3)}
 form.msg button{font:inherit;font-size:15px;padding:8px 20px;border:0;border-radius:8px;background:var(--seal);color:#fff;cursor:pointer}
-ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line);padding:10px 2px}ul.list small{display:block;color:var(--ink3)}
+ul.list{list-style:none;padding:0}ul.list li{border-bottom:1px solid var(--line);padding:10px 2px}ul.list small{display:block;color:var(--ink3)}ul.list a.sw{float:right;margin:2px 0 0 12px;color:var(--ink2);line-height:0}ul.list a.sw svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 """
 
 
@@ -673,7 +673,7 @@ def main():
             f.unlink()
 
     items = "".join(
-        f'<li><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("_headline") or i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
+        f'<li><a class="sw" href="./#{i["id"]}" title="滑卡" aria-label="用滑卡讀"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="2.5" width="8" height="11" rx="1.5"/><path d="M1.5 4.5v7M14.5 4.5v7"/></svg></a><a href="p/{i["id"]}.html">{esc(lab(i))}{"　" + esc(i.get("_headline") or i.get("title")) if not i.get("special") or i.get("title") != i["special"] else ""}</a>'
         f'<small>{esc(when(i))}{"・夜刊" if i.get("edition") == "night" else ""}</small></li>'
         for i in reversed(issues) if i.get("lang") != "en")  # 英文版不另列，從中文頁的連結進入
     archive = page("所有期數｜百千報 The Hundred", "百千報往期目錄：侯百千主編、發行，AI 協作的刊物。一期一期出的白話小報，新聞、反方、意識科學、刺青、音樂與侯百千的作品。",
