@@ -347,6 +347,24 @@ def main():
             render_story(meta, x, key, o, fonts, ImageFont, Image, ImageDraw).save(out, "JPEG", quality=84, optimize=True, progressive=True)
             made_s += 1
     print(f"產生 {made_s} 張限動圖")
+    # 整期限動圖：news/og/s/<id>.jpg（2026-11-21 主編同意，滑卡封面的「整期限動」鍵用）：上半當期的畫，下半特輯名或期數、開場句
+    made_i = 0
+    for meta in issues:
+        iid = meta["id"]
+        if meta.get("lang") == "en" or (a.only and iid not in a.only):
+            continue
+        out = OUT / "s" / f"{iid}.jpg"
+        if out.exists() and not a.force:
+            continue
+        x = json.loads((ISSUES / f"{iid}.json").read_text("utf-8"))
+        title = x.get("opening") or meta.get("title") or ""
+        if not title:
+            continue
+        _, no_i = art_of(meta, x)
+        tag = "特輯" if meta.get("special") else ("夜刊" if x.get("edition") == "night" else f"第 {no_i} 期")
+        render_story(meta, x, "issue", {"title": title, "tag": tag}, fonts, ImageFont, Image, ImageDraw).save(out, "JPEG", quality=84, optimize=True, progressive=True)
+        made_i += 1
+    print(f"產生 {made_i} 張整期限動圖")
 
 
 if __name__ == "__main__":
