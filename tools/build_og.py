@@ -102,6 +102,8 @@ def render(meta, x, fonts, ImageFont, Image, ImageDraw):
         art_n = int(x.get("art") or 0)
     except (TypeError, ValueError):
         art_n = 0
+    if art_n < 1 and x.get("edition") == "night":
+        art_n = night_art(no_i)
     if art_n < 1 or not (ART_DIR / f"{art_n:02d}.webp").exists():
         art_n = (no_i - 1) % LEGACY_ROTATION + 1 if no_i > 0 else 0
     if art_n:
@@ -159,6 +161,19 @@ def articles(x):
     return [(k, x[k]) for k in KEYS if isinstance(x.get(k), dict) and x[k].get("title") and x[k].get("body")]
 
 
+def night_art(no_i):
+    """夜刊沒寫 art 時，回傳同期數日刊的 art（跟 build_news_pages.sync_night_art 同一規則）。"""
+    import json
+    for f in sorted((ROOT / "news" / "issues").glob("*.json")):
+        try:
+            d = json.loads(f.read_text())
+        except Exception:
+            continue
+        if d.get("edition") != "night" and not d.get("special") and d.get("issue_no") == no_i and isinstance(d.get("art"), int) and d["art"] >= 1:
+            return d["art"]
+    return 0
+
+
 def art_of(meta, x):
     no_i = int(x.get("issue_no") or meta.get("issue_no") or 0)
     try:
@@ -168,7 +183,7 @@ def art_of(meta, x):
     if n < 1 or not (ART_DIR / f"{n:02d}.webp").exists():
         n = (no_i - 1) % LEGACY_ROTATION + 1 if no_i > 0 else 0
     if x.get("edition") == "night" and not (isinstance(x.get("art"), int) and x["art"] >= 1):
-        n = 3  # 夜刊共用同期日刊的畫（sync_night_art 寫進 art）；找不到才用預設圖那張
+        n = night_art(no_i) or 3  # 夜刊共用同期日刊的畫；build_news_pages 的 sync_night_art 還沒跑時，這裡自己去同期日刊找
     return n, no_i
 
 
