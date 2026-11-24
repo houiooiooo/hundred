@@ -1,0 +1,167 @@
+{
+ "art": 40,
+ "date": "2026-11-24",
+ "edition": "morning",
+ "issue_no": 24,
+ "lesson": {
+  "no": 23,
+  "question": "",
+  "series": "意識科學",
+  "tags": [
+   "意識",
+   "知覺",
+   "大腦",
+   "心理學"
+  ],
+  "title": "手腕上的數字",
+  "notes": [
+   "Chess Stetson、Matthew Fiesta、David Eagleman〈Does Time Really Slow Down during a Frightening Event?〉，PLoS ONE 2(12): e1295，2007 年 12 月。論文 Methods 寫平台升到離地 46 公尺塔頂、自由落下 31 公尺、約 2.49 秒，落入吊掛式接網裝置（SCAD）；Discussion 另寫 50 公尺，各處說法不一。感知計時器交替顯示隨機數字與其負像，墜落時設成比每人地面極限快 6 毫秒；若解析度真的提高，預期正確率應達 79%，實際與地面無差別。時長判斷只有 7 人：跳前看過別人墜落，先用碼錶估計自己想像中下墜的時間，平均 2.17 秒；跳後再依回憶估計實際的自己墜落，平均 2.96 秒（p<0.03）。這不是「估自己 vs. 估別人」的比較，也不是與實際 2.49 秒直接比較；樣本很小。原論文 Methods 與 Results：https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0001295 。摘要原話：“a richer encoding of memory may cause a salient event to appear, retrospectively, as though it lasted longer.” https://eagleman.com/wp-content/uploads/2013/02/stetson_2007.pdf",
+   "Eagleman 八歲時在施工中的房子上踩空，摔下約 12 英尺；「記憶像篩子」見 NPR／Radiolab：“Normally, our memories are like sieves... We're not writing down most of what's passing through our system.” https://www.npr.org/2010/08/17/129112147/why-a-brush-with-death-triggers-the-slow-mo-effect 。「大腦不像攝影機」“Your brain is not like a video camera.”與「記憶越多，就越覺得花了很久」見 Baylor 醫學院新聞稿（ScienceDaily 轉載）：https://www.sciencedaily.com/releases/2007/12/071211233934.htm",
+   "William James《心理學原理》第 15 章（1890）：“a time filled with varied and interesting experiences seems short in passing, but long as we look back.” 同一章他說被感知的「現在」不是刀鋒，而是有寬度的馬鞍，並把「似現在」（specious present）一詞歸給 E. R. Clay。https://psychclassics.yorku.ca/James/Principles/prin15.htm 。另一個「時間被做出來」的日常例子是停止的時鐘錯覺：眼睛掃到時鐘時，秒針第一下看起來特別久，大腦把對目標的知覺往回延伸到眼睛移動之前（Yarrow 等，Nature 2001）。https://kielanyarrow.github.io/MyPage/papers/Chronostasis_Review.pdf",
+   "Valtteri Arstila〈Time Slows Down during Accidents〉，Frontiers in Psychology 2012：記憶解釋 “is neither the only nor the most plausible explanation”；他推測機制可能與藍斑核釋放正腎上腺素有關。文中轉引 Noyes 與 Kletti 1970 年代的事故倖存者調查，七成以上回報時間變慢（原始調查未讀）。這是理論文章，不是新實驗。https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2012.00196/full",
+   "Bocanegra 與 Zeelenberg，Journal of Experimental Psychology: General 140(2)，2011：“emotion improves fast temporal vision at the expense of fine-grained spatial vision.” 實驗室裡的恐懼臉不等於真實危險，不能當成推翻墜落實驗。https://pure.eur.nl/en/publications/emotion-induced-trade-offs-in-spatiotemporal-vision/"
+  ],
+  "body": "2007 年，美國達拉斯一座遊樂園的高塔上，受試者一個接一個被放開，自由落下約 31 公尺，大約兩秒半後掉進一張網子。這是一場心理學實驗 [1]。\n\n主持的神經科學家 Eagleman 想測一個很多人都說過的經驗：車禍、墜落的瞬間，世界好像變成慢動作。他八歲時從施工中的屋頂踩空摔下，也有過這種感覺 [2]。問題是，那一刻大腦真的看得比較快，還是事後才覺得很久？\n\n團隊做了一個戴在手腕上的小螢幕，讓數字和它的負像快速交替。閃得夠快，眼睛只看到一片亮，讀不出數字。他們先在地面測出每個人剛好讀不出來的速度，再調快一點點，讓人在墜落時看。如果恐懼真的讓人像高速攝影機那樣看得更細，掉下去的時候就該讀得出來。\n\n結果，墜落時辨認數字的表現沒有比地面對照組更好。\n\n但另一個數字變了。七名受試者先看過別人墜落，再用碼錶估計自己如果落下會花多久。等自己跳完，他們又依回憶估了一次。跳後估的時間，平均比跳前想像的長了三成多。\n\n研究團隊推測：害怕的時候，大腦可能把事情記得特別密。平常記憶像篩子，經過的大多沒留下；危險的那兩秒，如果留下更多細節，回頭去量，就可能覺得特別長。Eagleman 的說法是，大腦不像攝影機。\n\n這個區分很早就有人講過。心理學家 William James 在 1890 年寫，充滿新鮮經驗的一段時間，經歷時覺得短，回頭看卻很長 [3]。慢動作也許不是當下的速度，而是事後的長度。\n\n這個結論沒有定案。哲學家 Arstila 認為，受試者事先看過別人跳、知道會發生什麼，和真正的意外不一樣；小螢幕測的也只是很早期的視覺 [4]。另一個實驗室發現，人看過恐懼的臉之後，偵測極短時間空隙的能力變好，分辨空間細節的能力卻變差 [5]。當下的加速可能存在，只是有條件，也有代價。\n\n他們爭論的點是，時間是在什麼時候被做出來？是在那兩秒裡，還是在事後回想的時候？\n\n他們都不認為時間的長度是直接看見的。",
+  "pre": "遇到危險時，時間真的會變慢嗎？一場高塔墜落實驗讓受試者在恐懼中讀手腕上的數字，試著分辨當下的知覺與事後回憶。"
+ },
+ "lit": {
+  "kind": "讀",
+  "question": "",
+  "source": {
+   "title": "Virginia Woolf, To the Lighthouse（Standard Ebooks 公有領域全文）",
+   "url": "https://standardebooks.org/ebooks/virginia-woolf/to-the-lighthouse/text/single-page"
+  },
+  "tags": [
+   "小說",
+   "女性",
+   "歐洲"
+  ],
+  "title": "方括號裡的手臂",
+  "notes": [
+   "三部依序為〈The Window〉〈Time Passes〉〈The Lighthouse〉；〈Time Passes〉分十節（I–X）。Britannica 稱中段是「十年空白」，書中第三部提到 “ten years ago”，所以寫「大約十年」。〈時光流逝〉先以法文〈Le temps passe〉刊於巴黎雜誌《Commerce》1926 年冬季號（譯者 Charles Mauron），早於英文小說出版；研究者發現法譯依據的版本與手稿、印行本都不同。https://www.britannica.com/biography/Virginia-Woolf/Mrs-Dalloway-To-the-Lighthouse-A-Room-of-Ones-Own-and-other-major-works ；https://www.smith.edu/libraries/libs/rarebook/exhibitions/penandpress/case10b.htm",
+   "據 Standard Ebooks 公有領域文本：“[Mr. Ramsay stumbling along a passage stretched his arms out one dark morning, but, Mrs. Ramsay having died rather suddenly the night before, he stretched his arms out. They remained empty.]” 英國首版與美國版有已知差異，這句在其他版本可能措辭略有不同，未逐版核對。Prue、Andrew（“A shell exploded.”）與詩人 Carmichael 先生的事也都在方括號裡。https://standardebooks.org/ebooks/virginia-woolf/to-the-lighthouse/text/single-page",
+   "吳爾芙《A Writer's Diary》（Leonard Woolf 1953 年節選本）1926-04-30：“Yesterday I finished the first part of To the Lighthouse, and today began the second.” “the most difficult abstract piece of writing — I have to give an empty house, no people's characters, the passage of time, all eyeless and featureless with nothing to cling to.” 她寫給 Vita Sackville-West 的信說這部寫於 1926 年英國大罷工的陰鬱中，後來重寫（Heine 2019 轉引）。https://archive.org/stream/in.ernet.dli.2015.509772/2015.509772.A-Writers_djvu.txt",
+   "原型與出版日見 Britannica；母親 Julia Stephen 1895 年過世時吳爾芙十三歲。她在回憶文字〈A Sketch of the Past〉寫，這本書寫完之後，她不再被母親纏繞：“I no longer hear her voice; I do not see her.”（Smith College 網頁轉寫）https://smith.edu/woolf/motherwithtranscript.php",
+   "原文：“They came with their brooms and pails at last; they got to work.” “Mrs. McNab, Mrs. Bast stayed the corruption and the rot.” Stefanie Heine（Textual Cultures 2019）說清潔工把受損的屋子修復，但她們的工作不全是重建；McCracken 與 Thomas（MATRAGA 2020）說上流階層女性在括號裡、幫傭在括號外；Simon Joyce（劍橋大學出版社 2014）指出敘述以比喻與 “she seemed to say” 和 McNab 太太保持距離。https://scholarworks.iu.edu/journals/index.php/textual/article/download/27150/32675/65954 ；https://www.e-publicacoes.uerj.br/matraga/article/view/49798"
+  ],
+  "body": "吳爾芙的《燈塔行》（1927）分成三部。第一部寫一天，第三部也寫一天，中間那部叫〈時光流逝〉，只有十節，卻跨過大約十年 [1]。\n\n這十節的主角不是人，是夜、風、黑暗，和一間沒人住的海邊房子。人的事只出現在方括號裡。第三節寫，一個黑暗的早晨，Ramsay 先生在走廊上跌跌撞撞地伸出雙臂；但 Ramsay 太太前一晚相當突然地死了，他伸出雙臂。「They remained empty.」（手臂是空的。）[2] 全書前半最重要的人物，在一個從屬子句裡死去，括號關上，敘述回到空屋。\n\n女兒出嫁後死於分娩相關的病、兒子在法國戰死、一位詩人意外成名，也都在括號裡，每件一兩句。\n\n1926 年 4 月 30 日，吳爾芙寫完第一部、開始寫這部，在日記裡說這是最難的抽象寫作：她得寫一間空屋、沒有人物性格、時間流逝 [3]。Ramsay 夫婦以她的父母為原型，母親在她十三歲時過世。小說在 1927 年 5 月 5 日出版，那天是母親去世三十二週年 [4]。\n\n括號外真正在做事的，是兩個清潔婦，McNab 太太和 Bast 太太。她們終於帶著掃帚和水桶來了，擋住了腐朽。書裡說，要是天平再傾斜一點，整棟房子就會沉下去。評論者讀法不一：有人說她們把房子修了回來；也有人指出，上流人家的生死在括號裡，幫傭在括號外 [5]。\n\n讀這十節，像站在一個房間裡看光移動，偶爾有人從門外經過，說一句話就走。大事被縮成括號，灰塵和水桶占滿了頁面。",
+  "pre": "吳爾芙用短短十節寫過大約十年，人的死亡被放進方括號，房子與清潔婦卻留在敘事中央。小說的主角與時間因此有了不同的重量。"
+ },
+ "main": {
+  "question": "如果某個月份出生的人真的比較常成功，要怎麼分辨原因來自天上，還是來自人訂的規則？",
+  "tags": [
+   "占星",
+   "科學驗證",
+   "歐洲",
+   "日本"
+  ],
+  "target": "被挑戰的立場：占星",
+  "title": "報名表上的那一天",
+  "notes": [
+   "CIES 足球觀察站第 10 號月報（2015 年 12 月）：歐洲 31 個頂級聯賽 28,685 名球員，30.5% 生在 1–3 月、10–12 月僅 19.3%。英格蘭的年齡組跟學制在 9 月 1 日截止，以四個月分段，39.9% 生在 9–12 月、35.7% 在 1–4 月、24.4% 在 5–8 月。一般人平均生日約 7 月 1 日，職業足球員約 6 月 13 日，效應隨年齡變淡但沒有消失。https://football-observatory.com/IMG/pdf/mr10_eng.pdf",
+   "Peter Yoachim〈When Astrology Works: Birthday Effects in Sports〉（2013）：NHL 與男子網球有年初高峰，NBA、NFL 與女子網球和隨機分布沒有差別——不是每種運動都有。他對籃球的解釋：「You can't teach height」。這是部落格，只當輔助。https://yoachim.github.io/2013/07/30/when-astrology-works-birthday-effects-in-sports",
+   "這個名詞常追溯到 Barnsley 等人 1985 年的加拿大冰球研究（加拿大青少年冰球以 1 月 1 日分組）。日本數字見 Sasano 等 2020（Sports Medicine – Open）：1993 年 J 聯盟 36.5% 生在 4–6 月、1–3 月 16.7%；職棒 2001 年 36.1% 對 14.0%，2018 年仍是 31.0% 對 18.8%；日本學年 4 月起算，1886 年起沿用。https://pmc.ncbi.nlm.nih.gov/articles/PMC7538493 。台灣學年依《強迫入學條例施行細則》第 2 條從 9 月 1 日起算；一項健保資料研究發現，8 月生（全班最小）的孩子比 9 月生更常被診斷 ADHD、用藥（陳牧宏等，J Pediatr 2016）——這是診斷與用藥的差異，不代表 8 月生比較容易「有」ADHD。https://pure.lib.cgu.edu.tw/en/publications/influence-of-relative-age-on-diagnosis-and-treatment-of-attention-3/",
+   "舊制結果見 Helsen 等 1998（Am J Hum Biol 10(6)）：選拔年度早段（8–10 月）出生者從 6–8 歲組起較常被認定有天分，晚段出生者 12 歲就傾向退出。https://experts.mcmaster.ca/display/publication1314002 。改制後見 Helsen、Starkes、Van Winckel 2000（Am J Hum Biol 12(6)），比較 1996–97 與 1997–98 兩季。https://experts.mcmaster.ca/display/publication1314031 。澳洲 1989 年改青少年足球截止日後，職業球員的出生高峰也跟著移動（Musch & Hay 1999）；英格蘭橄欖球 U18 先後用過兩種截止日，兩段都偏向各自的第一季出生者（Kelly 等 2021）。https://www.open-access.bcu.ac.uk/13463/1/Kelly%20et%20al.%20%282021%29%20-%20Consequences%20of%20changing%20the%20cutoff%20date.pdf",
+   "第一個回應的說法例見 Parade：「you are more than just your Sun sign—you have an entire birth chart!」https://www.aol.com/4-reasons-don-t-zodiac-182847365.html 。這些是一般媒體與寫作者的說法，不是占星界的正式立場；第二個回應是寫這篇的我整理的可能立場，不是來源原話。出生月份另有一條和日期無關的真實路徑：季節。哥倫比亞大學分析 174 萬人病歷，發現 55 種疾病與出生月份顯著相關，研究者自己說這個風險「相對很小」（Boland 等 2015）。https://pubmed.ncbi.nlm.nih.gov/26041386/"
+  ],
+  "body": "歐洲頂級足球聯賽的球員裡，一月生的人幾乎是十二月生的兩倍。2015 年一份統計看了 31 個聯賽、兩萬八千多名球員：三成生在一到三月，生在十到十二月的不到兩成 [1]。\n\n只有英格蘭不一樣。那裡的職業球員，最多是九到十二月出生。\n\n一位研究者把這種現象戲稱為「占星靈驗的時候」[2]。可是牽線的不是天空，是人訂的日期。\n\n英格蘭的青少年足球跟學校一樣，以九月一日分年齡組；歐陸多半用一月一日。同一組裡最早出生的孩子，可能比最晚的大將近一歲。七、八歲的年紀，這一歲就是身高、力氣和協調的差距，教練眼中的「有天分」，有一部分只是比較大。被挑中的人得到更好的訓練，差距一路滾下去。研究者叫它「相對年齡效應」[3]。\n\n日本的學年從四月開始。日本的職業足球與職棒選手，最多是四到六月出生，一到三月出生的最少。\n\n截止日也真的被改過。比利時足協在 1997 年把選拔年度的起點從八月一日改到一月一日。舊制下，八到十月出生的孩子較常被認定有天分；改制後，換成一到三月出生的較常被評為有天分，八到十月出生的比例明顯偏低 [4]。天上沒有任何變化，協會改了一條規定，「好的出生月份」就搬了家。\n\n占星會怎麼回應？第一個回應是：太陽星座只是一張星盤的一小部分，出生月份不等於占星。占星本來也未必主張，誰能進職業隊是由太陽星座決定的。第二個回應退得更遠：星盤不負責預測運動成就，這批資料和占星無關 [5]。\n\n兩個回應都成立，也劃出一條界線。相對年齡效應只用一個日期，就能說出哪個月份占優，還能說出規則改了之後優勢會往哪裡移。占星如果退出這批資料，它就不再對這種月份效應提出解釋。\n\n爭點不在出生的時刻重不重要，而在看到某個月份的人特別多時，先查天空，還是先查報名表上的日期。",
+  "pre": "為什麼職業運動員的出生月份分布不平均？當選拔截止日改變，優勢月份也跟著移動。這篇用制度的日期檢驗出生月份的神祕解釋。"
+ },
+ "music": {
+  "question": "",
+  "source": {
+   "title": "Wax Poetics: DJ Krush: Breakbeat Swordsman（2021）",
+   "url": "https://magazine.waxpoetics.com/article/dj-krush-breakbeat-swordsman"
+  },
+  "tags": [
+   "日本",
+   "DJ",
+   "嘻哈",
+   "取樣"
+  ],
+  "title": "幾乎沒有人的戲院",
+  "topic": "場景",
+  "notes": [
+   "《Wild Style》（導演 Charlie Ahearn）1983 年 10 月在新宿上映；在美國是地下片，在日本反而成了主流（Japan Times 2015）。RBMA 寫約 30 名演員與工作人員來日宣傳，在俱樂部演出、上電視，之後原宿很快出現 Tokyo B-Boys 等霹靂舞團（只有這一個來源）。https://japantimes.co.jp/culture/2015/04/01/films/exporting-wild-style-bronx-hip-hop-king-fab-5-freddy-remembers-year-rode-around-tokyo-graffiti-covered-van-hung-yoyogi-park-rockers ；https://daily.redbullmusicacademy.com/2014/10/birth-of-hip-hop-in-japan",
+   "江垣ひろし，RBMA Daily〈The Birth of Hip Hop in Japan〉（2014）。在戲院看片與買錄影帶反覆看，兩件事的先後沒有來源明說。",
+   "TOKION 訪談（2022-06-19）：“What was even more exciting was watching Grandmaster Flash make smooth transitions on two separate records on two different turntables… I was like, 'so this is how you do transitions!'” 他原想跳霹靂舞、體力不足，也見同篇。https://tokion.jp/en/2022/06/19/interview-dj-krush-vol1/",
+   "Japan Times（2010-02-19）：“There was absolutely no information in those days, so I bought the video and watched a DJ scratching on repeat.” “At the time you couldn't buy the kind of mixers that they were using in the film.” 店員那句見 THUMP：“They argued, 'you only need one.' They didn't understand.”（只有這一個來源）。https://www.japantimes.co.jp/culture/2010/02/19/music/dj-krush-spins-some-tales ；https://thump.vice.com/en_us/article/inside-legendary-japanese-producer-dj-krushs-first-album-in-11-years",
+   "Krush Posse 成立與解散年份據 Wax Poetics（2021），其他來源寫解散在「1990 年代初」。團體曾贏得 Major Force 的 DJ 比賽，作品收在 1990 年合輯《Yellow Rapculture in Your House》。解散後那句見 TOKION：“When we disbanded and there was no longer an MC, I didn't know how to move forward.” 他說後來聽 Eric B. & Rakim《Paid In Full》才重燃興趣。https://magazine.waxpoetics.com/article/dj-krush-breakbeat-swordsman",
+   "《Krush》由 S-Ken 創立的 Chance 廠牌發行，“I wanted to see if I could do hip-hop music without any rapping.”（Wax Poetics）。《Strictly Turntablized》封面由 Futura 2000 繪製；1994 年 Mo' Wax 的 MW024 分割單曲，A 面是 DJ Shadow〈Lost and Found (S.F.L.)〉，AA 面是 DJ Krush〈Kemuri〉，不是兩人合製〈Kemuri〉（發行資訊：https://www.mowaxdiscography.com/mw024.html）；這張單曲英國單曲榜最高第 82 名；《The Wire》1994 年那句轉引自 Medium〈Mo' Wax Where Are They Now〉。早期器材：四軌錄音機、一台只能錄一秒的 Boss 取樣機，後來 Akai 與 Casio RZ-1 鼓機。https://medium.com/mo-wax-where-are-they-now/mo-wax-where-are-they-now-dj-krush-1994-e3eab6c31328"
+  ],
+  "body": "1983 年 10 月，紐約的嘻哈電影《Wild Style》在東京新宿上映 [1]。據音樂記者江垣ひろし記載，放映的戲院幾乎沒有觀眾。坐在裡面的人之一，是後來叫做 DJ Krush 的石井英明 [2]。\n\n他原本想跳舞，但體力撐不住。讓他留下來的，是片中 Grandmaster Flash 用兩台唱盤，把兩張唱片順順接起來的段落。他後來說：「原來轉場是這樣做的。」[3]\n\n但他沒地方學。他說那時候完全沒有資訊，只好買錄影帶回家，一遍遍重播 DJ 刷碟的片段。片中那種混音器在日本買不到；他去店裡說要兩台唱盤，店員說一台就夠了 [4]。他也說，《Wild Style》裡用的是家裡就找得到的東西：唱盤和唱片。\n\n1987 年，他和 MURO、DJ GO 組了 Krush Posse，MURO 當時是 MC。1992 年團體解散 [5]。他說：「解散之後沒有 MC 了，我不知道要怎麼往下走。」\n\n他往下走的方式，是拿掉饒舌。1994 年 1 月的第一張個人專輯《Krush》，他說是想試試看，能不能做出沒有饒舌的嘻哈。同年，英國廠牌 Mo' Wax 發行他的《Strictly Turntablized》。他對英國雜誌《The Wire》說：「我是 DJ，不是饒舌歌手，所以我得用聲音、而不是文字來描述情緒。」[6]\n\n可以從《Strictly Turntablized》聽起，聽嘻哈在沒有人說話時，靠節拍和取樣能走多遠；再聽〈Kemuri〉：它在 1994 年與 DJ Shadow 的〈Lost and Found (S.F.L.)〉分別收在同一張雙面單曲。",
+  "pre": "1983 年，一部紐約嘻哈電影在東京放映。DJ Krush 從電影裡學著使用唱盤，後來嘗試不用饒舌人聲、只靠聲音來表達情緒。"
+ },
+ "news": {
+  "question": "",
+  "source": {
+   "title": "Brut／AFP：Procès Zecler : le racisme retenu, prison ferme pour trois policiers",
+   "url": "https://www.brut.media/fr/articles/france/justice-faits-divers/proces-zecler-le-racisme-retenu-prison-ferme-pour-trois-policiers"
+  },
+  "tags": [
+   "歐洲",
+   "法律",
+   "警察"
+  ],
+  "title": "巴黎，錄音室門口的監視器",
+  "notes": [
+   "判決日期與法院：AFP 稿（Brut 轉載，2026-11-21）寫「星期五」、巴黎刑事法院（cour criminelle de Paris）評議逾十小時；Al Jazeera（2026-11-21）圖說寫 11 月 20 日最後一次開庭與宣判。三人為 Aurélien Lapersonne、Philippe Tondeux、Pierre Plantier，罪名含集體故意暴力（violences volontaires en réunion）與偽造公文書（faux en écriture publique），最重可判 15 年。律師 Caroline Toby 稱本案是「第一次」（AFP）；Al Jazeera 引 Zecler 律師說，判例的意義是即使警察說謊，受害者仍可能被相信。https://www.brut.media/fr/articles/france/justice-faits-divers/proces-zecler-le-racisme-retenu-prison-ferme-pour-trois-policiers ；https://www.aljazeera.com/news/2026/11/21/french-police-officers-guilty-of-michel-zecler-assault-what-happens-now",
+   "2020 年當晚：AFP 寫約 30 名警察到場，一枚催淚彈被丟進錄音室，九名年輕人被捕；警方報告指控 Zecler 施暴並以「抗拒公務」對他提告。Zecler 頭部受傷、二頭肌肌腱斷裂（Al Jazeera）。Tondeux 在庭上承認那份報告「從 A 到 Z 都是假的」（AFP，Sud Radio 轉載 2026-11-18）。https://www.sudradio.fr/societe/proces-zecler-la-cour-se-prononcera-sur-la-dimension-raciste-de-lagression",
+   "種族歧視加重情節：偵查階段以缺乏證據未予採納，但未質疑 Zecler 的誠信；律師 Serge Money 於庭上要求法庭表態，代理檢察長支持，審判長 11 月 18 日宣布評議時一併審酌（AFP，Sud Radio 轉載）。Zecler 說的辱罵原文見同篇報導，本文不重複。",
+   "刑度：Lapersonne 五年、緩刑三年；Tondeux 五年、緩刑三年半；Plantier 五年、緩刑四年，實刑部分戴電子腳鐐執行；前兩人另有延後收押令。細節另見《世界報》判決報導：https://www.lemonde.fr/en/france/article/2026/11/21/police-beating-of-black-music-producer-court-recognizes-racist-nature-of-violence-sentences-officers-to-prison-raising-hopes-for-new-legal-precedent_6785803_7.html 。檢方原求刑四到六年實刑；法院說量刑考慮了他們認罪、道歉、沒有前科；檢方也在庭上說那段畫面避免了一場冤案（AFP）。禁止再任警職見 Al Jazeera。是否上訴，讀到的報導未提。",
+   "背景：法國權利保護官（Défenseur des droits，現任 Claire Hédon）2025 年報告指出，被認為是阿拉伯裔、黑人或北非裔的年輕男性，被攔查的機率是其他人的四倍，遭受搜身等更嚴厲措施的機率是十二倍；歐洲人權法院去年判法國歧視性身分查驗違反公約（以上據 Al Jazeera 轉述，原報告未讀）。法國官方的立場是承認個別失職、否認體制性種族歧視。"
+  ],
+  "body": "2026 年 11 月 20 日星期五，巴黎刑事法院判三名警察毆打音樂製作人 Michel Zecler、偽造公文書罪名成立，並認定暴力帶有種族歧視的加重情節 [1]。\n\n事情發生在 2020 年 11 月 21 日。警察以沒戴口罩為由，在 Zecler 的錄音室門口攔下他。事後的警方報告寫，是他動手打警察，還想搶警察的槍。錄音室的監視器拍到的是另一回事：警察一再出手，他沒有還擊 [2]。Zecler 說：「沒有這些影片，我今天不會以受害者的身分站在這裡。」\n\n畫面推翻了報告，卻拍不到聲音。Zecler 說毆打時被用一句針對黑人的辱罵罵了好幾次，警察否認。偵查階段以證據不足，沒有把種族歧視列進來；開庭後在他的律師要求下，法庭同意一併判斷 [3]。\n\n法院考量的證據包括：Zecler 的說法從頭到尾一致；警察寫過假報告，他們的否認因此失去可信度。他的律師 Caroline Toby 說，這是第一次，法庭完整聽見了他的說法。\n\n三人各判五年，實刑部分分別是兩年、一年半及一年；最後一人可戴電子腳鐐在家執行，前兩人有延後收押安排。三人都不得再任警職 [4]。Zecler 的律師說刑度不夠，但這個判例重要。\n\n判決回答的是一個執法現場常見的問題：當紀錄出自執法者之手，被執法者的話值多少。這一次，答案一半來自監視器，一半來自法院把那份假報告算進了警察證詞的分量 [5]。",
+  "pre": "監視器拍到警察毆打音樂製作人，卻沒有錄下種族辱罵。巴黎法院如何在影像、證詞與造假的警方報告之間判斷可信度？"
+ },
+ "opening": "1983 年新宿，一間幾乎沒人的戲院，放著一部紐約的嘻哈電影。",
+ "order": [
+  "music",
+  "lit",
+  "lesson",
+  "news",
+  "tattoo",
+  "main",
+  "own"
+ ],
+ "own": {
+  "kind": "散文",
+  "notes": [],
+  "public": true,
+  "source": {
+   "title": "侯百千・我",
+   "url": "https://houiooiooo.github.io/hundred/archive-wo.html"
+  },
+  "tags": [
+   "散文",
+   "我"
+  ],
+  "title": "我・清明",
+  "body": "清明他收到訊息，說有空就去掃墓吧。那時他正在曬太陽。他忘記了。可能是因為原本以為會下雨。每年這個時候都會下雨。但今年沒有。所以他忘記有人離開。因為陽光的關係。因為想起來有人離開，所以要去掃墓。而去掃墓的原因，是為了想起來。想起來他們已經離開了。或許沒有人真的離開，直到他想起來。他這樣想。陽光灑在身上，像河流與河床。他突然覺得不想去了，因為他已經想起來了。想起來的時候，他們就在這裡，在陽光的縫隙裡，在皮膚的感覺裡，沒有人離開。忘記的時候，他也順便忘記了自己，跟他們在一起。他們一起離開，一起在這裡。忘記與想起來的所有人，都在這裡，在陽光的縫隙裡。然後，天空開始飄下淡淡的雨，雨在他的身上，成為河流與河床。\n\n然後，他起身，擦拭身上的水滴，回家準備出門的東西。"
+ },
+ "published": "2026-11-24T03:41:00+08:00",
+ "tattoo": {
+  "question": "",
+  "source": {
+   "title": "NPR Code Switch: Black And Gray ... And Brown: A Tattoo Style's Chicano Roots（2018）",
+   "url": "https://www.npr.org/sections/codeswitch/2018/04/15/602169159/black-and-gray-and-brown-a-tattoo-styles-chicano-roots"
+  },
+  "tags": [
+   "刺青史",
+   "工藝",
+   "監獄"
+  ],
+  "title": "一根磨尖的吉他弦",
+  "topic": "技法",
+  "notes": [
+   "Negrete 在 Addiction Unlimited Podcast（2018-08-22，逐字稿）描述的是成年後在監獄的機器：“Basically it's a motor that you break out of a CD player or back then it was a cassette player.” “You use a toothbrush, a Bic pen, a sharpened guitar string, tape, and that motor, and a paperclip.” 他也說今天常用的旋轉機（rotary）以這種監獄設計為基礎，這是他本人的說法。Jack Rudy 對 OC Weekly（2005）說牢裡用的是 “essentially a sharpened guitar string, and it was a single needle, with no back-up”，並認為這種手法根源在 1950 年代的加州監獄系統。https://addictionunlimited.com/freddy-negrete/ ；https://www.ocweekly.com/?p=159139",
+   "NPR Code Switch（2018-04-15）：“The machines had one needle.” 牢裡只有黑墨，“But if you watered it down, it turned gray.” 「燒煙灰做墨水」等說法沒有讀到可靠一手來源，不寫。https://www.npr.org/sections/codeswitch/2018/04/15/602169159/black-and-gray-and-brown-a-tattoo-styles-chicano-roots",
+   "1968 年 12 歲，洛杉磯 Central Juvenile Hall；當時學會的是把針插進融化的牙刷、沾睫毛膏手刺，和後來監獄裡的馬達機器是兩個不同時期（KCET Artbound 2017-08-14、OC Weekly 2016-12-07）。客人要「像在牢裡刺的」見 Negrete Podcast 原話。他的「smile now, cry later」喜劇悲劇面具圖出自少年矯正機構時期，2016 年回憶錄以此為名。https://www.pbssocal.org/shows/artbound/chicanx-tattoos-from-prison-badges-to-venerated-latinx-culture ；https://www.ocweekly.com/once-a-style-exclusive-to-chicanos-black-and-gray-tattoos-are-now-taking-over-the-world-7728101/",
+   "Rudy：“We just eventually figured to take a three-needle [machine] and pull one needle about a quarter-inch out from the other two, and the single-needle was born: one on the top, two on the bottom.”（OC Weekly 2005，他把時間定在 “Late '75-early '76”）。這仍是三針配置中的一針突出，不是整組只剩一針。同一篇報導說他們沒有發明黑灰單針，而是把它完善；Charlie Cartwright 官網稱是他開創細線風格，Negrete 自稱開創黑灰寫實，誰最早說法不一。開店年份與地點見世界刺青博物館 Rudy 頁；Rudy 2015 年對 OC Weekly 說：“A lot of East LA chicanos were coming in asking for more prison-style work with no color in it.” NPR 寫 1970 年代中期店裡的客人男女都有。Rudy 已於 2025 年 1 月過世。https://worldwidetattoomuseum.com/jackrudy/ ；https://www.ocweekly.com/jack-rudy-on-tattoos-stigma-and-why-its-good-they-hurt-6459877/ ；https://www.goodtimecharlie.net/pages/about",
+   "Negrete：“I was like the first Chicano who ever even got a job as a professional tattoo artist”（NPR 2018）。圖像清單見 OC Weekly 2016（三點十字、戴寬邊帽的女人、Old English 字體、瓜達露佩聖母、lowrider 與 pinup 場景）與 Negrete Podcast（Aztec 圖像、天主教圖像、玫瑰、小丑女、charra 女孩）；「營火故事」一句見 NPR。Margot Mifflin 在 LARB（2013）寫 Hardy “embraced and cultivated pioneering artists like Freddy Negrete”。https://lareviewofbooks.org/article/hate-the-brand-love-the-man-why-ed-hardy-matters/"
+  ],
+  "body": "在加州的監獄裡，刺青機是自己組的。Freddy Negrete 後來回憶，材料是從卡帶機拆下來的馬達、一支牙刷、一支 Bic 原子筆、一根磨尖的吉他弦、膠帶和一枚迴紋針 [1]。\n\n這種監獄土製機器用的是單針。牢裡也沒有彩色墨水，只有黑的；但黑墨加水稀釋，就變成灰 [2]。一根針拉得出很細的線，加了水的黑做得出深淺。細線勾形、灰階做陰影的畫法，就從這裡長出來。\n\nNegrete 十二歲在洛杉磯的少年感化院就接觸了這種刺青，但當時用的是沒有馬達的手刺方式 [3]。後來他在公寓接案，客人都要「看起來像在牢裡刺的」。\n\n1975 年，東洛杉磯 Whittier 大道上開了一家刺青店 Good Time Charlie's。很多 Chicano（墨西哥裔美國人）客人來要沒有顏色的監獄風格，店裡原來的三針配置做不出那種細線。刺青師 Jack Rudy 回憶，他們把其中一根針向前拉出約四分之一英吋，讓它凸出另外兩根，做出單針的細線效果。他自己替「發明」加了引號 [4]。這次是專業工具倒過來，模仿監獄裡的單針效果。\n\n1977 年，舊金山刺青師 Ed Hardy 買下這家店，Negrete 同年進店。他說自己大概是第一個拿到專業刺青師工作的 Chicano [5]。\n\n刺上去的東西也有來處：瓜達露佩聖母、玫瑰、十字架、戴寬邊帽的女人、Old English 字體的名字。Negrete 說：「這些是我們的營火故事、我們的神話、我們文化的印記。」",
+  "pre": "黑灰細線刺青如何從監獄走進專業刺青店？單針、稀釋的黑墨與 Chicano 圖像，連起工具、手藝和文化的變化。"
+ },
+ "weekday": "星期二"
+}
