@@ -1,0 +1,162 @@
+{
+ "art": 128,
+ "craft": {
+  "body": "《2001 太空漫遊》的開場是一片非洲荒原，猿人在岩石間覓食、對峙，天光從地平線打過來。演這段戲的人，一步也沒踏上非洲。他們在倫敦北邊 Borehamwood 的片廠，身後的荒原是一張照片 [1]。\n\n1966 年，劇組先派人到西南非的納米布沙漠，等光線對了，用 8×10 吋的大幅透明片拍下風景。要把演員放進一張風景照，當時常見的是背投：從布幕後面打影像，演員站在前面演。庫柏力克的檔案紀錄寫，背景板和背投做出來都不夠真 [2]。\n\n他們改用前景投影。投影機架在攝影機旁，中間放一面半透鏡，把兩者對到同一條光軸上：投影機的光從鏡片反射出去，攝影機透過同一片鏡子往外看。光落在演員身後一面巨大的反光幕上，幕面材料是 3M 的 Scotchlite，布滿細小的玻璃珠，會把光原路送回它來的方向，也就是送回鏡頭 [3]。\n\n整個技法的關鍵在這裡。同一道光也打在演員身上，但皮膚和戲服只會把光往四面八方散掉，回到鏡頭的那一點點，跟幕面送回來的比起來暗到看不見。光源和鏡頭在同一條線上，演員的影子也剛好藏在自己身後。\n\n要讓一張透明片的光填滿那面幕，投影機得非常亮。飾演猿人首領、也替整段戲編動作的 Dan Richter 回憶，片場溫度很高，灰塵跑進眼睛，每拍完一次，就有護士和助手拿高壓空氣管替戴著面具的演員吹涼 [4]。\n\n有一個意外的破綻。據記載，那頭豹轉向鏡頭時，牠的眼睛和反光幕一樣，把投影的光原樣送了回來，在畫面上亮成兩點 [5]。那兩點光留在了成片裡。",
+  "domain": "影",
+  "notes": [
+   "「人類的黎明」在 Borehamwood 的 MGM British 片廠拍攝，The Prop Gallery 寫在第 3 號攝影棚。https://www.thepropgallery.com/2001-a-space-odyssey-dawn-of-front-projection ；https://movie-locations.com/movies/0/2001-A-Space-Odyssey.php",
+   "外景 1966 年拍於當時的西南非（今納米比亞）納米布沙漠，在場者有 Ernest Archer、Andrew Birkin、Keith Hamshere 與劇照攝影師 Pierre Boulat（The Prop Gallery）。倫敦藝術大學庫柏力克檔案館館藏「Front Projection Slides」（1966–1968）目錄寫，一般背景板或背投「did not produce a result that looked realistic enough」；同一目錄記為 10×8 吋玻璃片，Douglas Trumbull 的圖說寫 8×10 Ektachrome 透明片。https://archives.arts.ac.uk/CalmView/rdf/catalog/SK/12/3/2/25",
+   "3M 對回歸反射的說明：「retroreflection occurs when light rays are returned in the direction from which they came.」器材由 MGM 特效專家 Tom Howard 與庫柏力克合作研製；Trumbull 圖說（經二手部落格轉引，原刊未讀）稱它「probably the largest front-projection device ever made」，並提到水冷的電弧光源與高熱下偶爾碎裂的聚光鏡。前景投影不是這部片首創，1960 年代初已有劇情片用過。https://www.3m.com/3M/en_US/scotchlite-reflective-material-us/industries-active-lifestyle/active-lifestyle/how-retroreflection-works/ ；https://danklife.squarespace.com/danklife-blog/2001vfx",
+   "Richter 2020 年訪談：「the front projection had to send enough light through the 8 x 10 transparencies to fill the 80-foot-wide screen」「The temperatures on the set were very high」「We had nurses and helpers standing by to cool us with high-pressure hoses of compressed air」。幕寬他說 80 英尺，其他來源有約 100 英尺的說法。他也說光是發展猿人的動作就花了六個多月。https://www.artdigiland.com/blog/2020/11/29/dan-richter-conversation-with-the-man-ape-of-2001-a-space-odyssey",
+   "豹眼的說法見 Mental Floss（轉述《紐約客》）：「the leopard with the wild bright eyes is actually reflecting light from the projection system」，並說庫柏力克保留了這個意外。原話沒有讀到。貓科動物眼底有一層反光組織，夜裡被車燈照到會發亮，是同一類反射。https://www.mentalfloss.com/article/643479/2001-a-space-odyssey-things-to-look-for"
+  ],
+  "pre": "《2001 太空漫遊》的非洲荒原，其實可以在英國片廠裡完成。這篇介紹前景投影如何利用光線的反射，讓演員與照片融為一體。",
+  "question": "",
+  "source": {
+   "title": "倫敦藝術大學庫柏力克檔案館：Front Projection Slides",
+   "url": "https://archives.arts.ac.uk/CalmView/rdf/catalog/SK/12/3/2/25"
+  },
+  "tags": [
+   "電影",
+   "工藝"
+  ],
+  "title": "豹的眼睛"
+ },
+ "date": "2026-11-25",
+ "edition": "morning",
+ "issue_no": 25,
+ "lesson": {
+  "body": "一位柏克萊的哲學家受邀到耶魯大學的人工智慧實驗室演講。他後來說，自己那時對人工智慧一無所知，就在飛機上讀耶魯團隊的書，書裡說他們的程式能「理解故事」。反駁的點子，他說是在三萬英尺高空、雞尾酒和晚餐之間想到的 [1]。\n\n那種程式讀一則短故事：一個人在餐廳點了漢堡，漢堡送來時焦了，他氣得沒付錢就走。問它這個人吃了漢堡嗎，故事沒寫，程式會答「沒有」。研究者說，這表示程式懂了 [2]。\n\n這位哲學家叫塞爾。他想像自己被鎖在房間裡，一個中文字都不懂。門縫遞進來一疊中文，旁邊有一本英文規則書：看到這種形狀的符號，就抄下那種形狀的符號遞出去。規則夠完整，門外的人會以為裡面有個懂中文的人。\n\n可是在塞爾看來，房間裡沒有人懂中文，只有照形狀配對。他認為，電腦執行程式做的正是這件事。塞爾的結論是：句法不等於語意 [3]。句法是符號怎麼排列，語意是符號指的是什麼，他認為，程式本身只處理前者。\n\n到了耶魯，每個人都說他錯了，卻說不清錯在哪。1980 年論文刊出，有二十七位研究者提出評論 [4]。最常見的反駁是：房間裡的人只是一個零件，就像一顆神經元也不懂中文；懂中文的是人加規則書加草稿紙的整個系統。塞爾回答：那就讓他把規則書全背下來，在腦子裡算。整個系統都在他身上了，他還是不懂。\n\n十年後，哲學家保羅與派翠夏・丘奇蘭設計了另一個房間：一個人在暗房裡上下抽動磁鐵。磁場變動會產生電磁波，光也是電磁波；他沒看到光，就宣布理論錯了。但磁鐵擺動得太慢，產生的電磁波不在可見光範圍。暗房裡看不見光，不能證明光不是電磁波；房間裡看不見理解，也不能證明理解不是符號處理。他們說，塞爾把自己想像力的極限當成了現實的極限 [5]。\n\n四十多年過去，兩邊都說對方被感覺騙了。",
+  "no": 24,
+  "notes": [
+   "塞爾（John R. Searle，1932–2025），柏克萊加大哲學系。來由見他 2009 年在 Scholarpedia 的自述：「These ideas came to me at 30,000 feet between cocktails and dinner on United Airlines」；到耶魯後「Everybody agreed that the argument was wrong but they did not seem to agree on exactly why it was wrong.」他沒寫演講年份，也沒點名那本書，一般認為是耶魯 Roger Schank 團隊的著作。2019 年柏克萊因他違反性騷擾與報復政策的調查結論，撤銷其榮譽教授頭銜。https://www.scholarpedia.org/article/Chinese_room_argument ；https://dailynous.com/2019/06/21/searle-found-violated-sexual-harassment-policies/",
+   "餐廳故事是塞爾 1980 年論文裡舉的例子，靶子是 Schank 與 Abelson（1977）的故事理解程式；他另舉一個版本，男人吃完留下大筆小費，程式會答「有吃」。https://cse.buffalo.edu/~rapaport/Papers/Papers.by.Others/Searle/searle80.html",
+   "1990 年《Scientific American》版本的公理三：「Syntax by itself is neither constitutive of nor sufficient for semantics.」1980 年論文摘要：「Instantiating a computer program is never by itself a sufficient condition of intentionality.」這裡的「意向性」指心理狀態「關於」某件事的性質。https://mail.joelvelasco.net/teaching/hum9/scientificamerican0190-26.pdf ；https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/minds-brains-and-programs/DC644B47A4299C637C89772FACC2706A",
+   "塞爾反對的是「強 AI」：寫對程式的電腦本身就是心智，不只是研究心智的工具。〈Minds, brains, and programs〉，《Behavioral and Brain Sciences》第 3 卷第 3 期（1980 年 9 月），採公開同儕評論形式。原文把系統回應標為「柏克萊」的回應；塞爾答覆：人背下一切仍不懂中文，「a fortiori neither does the system」。他也回應了機器人回應、大腦模擬回應等。https://www.cs.uky.edu/~sgware/reading/papers/searle1980minds.pdf",
+   "Paul & Patricia Churchland〈Could a Machine Think?〉，《Scientific American》1990 年 1 月：「Searle is once more mistaking the limits on his (or the reader's) current imagination for the limits on objective reality.」副標：「Classical AI is unlikely to yield conscious machines; systems that mimic the brain might.」兩人也同意，一條條寫規則的古典 AI 大概造不出有意識的機器，模仿大腦的系統或許可以。Dennett 稱這個論證是「直覺泵」（據史丹佛哲學百科轉述）。https://mail.joelvelasco.net/teaching/hum9/scientificamerican0190-32.pdf ；https://openlearninglibrary.mit.edu/courses/course-v1%3AMITx%2B24.09x%2B3T2019/courseware/59d5d5edfbfb4a548c8bccd60187f706/4c4a7fdbd876498d84e693fc2dea9421/ ；https://plato.stanford.edu/archives/spr2025/entries/chinese-room/"
+  ],
+  "pre": "一個完全不懂中文的人，能不能回答所有中文問題？透過塞爾的中文房間與反對者的思想實驗，認識符號運算與真正理解之間的爭議。",
+  "question": "",
+  "series": "意識科學",
+  "tags": [
+   "意識",
+   "思想實驗",
+   "AI",
+   "意識理論"
+  ],
+  "title": "門縫底下的中文"
+ },
+ "main": {
+  "body": "1972 年 6 月 8 日，西貢西北的 1 號公路上，燒夷彈落下後，一群孩子朝十幾名記者跑來。那天拍下的照片後來叫〈戰爭的恐怖〉，中央是九歲的潘金福。半世紀來，攝影師一欄寫的是美聯社的 Nick Út [1]。\n\n2025 年 1 月，紀錄片《The Stringer》在日舞影展放映。當年美聯社西貢的圖片編輯 Robinson 說，那張照片是越南籍特約攝影師 Nguyễn Thành Nghệ 送來的；當晚站在他旁邊的主管說：寫 Nick Út，寫成社內攝影。Nghệ 本人說，照片是我拍的 [2]。\n\n美聯社隨即調查，5 月公布報告：照片很可能出自一台 Pentax，而 Út 一向說他那天帶的是 Leica 和 Nikon [3]。結論是：Út 拍下這張照片是可能的，也找不到 Nghệ 拍照的證明。署名不變。\n\n十天後，世界新聞攝影基金會在自己的調查中，也參考了美聯社的部分發現，宣布暫停署名給 Út：疑點大到不能維持，也沒有確證可以改給別人。獎項照舊，署名懸空 [4]。\n\n照片常被當成最接近事實的新聞，但它不會說出是誰按的快門。署名是另一層記錄，靠的是那晚誰把底片交給誰、編輯寫下什麼，以及五十年後機構用什麼門檻重審。美聯社的規則是，除非有確證顯示署名的人沒拍，否則不撤；基金會的做法是疑點太大就先停。兩份調查都留下疑點，差別也落在門檻上。\n\n相信新聞追得到事實的人會回應：門檻不同，正說明這套系統在運作。美聯社指出，Robinson 幾十年來沒有質疑，反而一再強化 Út 的署名；潘金福說她不會參與這部片，因為她知道它是假的 [5]。那一格快門只有一個人按下，程序的用處是讓每個說法都能被追問。Út 已在法國提告誹謗，據目前公布的排程，2027 年初開庭 [6]。\n\n爭點在於，證據停在「可能」的時候，紀錄要站在哪一邊。維持舊署名，錯的風險落在一個也許沒被看見的特約攝影師身上；暫停署名，風險落在一個也許一直說實話的人身上。",
+  "notes": [
+   "地點在 Trảng Bàng 鎮外 1 號公路的軍事檢查哨，十幾名記者在場，見世界新聞攝影基金會（WPP）調查摘要與 NPR。照片中央是九歲的潘金福（Phan Thị Kim Phúc）。照片原名〈The Terror of War〉，1973 年獲普立茲獎與 WPP 年度照片。https://www.worldpressphoto.org/getmedia/9a412bbd-5173-4b9d-bec6-0882ec71f2b6/WPP_2025_The-Terror-of-War_summary-of-investigative-analysis.pdf ；https://www.npr.org/transcripts/nx-s1-5400606",
+   "導演 Bao Nguyen。Carl Robinson 是當年美聯社西貢分社圖片編輯，他說的主管是 Horst Faas。Robinson 的原話：「Horst Faas, who had been standing right next to me, said, Nick Ut. Make it Nick Ut. Make it staff.」（NPR）。他也說：「I didn't want to die before this story came out.」Nghệ（經翻譯）：「I took the photo.」見美聯社 Lindsey Bahr 2025-01-27 報導。2025 年 9 月 Netflix 買下發行權。https://www.yahoo.com/news/sundance-documentary-called-stringer-disputes-220550918.html ；https://petapixel.com/2025/09/06/nick-ut-speaks-out-after-netflix-buys-doc-challenging-napalm-girl-photo-credit",
+   "美聯社 2025 年 5 月 6 日報告：Út 後來對美聯社說，那天可能也帶了 Pentax。相機「很可能」是 Pentax、「不太可能」是 Leica M2；距離估 28.8–48 公尺。巴黎 INDEX 團隊的 60 公尺說法、WPP 認為 30 或 60 公尺都「不太可能但非不可能」，三方估法不同。結論原文：「AP has concluded that it is possible Nick Ut took the photo」；門檻：「a challenged credit would be removed only if definitive evidence … showed that the person who claimed to have taken the photo did not」。https://petapixel.com/assets/uploads/2025/05/CC_TerrorOfWarReportUpdate_050525_RL3_hh.pdf ；https://petapixel.com/2025/05/06/after-lengthy-investigation-the-ap-will-not-change-nick-uts-credit-on-napalm-girl-photo",
+   "WPP 2025-05-16 聲明：「the level of doubt is too significant to maintain the existing attribution」，「lacking conclusive evidence pointing definitively to another photographer, we cannot reassign authorship either」。WPP 認為 Nghệ 或另一位攝影師 Huỳnh Công Phúc 可能比 Út 更有機會拍到。執行長 Joumana El Zein Khoury：「This may not be a perfect resolution. But it is a thoughtful and principled one.」https://www.worldpressphoto.org/news/2025/authorship-attribution-suspended-for-the-terror-of-war ；https://www.cbc.ca/lite/story/1.7537482",
+   "潘金福的原話：「I would never participate in the Gary Knight film because I know it is false.」（見美聯社報告；Gary Knight 是製作方 VII Foundation 執行長）。導演 Bao Nguyen 則說，這部片關於「who gets to be seen, who is believed, and who gets to write history」（CBC）。",
+   "Út 依法國 1881 年新聞自由法，對 Netflix France、VII Foundation 及 Gary Knight 提出刑事誹謗告訴，求償 10 萬歐元；Tarascon 法院排定 2027 年 2–3 月審理，潘金福提交證詞。審判尚未進行，沒有判決。https://petapixel.com/2026/03/02/nick-ut-files-lawsuit-the-stringer-vii-foundation-defamation ；https://petapixel.com/2026/05/18/french-court-sets-date-for-trial-between-nick-ut-and-netflix-over-napalm-girl-documentary/ ；https://www.france24.com/fr/info-en-continu/20260515-paternit%C3%A9-du-clich%C3%A9-de-la-petite-fille-au-napalm-netflix-jug%C3%A9-en-2027-pour-diffamation"
+  ],
+  "pre": "一張著名新聞照片的真實性沒有受到否定，攝影者的身分卻出現爭議。透過兩個新聞機構的不同決定，思考證據不足時應如何保存歷史紀錄。",
+  "question": "證據只走到「可能」的時候，你希望新聞機構維持原來的署名，還是先把它拿掉？",
+  "tags": [
+   "媒體",
+   "戰爭",
+   "攝影"
+  ],
+  "target": "被挑戰的立場：新聞與真相觀",
+  "title": "寫成社內攝影"
+ },
+ "music": {
+  "body": "1999 年，Aphex Twin 發行單曲《Windowlicker》。第二軌的曲名是一條數學式，前面是破碎的節拍，接近尾聲時，大約從 5 分 27 秒開始，冒出一段像金屬摩擦又像尖叫的怪聲 [1]。\n\n兩年後，網路上有人把這段聲音丟進頻譜分析。頻譜圖的橫軸是時間，縱軸是頻率，越亮代表那個頻率在那一刻越響。用一般的線性刻度看，只浮出一對瞪大的眼睛；聽眾 Jarmo Niinisalo 把縱軸改成對數刻度，一張咧嘴笑的臉才完整出現。那是 Aphex Twin 本人 Richard D. James 的臉 [2]。\n\n這張臉不是錄進去的，是畫進去的。一般認為他用的是軟體 MetaSynth 的 Image Synth：把一張圖當樂譜讀，橫軸是時間、縱軸是音高，每個像素觸發一個振盪器，越亮越大聲 [3]。頻譜分析把聲音變成圖，這個工具把圖變回聲音。\n\n所以那段怪聲聽起來不像任何樂器。一張臉的輪廓、陰影和頭髮，換成聲音，就是許多不同頻率的聲音同時起落，耳朵只能聽成一團嘶吼。\n\n對數刻度也有它的道理。音高是按倍數排的，高八度就是頻率翻倍。若原圖是按等距音程排列，臉就要用同樣按倍數排的對數刻度去看，才是端正的 [4]。",
+  "notes": [
+   "曲名是一條數學式，常被寫成 [Formula] 或 [Equation]，日本版作 [Symbol]，各家寫法不一，長 5 分 43 秒。5 分 27 秒的時間點見 Mixmag 與 Far Out。https://en.wikipedia.org/wiki/Windowlicker ；https://mixmag.net/feature/spectrogram-art-music-aphex-twin",
+   "Mixmag：2001 年網名 chāosMachine 的人發文說找到一張「demon face」；Niinisalo 同年夏天重做，發現「The face was supposed to be displayed on a logarithmic frequency scale, instead of with a linear scale.」Far Out 形容線性刻度下「might reveal a pair of bugged-out eyes but little else」。2002 年《Wired》報導後廣為人知。Scot Hacker 2002 年寫，MP3 的壓縮會把這張圖破壞掉。James 本人談這件事的原話沒有找到。https://faroutmagazine.co.uk/how-aphex-twin-coded-his-face-into-music/ ；https://blog.birdhouse.org/2002/05/11/whos-that-face-in-my-song/",
+   "臉是用 MetaSynth 做的，是 Mixmag、Far Out、VICE 的說法，本人與軟體開發者沒有證實；MetaSynth 官網的用戶名單列有 Richard David James。Sound on Sound：「Each pixel will trigger an oscillator with brightness dictating amplitude and colour setting the stereo position.」軟體手冊稱這個介面結合了鋼琴捲軸式音序器與「reverse sonogram」（反向的聲譜圖）。https://uisoftware.com/metasynth-manual/ ；https://www.soundonsound.com/reviews/ui-software-metasynth-xx-ctx",
+   "「用圖作曲」更早的系譜：作曲家 Xenakis 1977 年在巴黎完成 UPIC，在繪圖板上畫線就是作曲，X 軸時間、Y 軸音高。2001 年 Venetian Snares《Songs About My Cats》最後一軌〈Look〉的頻譜裡也有幾顆貓頭。https://en.wikipedia.org/wiki/UPIC ；https://mentalfloss.com/article/61815/how-musicians-put-hidden-images-their-songs"
+  ],
+  "pre": "聲音可以變成圖像，圖像也能變成聲音。從 Aphex Twin 藏在樂曲中的一張臉，認識頻譜圖，以及音高與頻率之間的關係。",
+  "question": "",
+  "source": {
+   "title": "Mixmag：Spectrogram art, a short history",
+   "url": "https://mixmag.net/feature/spectrogram-art-music-aphex-twin"
+  },
+  "tags": [
+   "實驗音樂",
+   "科技"
+  ],
+  "title": "頻譜上的笑臉",
+  "topic": "製作"
+ },
+ "news": {
+  "body": "11 月 23 日星期一，聯合國世界糧食計畫署執行主任 Luke Lindberg 在安理會報告了一個數字：到 10 月中，穿過伊斯坦堡博斯普魯斯海峽的小麥與玉米船，比去年同期少了 63% [1]。\n\n荷姆茲海峽、紅海口的曼德海峽和黑海同時受阻，運費、燃料和肥料一起漲。照現況走下去，糧食計畫署到 2027 年中要多花 7.27 億美元，730 萬人的援糧可能因此付不出來。這是對新增風險的預估，不是已停止援助的人數。最直接受影響的是蘇丹、南蘇丹、索馬利亞、葉門 [2]。\n\n「這不是生產的問題，是政治問題。」Lindberg 說，糧食就在那裡，只是到不了需要的人手上。他提的辦法，是讓俄羅斯和烏克蘭的穀物都走一條純人道的運輸機制，糧食計畫署願意居中協調，請安理會支持 [3]。\n\n這個辦法有前例。2022 年 7 月，俄、烏、土耳其在伊斯坦堡簽下黑海穀物倡議，聯合國見證，聯合小組逐船查驗。一年間，一千多艘次的船從烏克蘭運出約 3,280 萬公噸穀物與其他食品，糧食計畫署靠它把 72 萬多公噸小麥送到阿富汗、索馬利亞、葉門等地 [4]。\n\n限制也寫在同一份紀錄裡：查驗越拖越久，平均從兩小時拉長到四小時。2023 年 7 月 17 日，俄羅斯不再續約，協議到期 [5]。這次要成，得靠交戰雙方點頭，已查報導未提及俄烏對這項提議的直接回應。",
+  "notes": [
+   "糧食計畫署原稿：截至 10 月中，博斯普魯斯海峽的小麥與玉米船通行量比 2025 年同期低 63%；黑海航線 2026 年有超過 300 次攻擊、至少 40 人死亡；約 1,000 萬公噸俄烏小麥今年可能到不了國際市場，足夠 4,400 萬人吃。https://www.wfp.org/news/wfp-executive-directors-briefing-un-security-council-ukraine-remarks-delivered",
+   "7.27 億美元與 730 萬人是糧食計畫署對「現況持續到 2027 年中」的預估。原稿另提：全球 2.66 億人處於急性飢餓；蘇丹基本飲食成本比 2 月高 130%；葉門九成糧食靠進口；全球約三成肥料經過荷姆茲海峽。半島電視台（Heba Habib，11 月 24 日）與路透社（11 月 23 日）均報導同一場簡報。https://www.reuters.com/business/environment/un-food-agency-chief-warns-wars-jeopardize-food-aid-73-million-more-people-2026-11-23/ ；https://www.aljazeera.com/news/2026/11/24/wars-choke-global-food-routes-threatening-aid-for-7-3-million-wfp-warns",
+   "原話：「This is not a problem of production. It is a political problem.」「Grain is available, but it is not reaching the people who need it.」「We need practical, rapid action to get food moving again through a strictly humanitarian mechanism.」他也提出三條紅線：不再有饑荒、不再把糧食當武器、不再攻擊人道工作者。半島電視台的報導沒有收錄俄烏或其他政府的回應。",
+   "數字截至 2023 年 7 月 15 日：32,817,650 公噸、1,003 艘次出港；小麥有 40% 運往低收入與中低收入國家；糧食計畫署運出 725,167 公噸小麥，目的地為阿富汗、吉布地、衣索比亞、肯亞、索馬利亞、蘇丹、葉門。https://www.ungeneva.org/en/news-media/press-release/2023/07/operational-update-office-un-coordinator-black-sea-grain",
+   "查驗平均時間從 2023 年 2 月的 2 小時 12 分拉長到 7 月的 4 小時 12 分（同上聯合國紀錄）。俄羅斯 2023 年 7 月 17 日通知不續約，古特雷斯說這個決定「will strike a blow to people in need everywhere」。https://kyivindependent.com/un-secretary-general-russias-pull-out-of-grain-deal-will-strike-a-blow-to-people-in-need-everywhere"
+  ],
+  "pre": "戰爭不只摧毀糧食，也可能讓現有糧食無法抵達需要的人手中。從三條受阻的航運通道，理解運輸成本如何侵蝕國際人道援助。",
+  "question": "",
+  "source": {
+   "title": "WFP：Executive Director's briefing to the UN Security Council（2026-11-23）",
+   "url": "https://www.wfp.org/news/wfp-executive-directors-briefing-un-security-council-ukraine-remarks-delivered"
+  },
+  "tags": [
+   "戰爭",
+   "地緣政治",
+   "經濟"
+  ],
+  "title": "博斯普魯斯，少了六成的麥船"
+ },
+ "opening": "英國的片廠裡，一道光打在演員身上，鏡頭卻看不見它。",
+ "order": [
+  "craft",
+  "music",
+  "lesson",
+  "news",
+  "tattoo",
+  "main",
+  "own"
+ ],
+ "own": {
+  "body": "去美術館，山與海約定，不看作者資訊，不管脈絡、背景與策展主題，然後自己幫他們取名。\n\n「神風模擬器」\n\n「吹玻璃製人馬座星獸器官處理器」\n\n「哇有妖氣的人造花，作者精氣都被吸光」\n\n「⋯⋯情慾襪襪週年慶？」\n\n「死亡。」\n\n一個小時後，他們走完想像力的馬拉松，於是在角落寫下紙條向他們告別。是兩行短詩。\n\n如果你要的是我不曾看過的視角，那麼請去看我的後腦勺。",
+  "kind": "連載",
+  "notes": [],
+  "public": true,
+  "source": {
+   "title": "侯百千・2026 連載中",
+   "url": "https://houiooiooo.github.io/hundred/series-2026.html"
+  },
+  "tags": [
+   "散文",
+   "藝術"
+  ],
+  "title": "2026 連載中・Smooth（思慕）"
+ },
+ "published": "2026-11-25T03:40:00+08:00",
+ "tattoo": {
+  "body": "1971 年 5 月 3 日，檀香山唐人街的刺青師 Norman Collins 在信裡寫，他一直在和岐阜的一位刺青師通信。他用的稱呼，是二戰時美國人罵日本人的蔑稱 [1]。\n\nCollins 就是後來被做成蘭姆酒品牌的 Sailor Jerry。二戰時他在檀香山的 Hotel Street 替水兵刺三美元的刺青，越快越多越好；當地雜誌形容他還是個偏執的人 [2]。\n\n信的另一頭是小栗一男。1945 年 7 月岐阜被燃燒彈轟炸時，他 12 歲；後來到東京當了五年學徒，再無償做一年，才回岐阜開業。他請人翻譯，寫信到檀香山。兩人往來好幾年，交換圖稿、完成作品的照片和想法，Collins 還把紐約州一家刺青器材商的聯絡方式給了他 [3]。\n\n這些信後來由刺青師 Shanghai Kate Hellenbrand 保存。據她說，1972 年小栗到檀香山，Collins 開車載他去珍珠港的亞利桑那號紀念館，說：「這是你們對我們做的事。」\n\n書評形容 Collins 的刺青把美式圖像和日本刺青更繁複的結構接在一起。1973 年，他安排舊金山的年輕刺青師 Ed Hardy 去日本，跟小栗學 [4]。Hardy 後來說：「我知道刺青不一定只能是一隻鷹和一個錨。」他回國開了一家只接預約、專做客製圖的店 [5]。\n\n同年 6 月，Collins 在檀香山去世，62 歲。",
+  "notes": [
+   "原文：「Have been corresponding with a Nip tattoo artist from Gifu.」Nip 是二戰時期美國對日本人的蔑稱。信件與小栗的生平見 Defector 2021 年的長文，主要依據 Hellenbrand 持有的信與她的說法。https://defector.com/ed-hardy-went-to-japan-and-brought-back-a-myth",
+   "《Honolulu Magazine》形容他「a bit of a bigot to boot」。Collins 死後店面由 Mike Malone 買下；1999 年 Hardy、Malone 與 Steven Grasse 成立 Sailor Jerry Ltd.，是後來蘭姆酒品牌的源頭。https://www.honolulumagazine.com/?p=12685",
+   "日本國立國會圖書館權威資料記載，岐阜彫秀本名小栗一男，生於 1933 年。https://id.ndl.go.jp/auth/ndlna/00963017 。Collins 給他的是紐約州 Albany 器材商 Spaulding & Rogers 的聯絡方式；Defector 寫兩人交換「designs, pictures of finished tattoos, flash art, and ideas」。各來源對彫師稱呼不一，這裡只寫本名。Hellenbrand 另說，小栗在 Collins 小腿刺牡丹時，Collins 誇張喊痛、在打霧階段喊停，她認為是故意讓小栗難堪；這些都只有她一個來源。",
+   "《洛杉磯書評》評 Hardy 回憶錄《Wear Your Dreams》：Collins 結合美式圖像與「greater complexity of Japanese tattooing」，並由他安排 Hardy 1973 年赴日（《日本時報》書評寫 1972 年；《舊金山紀事報》2024 年年表依 Hardy 回憶錄及照片列為 1973 年，本文採後者）。https://lareviewofbooks.org/article/hate-the-brand-love-the-man-why-ed-hardy-matters/ ；https://www.japantimes.co.jp/culture/2000/01/10/books/getting-under-a-tattooists-skin ；https://www.sfchronicle.com/projects/2024/ed-hardy-tattoo-timeline/",
+   "Hardy 原話：「I knew that tattoos didn't just have to be an eagle and an anchor.」店名 Realistic Tattoo，《洛杉磯書評》稱是第一家只接預約、專做客製圖的刺青店；他和 Malone 翻拍歌川國芳的版畫，這批照片「became the key reference base for us to transform Western tattooing」。Collins 1973 年 6 月 12 日去世。https://michaelcorcoran.substack.com/p/stewed-screwed-and-tattooed-the-selling"
+  ],
+  "pre": "從美國與日本刺青師之間的一段跨國通信，追溯日本刺青如何影響美式傳統，也看看藝術交流如何與戰爭留下的偏見同時存在。",
+  "question": "",
+  "source": {
+   "title": "Defector：Ed Hardy Went To Japan And Brought Back A Myth",
+   "url": "https://defector.com/ed-hardy-went-to-japan-and-brought-back-a-myth"
+  },
+  "tags": [
+   "刺青史",
+   "日本",
+   "戰爭"
+  ],
+  "title": "岐阜寄來的圖稿",
+  "topic": "刺青師"
+ },
+ "weekday": "星期三"
+}
