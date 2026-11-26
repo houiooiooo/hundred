@@ -1,0 +1,36 @@
+{
+ "date": "2026-11-26",
+ "edition": "night",
+ "issue_no": 26,
+ "published": "2026-11-26T18:30:00+08:00",
+ "weekday": "星期四",
+ "items": [
+  {
+   "tag": "夜刊",
+   "sub": "策展",
+   "title": "一朵花引發的戰爭",
+   "video": {
+    "embed": "https://www.nfb.ca/film/neighbours_voisins/embed/player/",
+    "href": "https://www.nfb.ca/film/neighbours_voisins/",
+    "title": "Neighbours（鄰居），Norman McLaren，1952",
+    "caption": "《鄰居》（Neighbours），諾曼・麥克拉倫，1952，加拿大，約 8 分鐘。加拿大國家電影局（NFB）官方播放器嵌入；片中有暴力場面。播放不了時，到 NFB 官方頁面觀看。"
+   },
+   "body": "兩個原本友好的鄰居，因為一朵長在中央的花，開始爭奪。花並沒有變，變的是兩人看待彼此的方式。\n\n麥克拉倫將真人當作逐格動畫的拍攝對象。這種技法稱為 pixilation：演員在每次曝光之間改變姿勢，讓連續播放的影格產生異於日常的動作。影片沒有口語對白，身體的動作成為敘事的語言。\n\n這是一部反戰寓言，也是一個關於所有權的提問：為什麼人會為了擁有美好的事物，反而摧毀？\n\n背景｜導演與作品背景\n\n諾曼・麥克拉倫（Norman McLaren）是出身蘇格蘭的實驗動畫導演，1941年加入加拿大國家電影局，並建立其動畫部門。他的創作跨越繪畫、音樂與舞蹈，甚至直接在底片上製造聲音。《鄰居》的電子般聲響，便是透過光學聲軌上的圖案產生，而非以傳統樂器演奏。\n\n這部片的構想源於麥克拉倫赴中國參與聯合國教科文組織工作後的經驗。返抵加拿大時，韓戰已使中國成為敵對一方，他對這種敵我觀念感到不安，因而創作反戰寓言。影片於1951年夏天由四人團隊拍攝，全片沒有正式拍攝劇本，以即興方式完成。1953年獲得奧斯卡最佳紀錄短片獎，2009年列入聯合國教科文組織世界記憶名錄。",
+   "notes": [
+    "導演生平：加拿大國家電影局 https://www.nfb.ca/directors/norman-mclaren/",
+    "製作經過與得獎：NFB 部落格〈Neighbours: the NFB's second Oscar winner〉https://blog.nfb.ca/blog/2011/02/27/neighbours-the-nfbs-second-oscar-winner/ ；拍攝現場照片 https://blog.nfb.ca/blog/2016/02/26/10-great-pictures-from-the-set-of-norman-mclarens-neighbours/ ；麥克拉倫技術筆記 https://www3.nfb.ca/archives_mclaren/notech/NT_EN.pdf",
+    "影片由加拿大國家電影局提供，依 NFB 網站分享條款以官方播放器嵌入，不重製影片或劇照。"
+   ],
+   "source": {
+    "title": "加拿大國家電影局：Neighbours（Norman McLaren, 1952）",
+    "url": "https://www.nfb.ca/film/neighbours_voisins/"
+   },
+   "tags": [
+    "電影",
+    "戰爭",
+    "動畫"
+   ]
+  }
+ ],
+ "art": 120
+}
