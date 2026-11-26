@@ -1,0 +1,25 @@
+# python3 hd.py START END N SEED（UT 均勻隨機時刻；pyswisseph 2.10 Moshier）
+## 1917 1975 5000 1
+1917-1975	Generator	1775	35.5%
+1917-1975	Manifesting Generator	1691	33.8%
+1917-1975	Projector	1071	21.4%
+1917-1975	Manifestor	403	8.1%
+1917-1975	Reflector	60	1.2%
+## 1917 1975 5000 2
+1917-1975	Generator	1853	37.1%
+1917-1975	Manifesting Generator	1648	33.0%
+1917-1975	Projector	999	20.0%
+1917-1975	Manifestor	450	9.0%
+1917-1975	Reflector	50	1.0%
+## 1100 1158 5000 3
+1100-1158	Generator	1639	32.8%
+1100-1158	Manifesting Generator	1935	38.7%
+1100-1158	Projector	929	18.6%
+1100-1158	Manifestor	444	8.9%
+1100-1158	Reflector	53	1.1%
+## 2100 2158 5000 4
+2100-2158	Generator	1478	29.6%
+2100-2158	Manifesting Generator	1952	39.0%
+2100-2158	Projector	949	19.0%
+2100-2158	Manifestor	564	11.3%
+2100-2158	Reflector	57	1.1%
