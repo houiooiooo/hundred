@@ -119,8 +119,10 @@ def inner(o):
     h = []
     if o.get("target"):
         h.append(f'<div class="target">{esc(o["target"])}</div>')
-    fig = o.get("figure") or {}
-    if re.match(r"^https://", fig.get("src") or ""):  # 作品圖（2026-11-20 夜刊起：公眾領域館藏圖，熱連結官方原圖）
+    figs = o.get("figure") or []
+    for fig in (figs if isinstance(figs, list) else [figs]):  # 作品圖（2026-11-20 夜刊起：公眾領域館藏圖，熱連結官方原圖；2026-11-27 起可為陣列）
+        if not isinstance(fig, dict) or not re.match(r"^https://", fig.get("src") or ""):
+            continue
         img = f'<img src="{esc(fig["src"])}" alt="{esc(fig.get("alt") or "")}" loading="lazy" decoding="async">'
         if re.match(r"^https?://", fig.get("href") or ""):
             img = f'<a href="{esc(fig["href"])}" rel="noopener">{img}</a>'
