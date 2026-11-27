@@ -139,9 +139,10 @@ def inner(o):
     if o.get("question"):
         h.append(f'<div class="q{" en" if EN else ""}">{esc(o["question"])}</div>')
     notes = o.get("notes") or []
-    if notes:
-        h.append('<div class="notes"><div class="nt">' + ("Notes" if EN else "附註") + '</div><ol>'
-                 + "".join(f"<li>{esc(n)}</li>" for n in notes) + "</ol></div>")
+    if notes or o.get("ednote"):  # 編按 ednote 放在附註區、不進正文（2026-11-27 主編定）
+        h.append('<div class="notes"><div class="nt">' + ("Notes" if EN else "附註") + '</div>'
+                 + (f'<p class="ednote">{esc(o["ednote"])}</p>' if o.get("ednote") else "")
+                 + ("<ol>" + "".join(f"<li>{esc(n)}</li>" for n in notes) + "</ol>" if notes else "") + "</div>")
     src = o.get("source") or {}
     if re.match(r"^https?://", src.get("url") or ""):
         h.append(f'<div class="src">{"Source: " if EN else "來源："}<a href="{esc(src["url"])}" rel="noopener">{esc(src.get("title") or src["url"])}</a></div>')
@@ -205,7 +206,7 @@ h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:22px;line-height:
 .bg{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px 2px;margin:20px 0 8px;font-size:15px;color:var(--ink2)}
 .bg .bgt{font-family:"Noto Serif TC",serif;font-weight:600;color:var(--ink);margin-bottom:8px}
 .q{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:"Noto Serif TC",serif}.q::before{content:"問　";color:var(--seal);font-weight:900}.q.en::before{content:"Q  "}
-.notes{font-size:14px;color:var(--ink2);margin-top:14px}.nt{color:var(--ink3);font-size:13px}.notes ol{padding-left:20px;margin:6px 0}
+.notes{font-size:14px;color:var(--ink2);margin-top:14px}.nt{color:var(--ink3);font-size:13px}.notes ol{padding-left:20px;margin:6px 0}.notes p.ednote{margin:6px 0}
 .src{font-size:13px;color:var(--ink3);margin-top:10px}
 .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:13px;margin-top:14px;color:var(--ink3)}.meta a{color:var(--ink3);text-decoration:none}.meta a:first-child{color:var(--seal)}
 .chip{white-space:nowrap}a.chip:hover,.meta a:hover{text-decoration:underline}

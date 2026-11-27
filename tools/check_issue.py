@@ -128,7 +128,7 @@ def check(doc):
 
         # 附註標號
         seen = []
-        for m in MARK.findall(body):
+        for m in MARK.findall(body + (col.get("ednote") or "")):  # 編按裡的標號也算
             m = int(m)
             if m not in seen:
                 seen.append(m)

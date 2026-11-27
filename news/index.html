@@ -61,6 +61,7 @@
   details.notes{border-top:1px dashed var(--line);padding-top:8px}
   details.notes ol{margin:8px 0 0;padding-left:20px;font-size:14px;line-height:1.75;color:var(--ink2)}
   details.notes li{margin-bottom:8px}
+  details.notes p.ednote{margin:8px 0 0;font-size:14px;line-height:1.75;color:var(--ink2)}
   details.more>summary{color:var(--seal);font-size:14px}
   .src{font-size:13px;color:var(--ink3);margin-top:10px} .src a{color:var(--ink2)}
   .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;margin-top:14px} .meta a{color:var(--ink3);text-decoration:none} .meta a:first-of-type{color:var(--seal)}
@@ -206,8 +207,9 @@
     if(o.pre) h += '<aside class="pre"><div class="pret">讀前｜這篇在說什麼</div>'+paras(o.pre)+'</aside>'; // 讀前小卡（2026-11-18 試行）
     h += bodyHtml(o.body);
     if(o.question) h += '<div class="q">'+esc(o.question)+'</div>';
-    if(Array.isArray(o.notes) && o.notes.length)
-      h += '<details class="notes"><summary>附註（'+o.notes.length+'）</summary><ol>'+o.notes.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ol></details>';
+    const nn = Array.isArray(o.notes) ? o.notes : []; // 編按 ednote 放在附註區、不進正文（2026-11-27 主編定）
+    if(nn.length || o.ednote)
+      h += '<details class="notes"><summary>附註'+(nn.length?'（'+nn.length+'）':'')+'</summary>'+(o.ednote?'<p class="ednote">'+esc(o.ednote)+'</p>':'')+(nn.length?'<ol>'+nn.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ol>':'')+'</details>';
     const u = o.source && safeUrl(o.source.url);
     if(u) h += '<div class="src">來源：<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(o.source.title||u)+'</a></div>';
     h += metaHtml(o, key);
