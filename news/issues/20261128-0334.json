@@ -36,7 +36,13 @@
    "紀錄名為《北斎大画即書細図》，名古屋市博物館藏，同館另藏當時的傳單《北斎大画即書引札》。原文：「世人皆こぞつて此画工を頌嘆し達磨先生と異名に、それ亦略してだるせんともてはやせり。」宣傳《北斎漫画》之說見墨田北齋美術館；名古屋市中區官網寫是《北斎漫画》六、七編的出版紀念。米粒畫雀只見美術館一句介紹，沒有原始出處。https://hokusai-museum.jp/modules/Exhibition/exhibitions/view/337?lang=en",
    "原畫毀於戰災只見和樂web，未寫年份。重現活動 2017 年 11 月 23 日在西別院舉行，由愛知縣立藝術大學受託研究、藤田哲也帶隊，紙據考是「泉貨紙」。https://intojapanwaraku.com/rock/art-rock/156599/ ；https://www.nact.jp/artcommons/user/detail/55843 ；2017 年重現照片另見：https://www.nippon.com/en/articles/-/54146"
   ],
-  "question": ""
+  "question": "",
+  "figure": {
+   "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Hokusai_Daruma_1817.jpg?width=1200",
+   "href": "https://commons.wikimedia.org/wiki/File:Hokusai_Daruma_1817.jpg",
+   "alt": "1817 年北齋在名古屋寺院境內畫大達磨的同時代圖像。",
+   "caption": "1817 年北齋在名古屋西別院畫大達磨的同時代圖像，作者不詳。Wikimedia Commons，標示日本公有領域（PD-Japan）。"
+  }
  },
  "tattoo": {
   "title": "坐在箱子上的人",
@@ -138,7 +144,13 @@
    "兩位創辦人是 Derek Debru 與 Arlen Dilsizian，2011 年各自搬到烏干達，起點是放映會之後的派對；第一屆 Nyege Nyege 音樂節 2015 年在金賈舉行，廠牌 2016 年成立（Loud and Quiet，2023）。2018 年 4 月 Sisso 的團隊在倫敦 Cafe OTO 演出，Songlines 樂評寫「this is no music to chin-stroke to」。《Sounds of Sisso》編號 NNT005，2017 年 6 月先出錄音帶。https://www.loudandquiet.com/interview/nyege-nyege-ten-years-of-diy-experimental-music-in-uganda ；https://core-prod.cambridgecore.org/core/product/B4E79DFF5CA1A57B9EED7E82159A8E99/core-reader ；https://factmag.com/2018/08/17/nyege-nyege-tapes-bamba-pana-debut-album-poaa",
    "Africa Is a Country，Karen Chalamilla，2026-05-18；原文說國家起初不認同它「cheeky, sometimes vulgar lyricism」。https://africasacountry.com/2026/05/tanzanias-national-sound ；UNESCO 2026 年審查議程，案號 2424：https://ich.unesco.org/en/1447"
   ],
-  "question": ""
+  "question": "",
+  "video": {
+   "embed": "https://www.youtube-nocookie.com/embed/IJEtpROQ68I",
+   "href": "https://www.youtube.com/watch?v=IJEtpROQ68I",
+   "title": "Sisso & Maiko | Boiler Room Dar Es Salaam: Singeli Vibes",
+   "caption": "Boiler Room 官方影片：Sisso 與 Maiko 在達累斯薩拉姆的 singeli 現場。"
+  }
  },
  "own": {
   "title": "百的某日・鞦韆",
